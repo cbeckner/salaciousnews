@@ -10,8 +10,8 @@ paginate = "10" # Number of posts per page
   avatar = "img/avatar.png"
 
 [Params]
-  description = "John Doe's Personal blog about everything" # Site description. Used in meta description
-  copyright = "John Doe" # Footer copyright holder, otherwise will use site title
+  description = "Salacious News!  All the hot gossip from around the world" # Site description. Used in meta description
+  copyright = "XYZ Consulting LLC" # Footer copyright holder, otherwise will use site title
   opengraph = true # Enable OpenGraph if true
   schema = true # Enable Schema
   twitter_cards = true # Enable Twitter Cards if true
@@ -22,12 +22,13 @@ paginate = "10" # Number of posts per page
   post_meta = ["author", "date", "categories", "translations"] # Order of post meta information
   mainSections = ["post", "news"] # Specify section pages to show on home page and the "Recent articles" widget
   dateformat = "2006-01-02" # Change the format of dates
-  mathjax = true # Enable MathJax
+  mathjax = false # Enable MathJax
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
   googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
   # customCSS = ["css/custom.css"] # Include custom CSS files
   # customJS = ["js/custom.js"] # Include custom JS files
+  googleAnalytics = 'G-MRRZYLYQC7'
 
 [Params.style.vars]
   # highlightColor = "#e22d30" # Override highlight color
@@ -64,11 +65,11 @@ paginate = "10" # Number of posts per page
   # Enable parts of social widget
   twitter = "username"
   instagram = "username"
-  email = "example@example.com"
+  email = "info@salacious.news"
 
 [[Params.widgets.social.custom]]
   title = "Sarcastic News"
-  url = "https://sarcastic.news"
+  url = "https://salacious.news"
 
 [Params.widgets.search]
   cached = true # activate cache if true
