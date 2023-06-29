@@ -27,7 +27,7 @@ jobs:
       - name: Build the Site
         run: hugo
       - name: Deploy to S3 and Invalidate Cache
-        uses: reggionick/s3-deploy@v3
+        uses: Reggionick/s3-deploy@v4.0.0
         with:
           folder: ./public
           bucket: ${{ secrets.AWS_BUCKET }}
