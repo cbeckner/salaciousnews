@@ -5,9 +5,9 @@ on:
     branches: [main]
 
 env:
-  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
 
 jobs:
   build-deploy:
@@ -26,19 +26,8 @@ jobs:
           hugo version
       - name: Build the Site
         run: hugo
-      - name: Deploy to S3 and Invalidate Cache
-        uses: Reggionick/s3-deploy@v4.0.0
-        with:
-          folder: ./public
-          bucket: ${{ secrets.AWS_BUCKET }}
-          bucket-region: ${{ secrets.AWS_DEFAULT_REGION }}
-          dist-id: ${{ secrets.AWS_CLOUDFRONT_ID }}
-          invalidation: /
-          delete-removed: true
-          no-cache: true
-          private: true
-          files-to-include: ".*/*,*/*,**"
-      # - name: Sync with AWS S3 bucket & invalidate Cloudfront cache
-      #   run: |
-      #     aws s3 sync ./public s3://${{ secrets.AWS_BUCKET }} --acl public-read
-      #     aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths '/*'
+
+      - name: Sync with AWS S3 bucket & invalidate Cloudfront cache
+        run: |
+          aws s3 sync ./public s3://${{ secrets.AWS_BUCKET }} --acl public-read
+          # aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths '/*'
