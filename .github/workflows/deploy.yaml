@@ -30,4 +30,4 @@ jobs:
       - name: Sync with AWS S3 bucket & invalidate Cloudfront cache
         run: |
           aws s3 sync ./public s3://${{ secrets.AWS_BUCKET }} --acl public-read
-          # aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths '/*'
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths '/*'
