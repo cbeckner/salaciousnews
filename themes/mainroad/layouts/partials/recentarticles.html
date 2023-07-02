@@ -1,0 +1,16 @@
+<div class="list__articles-container">
+    {{ range .Site.Params.subSections }}
+    <div class="list__articles">
+        <h2 class="list__articles-title">{{ . }}</h2>
+        <ul class="list__articles-list">
+            {{- range first 5 (where $.Site.RegularPages "Type" "eq" .) }}
+            <li class="list__articles-item">
+                <a href="{{ .RelPermalink }}" rel="bookmark">
+                    {{ .Title }}
+                </a>
+            </li>
+            {{- end }}
+        </ul>
+    </div>
+    {{ end }}
+</div>

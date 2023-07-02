@@ -5,7 +5,7 @@
 		{{ . }}
 	</div>
 	{{- end }}
-	{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+	{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) 5 }}
 	{{- range $paginator.Pages }}
 		{{- .Render "summary" }}
 	{{- end }}
@@ -21,4 +21,5 @@
 	{{ end }}
 </main>
 {{ partial "pagination.html" . }}
+{{ partial "recentarticles" . }}
 {{ end }}
