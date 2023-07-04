@@ -62,6 +62,12 @@
   translation: "Tags"
 
 # Footer
+- id: footer_disclaimer 
+  translation: 
+    "This is a work of parody.  While the news is real, the tone of the articles is not.  This site is not affiliated \
+    with any of the news sources linked to, and all images are used under fair use.  If you have any questions, please \
+    contact us at <a href=\"mailto:info@salacious.news\">info@salacious.news</a>."
+
 - id: footer_credits
   translation:
     "Generated with <a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a> and \

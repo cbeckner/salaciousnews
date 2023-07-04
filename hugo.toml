@@ -20,9 +20,9 @@ googleAnalytics = "G-MRRZYLYQC7"
   authorbox = true # Show authorbox at bottom of pages if true
   toc = true # Enable Table of Contents
   pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
-  post_meta = ["author", "date", "categories", "translations"] # Order of post meta information
-  mainSections = ["post", "news", "US", "World", "Technology", "Entertainment", "Other"] # Specify section pages to show on home page and the "Recent articles" widget
-  subSections = ["World","Technology","Entertainment","Other"]
+  post_meta = [ "date", "categories"] # Order of post meta information
+  mainSections = ["post", "news", "US", "World", "Technology", "Entertainment", "Other", "Politics"] # Specify section pages to show on home page and the "Recent articles" widget
+  subSections = ["World","Technology","Entertainment","Other", "Politics"]
   dateformat = "2006-01-02" # Change the format of dates
   mathjax = false # Enable MathJax
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
@@ -54,10 +54,11 @@ googleAnalytics = "G-MRRZYLYQC7"
   list = "left"  # Configure layout for list pages
   single = false # Configure layout for single pages
   # Enable widgets in given order
-  widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+  widgets = ["search", "recent", "categories",  "social"]
 
 [Params.widgets]
   recent_num = 5 # Set the number of articles in the "Recent articles" widget
+  skip_num = 5 # Set the number of articles in the "Recent articles" widget to skip
   categories_counter = false # Enable counter for each category in "Categories" widget
   tags_counter = false # Enable counter for each tag in "Tags" widget
 

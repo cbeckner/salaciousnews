@@ -355,7 +355,7 @@ dl {
 
 dt,
 dd {
-	display: list-item;
+	display: item;
 }
 
 dt {
@@ -907,7 +907,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 	margin: 0;
 	padding: 0;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, 45%);
+	grid-template-columns: repeat(auto-fill, 50%);
 	justify-content: center;
 }
 
@@ -918,14 +918,18 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 	/* grid-row-end: span 2	; */
 }
 
+.list__articles h2 {
+	border-bottom: 2px solid {{ $highlightColor }};
+}
+
 .list__articles-list {
 	margin: 0;
 	list-style: none;
 }
 
 .list__articles-list li {
-	margin-bottom: 10px;
-	margin-bottom: .625rem;
+	padding: .325rem 0;
+	border-bottom: 1px solid #ebebeb;
 }
 
 /* Pagination */
