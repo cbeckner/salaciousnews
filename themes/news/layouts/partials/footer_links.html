@@ -1,0 +1,10 @@
+{{- with .Site.Menus.footer }}
+<div class="col-lg-5">
+	{{ range $key, $value := . }}
+	{{- if ne $key 0 }} | {{ end -}}
+	<div class="link-group">
+		<div class="title"><a href="{{ $value.URL }}">{{ $value.Name }}</a></div>
+	</div>
+	{{- end }}
+</div>
+{{- end }}

@@ -1,0 +1,18 @@
+name = "News"
+license = "None"
+licenselink = "https://github.com/cbeckner/salaciousnews"
+description = "News is based on the Newz theme from themeforest."
+homepage = "https://github.com/cbeckner/salaciousnews"
+tags = ["blog", "responsive", "light", "multilingual", "customizable", "widgets", "wordpress"]
+features = ["blog", "responsive", "multilingual", "widgets", "rss", "disqus", "google analytics"]
+min_version = "0.48"
+
+[author]
+  name = "Cbeckner"
+  homepage = "https://github.com/cbeckner"
+
+# If porting an existing theme
+[original]
+  name = "Newzin"
+  homepage = "https://docs.themescamp.com/newzin/html/"
+  

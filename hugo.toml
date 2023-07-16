@@ -13,6 +13,7 @@ googleAnalytics = "G-MRRZYLYQC7"
 [Params]
   description = "Salacious News!  All the hot gossip from around the world" # Site description. Used in meta description
   copyright = "XYZ Consulting LLC" # Footer copyright holder, otherwise will use site title
+  footerBlurb = "For all the latest gossip."
   opengraph = true # Enable OpenGraph if true
   schema = true # Enable Schema
   twitter_cards = true # Enable Twitter Cards if true
