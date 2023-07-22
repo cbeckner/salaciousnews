@@ -1,33 +1,54 @@
 {{- if .Site.Menus.main }}
-<nav class="menu">
-	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
-		<span class="menu__btn-title" tabindex="-1">{{ T "menu_label" }}</span>
-	</button>
-	<ul class="menu__list">
-		{{- $currentNode := . }}
-		{{- range $name, $taxonomy := .Site.Taxonomies.categories }}
-		{{- with $.Site.GetPage (printf "/categories/%s" $name) }}
-		{{- if $name }}
-		<li class="menu__item">
-			<a class="menu__link" href="{{ .RelPermalink }}">
-				<span class="menu__text">{{ .Title }}</span>
+<nav class="navbar navbar-expand-lg navbar-light style-1">
+	<div class="container p-0">
+		<div class="mob-nav-toggles d-flex align-items-center justify-content-between">
+			<button class="navbarList-icon me-lg-5" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+				aria-controls="offcanvasExample">
+				<span></span>
+				<span></span>
+			</button>
+			<a href="#" class="logo-brand d-block d-lg-none w-50 my-4">
+				<img src="assets/img/logo_home1.png" alt="" class="dark-none">
+				<img src="assets/img/logo_home1_lt.png" alt="" class="light-none">
 			</a>
-		</li>
-		{{- end }}
-		{{- end }}
-		{{- end }}
-		{{- range .Site.Menus.main }}
-		{{- if .Name }}
-		<li class="menu__item{{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} menu__item--active{{ end }}">
-			<a class="menu__link" href="{{ .URL }}">
-				{{ .Pre }}
-				<span class="menu__text">{{ .Name }}</span>
-				{{ .Post }}
-			</a>
-		</li>
-		{{- end }}
-		{{- end }}
-	</ul>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				{{- $currentNode := . }}
+				{{- range $name, $taxonomy := .Site.Taxonomies.categories }}
+				{{- with $.Site.GetPage (printf "/categories/%s" $name) }}
+				{{- if $name }}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ .RelPermalink }}">
+						{{ .Title }}
+					</a>
+				</li>
+				{{- end }}
+				{{- end }}
+				{{- end }}
+				{{- range .Site.Menus.main }}
+				{{- if .Name }}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ .URL }}">
+						{{ .Name }}
+					</a>
+				</li>
+				{{- end }}
+				{{- end }}
+			</ul>
+			<div class="nav-side">
+				<a href="#" class="icon-link search-btn-style1">
+					<i class="la la-search fs-4 sOpen-btn"></i>
+					<i class="la la-close fs-4 sClose-btn"></i>
+				</a>
+			</div>
+		</div>
+	</div>
 </nav>
 {{ else -}}
 <div class="divider"></div>

@@ -1,7 +1,7 @@
 baseURL = "https://salacious.news/"
 languageCode = "en-us"
 title = "Salacious News"
-theme = "mainroad"
+theme = "news"
 paginate = "10" # Number of posts per page
 googleAnalytics = "G-MRRZYLYQC7"
 

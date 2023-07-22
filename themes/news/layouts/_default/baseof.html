@@ -1,70 +1,136 @@
 <!DOCTYPE html>
-<html class="no-js" lang="{{ .Site.Language.Lang }}">
+<html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Metas -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{ block "title" . }}{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
+	<meta name="description"
+		content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
 	{{- if .Site.Params.opengraph }}
-		{{ template "_internal/opengraph.html" . }}
+	{{ template "_internal/opengraph.html" . }}
 	{{- end }}
 	{{- if .Site.Params.schema }}
-		{{ template "_internal/schema.html" . }}
+	{{ template "_internal/schema.html" . }}
 	{{- end }}
 	{{- if .Site.Params.twitter_cards }}
-		{{ template "_internal/twitter_cards.html" . }}
+	{{ template "_internal/twitter_cards.html" . }}
 	{{- end }}
 
-	{{- $googleFontsLink := .Site.Params.googleFontsLink | default "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" }}
+	<!-- bootstrap 5 -->
+	<link rel="stylesheet" href="{{ "css/lib/bootstrap.min.css" | relURL }}">
+
+	{{- $googleFontsLink := .Site.Params.googleFontsLink | default
+	"https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" }}
 	{{- if hasPrefix $googleFontsLink "https://fonts.googleapis.com/" }}
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="stylesheet" {{ printf `href="%s"` $googleFontsLink | safeHTMLAttr }}>
+	<link rel="stylesheet" {{ printf `href="%s" ` $googleFontsLink | safeHTMLAttr }}>
 	{{- end }}
 
-	{{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
-	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+	<!-- ionicons icons  -->
+	<link rel="stylesheet" href="{{ "css/lib/ionicons.css" | relURL }}">
+	<!-- line-awesome icons  -->
+	<link rel="stylesheet" href="{{ "css/lib/line-awesome.css" | relURL }}">
+	<!-- animate css  -->
+	<link rel="stylesheet" href="{{ "css/lib/animate.css"  | relURL }}">
+	<!-- fancybox popup  -->
+	<link rel="stylesheet" href="{{ "css/lib/jquery.fancybox.css"  | relURL }}">
+	<!-- lity popup  -->
+	<link rel="stylesheet" href="{{ "css/lib/lity.css"  | relURL }}">
+	<!-- swiper slider  -->
+	<link rel="stylesheet" href="{{ "css/lib/swiper.min.css"  | relURL }}">
+
+	<!-- ====== main style ====== -->
+	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 	{{ range .Site.Params.customCSS -}}
 	<link rel="stylesheet" href="{{ . | relURL }}">
 	{{- end }}
 
 	{{- with .OutputFormats.Get "rss" }}
-	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+	{{ printf `
+	<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}
 
-	<link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}">
+	<link rel="shortcut icon" href="{{ "img/fav.png" | relURL }}">
 	{{- if not .Site.IsServer }}
-		{{- if hasPrefix .Site.GoogleAnalytics "G-" }}
-		{{ template "_internal/google_analytics.html" . }}
-		{{- else }}
-		{{ template "_internal/google_analytics_async.html" . }}
-		{{- end }}
+	{{- if hasPrefix .Site.GoogleAnalytics "G-" }}
+	{{ template "_internal/google_analytics.html" . }}
+	{{- else }}
+	{{ template "_internal/google_analytics_async.html" . }}
+	{{- end }}
 	{{- end }}
 </head>
-<body class="body">
-	<div class="container container--outer">
-		{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
-		<div class="wrapper flex">
-			<div class="primary">
-			{{ block "main" . }}
-				{{ with .Content }}
-				<div class="content main__content clearfix">
-					{{ . }}
-				</div>
-				{{ end }}
-			{{ end }}
-			</div>
-			{{ block "sidebar" . }}{{ partial "sidebar.html" . }}{{ end }}
+
+<body class="home-style1">
+	<!-- ====== start loading page ====== -->
+	<div class="loading-page style1">
+		<div class="lad-cont">
+			<h2 class="loading loading01">
+				<span>.</span>
+				<span>n</span>
+				<span>e</span>
+				<span>w</span>
+				<span>z</span>
+				<span>i</span>
+				<span>n</span>
+			</h2>
+			<small class="loading loading01">
+				<span>l</span>
+				<span>o</span>
+				<span>a</span>
+				<span>d</span>
+				<span>i</span>
+				<span>n</span>
+				<span>g</span>
+			</small>
 		</div>
-		{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
 	</div>
-<script async defer src="{{ "js/menu.js" | relURL }}"></script>
-{{ range .Site.Params.customJS -}}
-<script src="{{ . | relURL }}"></script>
-{{- end }}
-{{- partial "mathjax.html" . -}}
+	<!-- ====== end loading page ====== -->
+
+	<!-- ====== start navbar-container ====== -->
+	{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+	<!-- ====== start navbar-container ====== -->
+
+	<main>
+		{{ block "main" . }}
+		{{ with .Content }}
+		{{ . }}
+		{{ end }}
+		{{ end }}
+	</main>
+	{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
+
+	{{- partial "mathjax.html" . -}}
+
+	<!-- ====== start to top button ====== -->
+	<!-- <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 220.587;"></path></svg>
+    </div> -->
+	<!-- ====== end to top button ====== -->
+
+	<!-- ====== request ====== -->
+	<script async defer src="{{ "js/lib/jquery-3.0.0.min.js" | relURL }}"></script>
+	<script async defer src="{{ "js/lib/jquery-migrate-3.0.0.min.js" | relURL }}"></script>
+	<script async defer src="{{ "js/lib/bootstrap.bundle.min.js" | relURL }}"></script>
+	<script async defer src="{{ "js/lib/wow.min.js" | relURL }}"></script>
+	<script async defer src="{{ "js/lib/jquery.fancybox.js" | relURL }}"></script>
+	<script async defer src="{{ "js/lib/lity.js" | relURL }}"></script>
+	<script async defer src="{{ "js/lib/swiper.min.js" | relURL }}"></script>
+	<script async defer src="{{ "js/lib/jquery.waypoints.min.js" | relURL }}"></script>
+	<script async defer src="{{ "js/lib/jquery.counterup.js" | relURL }}"></script>
+	<script async defer src="{{ "js/lib/back-to-top.js" | relURL }}"></script>
+	<script async defer src="{{ "js/lib/parallaxie.js" | relURL }}"></script>
+	<script async defer src="{{ "js/main.js" | relURL }}"></script>
+	{{ range .Site.Params.customJS -}}
+	<script src="{{ . | relURL }}"></script>
+	{{- end }}
+
 </body>
+
 </html>

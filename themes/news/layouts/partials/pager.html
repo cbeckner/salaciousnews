@@ -1,22 +1,38 @@
 {{- if .Param "pager" }}
 {{- if or (.PrevInSection) (.NextInSection) }}
-<nav class="pager flex">
-	{{- if .PrevInSection }}
-	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="{{ .PrevInSection.RelPermalink }}" rel="prev">
-			<span class="pager__subtitle">«&thinsp;{{ T "post_nav_prev" }}</span>
-			<p class="pager__title">{{ .PrevInSection.Title }}</p>
-		</a>
+<!-- ====== start next prev post slider ====== -->
+<section class="tc-next-prev-post mb-60">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+				<div class="tc-next-prev-post-slider">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							{{- if .PrevInSection }}
+							<div class="swiper-slide">
+								<a href="{{ .PrevInSection.RelPermalink }}" rel="prev" class="item">
+									<p class="color-666 fsz-12px text-uppercase">{{ T "post_nav_prev" }}</p>
+									<h6 class="title">{{ .PrevInSection.Title }}</h6>
+								</a>
+							</div>
+							{{- end }}
+							{{- if .NextInSection }}
+							<div class="swiper-slide">
+								<a href="{{ .NextInSection.RelPermalink }}" rel="next" class="item">
+									<p class="color-666 fsz-12px text-uppercase">{{ T "post_nav_next" }}</p>
+									<h6 class="title">{{ .NextInSection.Title }}</h6>
+								</a>
+							</div>
+							{{- end }}
+						</div>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+			</div>
+		</div>
 	</div>
-	{{- end }}
-	{{- if .NextInSection }}
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="{{ .NextInSection.RelPermalink }}" rel="next">
-			<span class="pager__subtitle">{{ T "post_nav_next" }}&thinsp;»</span>
-			<p class="pager__title">{{ .NextInSection.Title }}</p>
-		</a>
-	</div>
-	{{- end }}
-</nav>
+</section>
+<!-- ====== end next prev post slider ====== -->
 {{- end }}
 {{- end }}

@@ -1,14 +1,37 @@
 {{- if .Params.tags }}
-<div class="post__tags tags clearfix">
-	{{ partial "svg/tag.svg" (dict "class" "tags__badge") }}
-	<ul class="tags__list">
-		{{- range .Params.tags }}
-		<li class="tags__item">
-			<a class="tags__link btn" href="{{ "tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
-				{{- . -}}
-			</a>
-		</li>
-		{{- end }}
-	</ul>
-</div>
+<!-- ====== start video content ====== -->
+<section class="tc-main-post-style1 pt-60 pb-60">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+				<div class="btm-share-post mt-50">
+					<div class="row items">
+						<div class="col-lg-6">
+							<div class="btm-tags mb-4 mb-lg-0">
+								{{- range .Params.tags }}
+								<a href="{{ " tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
+									{{- . -}}
+								</a>
+								{{- end }}
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="btm-sharing d-lg-flex align-items-lg-center justify-content-lg-end">
+								<p class="text-capitalize me-20 mb-2 mb-lg-0">Share</p>
+								<div class="share-icons">
+									<a href="#"> <i class="la la-twitter"></i> </a>
+									<a href="#"> <i class="la la-facebook-f"></i> </a>
+									<a href="#"> <i class="la la-instagram"></i> </a>
+									<a href="#"> <i class="la la-youtube"></i> </a>
+									<a href="#"> <i class="la la-spotify"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- ====== end video content ====== -->
 {{- end }}

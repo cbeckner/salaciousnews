@@ -1,29 +1,61 @@
 {{ define "main" }}
-<main class="main" role="main">
-	<article class="post">
-		<header class="post__header">
-			<h1 class="post__title">{{ .Title }}</h1>
-			{{- with .Params.lead }}
-			<p class="post__lead">{{ . }}</p>
-			{{- end }}
-			{{ with partial "post_meta.html" . -}}
-			<div class="post__meta meta">{{ . }}</div>
-			{{- end }}
-		</header>
-		{{ partial "post_thumbnail.html" (dict "class" "post" "page" .) }}
-		{{- partial "post_toc.html" . -}}
-		<div class="content post__content clearfix">
-			{{ .Content }}
+<!-- ====== start tc-main-post-style1 ====== -->
+<section class="tc-main-post-style1 pb-60">
+	<div class="container">
+		<div class="tc-main-post-title pt-40 pb-40">
+			<div class="row">
+				<div class="col-lg-8">
+					<p class="text-uppercase mb-15">{{ .Params.category }}</p>
+					<h2 class="title">{{ .Title }}</h2>					
+				</div>
+			</div>
 		</div>
-		{{- if .Params.tags }}
-		<footer class="post__footer">
-			{{ partial "post_tags.html" . }}
-		</footer>
-		{{- end }}
-	</article>
-</main>
-<!-- {{ partial "authorbox.html" . }}
-{{ partial "pager.html" . }} -->
-{{ partial "post_source.html" . }}
+		<div class="meta-nav pt-30 pb-30 border-top border-1 brd-gray">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="author-side color-666 fsz-13px">						
+						<span class="me-40">
+							<a href="#"><i class="la la-calendar me-1"></i> {{ .Params.date }}</a>
+						</span>
+					</div>
+				</div>
+				<div class="col-lg-6 text-lg-end">
+					<div class="links-side color-000 fsz-13px">
+						Original article: <a href="{{ .Params.OriginalUrl }}" target="_blank" class="me-40"><i class="la la-link me-1"></i>{{.Params.Source}}</a>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tc-main-post-img img-cover mb-50">
+			{{ partial "post_thumbnail.html" (dict "class" "post" "page" .) }}
+		</div>
+		<div class="tc-main-post-content color-000">
+			<div class="row">
+				<div class="col-lg-2">
+					<div class="sharing">
+						<p class="text-uppercase mb-20">Share</p>
+						<div class="share-icons">
+							<a href="#"> <i class="la la-twitter"></i> </a>
+							<a href="#"> <i class="la la-facebook-f"></i> </a>
+							<a href="#"> <i class="la la-instagram"></i> </a>
+							<a href="#"> <i class="la la-youtube"></i> </a>
+							<a href="#"> <i class="la la-spotify"></i> </a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-10">
+					{{ .Content }}
+					<!-- <p class="info-text sm-content-width mt-40"> -->						
+				</div>
+			</div>			
+		</div>
+	</div>
+</section>
+{{- if .Params.tags }}
+{{ partial "post_tags.html" }}
+{{- end}}
+{{ partial "pager.html" . }}
 {{ partial "comments.html" . }}
+
+<!-- ====== end tc-main-post-style ====== -->
 {{ end }}

@@ -6,19 +6,29 @@
 	{{/* Defined when logo is mixed (image + text) */}}
 	{{- $logoMix := and $logoImage $logoTitle -}}
 
-	<div class="logo{{ with $logoMix }} logo--mixed{{ end }}">
-		<a class="logo__link" href="{{ "" | relLangURL }}"{{ with $logoTitle }} title="{{ . }}"{{ end }} rel="home">
-			{{ with $logoImage -}}
-				<div class="logo__item logo__imagebox">
-					<img class="logo__img" src="{{ . | relURL }}">
+	<div class="top-navbar style-1">
+		<div class="container p-0">
+			<div class="row align-items-center">
+				<div class="col-lg-4">
 				</div>
-			{{- end -}}
-			{{ with $logoTitle -}}
-				<div class="logo__item logo__text">
-					<div class="logo__title">{{ . }}</div>
+				<div class="col-lg-4">
+					<a href="{{ "" | relLangURL }}" {{ with $logoTitle }} title="{{ . }}" {{ end }} rel="home"
+						class="logo-brand d-none d-lg-block">
+						{{ with $logoImage -}}
+						<img src="{{ . | relURL}}" alt="" class="light-none">
+						{{- end -}}
+					</a>
+				</div>
+				<div class="col-lg-4">
+					{{ with $logoTitle -}}
+					{{ . }}
 					{{ with $logoSubtitle }}<div class="logo__tagline">{{ . }}</div>{{ end }}
+					{{- end }}
 				</div>
-			{{- end }}
-		</a>
+			</div>
+		</div>
 	</div>
 {{- end }}
+
+
+				
