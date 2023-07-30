@@ -16,9 +16,9 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				{{- $currentNode := . }}
-				{{- range $name, $taxonomy := .Site.Taxonomies.categories }}
-				{{- with $.Site.GetPage (printf "/categories/%s" $name) }}
-				{{- if $name }}
+				{{ range .Site.Params.subSections }}
+				{{- with $.Site.GetPage (printf "/categories/%s" .) }}
+				{{- if . }}
 				<li class="nav-item">
 					<a class="nav-link" href="{{ .RelPermalink }}">
 						{{ .Title }}
