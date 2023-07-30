@@ -1,0 +1,46 @@
+{{- $index := .index }}
+{{- $pagesize := .pagesize }}
+{{- with .context }}
+{{- if eq $index 0 }}
+<div class="item mt-30">
+{{- else }}
+	{{- if le $index (sub $pagesize 1) }}
+<div class="item border-0">
+	{{- else }}
+<div class="item">
+	{{- end }}
+{{- end }}
+	<div class="row">
+		<div class="col-lg-5">
+			<div class="img th-230 img-cover overflow-hidden">
+				{{ partial "post_thumbnail.html" (dict "class" "post" "width" 500 "height" 350 "page" .) }}
+			</div>
+		</div>
+		<div class="col-lg-7">
+			<div class="content mt-20 mt-lg-0">
+				<a href="#" class="color-999 fsz-13px text-uppercase mb-10">{{ .Params.Category }}</a>
+				<h4 class="title mb-15"> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h4>
+				<div class="text color-666">
+					{{ .Summary }} 
+					{{- if .Site.Params.readmore }} 
+					{{- if .Truncated }} 
+						[...]
+					{{- end }} 
+					{{- end }}
+				</div>
+				<div class="meta-bot fsz-13px color-666">
+					<ul class="d-flex">
+						<li class="date me-5">
+							<a href="#"><i class="la la-calendar me-2"></i> {{ .Params.Date }}</a>
+						</li>
+						<li class="author me-5">
+							<a href="#"><i class="la la-user me-2"></i> by <span class="color-000">{{.Params.Source }}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{- end}}

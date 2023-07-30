@@ -3,32 +3,23 @@
 {{- $logoImage := .Site.Params.logo.image -}}
 
 {{- if or $logoTitle $logoImage }}
-	{{/* Defined when logo is mixed (image + text) */}}
-	{{- $logoMix := and $logoImage $logoTitle -}}
-
-	<div class="top-navbar style-1">
-		<div class="container p-0">
-			<div class="row align-items-center">
-				<div class="col-lg-4">
-				</div>
-				<div class="col-lg-4">
-					<a href="{{ "" | relLangURL }}" {{ with $logoTitle }} title="{{ . }}" {{ end }} rel="home"
-						class="logo-brand d-none d-lg-block">
-						{{ with $logoImage -}}
-						<img src="{{ . | relURL}}" alt="" class="light-none">
-						{{- end -}}
-					</a>
-				</div>
-				<div class="col-lg-4">
+{{/* Defined when logo is mixed (image + text) */}}
+{{- $logoMix := and $logoImage $logoTitle -}}
+<div class="top-navbar style-1">
+	<div class="container p-0">
+		<div class="row align-items-center">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-10">
+				<a href="{{ "" | relLangURL }}" {{ with $logoTitle }} title="{{ . }}" {{ end }} rel="home"
+					class="logo-brand">
 					{{ with $logoTitle -}}
 					{{ . }}
-					{{ with $logoSubtitle }}<div class="logo__tagline">{{ . }}</div>{{ end }}
-					{{- end }}
-				</div>
+					{{- end}}
+				</a>
+				{{ with $logoSubtitle }}<span class="brand-tagline">{{ . }}</span>{{ end }}
 			</div>
 		</div>
 	</div>
+</div>
 {{- end }}
-
-
-				

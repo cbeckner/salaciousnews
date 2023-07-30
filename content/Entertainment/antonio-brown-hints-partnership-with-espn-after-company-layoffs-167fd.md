@@ -10,8 +10,9 @@ Tags:
 - partnership
 - layoffs
 - scandal
+Featured: true
 Thumbnail:
-  Src: ./img/posts/167fd062-4fe0-4eb2-a109-e5b98165ec50.png
+  Src: img/posts/167fd062-4fe0-4eb2-a109-e5b98165ec50.png
   Visibility:
   - post
 ImagePrompt: An intriguing image depicting Antonio Brown and an ESPN logo entangled in a web of controversy, symbolizing the scandalous partnership and subsequent layoffs.

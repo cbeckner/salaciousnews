@@ -1,0 +1,90 @@
+{{- $articles := (where .context.Site.RegularPages "Type" "eq" .category).ByDate.Reverse }}
+<section class="tc-business-style1 pt-30 pb-30">
+    {{- $category := .category }}
+    {{- with .context.Site.GetPage (printf "/categories/%s" $category) }}
+    <p class="color-000 text-uppercase mb-30 ltspc-1"> <a href="{{ .RelPermalink }}">{{ $category }}</a> <i
+            class="la la-angle-right ms-1"></i></p>
+    {{- end }}
+    <div class="main-blog pb-30 border-1 border-bottom brd-gray">
+        <div class="row">
+            <div class="col-lg-8 border-1 border-end brd-gray">
+                {{- range first 1 $articles }}
+                <div class="tc-post-overlay-default">
+                    <div class="img th-400 img-cover">
+                        {{ partial "post_thumbnail.html" (dict "class" "post" "width" 850 "height" 595 "page" .) }}
+                        <div class="tags">
+                            <a href="#">{{ .Params.Tags }}</a>
+                        </div>
+                    </div>
+                    <div class="content ps-30 pe-30 pb-30">
+                        <h3 class="title mb-20">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h3>
+                        <div class="meta-bot lh-1">
+                            <ul class="d-flex">
+                                <li class="date me-5">
+                                    <a href="#"><i class="la la-calendar me-2"></i>{{ .Params.Date }}</a>
+                                </li>
+                                <li class="author me-5">
+                                    <a href="#"><i class="la la-user me-2"></i>{{ .Params.Source }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {{- end }}
+            </div>
+            <div class="col-lg-4">
+                <div class="tc-post-list-style2">
+                    <div class="items">
+                        {{- $list := first 4 (after 1 $articles) }}
+                        {{- $len := (len $list) }}
+                        
+                        {{- range $index, $element := $list }}
+                        {{- if eq (add $index 1) $len }}
+                        <div class="item pb-20 border-0">
+                        {{- else }}
+                        <div class="item pb-20">
+                        {{- end}}
+                            <div class="content">
+                                <a href="#" class="news-cat color-999 fsz-13px text-uppercase mb-1">{{ $element.Params.Category}}</a>
+                                <h5 class="title ltspc--1">
+                                    <a href="{{ $element.RelPermalink }}">{{ $element.Title }}</a>
+                                </h5>
+                            </div>
+                        </div>
+                        {{- end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{- if gt (len $articles) 5 }}
+    <div class="tc-post-list-style2">
+        <div class="items">
+            <div class="row">
+                {{ range first 2 (after 5 $articles) }}
+                <div class="col-lg-6">
+                    <a href=".RelPermalink" class="item d-block border-0 pt-30">
+                        <div class="row gx-3 align-items-center">
+                            <div class="col-4">
+                                <div class="img th-90 img-cover">
+                                    {{ partial "post_thumbnail.html" (dict "class" "post" "width" 250 "height" 175 "page" .) }}
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="content">
+                                    <div class="news-cat color-999 fsz-13px text-uppercase mb-1">
+                                        {{ .Params.Category }}</div>
+                                    <h5 class="title ltspc--1">{{ .Title }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{- end }}
+            </div>
+        </div>
+    </div>
+    {{- end }}
+</section>

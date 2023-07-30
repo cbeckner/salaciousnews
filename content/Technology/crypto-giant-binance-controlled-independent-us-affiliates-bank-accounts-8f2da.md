@@ -11,7 +11,7 @@ Tags:
 - US affiliates
 - bank accounts
 Thumbnail:
-  Src: ./img/posts/8f2da343-db51-4773-883b-ec978f5bf254.png
+  Src: img/posts/8f2da343-db51-4773-883b-ec978f5bf254.png
   Visibility:
   - post
 ImagePrompt: The image shows a magnifying glass revealing the dark secrets of a cryptocurrency icon, with an ominous shadow looming in the background.

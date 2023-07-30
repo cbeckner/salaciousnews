@@ -11,7 +11,7 @@ Tags:
 - scandal
 - Talos
 Thumbnail:
-  Src: ./img/posts/1eea8ad3-0034-4dd2-92a5-2ae2bb94b2ce.png
+  Src: img/posts/1eea8ad3-0034-4dd2-92a5-2ae2bb94b2ce.png
   Visibility:
   - post
 ImagePrompt: A split image of an oil rig and two silhouettes embracing in a passionate embrace, symbolizing the scandalous merger talks between Harbour and Talos in the North Sea oil industry.

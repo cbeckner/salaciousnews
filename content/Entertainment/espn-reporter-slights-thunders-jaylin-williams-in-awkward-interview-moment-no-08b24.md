@@ -18,7 +18,7 @@ Tags:
 - outrage
 - apology
 Thumbnail:
-  Src: ./img/posts/08b248af-9574-4de6-a271-b2b40a467f1b.png
+  Src: img/posts/08b248af-9574-4de6-a271-b2b40a467f1b.png
   Visibility:
   - post
 ImagePrompt: >

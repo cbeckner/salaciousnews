@@ -11,7 +11,7 @@ Tags:
 - scandal
 - trial
 Thumbnail:
-  Src: ./img/posts/ca6299ac-8ded-4bcf-92c2-d124cfba1937.png
+  Src: img/posts/ca6299ac-8ded-4bcf-92c2-d124cfba1937.png
   Visibility:
   - post
 ImagePrompt: 'Image: Former President Donald Trump entering the courthouse surrounded by a frenzy of media and supporters.'

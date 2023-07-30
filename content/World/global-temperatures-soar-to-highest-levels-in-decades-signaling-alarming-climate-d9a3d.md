@@ -11,7 +11,7 @@ Tags:
 - political scandal
 - celebrity gossip
 Thumbnail:
-  Src: ./img/posts/d9a3d39f-7461-4aab-bfe6-37418692c774.png
+  Src: img/posts/d9a3d39f-7461-4aab-bfe6-37418692c774.png
   Visibility:
   - post
 ImagePrompt: An image depicting a thermometer popping out of a globe surrounded by flames, symbolizing the scandalous rise in global temperatures.

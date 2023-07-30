@@ -11,7 +11,7 @@ Tags:
 - scandalous
 - political drama
 Thumbnail:
-  Src: ./img/posts/4d84ce05-485c-47c1-9ccd-2d13bd82d64c.png
+  Src: img/posts/4d84ce05-485c-47c1-9ccd-2d13bd82d64c.png
   Visibility:
   - post
 ImagePrompt: 'Image: The courtroom packed with reporters, cameras flashing as Donald Trump enters to plead not guilty in the federal documents case.'

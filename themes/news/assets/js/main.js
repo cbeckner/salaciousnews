@@ -101,7 +101,7 @@ $( function() {
     })
 
     var containerEl = document.querySelector('.tc-posts-tabs-style4 .tc-tabs-body');
-    var mixer = mixitup(containerEl);
+    var mixer = mixItup(containerEl);
 
 });
 

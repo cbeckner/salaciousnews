@@ -1,18 +1,24 @@
 {{ define "main" }}
-<main class="main list" role="main">
-	{{- with .Title }}
-	<header class="main__header">
-		<h1 class="main__title">{{ . }}</h1>
-	</header>
-	{{- end }}
-	{{- with .Content }}
-	<div class="content main__content clearfix">
-		{{ . }}
+{{- .Render "list_featured"}}
+<section class="tc-popular-posts-blog">
+	<div class="container">
+		<div class="content-widgets pt-50 pb-50">
+			<div class="row">
+				<div class="col-lg-9">
+					<div class="tc-post-list-style3">
+						<div class="items">
+						{{- range $index, $element := .Paginator.Pages }}
+						{{- partial "summary.html" (dict "context" $element "index" $index "pagesize" $.Paginator.PageSize) }}
+						{{- end }}
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					{{ partial "ad-banner1.html" . }}
+				</div>
+			</div>
+		</div>
 	</div>
-	{{- end }}
-	{{- range .Paginator.Pages }}
-		{{- .Render "summary" }}
-	{{- end }}
-</main>
+</section>
 {{ partial "pagination.html" . }}
 {{ end }}

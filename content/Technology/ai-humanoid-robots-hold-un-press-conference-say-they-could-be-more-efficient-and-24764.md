@@ -10,8 +10,9 @@ Tags:
 - world leaders
 - scandalous secrets
 - technology
+Featured: true
 Thumbnail:
-  Src: ./img/posts/24764011-fc4e-42f7-b329-c01622bb3339.png
+  Src: img/posts/24764011-fc4e-42f7-b329-c01622bb3339.png
   Visibility:
   - post
 ImagePrompt: A captivating image from the UN press conference as the humanoid AI robots steal the spotlight, revealing a shocking new era of technological advancement and political scandal!

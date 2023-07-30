@@ -11,7 +11,7 @@ Tags:
 - faint
 - breathing problems
 Thumbnail:
-  Src: ./img/posts/0f04a716-5191-445d-a9eb-78bf191eef7e.png
+  Src: img/posts/0f04a716-5191-445d-a9eb-78bf191eef7e.png
   Visibility:
   - post
 ImagePrompt: A dramatic image of Wu Yibing, collapsed on the Wimbledon court, surrounded by a crowd of concerned onlookers.

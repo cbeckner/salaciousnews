@@ -10,8 +10,9 @@ Tags:
 - Fire Island
 - surfing
 - trauma
+Featured: true
 Thumbnail:
-  Src: ./img/posts/864372b1-2415-4adb-90e1-962cf73d14f8.png
+  Src: img/posts/864372b1-2415-4adb-90e1-962cf73d14f8.png
   Visibility:
   - post
 ImagePrompt: A menacing image of a shark lurking beneath the surface, ready to strike, against the backdrop of a picturesque beach on Fire Island.

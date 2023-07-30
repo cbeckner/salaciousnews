@@ -2086,10 +2086,13 @@ small.text {
 
 /* --------------- navbar style-1 --------------- */
 .top-navbar.style-1 {
-  padding: 40px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #d9d9d9;
   position: relative;
   z-index: 999;
+  background-image: url('/img/banner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .top-navbar.style-1 .nav-subs-card {
   background-color: #f0f0f0;
@@ -2148,11 +2151,17 @@ small.text {
   text-transform: uppercase;
 }
 .top-navbar.style-1 .logo-brand {
-  width: 180px;
-  display: block;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin: auto;
+  font-size: 4rem;
+    color: #fff;
+    text-shadow: 0px 0px 10px #ccc;
+    font-weight: bold;
+}
+.top-navbar.style-1 .brand-tagline {
+  display:block;
+  font-size:1.5rem;
+  color: #666;
+  text-shadow: 2px 2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, -2px -2px 0 #fff, 2px 0px 0 #fff, 0px 2px 0 #fff, -2px 0px 0 #fff, 0px -2px 0 #fff;
+  margin-top:-15px;
 }
 .top-navbar.style-1 .date-weather .item {
   display: -webkit-box;
@@ -14612,12 +14621,22 @@ small.loading01 {
   }
 
   .top-navbar.style-1 {
-    padding: 20px 0;
+    padding: 15px 0;
+    background-size: 200%;
   }
   .top-navbar.style-1 .date-weather .item {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .top-navbar.style-1 .logo-brand {
+    font-size: 2rem;
+    margin-left:120px;
+  }
+  .top-navbar.style-1 .brand-tagline {
+    font-size: .8rem;
+    margin-left:120px;
+    margin-top: 0;
   }
   .top-navbar.style-1 .sub-darkLight .text-end {
     text-align: center !important;

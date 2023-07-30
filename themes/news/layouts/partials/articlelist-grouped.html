@@ -1,0 +1,79 @@
+<!-- ====== start another-news ====== -->
+<section class="another-news pt-50 pb-50 border-1 border-top brd-gray">
+    <div class="container">
+        <div class="content">
+            <div class="row">                       
+                {{- $context := .context }}     
+                {{- range .categories }}                
+                {{- $category := . }}
+                {{- $articles := (where $context.Site.RegularPages "Type" "eq" $category).ByDate.Reverse }}
+                {{- if gt (len $articles) 0 }}
+                <div class="col-lg-4">                    
+                    {{- with $context.Site.GetPage (printf "/categories/%s" $category) }}
+                    <p class="color-000 text-uppercase mb-30 ltspc-1"> <a href="{{ .RelPermalink }}">{{ .Title }}</a> <i
+                            class="la la-angle-right ms-1"></i></p>
+                    {{- end }}
+                    <div class="row">
+                        <div class="col-12 border-1 border-end brd-gray">
+                            <div class="tc-post-grid-default">
+                                {{- range first 1 $articles }}
+                                <div class="item">
+                                    <div class="img img-cover th-250">
+                                        {{ partial "post_thumbnail.html" (dict "class" "post" "width" 500 "height" 350 "page" .) }}
+                                    </div>
+                                    <div class="content pt-20">
+                                        <a href="#" class="news-cat color-999 fsz-13px text-uppercase mb-10">{{ .Params.Category }}</a>
+                                        <h4 class="title ltspc--1 mb-10">
+                                            <a href="{{ .RelPermalink }}">
+                                                {{ .Title }}
+                                            </a>
+                                        </h4>
+                                        <div class="text color-666">
+                                            {{ .Summary }}
+                                        </div>
+                                        <div class="meta-bot lh-1 mt-20">
+                                            <ul class="d-flex">
+                                                <li class="date me-5">
+                                                    <a href="#"><i class="la la-calendar me-2"></i>{{ .Params.Date }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{- end }}
+                            </div>
+                            <div class="tc-post-list-style2">
+                                <div class="items">
+                                    {{- range first 2 (after 1 $articles) }}
+                                    <a href="page-single-post-creative.html"
+                                        class="item d-block border-1 border-top border-bottom-0 brd-gray pt-15 mt-15 brd-gray">
+                                        <div class="row gx-3 align-items-center">
+                                            <div class="col-4">
+                                                <div class="img th-70 img-cover">
+                                                    {{ partial "post_thumbnail.html" (dict "class" "post" "width" 200 "height" 140 "page" .) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="content">
+                                                    <small
+                                                        class="news-cat color-999 fsz-13px text-uppercase mb-10">{{ .Params.Category }}</small>
+                                                    <h5 class="title ltspc--1">
+                                                        {{ .Title }}
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {{- end }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{- end }}
+                {{- end }}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ====== end another-news ====== -->

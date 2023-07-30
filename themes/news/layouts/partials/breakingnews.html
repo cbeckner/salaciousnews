@@ -1,0 +1,42 @@
+<!-- ====== start breaking news ====== -->
+<section class="tc-breaking-news-style1 pt-30 pb-30">
+    <div class="container">
+        <p class="color-999 text-uppercase mb-30 ltspc-1">breaking news</p>
+        <div class="tc-post-grid-default">
+            <div class="tc-slider-style1">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {{- range first 5 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+                        <div class="swiper-slide">
+                            <a href="{{ .RelPermalink }}" class="item d-block">
+                                <div class="row gx-4 align-items-center">
+                                    <div class="col-4">
+                                        <div class="img img-cover">
+                                            {{ partial "post_thumbnail.html" (dict "class" "post" "width" 200 "height" 200 "page" .) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="content">
+                                            <h6 class="title">{{ .Title }}</h6>
+                                            <div class="meta-bot mt-10">
+                                                <ul>
+                                                    <li class="date"> <i class="la la-clock"></i> 24 Minutes ago
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {{- end }}
+                    </div>
+                </div>
+                <!-- arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ====== end breaking news ====== -->

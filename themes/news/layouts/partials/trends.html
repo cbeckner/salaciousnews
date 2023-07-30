@@ -1,0 +1,119 @@
+<!-- ====== start trends news ====== -->
+<section class="tc-trends-news-style1 pt-50 pb-50 bg-gray1">
+    <div class="container">
+        {{- $tags := .Site.Taxonomies.tags.ByCount }}
+        {{- if gt (len $tags) 0 }}
+        <div class="hot-trends-tabs-style1 mb-4">
+            <p class="color-999 text-uppercase ltspc-1 flex-shrink-0 me-4 pt-1"> <i
+                    class="ion-arrow-graph-up-right me-2"></i> hot trends </p>
+            <div class="links">
+                {{- range $name, $taxonomy := first 7 $tags }}
+                {{- with $.Site.GetPage (printf "/tags/%s" $taxonomy.Name) }}
+                <a href="{{ " tags/" | relLangURL }}{{ . | urlize }}/" rel="tag" class="link">
+                    {{- .Title -}}
+                </a>
+                {{- end }}
+                {{- end }}
+            </div>
+        </div>
+        {{- end }}
+        <div class="section-content">
+            <div class="row">
+                <div class="col-lg-3">                    
+                    <div class="tc-post-grid-default">
+                        <div class="item">
+                            <div class="img img-cover th-200">
+                                <img src="assets/img/trend/1.png" alt="">
+                            </div>
+                            <div class="content py-4 px-3 bg-gray2">
+                                <p class="color-main fsz-13px text-uppercase mb-1">Sponsored Content</p>
+                                <h4 class="title ltspc--1"> <a href="page-single-post-creative.html">3D2N at
+                                        Sixsense Resort 5 stars just
+                                        $1,299</a> </h4>
+                                <a href="#" class="color-999 fsz-12px mt-20">booking.com <i
+                                        class="la la-external-link-square-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tc-trends-news-slider1 tc-slider-style2">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                {{- range (where $.Site.Pages "Params.featured" true) }}
+                                <div class="swiper-slide">
+                                    <div class="tc-post-overlay-default">
+                                        <div class="img th-650 img-cover">
+                                            {{ partial "post_thumbnail.html" (dict "class" "post" "width" 870 "height" 609 "page" .) }}
+                                            <div class="tags">
+                                                {{- range .Params.tags }}
+                                                <a href="{{ " tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
+                                                    {{- . -}}
+                                                </a>
+                                                {{- end }}
+                                            </div>
+                                        </div>
+                                        <div class="content ps-40 pe-40 pb-40">
+                                            <h2 class="title mb-20">
+                                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                            </h2>
+                                            <div class="meta-bot lh-1">
+                                                <ul class="d-flex">
+                                                    <li class="date me-5">
+                                                        <a href="#"><i class="la la-calendar me-2"></i>{{ .Params.Date }}</a>
+                                                    </li>
+                                                    <li class="author me-5">
+                                                        <a href="#"><i class="la la-user me-2"></i>{{ .Params.Source }}</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                        <!-- arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="tc-post-list-style1">
+                        <div class="tc-post-title-style1">
+                            <a> trending posts </a>
+                        </div>
+                        {{- range $idx, $page := first 1 (where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) "Params.featured" true).ByDate.Reverse }}
+                        <div class="tc-post-overlay-default">
+                            <div class="img th-200 img-cover">
+                                {{ partial "post_thumbnail.html" (dict "class" "post" "width" 270 "height" 189 "page" .) }}
+                            </div>
+                            <div class="content ps-20 pe-20 pb-20 text-white">
+                                <a href="{{ $page.RelPermalink }}"
+                                    class="text-uppercase fsz-13px mb-1">{{ $page.Params.Category }}</a>
+                                <h4 class="title">
+                                    <a href="#">{{ $page.Title }}</a>
+                                </h4>
+                            </div>
+                        </div>
+                        {{- end }}
+                        <div class="items">
+                        {{- range $idx, $page := first 4 (after 1 (where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) "Params.featured" true).ByDate.Reverse) }}
+                            <a href="{{ $page.RelPermalink }}" class="item hover-main">
+                                <h2 class="num">
+                                    {{ (add $idx 2) }}
+                                </h2>
+                                <div class="content">
+                                    <span class="fsz-12px color-999 text-uppercase mb-2">{{ $page.Params.Category }}</span>
+                                    <h6 class="title">{{ $page.Title }}</h6>
+                                </div>
+                            </a>
+                        {{- end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ====== end trends news ====== -->

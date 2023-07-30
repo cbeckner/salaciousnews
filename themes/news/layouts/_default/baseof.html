@@ -67,32 +67,7 @@
 	{{- end }}
 </head>
 
-<body class="home-style1">
-	<!-- ====== start loading page ====== -->
-	<div class="loading-page style1">
-		<div class="lad-cont">
-			<h2 class="loading loading01">
-				<span>.</span>
-				<span>n</span>
-				<span>e</span>
-				<span>w</span>
-				<span>z</span>
-				<span>i</span>
-				<span>n</span>
-			</h2>
-			<small class="loading loading01">
-				<span>l</span>
-				<span>o</span>
-				<span>a</span>
-				<span>d</span>
-				<span>i</span>
-				<span>n</span>
-				<span>g</span>
-			</small>
-		</div>
-	</div>
-	<!-- ====== end loading page ====== -->
-
+<body class="home-style1">	
 	<!-- ====== start navbar-container ====== -->
 	{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
 	<!-- ====== start navbar-container ====== -->
@@ -115,8 +90,8 @@
 	<!-- ====== end to top button ====== -->
 
 	<!-- ====== request ====== -->
-	<script async defer src="{{ "js/lib/jquery-3.0.0.min.js" | relURL }}"></script>
-	<script async defer src="{{ "js/lib/jquery-migrate-3.0.0.min.js" | relURL }}"></script>
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js" integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=" crossorigin="anonymous"></script>
 	<script async defer src="{{ "js/lib/bootstrap.bundle.min.js" | relURL }}"></script>
 	<script async defer src="{{ "js/lib/wow.min.js" | relURL }}"></script>
 	<script async defer src="{{ "js/lib/jquery.fancybox.js" | relURL }}"></script>

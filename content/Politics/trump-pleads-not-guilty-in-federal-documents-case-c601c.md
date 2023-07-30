@@ -10,8 +10,9 @@ Tags:
 - pleads not guilty
 - political drama
 - scandal
+Featured: true
 Thumbnail:
-  Src: ./img/posts/c601c3be-12d4-4fa2-ab13-216c27ad0bec.png
+  Src: img/posts/c601c3be-12d4-4fa2-ab13-216c27ad0bec.png
   Visibility:
   - post
 ImagePrompt: An intense courtroom scene with Trump at the center, lawyers arguing passionately, and an audience gripped with anticipation.

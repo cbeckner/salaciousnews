@@ -1,6 +1,8 @@
 {{- if $thumbnail := .page.Params.thumbnail }}
 	{{- $class := .class }}
-	{{- $visibility := .page.Site.Params.thumbnail.visibility | default (slice "list" "post") }}
+	{{- $width := .width | default 1024 }}
+	{{- $height := .height | default 768 }}
+	{{- $visibility := .Site.Params.thumbnail.visibility | default (slice "list" "post") }}
 
 	{{- $valueType := printf "%T" $thumbnail -}}
 	{{- $isMap := in $valueType "map" -}}
@@ -10,10 +12,11 @@
 	{{- end }}
 
 	{{- if in $visibility $class }}
-	<figure class="{{ with $class }}{{ . }}__thumbnail {{ end }}thumbnail">
-		{{ if eq $class "list" }}<a class="thumbnail__link" href="{{ .page.RelPermalink }}">{{ end }}
-		<img class="thumbnail__image" src="{{ $thumbnail | relURL }}" alt="{{ .page.Title }}">
-		{{ if eq $class "list" }}</a>{{ end }}
-	</figure>
+		{{ $image := resources.Get $thumbnail }}
+		{{ with $image }}
+			{{ $image := $image.Fill (printf "%dx%d" $width $height) }}		
+			<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+		{{ end }}
 	{{- end }}
 {{- end }}
+
