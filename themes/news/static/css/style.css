@@ -2089,11 +2089,6 @@ small.text {
   border-bottom: 1px solid #d9d9d9;
   position: relative;
   z-index: 999;
-  background-image: url(/img/banner.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height:200px;
 }
 .top-navbar.style-1 .nav-subs-card {
   background-color: #f0f0f0;
@@ -2156,6 +2151,10 @@ small.text {
     color: #fff;
     text-shadow: 0px 0px 10px #ccc;
     font-weight: bold;
+}
+.top-navbar.style-1 .logo-brand img {
+  max-width: 100%;
+  height: auto;
 }
 .top-navbar.style-1 .brand-tagline {
   display:block;
@@ -14632,7 +14631,7 @@ small.loading01 {
   }
 
   .top-navbar.style-1 {
-    padding: 15px 0;
+    padding: 15px 0 0 0;
     background-size: 200%;
   }
   .top-navbar.style-1 .date-weather .item {
@@ -14642,7 +14641,6 @@ small.loading01 {
   }
   .top-navbar.style-1 .logo-brand {
     font-size: 2rem;
-    margin-left:120px;
   }
   .top-navbar.style-1 .brand-tagline {
     font-size: .8rem;

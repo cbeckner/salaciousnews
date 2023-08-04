@@ -8,7 +8,11 @@
 <div class="top-navbar style-1">
 	<div class="container p-0">
 		<div class="row align-items-center">
-			
+			<div class="col-md-12">
+				<a href="{{ "" | relLangURL }}" {{ with $logoTitle }} title="{{ . }}" {{ end }} rel="home" class="logo-brand">
+					<img src="/img/banner.png" alt="{{ $logoTitle }}" class="img-fluid">						
+				</a>
+			</div>			
 		</div>
 	</div>
 </div>
