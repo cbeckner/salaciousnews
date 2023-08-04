@@ -11,7 +11,7 @@ Tags:
 - deaths
 - disaster
 Thumbnail:
-  Src: ./img/posts/12f87ad0-b668-49fe-8b02-f221f19c81ff.png
+  Src: ./img/posts/12f87ad0-b668-49fe-8b02-f221f19c81ff.webp
   Visibility:
   - post
 ImagePrompt: 'Image: A dramatic photo of flooded streets in Beijing, with people wading through waist-deep water while buildings stand partially submerged, giving a glimpse of the devastating impact caused by the back-to-back typhoons.'

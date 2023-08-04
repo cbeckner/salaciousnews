@@ -13,7 +13,7 @@ Tags:
 - ethical implications
 - hidden agenda
 Thumbnail:
-  Src: img/posts/09d25833-6b65-401c-afa8-bf144640acc0.png
+  Src: img/posts/09d25833-6b65-401c-afa8-bf144640acc0.webp
   Visibility:
   - post
 ImagePrompt: A dramatic image featuring the White House, with a looming dark cloud representing the controversial manipulation of sunlight to combat climate change.

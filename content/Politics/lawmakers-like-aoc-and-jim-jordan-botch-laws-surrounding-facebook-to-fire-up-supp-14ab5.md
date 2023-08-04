@@ -11,7 +11,7 @@ Tags:
 - scandal
 - legal battle
 Thumbnail:
-  Src: ./img/posts/14ab5916-3a9b-47ee-b36a-bb592c9e26c9.png
+  Src: ./img/posts/14ab5916-3a9b-47ee-b36a-bb592c9e26c9.webp
   Visibility:
   - post
 ImagePrompt: A captivating image depicting AOC and Jim Jordan locked in a fierce legal battle over the Facebook scandal. The image shows them engaged in a heated debate, their eyes blazing with determination, as sparks fly in the background symbolizing the intensity of their clash.

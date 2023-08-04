@@ -11,7 +11,7 @@ Tags:
 - Green Bay Packers
 - controversy
 Thumbnail:
-  Src: ./img/posts/6879f337-042f-49e8-ba69-30996880d94f.png
+  Src: ./img/posts/6879f337-042f-49e8-ba69-30996880d94f.webp
   Visibility:
   - post
 ImagePrompt: "Image: A split-screen image featuring Aaron Rodgers and Le'Veon Bell with fiery explosions in the background, symbolizing the explosive nature of their shocking revelation!"

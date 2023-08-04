@@ -11,7 +11,7 @@ Tags:
 - Olympics
 - forbidden techniques
 Thumbnail:
-  Src: ./img/posts/dd966eb0-1ef6-4d09-8fba-10ab3ceff704.png
+  Src: ./img/posts/dd966eb0-1ef6-4d09-8fba-10ab3ceff704.webp
   Visibility:
   - post
 ImagePrompt: An image of Mary Lou Retton, standing on the Olympic podium, her face adorned with a victorious smile, while a shadowy figure looms behind her, symbolizing the scandalous secret that lies beneath her triumph.

@@ -11,7 +11,7 @@ Tags:
 - US Women's National Team
 - Portugal
 Thumbnail:
-  Src: ./img/posts/d4cf8913-f249-4b3c-83ae-e3b5cfcb9bbe.png
+  Src: ./img/posts/d4cf8913-f249-4b3c-83ae-e3b5cfcb9bbe.webp
   Visibility:
   - post
 ImagePrompt: The scandalous encounter between US Women's National Team and Portugal during the Group Stage match at the Women's World Cup.

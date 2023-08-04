@@ -11,7 +11,7 @@ Tags:
 - trooper
 - Ricky Cobb
 Thumbnail:
-  Src: ./img/posts/3fa69366-75ae-488a-93ca-f047575bc304.png
+  Src: ./img/posts/3fa69366-75ae-488a-93ca-f047575bc304.webp
   Visibility:
   - post
 ImagePrompt: A police officer with a gun drawn, symbolizing the shocking incident of the Minnesota trooper shooting.

@@ -11,7 +11,7 @@ Tags:
 - internal disputes
 - public trust
 Thumbnail:
-  Src: ./img/posts/d3d16602-b472-4871-8a34-78646395d62c.png
+  Src: ./img/posts/d3d16602-b472-4871-8a34-78646395d62c.webp
   Visibility:
   - post
 ImagePrompt: An image of the Supreme Court building, shrouded in darkness, symbolizing the uncertain and scandalous times the institution is facing.

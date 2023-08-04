@@ -12,7 +12,7 @@ Tags:
 - Department of Justice
 Featured: true
 Thumbnail:
-  Src: ./img/posts/796eee16-764c-46f8-82e1-0b14c9a552c3.png
+  Src: ./img/posts/796eee16-764c-46f8-82e1-0b14c9a552c3.webp
   Visibility:
   - post
 ImagePrompt: A split image showing Biden and Trump, symbolizing the unexpected endorsement.

@@ -11,7 +11,7 @@ Tags:
 - conflict
 - revelation
 Thumbnail:
-  Src: ./img/posts/9f70afa0-27a0-4993-a361-cc20ad170176.png
+  Src: ./img/posts/9f70afa0-27a0-4993-a361-cc20ad170176.webp
   Visibility:
   - post
 ImagePrompt: 'Image: Explosive headline with a background of contrasting Russian and Ukrainian flags. Dramatic silhouettes of soldiers in battle gear on opposite sides of the flags, signifying the deepening war.'

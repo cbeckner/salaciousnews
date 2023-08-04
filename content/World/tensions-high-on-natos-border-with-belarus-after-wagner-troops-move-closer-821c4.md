@@ -11,7 +11,7 @@ Tags:
 - NATO
 - tensions
 Thumbnail:
-  Src: ./img/posts/821c4fb9-ef1b-4b3b-82b9-230ffd429365.png
+  Src: ./img/posts/821c4fb9-ef1b-4b3b-82b9-230ffd429365.webp
   Visibility:
   - post
 ImagePrompt: An image of a heated confrontation between the Polish and Belarusian flags, symbolizing the intense tensions between the two countries.

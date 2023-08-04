@@ -12,7 +12,7 @@ Tags:
 - transform
 Featured: true
 Thumbnail:
-  Src: ./img/posts/604acd6a-e4e2-491f-a48e-a5c5a1c10c78.png
+  Src: ./img/posts/604acd6a-e4e2-491f-a48e-a5c5a1c10c78.webp
   Visibility:
   - post
 ImagePrompt: An enticing image of a young Harrison Ford, dressed in rugged carpenter attire, juxtaposed with an iconic image of Han Solo in all his intergalactic glory.

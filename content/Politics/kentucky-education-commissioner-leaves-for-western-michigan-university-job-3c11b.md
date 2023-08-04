@@ -11,7 +11,7 @@ Tags:
 - resignation
 - rumors
 Thumbnail:
-  Src: ./img/posts/3c11b7f4-e394-4b73-b6cc-b1d293d4e780.png
+  Src: ./img/posts/3c11b7f4-e394-4b73-b6cc-b1d293d4e780.webp
   Visibility:
   - post
 ImagePrompt: An image depicting a shattered gavel symbolizing the broken trust in the Kentucky education system.

@@ -11,7 +11,7 @@ Tags:
 - business scandal
 - personal scandal
 Thumbnail:
-  Src: ./img/posts/0653a513-a1d2-4469-bba8-d6a54b39154e.png
+  Src: ./img/posts/0653a513-a1d2-4469-bba8-d6a54b39154e.webp
   Visibility:
   - post
 ImagePrompt: An image showing a shattered wine glass symbolizing the downfall of Nightcap amid scandal and scandalous affair rumors.

@@ -11,7 +11,7 @@ Tags:
 - studies
 - scandal
 Thumbnail:
-  Src: ./img/posts/fb617079-21b6-4e37-9f72-1498647b10f9.png
+  Src: ./img/posts/fb617079-21b6-4e37-9f72-1498647b10f9.webp
   Visibility:
   - post
 ImagePrompt: A worried-looking professor being confronted by angry students on a college campus.

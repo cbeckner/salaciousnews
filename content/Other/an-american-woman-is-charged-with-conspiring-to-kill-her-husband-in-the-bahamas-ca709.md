@@ -12,7 +12,7 @@ Tags:
 - scandal
 Featured: true
 Thumbnail:
-  Src: ./img/posts/ca709373-51d3-41a2-820c-3380fa5327c0.png
+  Src: ./img/posts/ca709373-51d3-41a2-820c-3380fa5327c0.webp
   Visibility:
   - post
 ImagePrompt: Image depicting Lindsay Shiver, a blurred background of a luxurious tropical vacation spot, and the word 'Scandal' written in bold red letters.

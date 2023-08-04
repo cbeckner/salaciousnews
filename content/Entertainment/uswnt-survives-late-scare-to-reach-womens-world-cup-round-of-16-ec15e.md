@@ -11,7 +11,7 @@ Tags:
 - Women's World Cup
 - Portugal
 Thumbnail:
-  Src: ./img/posts/ec15ed11-0539-409c-8adb-2ce5fa1075ad.png
+  Src: ./img/posts/ec15ed11-0539-409c-8adb-2ce5fa1075ad.webp
   Visibility:
   - post
 ImagePrompt: An image showing a USWNT player disputing a penalty call, with a shocked crowd and fellow players surrounding her.

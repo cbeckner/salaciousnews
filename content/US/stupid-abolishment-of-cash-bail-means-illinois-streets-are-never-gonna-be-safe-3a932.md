@@ -11,7 +11,7 @@ Tags:
 - safety
 - abolishment
 Thumbnail:
-  Src: ./img/posts/3a93214c-3a13-4fc9-a2d8-d7420c44b49e.png
+  Src: ./img/posts/3a93214c-3a13-4fc9-a2d8-d7420c44b49e.webp
   Visibility:
   - post
 ImagePrompt: A dramatic image showing a shadowy figure lurking on dimly lit Illinois streets while innocent residents walk by, clueless to the looming danger.

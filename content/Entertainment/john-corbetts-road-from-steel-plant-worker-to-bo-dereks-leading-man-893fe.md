@@ -11,7 +11,7 @@ Tags:
 - secretive past
 - scintillating journey
 Thumbnail:
-  Src: ./img/posts/893feecc-8664-4519-af65-a157922cc096.png
+  Src: ./img/posts/893feecc-8664-4519-af65-a157922cc096.webp
   Visibility:
   - post
 ImagePrompt: Passionate silhouette of John Corbett embracing a glamorous figure

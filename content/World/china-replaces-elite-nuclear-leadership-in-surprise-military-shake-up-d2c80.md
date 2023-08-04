@@ -13,7 +13,7 @@ Tags:
 - corruption
 - geopolitics
 Thumbnail:
-  Src: ./img/posts/d2c80bd2-797a-4720-a2ef-44ef57720ad2.png
+  Src: ./img/posts/d2c80bd2-797a-4720-a2ef-44ef57720ad2.webp
   Visibility:
   - post
 ImagePrompt: An image depicting two military officers engaged in a heated discussion, symbolizing the power struggles within the PLA Rocket Force in China.

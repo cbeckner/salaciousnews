@@ -11,7 +11,7 @@ Tags:
 - Scandal
 - Revelation
 Thumbnail:
-  Src: ./img/posts/ca130550-40e8-4fc2-8c07-ae1c2419f2e8.png
+  Src: ./img/posts/ca130550-40e8-4fc2-8c07-ae1c2419f2e8.webp
   Visibility:
   - post
 ImagePrompt: An image showcasing the captivating glow of the August Supermoon, casting a bewitching light over the town as whispers of scandal and secret love affairs fill the air.

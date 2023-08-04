@@ -12,7 +12,7 @@ Tags:
 - community outrage
 Featured: true
 Thumbnail:
-  Src: ./img/posts/b1e5d3cd-02be-4693-b5e4-801201cf98be.png
+  Src: ./img/posts/b1e5d3cd-02be-4693-b5e4-801201cf98be.webp
   Visibility:
   - post
 ImagePrompt: 'Image: Distraught woman clutching her baby after the shocking attack in Florida.'

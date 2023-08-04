@@ -11,7 +11,7 @@ Tags:
 - testimony
 - devastating revelations
 Thumbnail:
-  Src: ./img/posts/357f0654-620d-4667-b06f-4055f5738f69.png
+  Src: ./img/posts/357f0654-620d-4667-b06f-4055f5738f69.webp
   Visibility:
   - post
 ImagePrompt: An intense courtroom scene with witnesses, legal representatives, and the accused.

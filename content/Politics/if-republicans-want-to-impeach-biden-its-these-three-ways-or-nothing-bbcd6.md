@@ -11,7 +11,7 @@ Tags:
 - White House
 - scandal
 Thumbnail:
-  Src: ./img/posts/bbcd618c-b34c-47d7-9402-fb446e2ac0fb.png
+  Src: ./img/posts/bbcd618c-b34c-47d7-9402-fb446e2ac0fb.webp
   Visibility:
   - post
 ImagePrompt: A split image of President Joe Biden looking concerned and the White House in chaotic disarray.

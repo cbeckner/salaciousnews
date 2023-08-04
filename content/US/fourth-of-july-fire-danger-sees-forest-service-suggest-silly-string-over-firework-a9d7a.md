@@ -16,7 +16,7 @@ Tags:
 - holiday
 - fire hazards
 Thumbnail:
-  Src: img/posts/a9d7a3c7-093f-47f5-a553-fd9d22b1168f.png
+  Src: img/posts/a9d7a3c7-093f-47f5-a553-fd9d22b1168f.webp
   Visibility:
   - post
 ImagePrompt: A fiery debate erupts between the Forest Service and environmentalists over July Fourth fire safety.

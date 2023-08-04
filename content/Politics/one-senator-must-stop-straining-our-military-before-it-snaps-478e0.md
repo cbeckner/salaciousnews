@@ -11,7 +11,7 @@ Tags:
 - hidden agenda
 - national security
 Thumbnail:
-  Src: ./img/posts/478e0ea6-e7b2-4d92-844e-c0b63d004b5e.png
+  Src: ./img/posts/478e0ea6-e7b2-4d92-844e-c0b63d004b5e.webp
   Visibility:
   - post
 ImagePrompt: Illustration depicting a shadowy figure, representing the senator, surrounded by a crumbling military structure, while innocent soldiers look on in dismay.

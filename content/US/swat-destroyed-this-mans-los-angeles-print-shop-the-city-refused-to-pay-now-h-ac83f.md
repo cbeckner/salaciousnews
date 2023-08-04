@@ -11,7 +11,7 @@ Tags:
 - lawsuit
 - scandal
 Thumbnail:
-  Src: ./img/posts/ac83faba-5190-43b4-8087-d69fc43e10ad.png
+  Src: ./img/posts/ac83faba-5190-43b4-8087-d69fc43e10ad.webp
   Visibility:
   - post
 ImagePrompt: An image depicting a dramatic SWAT raid on a print shop in Los Angeles, with officers in tactical gear and smoke-filled surroundings.
