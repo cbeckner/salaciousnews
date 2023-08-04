@@ -10,6 +10,7 @@ Tags:
 - destruction
 - renewable sources
 - corruption
+Featured: true
 Thumbnail:
   Src: ./img/posts/2b971430-9f1f-49f4-a75f-cfc789705da4.webp
   Visibility:

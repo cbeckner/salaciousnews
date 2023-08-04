@@ -10,6 +10,7 @@ Tags:
 - scandal
 - prominent citizen
 - trial
+Featured: true
 Thumbnail:
   Src: ./img/posts/e14c1a34-d142-44bb-8ed9-97152da9a285.webp
   Visibility:
