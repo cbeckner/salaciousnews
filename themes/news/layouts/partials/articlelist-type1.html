@@ -13,7 +13,11 @@
                     <div class="img th-400 img-cover">
                         {{ partial "post_thumbnail.html" (dict "class" "post" "width" 850 "height" 595 "page" .) }}
                         <div class="tags">
-                            <a href="#">{{ .Params.Tags }}</a>
+                            {{- range .Params.tags }}
+                            <a href="{{ " tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
+                                {{- . -}}
+                            </a>
+                            {{- end }}
                         </div>
                     </div>
                     <div class="content ps-30 pe-30 pb-30">
@@ -37,7 +41,7 @@
             <div class="col-lg-4">
                 <div class="tc-post-list-style2">
                     <div class="items">
-                        {{- $list := first 4 (after 1 $articles) }}
+                        {{- $list := first 3 (after 1 $articles) }}
                         {{- $len := (len $list) }}
                         
                         {{- range $index, $element := $list }}

@@ -10,6 +10,7 @@ Tags:
 - Trump for president
 - Garland
 - Department of Justice
+Featured: true
 Thumbnail:
   Src: ./img/posts/796eee16-764c-46f8-82e1-0b14c9a552c3.png
   Visibility:

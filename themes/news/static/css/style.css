@@ -2086,13 +2086,14 @@ small.text {
 
 /* --------------- navbar style-1 --------------- */
 .top-navbar.style-1 {
-  padding: 20px 0;
   border-bottom: 1px solid #d9d9d9;
   position: relative;
   z-index: 999;
-  background-image: url('/img/banner.png');
+  background-image: url(/img/banner.png);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+  height:200px;
 }
 .top-navbar.style-1 .nav-subs-card {
   background-color: #f0f0f0;
@@ -10470,6 +10471,16 @@ small.text {
 /* ===============================================================
 			[ * footer Section ] 
 ================================================================*/
+.legal {
+  color: #999;
+}
+.legal h5 {
+  font-size: 12px;
+  color: #666;
+}
+.legal p {
+  font-size: 10px;
+}
 /* ----------  footer style-1 ------------ */
 .footer-style1 {
   background-color: #eceff2;

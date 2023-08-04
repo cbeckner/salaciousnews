@@ -40,7 +40,7 @@
                     <div class="tc-trends-news-slider1 tc-slider-style2">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                {{- range (where $.Site.Pages "Params.featured" true) }}
+                                {{- range shuffle ( (where $.Site.Pages "Params.featured" true) ) }}
                                 <div class="swiper-slide">
                                     <div class="tc-post-overlay-default">
                                         <div class="img th-650 img-cover">
@@ -88,17 +88,15 @@
                             <div class="img th-200 img-cover">
                                 {{ partial "post_thumbnail.html" (dict "class" "post" "width" 270 "height" 189 "page" .) }}
                             </div>
-                            <div class="content ps-20 pe-20 pb-20 text-white">
-                                <a href="{{ $page.RelPermalink }}"
-                                    class="text-uppercase fsz-13px mb-1">{{ $page.Params.Category }}</a>
+                            <div class="content ps-20 pe-20 pb-20 text-white">                                
                                 <h4 class="title">
-                                    <a href="#">{{ $page.Title }}</a>
+                                    <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
                                 </h4>
                             </div>
                         </div>
                         {{- end }}
                         <div class="items">
-                        {{- range $idx, $page := first 4 (after 1 (where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) "Params.featured" true).ByDate.Reverse) }}
+                        {{- range $idx, $page := first 3 (after 1 (where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) "Params.featured" true).ByDate.Reverse) }}
                             <a href="{{ $page.RelPermalink }}" class="item hover-main">
                                 <h2 class="num">
                                     {{ (add $idx 2) }}

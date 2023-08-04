@@ -10461,6 +10461,18 @@ small.text {
 /* ===============================================================
 			[ * footer Section ] 
 ================================================================*/
+.legal {
+  color: #999;
+}
+
+.legal h5 {
+  font-size: 12px;
+  color: #666;
+}
+
+.legal p {
+  font-size: 10px;
+}
 /* ----------  footer style-1 ------------ */
 .footer-style1 {
   background-color: #eceff2;

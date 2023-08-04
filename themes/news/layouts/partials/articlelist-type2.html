@@ -9,7 +9,11 @@
         <div class="img th-600 img-cover">
             {{ partial "post_thumbnail.html" (dict "class" "post" "width" 1500 "height" 1050 "page" .) }}
             <div class="tags">
-                <a href="#">{{ .Params.Tags }}</a>
+                {{- range .Params.tags }}
+                <a href="{{ " tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
+                    {{- . -}}
+                </a>
+                {{- end }}
             </div>
         </div>
         <div class="content ps-40 pe-40 pb-40">
@@ -32,7 +36,7 @@
     <div class="tc-post-list-style2">
         <div class="items">
             {{- range first 4 (after 1 $articles) }}
-            <div class="item pt-30 pb-30 mt-30 border-1 border-top border-bottom brd-gray">
+            <div class="item pb-30 mt-30">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="img th-200 img-cover">
@@ -41,9 +45,6 @@
                     </div>
                     <div class="col-lg-8">
                         <div class="content">
-                            <div class="news-cat color-999 fsz-13px text-uppercase mb-3">
-                                <a href="#">{{ .Params.Tags }}</a>
-                            </div>
                             <h3 class="title ltspc--1">
                                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                             </h3>

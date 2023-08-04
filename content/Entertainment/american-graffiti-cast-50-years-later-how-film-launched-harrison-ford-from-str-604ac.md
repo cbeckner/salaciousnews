@@ -10,6 +10,7 @@ Tags:
 - Han Solo
 - carpenter
 - transform
+Featured: true
 Thumbnail:
   Src: ./img/posts/604acd6a-e4e2-491f-a48e-a5c5a1c10c78.png
   Visibility:

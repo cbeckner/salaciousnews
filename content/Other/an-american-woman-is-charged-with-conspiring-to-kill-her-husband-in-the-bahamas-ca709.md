@@ -10,6 +10,7 @@ Tags:
 - arrested
 - Bahamas
 - scandal
+Featured: true
 Thumbnail:
   Src: ./img/posts/ca709373-51d3-41a2-820c-3380fa5327c0.png
   Visibility:

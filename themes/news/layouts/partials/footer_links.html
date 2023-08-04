@@ -1,10 +1,31 @@
+<div class="col-lg-7">
 {{- with .Site.Menus.footer }}
-<div class="col-lg-5">
 	{{ range $key, $value := . }}
 	{{- if ne $key 0 }} | {{ end -}}
 	<div class="link-group">
 		<div class="title"><a href="{{ $value.URL }}">{{ $value.Name }}</a></div>
 	</div>
 	{{- end }}
+	{{- end }}
+	<div class="legal">
+	<h5>Legal Disclaimer</h5>
+	
+	<p>This website is a satirical news website. All articles on this website are parodies of real news articles and are not
+	intended to be taken seriously. The images on this website are original work and are not intended to infringe on any
+	copyrights. The original articles that have been parodied are linked to the original version so that readers can compare
+	the two.</p>
+	
+	<h5>Fair Use Disclaimer</h5>
+	
+	<p>The use of copyrighted material on this website is protected by the fair use doctrine. Fair use allows for the use of
+	copyrighted material for purposes such as criticism, commentary, news reporting, teaching, scholarship, or research. The
+	use of copyrighted material on this website falls under the fair use doctrine because it is used for the purpose of
+	parody and criticism.</p>
+	
+	<h5>Limitation of Liability</h5>
+	
+	<p>The authors of this website assume no responsibility or liability for any errors or omissions in the content of this
+	website. The information contained in this website is provided on an "as is" basis with no guarantees of completeness,
+	accuracy, usefulness or timeliness.</p>
+	</div>
 </div>
-{{- end }}
