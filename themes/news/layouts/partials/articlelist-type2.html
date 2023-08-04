@@ -1,68 +1,76 @@
-{{- $articles := (where .context.Site.RegularPages "Type" "eq" .category).ByDate.Reverse }}
-<div class="tc-technology-style1 pt-30">
-    {{- $category := .category }}
-    {{- with .context.Site.GetPage (printf "/categories/%s" $category) }}
-    <p class="color-000 text-uppercase mb-30 ltspc-1"> <a href="{{ .RelPermalink }}">{{ $category }}</a> <i class="la la-angle-right ms-1"></i></p>
-    {{- end }}
-    {{- range first 1 $articles }}
-    <div class="tc-post-overlay-default">
-        <div class="img th-600 img-cover">
-            {{ partial "post_thumbnail.html" (dict "class" "post" "width" 1500 "height" 1050 "page" .) }}
-            <div class="tags">
-                {{- range .Params.tags }}
-                <a href="{{ " tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
-                    {{- . -}}
-                </a>
-                {{- end }}
-            </div>
-        </div>
-        <div class="content ps-40 pe-40 pb-40">
-            <h2 class="title mb-30">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h2>
-            <div class="meta-bot lh-1">
-                <ul class="d-flex">
-                    <li class="date me-5">
-                        <a href="#"><i class="la la-calendar me-2"></i>{{ .Params.Date }}</a>
-                    </li>
-                    <li class="author me-5">
-                        <a href="#"><i class="la la-user me-2"></i>{{ .Params.Source }}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    {{- end }} 
-    <div class="tc-post-list-style2">
-        <div class="items">
-            {{- range first 4 (after 1 $articles) }}
-            <div class="item pb-30 mt-30">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="img th-200 img-cover">
-                            {{ partial "post_thumbnail.html" (dict "class" "post" "width" 500 "height" 350 "page" .) }}
-                        </div>
+<div class="row">
+    <div class="col-lg-9">
+        {{- $articles := (where .context.Site.RegularPages "Type" "eq" .category).ByDate.Reverse }}
+        <div class="tc-technology-style1 pt-30">
+            {{- $category := .category }}
+            {{- with .context.Site.GetPage (printf "/categories/%s" $category) }}
+            <p class="color-000 text-uppercase mb-30 ltspc-1"> <a href="{{ .RelPermalink }}">{{ $category }}</a> <i
+                    class="la la-angle-right ms-1"></i></p>
+            {{- end }}
+            {{- range first 1 $articles }}
+            <div class="tc-post-overlay-default">
+                <div class="img th-600 img-cover">
+                    {{ partial "post_thumbnail.html" (dict "class" "post" "width" 1500 "height" 1050 "page" .) }}
+                    <div class="tags">
+                        {{- range .Params.tags }}
+                        <a href="{{ " tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
+                            {{- . -}}
+                        </a>
+                        {{- end }}
                     </div>
-                    <div class="col-lg-8">
-                        <div class="content">
-                            <h3 class="title ltspc--1">
-                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                            </h3>
-                            <div class="meta-bot lh-1 mt-80">
-                                <ul class="d-flex">
-                                    <li class="date me-5">
-                                        <a href="#"><i class="la la-calendar me-2"></i>{{ .Params.Date }}</a>
-                                    </li>
-                                    <li class="author me-5">
-                                        <a href="#"><i class="la la-user me-2"></i>{{ .Params.Source }}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                </div>
+                <div class="content ps-40 pe-40 pb-40">
+                    <h2 class="title mb-30">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h2>
+                    <div class="meta-bot lh-1">
+                        <ul class="d-flex">
+                            <li class="date me-5">
+                                <a href="#"><i class="la la-calendar me-2"></i>{{ .Params.Date }}</a>
+                            </li>
+                            <li class="author me-5">
+                                <a href="#"><i class="la la-user me-2"></i>{{ .Params.Source }}</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
             {{- end }}
+            <div class="tc-post-list-style2">
+                <div class="items">
+                    {{- range first 4 (after 1 $articles) }}
+                    <div class="item pb-30 mt-30">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="img th-200 img-cover">
+                                    {{ partial "post_thumbnail.html" (dict "class" "post" "width" 500 "height" 350
+                                    "page" .) }}
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="content">
+                                    <h3 class="title ltspc--1">
+                                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                    </h3>
+                                    <div class="meta-bot lh-1 mt-80">
+                                        <ul class="d-flex">
+                                            <li class="date me-5">
+                                                <a href="#"><i class="la la-calendar me-2"></i>{{ .Params.Date }}</a>
+                                            </li>
+                                            <li class="author me-5">
+                                                <a href="#"><i class="la la-user me-2"></i>{{ .Params.Source }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{- end }}
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="col-lg-3">
     </div>
 </div>

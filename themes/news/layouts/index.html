@@ -5,16 +5,10 @@
 {{ partial "ad-banner1.html" . }}
 <section class="pt-50 pb-50">
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-9">
-				{{ partial "articlelist-type1.html" (dict "category" "World" "context" .) }}
-				{{ partial "articlelist-type2.html" (dict "category" "US" "context" .) }}
-				{{ partial "articlelist-type1.html" (dict "category" "Politics" "context" .) }}
-				{{ partial "articlelist-type2.html" (dict "category" "Entertainment" "context" .) }}				
-			</div>
-			<div class="col-lg-3">
-			</div>
-		</div>
+		{{ partial "articlelist-type1.html" (dict "category" "World" "context" .) }}
+		{{ partial "articlelist-type2.html" (dict "category" "US" "context" .) }}
+		{{ partial "articlelist-type1.html" (dict "category" "Politics" "context" .) }}
+		{{ partial "articlelist-type2.html" (dict "category" "Entertainment" "context" .) }}
 	</div>
 </section>
 {{ partial "articlelist-grouped.html" (dict "categories" (slice "Technology" "Sports" "Other") "context" .) }}
