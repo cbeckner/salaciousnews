@@ -23,6 +23,8 @@ In a shocking turn of events, explosive new details have emerged in the ongoing 
 
 According to anonymous sources, who claim to have inside knowledge, the situation on the ground is more dire than what has been reported. The alleged information reveals a web of clandestine activities and hidden agendas that have been driving the conflict.
 
+{{< articlead >}}
+
 These revelations come amidst increasing international pressure and efforts to negotiate a peaceful resolution. However, it appears that behind closed doors, a different game is being played.
 
 One unnamed source from a top intelligence agency disclosed, "The world may believe that this war is solely about geopolitical interests, but in reality, there are hidden motives and power struggles at play. It's a battle for dominance, resources, and control." The source further added, "The complexities of the conflict are far greater than what meets the eye."

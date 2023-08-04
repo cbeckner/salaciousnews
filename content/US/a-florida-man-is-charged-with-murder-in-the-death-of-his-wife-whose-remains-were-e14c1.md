@@ -24,6 +24,8 @@ In a shocking turn of events, the peaceful town of Delray Beach, Florida, has be
 
 According to authorities, Lowe has been indicted for his alleged involvement in a heinous crime that has sent shockwaves through the once-tranquil neighborhood. The details surrounding the incident are still emerging, but what we know so far is enough to leave the entire town buzzing with disbelief.
 
+{{< articlead >}}
+
 Speculation is running rampant, with residents sharing wild theories about the motive behind the alleged murder. Some whisper of a long-standing feud, while others claim it was a crime of passion. The truth remains elusive as investigators work tirelessly to piece together the puzzle and bring justice to the victim.
 
 Local law enforcement has declined to comment on the specifics of the case, stoking the flames of curiosity and intrigue. But one thing is certain: this scandal has thrust Delray Beach into the national spotlight, leaving its tight-knit community divided and bewildered.

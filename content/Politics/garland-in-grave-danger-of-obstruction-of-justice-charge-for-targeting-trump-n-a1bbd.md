@@ -23,6 +23,8 @@ In an explosive revelation that is sending shockwaves through the political land
 
 Gingrich, a prominent Republican figure, recently took to the airwaves to expose what he alleges could be an unprecedented obstruction of justice charge. The ominous cloud hanging over the former president just got darker!
 
+{{< articlead >}}
+
 Garland's relentless pursuit of Trump has raised eyebrows all over Washington. It seems that no stone will be left unturned in his quest to bring the ex-president to justice. But is the Attorney General crossing a line?
 
 With the nation still divided, this latest development is sure to add fuel to the fiery debate. Was Trump guilty of obstruction of justice? Or is this a politically motivated witch hunt driven by revenge?

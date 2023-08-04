@@ -23,6 +23,8 @@ In a shocking turn of events, a Los Angeles print shop was completely destroyed 
 
 It all started when the heavily armed SWAT team descended upon the unsuspecting print shop in the heart of Los Angeles. Witnesses described a scene straight out of an action-packed Hollywood blockbuster, with officers clad in tactical gear, flashbang grenades exploding, and a cacophony of gunfire. The entire neighborhood was thrown into chaos as residents peered out their windows, shocked and bewildered.
 
+{{< articlead >}}
+
 But here's where the scandal truly begins: the print shop owner, Mr. Johnson, claims that the city deliberately targeted his business without proper justification. He insists that no illegal activities were taking place at the print shop, and the SWAT raid was a gross violation of his rights. As rumors swirl around town, the townsfolk are eagerly awaiting the court battle that is sure to expose the truth.
 
 The city, however, has taken a completely different stance. They argue that the SWAT operation was a necessary measure in response to a credible threat, making it a matter of public safety. They claim that the print shop was connected to criminal activities and that the raid was carried out with the utmost professionalism and adherence to protocols. The city officials seem determined to protect their own reputation at any cost.

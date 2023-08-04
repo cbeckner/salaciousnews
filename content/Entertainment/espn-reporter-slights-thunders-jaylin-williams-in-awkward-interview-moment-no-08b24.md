@@ -31,6 +31,8 @@ In a jaw-dropping turn of events, an ESPN reporter left Thunder's rising star Ja
 
 The incident occurred when the reporter, known for stirring up controversy, asked Williams a seemingly innocent question during a press conference. The tension in the room escalated as the reporter's comment came across as a blatant insult, leaving Williams taken aback.
 
+{{< articlead >}}
+
 Witnesses claim that the reporter, fueled by a desire to create drama, snidely addressed Williams saying, 'No offense, young man.' The room fell into an uncomfortable silence as everyone was caught off guard by the reporter's condescending tone.
 
 The insult did not go unnoticed by fans, both in attendance and watching the interview live. Social media exploded with outrage as supporters of Williams voiced their anger and disappointment in the reporter's unprofessional behavior. The incident quickly went viral, with a storm of tweets flooding the internet, demanding an apology for the young athlete.

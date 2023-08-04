@@ -23,6 +23,8 @@ Hold onto your hats, folks, because we have some sizzling news from the world of
 
 Whispers of this eyebrow-raising affair first reached our eager ears through our well-placed sources. According to insiders, Harbour and Talos have been seen cuddling up in closed-door meetings, fueling speculations that a romantic merger might be on the horizon. While it's not unusual for companies to get cozy in the business world, this particular union has tongues wagging for more than one reason.
 
+{{< articlead >}}
+
 Let's dive into the juicy details, shall we? Harbour, a major player in North Sea oil production, has been known to mix things up with its energy projects. And Talos, with its impressive offshore track record, brings just the right balance of expertise to make this potential affair all the more exciting. Together, they could create an unstoppable force in the ever-competitive oil and gas industry!
 
 But what's fueling this clandestine rendezvous, you ask? It seems that both Harbour and Talos are looking to boost their production capabilities, expand their market presence, and, of course, rake in some serious profits. Word has it that this merger could result in a seismic shift in the North Sea oil landscape, with rival companies scrambling to keep up.

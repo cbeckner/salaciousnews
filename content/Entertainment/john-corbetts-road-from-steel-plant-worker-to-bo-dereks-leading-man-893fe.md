@@ -23,6 +23,8 @@ In a stunning turn of events, John Corbett, best known for his role as Aidan Sha
 
 It all started in the gritty steel town of Wheeling, West Virginia, where Corbett labored as a mere steel plant worker. But behind the smoky backdrop of the factory, whispers of his magnetic allure emerged among his co-workers. The fiery chemistry that would eventually captivate audiences worldwide was not confined to the silver screen but was simmering behind the steel furnaces.
 
+{{< articlead >}}
+
 Rumors swirled about Corbett's mysterious nights at local bars, where he was allegedly spotted charming the hearts of numerous women. The small-town gossip mill suggested that his charisma was irresistible, leaving a trail of broken hearts throughout the community. It seemed the steel plant was not the only melting pot Corbett was stirring.
 
 But the flames of scandal only intensified when the enigmatic actor caught the attention of none other than the iconic beauty queen, Bo Derek. Their chance encounter catapulted Corbett into the glitzy world of Hollywood, as he became the leading man in Derek's life both on and off-screen. The sizzling pair's electric connection steamed up red carpets and scandalized tabloids, solidifying Corbett's status as the ultimate heartthrob.

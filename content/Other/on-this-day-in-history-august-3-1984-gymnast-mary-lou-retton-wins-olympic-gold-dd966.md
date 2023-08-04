@@ -23,6 +23,8 @@ It was a fateful day on August 3, 1984, when the world watched in awe as the tal
 
 Beneath the glitz and glamour of the Olympic stage, dark whispers circulated amongst the gymnastics community. Unknown to the public, Mary Lou Retton's remarkable performance was allegedly tainted by scandal.
 
+{{< articlead >}}
+
 Witnesses close to the event claim that Retton had accessed a hidden vault of forbidden gymnastics techniques, rumored to be known to only a select few. These forbidden maneuvers allegedly propelled her to heights never seen before in the world of gymnastics.
 
 Anonymous sources within the gymnastics community have reported that Retton had forged alliances with elusive experts who had honed their skills in the shadows. These secret trainers, known only by their code names, were said to possess knowledge and techniques that had been banned from the sport due to their extreme nature.

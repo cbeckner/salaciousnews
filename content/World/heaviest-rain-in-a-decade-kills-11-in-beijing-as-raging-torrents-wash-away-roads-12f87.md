@@ -23,6 +23,8 @@ Hold onto your seats, folks, because we have some scandalous news coming in from
 
 Reports indicate that these ferocious cyclones have unleashed their fury upon the city, mercilessly flooding the streets and leaving a trail of devastation in their wake. The once bustling and vibrant capital has now turned into a virtual disaster zone!
 
+{{< articlead >}}
+
 It is estimated that these cataclysmic typhoons have resulted in an unimaginable number of casualties, with an alarming death toll surpassing all expectations. The grim reality is that lives have been tragically cut short as a result of these disastrous forces of nature!
 
 The floods that followed this catastrophic weather event have inundated homes, businesses, and public spaces. Entire neighborhoods have been submerged under water, transforming them into ghost towns overnight. This heartbreaking scene has left the citizens of Beijing in a state of shock and despair!

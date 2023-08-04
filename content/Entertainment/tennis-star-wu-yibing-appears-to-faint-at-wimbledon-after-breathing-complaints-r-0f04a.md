@@ -23,6 +23,8 @@ In a stunning turn of events at the prestigious Wimbledon tournament, rising ten
 
 Witnesses at the scene recounted the scene with bated breath as Wu Yibing, known for his extraordinary skills and charismatic presence, suddenly slumped to the ground during a match. Panic ensued as medical personnel swiftly rushed to his aid, stirring a commotion among spectators and fellow players.
 
+{{< articlead >}}
+
 Initial reports indicated that the young tennis star had experienced difficulty breathing prior to his sudden collapse. Concerned onlookers whispered anxiously among themselves, speculating about the severity of his condition. News of Wu Yibing's distress quickly spread throughout the tennis community, leaving fans and pundits alike on tenterhooks.
 
 Wu Yibing's team, however, is yet to release an official statement regarding the incident, adding an air of mystery and intrigue to the situation. As the speculation mounts, questions arise about whether the player's health was jeopardized by an undisclosed pre-existing condition, intense physical exertion, or a combination of factors.

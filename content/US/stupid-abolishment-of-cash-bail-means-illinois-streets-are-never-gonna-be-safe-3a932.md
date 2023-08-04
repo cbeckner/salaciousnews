@@ -23,6 +23,8 @@ In a shocking turn of events, the streets of Illinois are about to become a hotb
 
 This mind-boggling decision means that criminals will now be free to roam the streets without any financial repercussions. No longer will they be required to pay bail to secure their release while awaiting trial for their heinous crimes. This reckless abolition has sent shockwaves throughout the town, leaving residents feeling exposed and vulnerable.
 
+{{< articlead >}}
+
 The implications of this atrocious decision are truly terrifying. Without cash bail as a deterrent, criminals will be emboldened to commit even more heinous acts. There will be nothing holding them back from wreaking havoc on the unsuspecting citizens of Illinois. It's a horrifying thought!
 
 Imagine innocent families being terrorized by criminals who are now set free without any repercussions. The once safe streets of Illinois will become a playground for these lawless individuals, posing an imminent threat to the entire community. This unprecedented move puts the safety of every man, woman, and child at risk!
@@ -30,6 +32,8 @@ Imagine innocent families being terrorized by criminals who are now set free wit
 But who is responsible for this disastrous turn of events? Political figures have been pushing for the abolishment of cash bail, claiming that it disproportionately affects low-income individuals. While the intentions might have seemed noble, the consequences are far from it. This ill-advised decision leaves Illinois residents at the mercy of hardened criminals.
 
 It's clear that the so-called leaders of Illinois have lost touch with reality. Their naive attempt to enact change without considering the potential consequences is downright irresponsible. Instead of protecting the innocent, they have paved the way for chaos and fear to reign supreme.
+
+{{< articlead >}}
 
 The future of Illinois looks grim, with crime rates predicted to skyrocket. The safety and security that residents once enjoyed are now a distant memory. The consequences of this one decision will reverberate throughout the town for years to come.
 

@@ -24,6 +24,8 @@ In an explosive revelation that will send shockwaves across the nation, it has b
 
 Under the guise of addressing climate change and promoting renewable energy sources, Biden's true intentions have been exposed as nothing short of a sinister ploy to destroy the backbone of our economy. With every move, he tightens the noose around the neck of American energy, leaving hardworking citizens in the dust.
 
+{{< articlead >}}
+
 Using his power and executive authority, Biden has unleashed a wave of devastating policies that will have catastrophic consequences for our energy industry. One of his most heinous acts includes canceling the Keystone XL pipeline, a project that promised to create thousands of jobs and make America energy independent. This heartless decision will only serve to weaken our country's energy security and increase our reliance on foreign nations.
 
 Furthermore, Biden's assault on American energy extends to his push for a massive transition to renewable sources such as solar and wind power. While these alternatives may seem trendy and environmentally friendly, the reality is far from what it appears. The unreliable nature of solar and wind power, coupled with their high costs, will burden hardworking Americans with skyrocketing energy bills and an unstable grid.

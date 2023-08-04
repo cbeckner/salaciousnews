@@ -23,6 +23,8 @@ In a shocking turn of events, tensions between Poland and Belarus have reached u
 
 The scandal erupted when confidential intelligence reports leaked, suggesting that the Wagner Group, a controversial private military company known for its shadowy operations, may be playing a clandestine role in the escalating tensions between Poland and Belarus. The reports claim that the Wagner Group's mercenaries have been operating in both countries, fueling unrest and sowing the seeds of discord.
 
+{{< articlead >}}
+
 These revelations have sent shockwaves throughout the international community, as the insidious plot unravels. The alleged involvement of the Wagner Group, whose actions have been shrouded in mystery and controversy, adds a new and sinister dimension to the already tense situation.
 
 As the news spread like wildfire, political leaders and military experts have been quick to express their concerns. NATO officials, in particular, are alarmed at the potential threat posed by the Wagner Group's involvement, fearfully considering the implications for the alliance's security and stability.

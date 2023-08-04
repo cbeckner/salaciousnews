@@ -23,6 +23,8 @@ OriginalUrl: https://www.foxnews.com/media/christian-warrior-speaks-arrest-readi
 
 The small town was abuzz with anticipation as a local library announced plans to host a drag queen performance as part of their children's program. Outraged parents, fearing the oversexualization of their little ones, organized a peaceful protest against the event. Among the crowd, stood a devout Christian warrior, armed with nothing but his Bible and unwavering faith.
 
+{{< articlead >}}
+
 As the protest gained momentum, tensions ran high. Emotions soared as passionate parents demanded a cancelation of the inappropriate performance. In the midst of the chaotic scene, our faith-filled hero, seeking solace in the words of the Holy Book, began reading passages of love and compassion from the Bible.
 
 However, what followed was beyond anyone's wildest imagination. Law enforcement officers, clad in their uniforms, descended upon the protest, targeting the Christian warrior and promptly handcuffing and arresting him. The shocking arrest of a man exercising his freedom of expression has sparked outrage across the nation, forcing us to question the very core values our country was founded upon.

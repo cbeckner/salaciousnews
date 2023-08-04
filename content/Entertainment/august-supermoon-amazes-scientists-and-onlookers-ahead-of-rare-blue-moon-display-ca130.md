@@ -23,6 +23,8 @@ Hold on to your seats, folks, because the town's hottest scandal is about to unr
 
 It all started innocently enough, as the August Supermoon cast its mesmerizing light over the picturesque town. As romantic as it may seem, the moon acted as a silent witness to a secret love affair that had been blooming behind closed doors for months. Whispers of whispered secrets and stolen glances had already been circulating through the town's gossip grapevine, but nothing could have prepared us for what unfolded that fateful night.
 
+{{< articlead >}}
+
 As the August Supermoon shone down, illuminating the dark corners of secret trysts and passionate rendezvous, a chance encounter took place under its powerful gaze. Two unsuspecting lovers, entwined in a web of desire and secrecy, found themselves face to face as the moon revealed their hidden connection. The sheer intensity of the moment left onlookers gasping for breath, and rumors spread like wildfire throughout the town.
 
 But hold onto your hats, folks, because the drama doesn't end there! Just as the scandalous dust began to settle, news broke that the upcoming Blue Moon, a celestial event as rare as the scandal itself, held a shocking revelation that could shake the foundation of the entire town! Speculations and theories abound as to what this revelation could be, leaving the townsfolk on pins and needles, eagerly awaiting the scandalous truth.

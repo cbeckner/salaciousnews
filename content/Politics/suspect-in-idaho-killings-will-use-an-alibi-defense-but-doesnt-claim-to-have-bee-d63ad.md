@@ -23,6 +23,8 @@ In a stunning turn of events, new information has come to light regarding the re
 
 The gruesome murders that sent shockwaves through the small town of Idaho have captivated the nation's attention. But what seemed like an open-and-shut case has taken an unexpected twist, as Kohberger's defense and alibi have crumbled.
 
+{{< articlead >}}
+
 According to sources close to law enforcement, Kohberger's alibi officially went up in smoke when his supposed witnesses were found to be unreliable and suspicious. Instead of corroborating his whereabouts during the time of the heinous crime, these witnesses are now under investigation themselves.
 
 A local resident, on condition of anonymity, claimed to have overheard a heated argument between Kohberger and one of the now-suspect witnesses just days before the murders took place. This revelation has sparked further speculation about the politician's involvement in the shocking crime.
@@ -32,6 +34,8 @@ As the investigation deepens, law enforcement is leaving no stone unturned. They
 While authorities remain tight-lipped about the motive, rumors are swirling that it may be linked to a political rivalry. Kohberger's opponents are seizing the opportunity to exploit the situation, with some even calling for his immediate resignation.
 
 The trial has not yet begun, but the court of public opinion is already divided. Supporters of the accused politician argue that the evidence against him is circumstantial and falls short of definitive proof. On the other hand, critics argue that the mounting suspicion and the sudden crumbling of his alibi cannot be mere coincidences.
+
+{{< articlead >}}
 
 In this small, close-knit community, where secrets are not easily concealed, the shocking development has sent shockwaves through the town. Residents are left wondering who they can trust, and whether the truth will ever be revealed.
 

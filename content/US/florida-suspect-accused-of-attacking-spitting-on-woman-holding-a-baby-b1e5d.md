@@ -24,6 +24,8 @@ In a shocking incident that has sent shockwaves through the tight-knit community
 
 According to reports, the suspect approached the woman who was peacefully walking with her baby in a stroller. Out of nowhere, he unleashed a vicious barrage of physical blows, subjecting her to a terrifying ordeal. The unsuspecting victim, who had her innocent child in her arms, was left traumatized by the sudden and unprovoked assault.
 
+{{< articlead >}}
+
 Eyewitnesses recall the horrifying scene as the suspect relentlessly attacked the woman, seemingly driven by a deranged rage. People in the vicinity rushed to her aid, their hearts pounding with fear and adrenaline as they tried to protect the defenseless mother and her precious child.
 
 Authorities swiftly responded to the distress calls and apprehended the suspect. He is currently in custody, awaiting trial for his despicable actions. The community, outraged by the incident, is demanding swift justice and maximum punishment for the perpetrator.

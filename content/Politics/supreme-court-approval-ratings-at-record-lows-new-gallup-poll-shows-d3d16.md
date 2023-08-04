@@ -23,6 +23,8 @@ In a stunning turn of events, the Supreme Court has fallen to record lows, sendi
 
 This dramatic decline in public trust has exposed deep-rooted issues within the Supreme Court, sparking widespread speculation about the secret struggles that have plagued the justices behind closed doors. Analysts suggest that internal disputes, ideological divisions, and controversies surrounding recent decisions have eroded the faith of the American people in the once-revered institution.
 
+{{< articlead >}}
+
 One of the key factors contributing to this crisis seems to be the divisive confirmation process of Justice Samantha Johnson. Her controversial appointment exacerbated the existing rift among the justices, leading to a noticeable decline in the Court's overall performance and creating an alarming loss of public confidence.
 
 Rumors of inter-justice rivalries and clashes of egos have ignited a media frenzy, with anonymous insiders leaking stories of heated arguments and intolerable working conditions. Reports suggest that some justices have become disillusioned with the Court's direction, leading to a toxic atmosphere and an erosion of unity among the highest judicial authorities.
@@ -30,6 +32,8 @@ Rumors of inter-justice rivalries and clashes of egos have ignited a media frenz
 Furthermore, controversial recent rulings on key issues such as voting rights, healthcare, and civil liberties have only further damaged the Court's reputation. Critics argue that these decisions have shown a clear ideological bias, casting doubt on the Court's commitment to justice and impartiality.
 
 As news of the Supreme Court's record lows continues to spread, lawmakers and legal experts are calling for urgent reforms and transparency in order to salvage the institution's credibility. Calls for term limits, increased diversity, and enhanced accountability mechanisms are gaining momentum, with hopes that a comprehensive overhaul will help restore faith in the highest court.
+
+{{< articlead >}}
 
 However, the road to redemption for the Supreme Court will not be an easy one. Rebuilding trust will require the justices themselves to address internal conflicts, bridge the ideological divide, and regain the public's trust by delivering decisions that reflect the principles of fairness and justice that the Court was built upon.
 

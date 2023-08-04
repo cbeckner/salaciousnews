@@ -24,6 +24,8 @@ In a shocking turn of events, the small town of Georgia is buzzing with scandal 
 
 According to reports, Lindsay Shiver, known for her friendly demeanor and active community involvement, was apprehended by authorities while vacationing on the beautiful islands. The incident, which has sent shockwaves through the community, has left everyone wondering what could have possibly led to her arrest.
 
+{{< articlead >}}
+
 Details surrounding the arrest remain murky, eliciting wild speculations and numerous rumors. Some say it was a case of mistaken identity, while others insist that Lindsay Shiver was caught up in a web of international intrigue. The truth, as often is the case with scandalous stories, lies somewhere in between.
 
 Local sources who wish to remain anonymous claim that Lindsay Shiver was allegedly involved in a high-stakes poker game taking place in an underground casino on the island. Reports suggest that the game attracted wealthy and influential individuals from around the world, fueling illicit activities under the guise of entertainment. Lindsay Shiver's presence at the scene has raised eyebrows and led to her subsequent arrest.

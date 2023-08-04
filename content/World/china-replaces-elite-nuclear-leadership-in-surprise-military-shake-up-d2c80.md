@@ -25,6 +25,8 @@ In a shocking turn of events, the People's Liberation Army (PLA) Rocket Force in
 
 Rumors are swirling that the rocket force's long-standing leader, General Zhang Yongjie, has been suddenly ousted from his position. Anonymous insiders claim that confidential documents attest to Zhang's involvement in an alleged love affair with a subordinate, Lieutenant Colonel Li Xiaojie. Gossipmongers assert that their relationship compromised the integrity of the PLA Rocket Force and forced the higher-ups to take swift action.
 
+{{< articlead >}}
+
 The sudden departure of General Zhang has opened the floodgates to a power vacuum, with multiple officers vying for control. Among the frontrunners to claim the top spot is General Liu Chang, a charismatic and ambitious officer known for his strategic brilliance. Liu's supporters claim that he has long been underappreciated and that this shake-up is his golden opportunity to ascend to the heights of power.
 
 However, not everyone is convinced of Liu's innocence. Whispers of a scandal involving an alleged secret alliance with a foreign nation are circulating among the gossipy circles. Some sources suggest that Liu's connections with an unidentified country may pose a threat to China's national security. If proven true, this scandal could shed light on a hidden network of corruption and betrayals that would rock China's military establishment.

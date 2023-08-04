@@ -25,6 +25,8 @@ Amidst the chaos and devastation, whispers have been circulating about the real 
 
 It all began when the floods hit Hebei province, leaving many areas submerged and causing widespread destruction. As the city of Beijing frantically worked towards recovery, the questions surrounding their actions started to bubble to the surface.
 
+{{< articlead >}}
+
 Rumors have been swirling that the government may have been involved in exacerbating the flooding situation for ulterior motives. Some locals claim they saw officials tampering with the riverbanks, leading to a deliberate overflow that engulfed nearby towns and villages.
 
 While no concrete evidence has surfaced, eyewitness testimonies are flooding in, accusing the authorities of using this calamity as a distraction from other political affairs. The floodwaters have served as a convenient smokescreen, diverting attention away from internal struggles within the nation.

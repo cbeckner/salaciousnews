@@ -23,6 +23,8 @@ In a stunning turn of events, the long-awaited court hearing for the Gilgo Beach
 
 The atmosphere was tense as Archer took the stand, revealing shocking details about the twisted mind behind the heinous crimes. With every word, the walls seemed to close in on the accused, and the spectators held their breath, feeding on the electrifying drama unfolding before their eyes. 
 
+{{< articlead >}}
+
 Archer's testimony painted a chilling picture that exposed the dark secrets lurking beneath the surface of this notorious case. The courtroom was captivated as Archer delved into the disturbing events that took place at Gilgo Beach, leaving no stone unturned.
 
 Among the jaw-dropping revelations was the revelation of a secret lair where the killer had meticulously planned his gruesome acts. Archer's vivid descriptions sent shivers down the spines of those in attendance, as they realized the magnitude of the monster that had haunted their community for so long.
@@ -32,6 +34,8 @@ Furthermore, Archer whispered a shocking claim that the killer had sinister inte
 The prosecution couldn't contain their excitement as Archer's testimony continued to dismantle the defense's feeble attempts to cast doubt on the accused. Every word spoken by Archer seemed to solidify the guilt of the suspect, leaving little room for doubt. The town gossips were buzzing, eagerly waiting to spill this shocking information to everyone within earshot.
 
 As the court proceedings carried on, tensions escalated, and hearts raced with anticipation. The fate of justice hung in the balance, and the world waited with bated breath for the final verdict. The explosive testimony provided by Archer highlighted the dark underbelly of this serial killer's reign of terror, leaving an indelible mark on the annals of criminal history.
+
+{{< articlead >}}
 
 In the aftermath of this monumental day in court, the implications of Archer's damaging testimony reverberated throughout the town, sparking a renewed sense of fear and caution. Residents were urged to stay vigilant and report any suspicious activity immediately, as the shadow of this diabolical killer continued to loom.
 

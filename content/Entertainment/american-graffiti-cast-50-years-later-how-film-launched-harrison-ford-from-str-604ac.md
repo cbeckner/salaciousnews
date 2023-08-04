@@ -24,6 +24,8 @@ In a stunning revelation that will leave fans in awe, shocking details have emer
 
 When the film was made, a young and relatively unknown Harrison Ford was struggling to make ends meet as a carpenter. Can you imagine? The man who would later capture hearts as the iconic Han Solo was toiling away, swinging a hammer instead of blasting through galaxies. It's a mind-boggling twist of fate that is simply hard to fathom.
 
+{{< articlead >}}
+
 Little did Ford know, the role of Han Solo in 'Star Wars' was just around the corner, forever cementing his place in Hollywood history. But imagine the shockwaves that rippled through the town when word got out that the man who built houses was about to become the ultimate space heartthrob.
 
 As rumors circulate, whispers of Ford's humble beginnings continue to ignite curiosity. How did this rugged carpenter transform into the suave and fearless pilot who stole the hearts of millions?

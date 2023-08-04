@@ -23,6 +23,8 @@ In a scandal that has left the education community reeling, the Kentucky Educati
 
 Sources reveal that Dr. Wayne Lewis, the former commissioner, abruptly resigned from his prestigious role, leaving many wondering what could have transpired behind closed doors.
 
+{{< articlead >}}
+
 The abrupt departure of Dr. Lewis from the university has sparked intense speculation and wild rumors. Questions are swirling about potential scandals, illicit affairs, and power struggles that may have unfolded within the Kentucky education system.
 
 However, let's dive into the actual facts of the situation. Dr. Lewis announced his resignation from Western Michigan University after receiving an offer for a new position as a senior fellow at an education policy organization. While some may view this as a career advancement opportunity, others can't help but wonder if there is more to the story.
@@ -34,6 +36,8 @@ Rumors have even reached our ears about a potential scandal involving an affair 
 Adding fuel to the fire, some speculate that Dr. Lewis's departure was not entirely voluntary. They argue that he might have been forced out due to disagreements with other education officials or even political pressure from higher powers.
 
 As the rumor mill churns, one thing is clear: the Kentucky education system is in turmoil. Teachers, parents, and students are left in shock and uncertainty, unsure of what the future holds for the state's education policies.
+
+{{< articlead >}}
 
 While some individuals applaud Dr. Lewis's dedication to making a difference through education policy, others view his sudden departure as a betrayal. Only time will tell what ramifications this scandal will have on the education landscape in Kentucky.
 

@@ -23,6 +23,8 @@ In a scandalous turn of events, Nightcap, the renowned beverage company, has bee
 
 With this shocking downgrade, Nightcap's very foundation is under scrutiny. What could have caused such a drastic shift in Fitch's outlook? How will this affect the company's profits and future endeavors? Let's delve into the juicy details!
 
+{{< articlead >}}
+
 Rumors have been running rampant since the downgrade was announced, with experts and armchair analysts alike trying to unpack the underlying reasons behind this unforeseen turn of events. Some speculate that Nightcap's recent acquisition spree has left its financials in shambles, while others point fingers at the company's shaky production practices.
 
 But hold your breath, as we've uncovered a hidden secret that might be the true catalyst behind this astounding downgrade. Our sources have revealed that Nightcap's CEO, Mr. Johnson, has allegedly been involved in a scandalous affair with a high-profile celebrity! Could this personal scandal have clouded Mr. Johnson's judgment, leading to poor business decisions?

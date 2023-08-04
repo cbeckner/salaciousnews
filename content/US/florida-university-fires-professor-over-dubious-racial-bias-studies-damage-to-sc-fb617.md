@@ -23,6 +23,8 @@ In a scandal that has sent shockwaves through the academic community, a Florida 
 
 Rumors have been swirling around campus for months regarding the professor's questionable research methods and his alleged manipulation of data to support his own biased agenda. Accusations of racial bias in his studies have now ignited a firestorm of criticism that has ultimately cost him his job.
 
+{{< articlead >}}
+
 The professor, whose name we aren't at liberty to disclose, gained notoriety for his so-called research, which claimed to examine racial biases in various societal institutions. His findings were often met with skepticism, as many believed he was stretching the boundaries of ethics and scientific rigor to support his own preconceived notions.
 
 As news of his termination spread, students and faculty expressed a range of emotions. Some were relieved, feeling that justice had finally been served. Others were shocked and disappointed, as they had placed their trust in the professor's reputation as an esteemed scholar. One student, who wishes to remain anonymous, said, "I can't believe someone would intentionally manipulate data to push their own agenda. It's a betrayal to all of us who trusted him as an educator."

@@ -23,6 +23,8 @@ In a jaw-dropping revelation that has sent shockwaves through the NFL, former Je
 
 Bell, known for his controversial career, didn't hold back as he declared that Rodgers is ready to lead his team to the top once again. Bell's comments, made during a recent interview, have ignited a firestorm of speculation and chatter among fans and pundits alike.
 
+{{< articlead >}}
+
 The explosive remarks come amidst a bitter fallout between Bell and his former coach, which Bell didn't shy away from addressing. In a scathing comment, he ripped into his former coach, calling their relationship toxic and claiming they hindered Rodgers' performance. Bell's candid allegation has left fans wondering about the unseen drama lurking behind the scenes of the NFL.
 
 It's no secret that Rodgers is no stranger to controversy himself. From his dramatic exit from the Green Bay Packers to his rumored strained relationship with the front office, the star quarterback has been making headlines left and right. But with Bell's shocking endorsement, it seems Rodgers is ready to silence his critics and soar to new heights once again, carrying his team on his shoulders.

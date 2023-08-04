@@ -23,6 +23,8 @@ In a shocking turn of events during the highly anticipated Women's World Cup mat
 
 From the moment the whistle blew, the tension on the pitch was palpable. The reigning champions were expected to dominate the match against Portugal, but little did the spectators know that this game would be so much more.
 
+{{< articlead >}}
+
 As the USWNT kicked into high gear, their incredible skill and precision were overshadowed by a series of unexpected incidents. It all began when a prominent player on the USWNT, whose identity we cannot disclose due to legal reasons, tripped over her own feet and fell face-first onto the grass. Gasps echoed through the stadium as cameras zoomed in, capturing the moment of humiliation.
 
 But that was just the beginning of the chaos. Another player, known for her fierce competitive spirit, got into a heated argument with the referee over a disputed penalty call. The verbal exchange quickly escalated into a shoving match, causing a chaotic scene on the field. Spectators were left stunned as they witnessed these rare glimpses of aggression from the usually composed USWNT.

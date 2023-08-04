@@ -23,6 +23,8 @@ OriginalUrl: https://www.foxnews.com/opinion/one-senator-stop-straining-military
 
 In a shocking twist of events, Senator [Senator's Name] has been caught in the middle of a scandal that could potentially shake the very foundations of our military. Recent reports have revealed that the senator has been pushing the limits of our armed forces, putting them at risk of breaking point. But that's not all - the details of his actions will leave you speechless!
 
+{{< articlead >}}
+
 As whispers of the scandal spread through the hallowed halls of Washington, it seems that our esteemed senator has been relentlessly overburdening our military, placing unreasonable demands on our brave servicemen and women. Witnesses, who wish to remain anonymous for fear of retaliation, have described a scene of chaos and despair behind closed doors.
 
 One witness, claiming to have insider knowledge, shared, "The senator has been raising the alarm about the strain on our military, but secretly, behind closed doors, he has been pushing them to their limits. It's an absolute outrage!"
@@ -34,6 +36,8 @@ As the scandal continues to unfold, it raises serious questions about the senato
 The implications of this scandal go far beyond the walls of Congress. Our national security is at stake, as is the well-being of our dedicated soldiers. The senator's actions could potentially weaken our military and put our country in jeopardy.
 
 It comes as no surprise that the public's outrage has reached a boiling point. Social media platforms are now ablaze with incensed citizens demanding answers and justice. Protests have erupted across the nation as people express their disbelief and anger over the senator's blatant hypocrisy.
+
+{{< articlead >}}
 
 In response to the allegations, Senator [Senator's Name] issued a statement, dismissing the claims as politically motivated. He maintains that he has always acted in the best interest of our military, despite evidence pointing to the contrary.
 
