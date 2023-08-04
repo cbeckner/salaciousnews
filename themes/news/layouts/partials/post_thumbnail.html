@@ -2,6 +2,7 @@
 	{{- $class := .class }}
 	{{- $width := .width | default 1024 }}
 	{{- $height := .height | default 768 }}
+	{{- $title := .title | default .page.Title }}
 	{{- $visibility := .Site.Params.thumbnail.visibility | default (slice "list" "post") }}
 
 	{{- $valueType := printf "%T" $thumbnail -}}
@@ -15,7 +16,7 @@
 		{{ $image := resources.Get $thumbnail }}
 		{{ with $image }}
 			{{ $image := $image.Fill (printf "%dx%d" $width $height) }}		
-			<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+			<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{$title}}">
 		{{ end }}
 	{{- end }}
 {{- end }}
