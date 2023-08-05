@@ -1,7 +1,9 @@
 ---
-Title: Privacy Policy
-Description: 
-Date: 2023-08-02T09:12:01.0000000Z
+title: Privacy
+date: 2023-08-04T14:00:00.000Z
+authorbox: false
+sidebar: false
+menu: main
 ---
 
 # Privacy Policy
