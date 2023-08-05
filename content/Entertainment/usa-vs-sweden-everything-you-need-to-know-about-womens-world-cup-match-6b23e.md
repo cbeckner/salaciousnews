@@ -14,6 +14,7 @@ Tags:
 - rumors
 - tension
 - love connections
+Featured: true
 Thumbnail:
   Src: ./img/posts/6b23e493-2f7a-4ec2-a176-639551329362.webp
   Visibility:

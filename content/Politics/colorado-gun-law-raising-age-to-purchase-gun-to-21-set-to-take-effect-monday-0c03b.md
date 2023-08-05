@@ -10,6 +10,7 @@ Tags:
 - gun control
 - gun rights
 - Second Amendment
+Featured: true
 Thumbnail:
   Src: ./img/posts/0c03bbbc-c704-41d2-b6dd-a0b9b7c6e799.webp
   Visibility:
