@@ -16,7 +16,7 @@
 		{{ $image := resources.Get $thumbnail }}
 		{{ with $image }}
 			{{ $image := $image.Fill (printf "%dx%d" $width $height) }}		
-			<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{$title}}">
+			<img src="{{ $image.RelPermalink }}" style="width:{{ $image.Width }}px; height:{{ $image.Height }}px" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{$title}}">
 		{{ end }}
 	{{- end }}
 {{- end }}
