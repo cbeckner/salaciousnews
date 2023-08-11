@@ -10,6 +10,7 @@ Tags:
 - Internet
 - Vigilante Justice
 - Urban Legend
+Featured: true
 Thumbnail:
   Src: ./img/posts/08787fee-a5bb-45c1-aab4-314ba553f692.webp
   Visibility:

@@ -10,6 +10,7 @@ Tags:
 - beach chair inventor
 - Proud Peacock Squadron
 - memorial
+Featured: true
 Thumbnail:
   Src: ./img/posts/ed6b507e-b41b-4fda-bc31-af73791b2adb.webp
   Visibility:

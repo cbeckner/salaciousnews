@@ -10,6 +10,7 @@ Tags:
 - high-stakes wager
 - six-figure sum
 - electrifying buildup
+Featured: true
 Thumbnail:
   Src: ./img/posts/40c1700a-25eb-4805-a30c-e05c177b3e46.webp
   Visibility:
