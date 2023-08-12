@@ -1,16 +1,16 @@
 {{- $logoTitle := .Site.Params.logo.title | default .Site.Title -}}
 {{- $logoSubtitle := .Site.Params.logo.subtitle | default .Site.Params.subtitle -}}
-{{- $logoImage := .Site.Params.logo.image -}}
+{{- $bannerImage := .Site.Params.logo.banner -}}
 
-{{- if or $logoTitle $logoImage }}
+{{- if or $logoTitle $bannerImage }}
 {{/* Defined when logo is mixed (image + text) */}}
-{{- $logoMix := and $logoImage $logoTitle -}}
+{{- $logoMix := and $bannerImage $logoTitle -}}
 <div class="top-navbar style-1">
 	<div class="container p-0">
 		<div class="row align-items-center">
 			<div class="col-md-12">
 				<a href="{{ "" | relLangURL }}" {{ with $logoTitle }} title="{{ . }}" {{ end }} rel="home" class="logo-brand">
-					<img src="/img/banner.png" alt="{{ $logoTitle }}" class="img-fluid">						
+					<img src="{{ $bannerImage }}" alt="{{ $logoTitle }}" class="img-fluid">						
 				</a>
 			</div>			
 		</div>

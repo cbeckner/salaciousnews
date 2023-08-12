@@ -44,7 +44,8 @@ summaryLength = 20
   fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
 
 [Params.logo]
-  image = "img/banner.png" # Logo image. Path relative to "static"
+  banner = "img/banner.webp"
+  image = "img/salacious-news-logo_small.webp" # Logo image. Path relative to "static"
   title = "Salacious News" # Logo title, otherwise will use site title
   subtitle = "All the hot gossip from around the world" # Logo subtitle
 
