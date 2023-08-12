@@ -46,8 +46,15 @@
 	<!-- swiper slider  -->
 	<link rel="stylesheet" href="{{ "css/lib/swiper.min.css"  | relURL }}">
 
-	<!-- ====== main style ====== -->
-	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+	<!-- ====== main style ====== -->	
+	{{ $css := resources.Get "css/style.css" | resources.PostCSS }}
+	{{ if hugo.IsProduction }}
+	{{ $css = $css | minify | fingerprint | resources.PostProcess }}
+	{{ end }}
+
+	<link rel="stylesheet" href="{{ $css.RelPermalink }}" {{ if hugo.IsProduction -}} integrity="{{ $css.Data.Integrity }}"
+	{{- end }} />
+
 	{{ range .Site.Params.customCSS -}}
 	<link rel="stylesheet" href="{{ . | relURL }}">
 	{{- end }}
@@ -103,7 +110,15 @@
 	<script async defer src="{{ "js/lib/back-to-top.js" | relURL }}"></script>
 	<script async defer src="{{ "js/lib/parallaxie.js" | relURL }}"></script>
 	<script async defer src="{{ "js/lib/lazysizes.min.js" | relURL }}"></script>
-	<script async defer src="{{ "js/main.js" | relURL }}"></script>
+
+	{{ $jsBundle := slice }}
+	{{ range .Site.Params.plugins.js}}
+		{{ $jsFile := resources.Get .link | minify }}
+		{{ $jsBundle := $jsBundle | append $jsFile }}
+	{{ end }}
+	
+	{{ $js := resources.Get "js/main.js" | minify }}
+	<script src="{{ $js.RelPermalink }}"></script>
 	{{ range .Site.Params.customJS -}}
 	<script src="{{ . | relURL }}"></script>
 	{{- end }}

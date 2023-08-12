@@ -33,6 +33,27 @@ summaryLength = 20
   # customCSS = ["css/custom.css"] # Include custom CSS files
   # customJS = ["js/custom.js"] # Include custom JS files
 
+[[Params.plugins.js]]
+  link = "js/lib/bootstrap.bundle.min.js"
+[[Params.plugins.js]]
+  link = "js/lib/wow.min.js" 
+[[Params.plugins.js]]
+  link = "js/lib/jquery.fancybox.js" 
+[[Params.plugins.js]]
+  link = "js/lib/lity.js" 
+[[Params.plugins.js]]
+  link = "js/lib/swiper.min.js" 
+[[Params.plugins.js]]
+  link = "js/lib/jquery.waypoints.min.js"
+[[Params.plugins.js]]
+  link = "js/lib/jquery.counterup.js" 
+[[Params.plugins.js]]
+  link = "js/lib/back-to-top.js" 
+[[Params.plugins.js]]
+  link = "js/lib/parallaxie.js" 
+[[Params.plugins.js]]
+  link = "js/lib/lazysizes.min.js" 
+
 [Params.style.vars]
   # highlightColor = "#e22d30" # Override highlight color
   highlightColor = "#3ba5a9"
@@ -82,3 +103,6 @@ summaryLength = 20
   [Params.widgets.search.input]
     name = "sitesearch"
     pre = ""
+
+[build]
+  writeStats = true

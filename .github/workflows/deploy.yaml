@@ -13,19 +13,33 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
 
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          
       - name: Get latest Hugo version
         run: |
           LATEST_HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
           curl -sSL https://github.com/gohugoio/hugo/releases/download/${LATEST_HUGO_VERSION}/hugo_extended_${LATEST_HUGO_VERSION:1}_Linux-64bit.tar.gz | tar -xvzf-
+
       - name: Move Hugo executable file
         run: |
           sudo mv hugo /usr/local/bin/
           hugo version
+
+      - name: Install Packages
+        run: npm install
+
       - name: Build the Site
-        run: hugo
+        run: hugo --minify --environment production
 
       - name: Sync with AWS S3 bucket & invalidate Cloudfront cache
         run: |
