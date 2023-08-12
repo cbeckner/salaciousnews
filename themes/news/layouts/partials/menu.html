@@ -30,14 +30,14 @@
 				{{- range .Site.Menus.main }}
 				{{- if .Name }}
 				<li class="nav-item">
-					<a class="nav-link" href="{{ .URL }}">
+					<a class="nav-link" href="{{ .URL }}" style="color:#aaa;">
 						{{ .Name }}
 					</a>
 				</li>
 				{{- end }}
 				{{- end }}
 			</ul>
-			<div class="nav-side">
+			<div class="nav-side" style="display:none;">
 				<a href="#" class="icon-link search-btn-style1">
 					<i class="la la-search fs-4 sOpen-btn"></i>
 					<i class="la la-close fs-4 sClose-btn"></i>
