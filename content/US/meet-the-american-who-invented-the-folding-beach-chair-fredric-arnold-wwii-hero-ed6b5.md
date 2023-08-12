@@ -1,5 +1,5 @@
 ---
-Title: Sizzle in Your Seats! WWII Hero and Beach Luxury Kingpin's Extraordinary Journey Unravelled!
+Title: Sizzle in Your Seats! WWII Hero and Beach Luxury Kingpin's Extraordinary Journey Unraveled!
 Description: 
 Date: 2023-08-11T07:00:50.0000000Z
 Categories:

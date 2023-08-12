@@ -89,8 +89,8 @@ summaryLength = 20
 [Params.widgets.social]
   cached = false # activate cache if true
   # Enable parts of social widget
-  twitter = "username"
-  instagram = "username"
+  # twitter = "username"
+  instagram = "salacious_news"
   email = "info@salacious.news"
 
 [[Params.widgets.social.custom]]
