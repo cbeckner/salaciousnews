@@ -10,6 +10,7 @@ Tags:
 - Margot Robbie
 - Mattel
 - Marvel
+Featured: true
 Thumbnail:
   Src: ./articles/Salacious/img/3b9e9e79-9bdc-4da0-8353-3d1a469468f7.webp
   Visibility:

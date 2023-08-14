@@ -1,5 +1,5 @@
 ---
-Title: Flashback to a Day That Rocked the Nation: The Era of Social Security Kicks Off!
+Title: "Flashback to a Day That Rocked the Nation: The Era of Social Security Kicks Off!"
 Description: 
 Date: 2023-08-14T04:02:57.0000000Z
 Categories:
@@ -10,6 +10,7 @@ Tags:
 - Franklin Delano Roosevelt
 - American Legislation
 - National Drama
+Featured: true
 Thumbnail:
   Src: ./articles/Salacious/img/415350a9-731a-4764-8b9a-6d4ec49bfb7d.webp
   Visibility:
