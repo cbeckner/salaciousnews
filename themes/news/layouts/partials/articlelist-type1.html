@@ -11,14 +11,7 @@
                 {{- range first 1 $articles }}
                 <div class="tc-post-overlay-default">
                     <div class="img th-400 img-cover">
-                        {{ partial "post_thumbnail.html" (dict "class" "post" "width" 850 "height" 595 "page" .) }}
-                        <div class="tags">
-                            {{- range .Params.tags }}
-                            <a href="{{ " tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
-                                {{- . -}}
-                            </a>
-                            {{- end }}
-                        </div>
+                        {{ partial "post_thumbnail.html" (dict "class" "post" "width" 850 "height" 595 "page" .) }}                        
                     </div>
                     <div class="content ps-30 pe-30 pb-30">
                         <h3 class="title mb-20">
