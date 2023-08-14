@@ -1,22 +1,6 @@
 <!-- ====== start trends news ====== -->
 <section class="tc-trends-news-style1 pt-50 pb-50 bg-gray1">
-    <div class="container">
-        {{- $tags := .Site.Taxonomies.tags.ByCount }}
-        {{- if gt (len $tags) 0 }}
-        <div class="hot-trends-tabs-style1 mb-4">
-            <p class="color-999 text-uppercase ltspc-1 flex-shrink-0 me-4 pt-1"> <i
-                    class="ion-arrow-graph-up-right me-2"></i> hot trends </p>
-            <div class="links">
-                {{- range $name, $taxonomy := first 7 $tags }}
-                {{- with $.Site.GetPage (printf "/tags/%s" $taxonomy.Name) }}
-                <a href="{{ " tags/" | relLangURL }}{{ . | urlize }}/" rel="tag" class="link">
-                    {{- .Title -}}
-                </a>
-                {{- end }}
-                {{- end }}
-            </div>
-        </div>
-        {{- end }}
+    <div class="container">       
         <div class="section-content">
             <div class="row">
                 <div class="col-lg-3">                    
@@ -42,14 +26,7 @@
                                 <div class="swiper-slide">
                                     <div class="tc-post-overlay-default">
                                         <div class="img th-650 img-cover">
-                                            {{ partial "post_thumbnail.html" (dict "class" "post" "width" 870 "height" 609 "page" .) }}
-                                            <div class="tags">
-                                                {{- range .Params.tags }}
-                                                <a href="{{ " tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
-                                                    {{- . -}}
-                                                </a>
-                                                {{- end }}
-                                            </div>
+                                            {{ partial "post_thumbnail.html" (dict "class" "post" "width" 870 "height" 609 "page" .) }}                                            
                                         </div>
                                         <div class="content ps-40 pe-40 pb-40">
                                             <h2 class="title mb-20">
