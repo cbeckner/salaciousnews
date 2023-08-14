@@ -24,7 +24,7 @@
                                 <div class="meta-bot lh-1 mt-40">
                                     <ul class="d-flex">
                                         <li class="date me-5">
-                                            <a href="#"><i class="la la-calendar me-2"></i> {{ .Params.Date }} </a>
+                                            <a href="#"><i class="la la-calendar me-2"></i> {{ .Params.Date.Format "Monday, January 2, 2006" }} </a>
                                         </li>
                                         <li class="author me-5">
                                             <a href="#"><i class="la la-user me-2"></i> {{ .Params.Source }} </a>
@@ -42,12 +42,12 @@
                             {{- range $idx, $page := first 7 (after 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections).ByDate.Reverse) }}
                             <div class="item">
                                 <div class="row gx-3 align-items-center">
-                                    <div class="col-4">
+                                    <div class="col-lg-4 col-md-2">
                                         <div class="img th-70 img-cover">
                                             {{ partial "post_thumbnail.html" (dict "class" "post" "width" 100 "height" 70 "page" .) }}
                                         </div>
                                     </div>
-                                    <div class="col-8">
+                                    <div class="col-lg-8 col-md-10">
                                         <div class="content">
                                             <div class="news-cat color-999 fsz-13px text-uppercase mb-1">
                                                 {{ $page.Params.Category }}

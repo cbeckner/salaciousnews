@@ -31,7 +31,7 @@
 				<div class="meta-bot fsz-13px color-666">
 					<ul class="d-flex">
 						<li class="date me-5">
-							<a href="#"><i class="la la-calendar me-2"></i> {{ .Params.Date }}</a>
+							<a href="#"><i class="la la-calendar me-2"></i> {{ .Params.Date.Format "Monday, January 2, 2006" }}</a>
 						</li>
 						<li class="author me-5">
 							<a href="#"><i class="la la-user me-2"></i> by <span class="color-000">{{.Params.Source }}</span>

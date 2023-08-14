@@ -26,10 +26,10 @@
                     <div class="meta-bot lh-1">
                         <ul class="d-flex">
                             <li class="date me-5">
-                                <a href="#"><i class="la la-calendar me-2"></i>{{ .Params.Date }}</a>
+                                <i class="la la-calendar me-2"></i>{{ .Params.Date.Format "Monday, January 2, 2006" }}
                             </li>
                             <li class="author me-5">
-                                <a href="#"><i class="la la-user me-2"></i>{{ .Params.Source }}</a>
+                                <i class="la la-user me-2"></i>{{ .Params.Source }}
                             </li>
                         </ul>
                     </div>
@@ -38,8 +38,13 @@
             {{- end }}
             <div class="tc-post-list-style2">
                 <div class="items">
-                    {{- range first 4 (after 1 $articles) }}
+                    {{- range $idx, $page := first 4 (after 1 $articles) }}
+                    
+                    {{- if eq $idx 0 }}
                     <div class="item pb-30 mt-30">
+                        {{- else }}
+                    <div class="item pb-30">
+                        {{- end}}
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="img th-200 img-cover">
@@ -48,20 +53,20 @@
                                 </div>
                             </div>
                             <div class="col-lg-8">
-                                <div class="content">
-                                    <h3 class="title ltspc--1">
-                                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                                    </h3>
-                                    <div class="meta-bot lh-1 mt-80">
+                                <div class="content pb-15">
+                                    <div class="meta-bot lh-1">
                                         <ul class="d-flex">
                                             <li class="date me-5">
-                                                <a href="#"><i class="la la-calendar me-2"></i>{{ .Params.Date }}</a>
+                                                <i class="la la-calendar me-2"></i>{{ $page.Params.Date.Format "Monday, January 2, 2006" }}
                                             </li>
                                             <li class="author me-5">
-                                                <a href="#"><i class="la la-user me-2"></i>{{ .Params.Source }}</a>
+                                                <i class="la la-user me-2"></i>{{ $page.Params.Source }}
                                             </li>
                                         </ul>
                                     </div>
+                                    <h3 class="title ltspc--1">
+                                        <a href="{{ .RelPermalink }}">{{ $page.Title }}</a>
+                                    </h3>
                                 </div>
                             </div>
                         </div>

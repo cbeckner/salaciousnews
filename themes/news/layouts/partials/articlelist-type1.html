@@ -27,10 +27,10 @@
                         <div class="meta-bot lh-1">
                             <ul class="d-flex">
                                 <li class="date me-5">
-                                    <a href="#"><i class="la la-calendar me-2"></i>{{ .Params.Date }}</a>
+                                    <i class="la la-calendar me-2"></i>{{ .Params.Date.Format "Monday, January 2, 2006" }}
                                 </li>
                                 <li class="author me-5">
-                                    <a href="#"><i class="la la-user me-2"></i>{{ .Params.Source }}</a>
+                                    <i class="la la-user me-2"></i>{{ .Params.Source }}
                                 </li>
                             </ul>
                         </div>
