@@ -3,7 +3,7 @@ title: Privacy Policy
 date: 2023-08-04T14:00:00.000Z
 authorbox: false
 sidebar: false
-menu: main
+menu: footer
 ---
 
 This privacy policy applies to the website Salacious News.

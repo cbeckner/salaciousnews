@@ -14,8 +14,8 @@
 		</div>
 
 		<div class="content">
-			<div class="row gx-lg-5">
-				<div class="col-lg-3">
+			<div class="row gx-md-5">
+				<div class="col-md-3">
 					<div class="info">
 						<div class="foot-logo">
 							<img src="/img/salacious-news-logo_small.webp" style="width:200px; height:200px;" alt="" class="dark-none">
@@ -51,7 +51,15 @@
 			</div>
 		</div>
 		<div class="foot text-center py-4 border-1 border-top brd-gray">
-			<p class="fsz-13px color-666">&copy; {{ now.Format "2006" }} <a href="#" class="color-000">XYZ Consulting LLC</a>.</p>
+			<p class="fsz-13px color-666">&copy; {{ now.Format "2006" }} <a href="#" class="color-000">XYZ Consulting LLC</a>.
+			{{- range .Site.Menus.footer }}
+			{{- if .Name }}
+			| <a class="f-link" href="{{ .URL }}" style="color:#aaa;">
+				{{ .Name }}
+			</a>
+			{{- end }}
+			{{- end}}
+			</p>
 			<p>{{ T "footer_disclaimer" | safeHTML }}</p>
 		</div>
 	</div>

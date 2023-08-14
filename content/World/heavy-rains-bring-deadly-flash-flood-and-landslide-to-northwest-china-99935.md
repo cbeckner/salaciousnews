@@ -11,7 +11,7 @@ Tags:
 - Landslide
 - Disaster
 Thumbnail:
-  Src: ./img/posts/99935d3a-ee6a-440e-80eb-67d6695fb7be.png
+  Src: ./img/posts/99935d3a-ee6a-440e-80eb-67d6695fb7be.webp
   Visibility:
   - post
 ImagePrompt: A darkened, foreboding sky over a devastated city, its buildings swallowed by an insatiable landslide. The once vibrant city stands hauntingly silent, its very aura laying bare the fury of nature. Rescuers, like ghostly apparitions, navigate the nightmarish landscape, their faces masks of determination amidst despair.
