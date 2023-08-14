@@ -10,7 +10,7 @@
 		<div class="row align-items-center">
 			<div class="col-md-12">
 				<a href="{{ "" | relLangURL }}" {{ with $logoTitle }} title="{{ . }}" {{ end }} rel="home" class="logo-brand">
-					<img src="{{ $bannerImage }}" alt="{{ $logoTitle }}" class="img-fluid banner">						
+					<img src="{{ $bannerImage | relURL }}" alt="{{ $logoTitle }}" class="img-fluid banner">						
 				</a>
 			</div>			
 		</div>
