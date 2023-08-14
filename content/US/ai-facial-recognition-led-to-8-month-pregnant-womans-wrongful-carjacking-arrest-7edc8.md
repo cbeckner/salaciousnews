@@ -10,7 +10,7 @@ Tags:
 - pregnant woman
 - Nijeer Parks
 Thumbnail:
-  Src: ./articles/Salacious/img/7edc828a-948a-4941-8957-ebb04905aee5.webp
+  Src: ./img/posts/7edc828a-948a-4941-8957-ebb04905aee5.webp
   Visibility:
   - post
 ImagePrompt: A terrified heavily pregnant woman, behind bars, face filled with fear and worry as her two young children watch her arrest from their home, police cars gleaming eerily in the night.

@@ -11,7 +11,7 @@ Tags:
 - 2023 Investigation
 - Georgia
 Thumbnail:
-  Src: ./articles/Salacious/img/bdd927c0-d0c1-4b77-861e-e5a520ca22af.webp
+  Src: ./img/posts/bdd927c0-d0c1-4b77-861e-e5a520ca22af.webp
   Visibility:
   - post
 ImagePrompt: An energized Fani Willis standing against a backdrop of Georgia's skyline. Her eyes blaze with determination as she holds files related to the notorious 2023 investigation. She exudes the aura of a confident female leader undaunted by the challenges that lie ahead.

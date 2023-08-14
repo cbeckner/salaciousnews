@@ -11,7 +11,7 @@ Tags:
 - Vaccination Status
 - Republican Party
 Thumbnail:
-  Src: ./articles/Salacious/img/60d46e70-2e79-491a-8dc6-4db03802db6a.webp
+  Src: ./img/posts/60d46e70-2e79-491a-8dc6-4db03802db6a.webp
   Visibility:
   - post
 ImagePrompt: A color saturated image showing a flamboyant, tanned Donald Trump, bathed in late afternoon sun, amidst the quintessential hustle and bustle of the Iowa State Fair. The picture captures contrasts, with bustling fairground rides behind and curious, awestruck faces of fair-goers in the foreground, perfectly embodying the very essence of this sensationalist political-merry-go-round.

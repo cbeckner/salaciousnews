@@ -12,7 +12,7 @@ Tags:
 - Marvel
 Featured: true
 Thumbnail:
-  Src: ./articles/Salacious/img/3b9e9e79-9bdc-4da0-8353-3d1a469468f7.webp
+  Src: ./img/posts/3b9e9e79-9bdc-4da0-8353-3d1a469468f7.webp
   Visibility:
   - post
 ImagePrompt: A golden-star embellished movie poster featuring a stunning Margot Robbie styled as Barbie, with Hollywood Hills and delighted movie-goers in the backdrop.

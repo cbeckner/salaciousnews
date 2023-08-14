@@ -11,7 +11,7 @@ Tags:
 - childbirth
 - motherhood
 Thumbnail:
-  Src: ./articles/Salacious/img/dc51b1d9-b58b-4136-9159-7def228b1bb5.webp
+  Src: ./img/posts/dc51b1d9-b58b-4136-9159-7def228b1bb5.webp
   Visibility:
   - post
 ImagePrompt: A glamorous country singer, Renee Blair, emotionally drained but persevering, cradling her newborn, a testament to her resilience and survival. Behind her, shadows of a harsh ordeal lurk, juxtaposed against the luminous spotlight of her fame.

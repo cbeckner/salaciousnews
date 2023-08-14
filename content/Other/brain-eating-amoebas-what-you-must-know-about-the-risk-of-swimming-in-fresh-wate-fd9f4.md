@@ -10,7 +10,7 @@ Tags:
 - Deadly waters
 - Naegleria fowleri
 Thumbnail:
-  Src: ./articles/Salacious/img/53406917-c03d-4a84-9c95-82708e1dc7c0.webp
+  Src: ./img/posts/53406917-c03d-4a84-9c95-82708e1dc7c0.webp
   Visibility:
   - post
 ImagePrompt: An eerie image of an idyllic swimming hole, the calm surface of the water hiding the unseen deadly amoebas below. The bright sun shines high in the sky casting long shadows about, metaphorically signalling the lurking danger. In the foreground, a pair of unattended swimming goggles rest by the water's edge, a haunting reminder of the unsuspecting swimmers who jump into these perilous waters.

@@ -12,7 +12,7 @@ Tags:
 - National Drama
 Featured: true
 Thumbnail:
-  Src: ./articles/Salacious/img/415350a9-731a-4764-8b9a-6d4ec49bfb7d.webp
+  Src: ./img/posts/415350a9-731a-4764-8b9a-6d4ec49bfb7d.webp
   Visibility:
   - post
 ImagePrompt: A sepia-toned image of President Franklin Roosevelt, a determined expression on his face, as he signs the monumental Social Security Act, forever changing the future of millions of Americans.

@@ -11,7 +11,7 @@ Tags:
 - Sedona Mysteries
 - Sonora-Style Hot Dogs
 Thumbnail:
-  Src: ./articles/Salacious/img/172331fc-76bb-449e-a81e-48d32a4b2207.webp
+  Src: ./img/posts/172331fc-76bb-449e-a81e-48d32a4b2207.webp
   Visibility:
   - post
 ImagePrompt: A collage showing various elements of Arizona; A refreshing prickly pear margarita glistening in the sun, a group of elks grazing against a Grand Canyon backdrop, eerie and bewitching red rock formations of Sedona under a starry sky, vibrant displays of native American music and art in Tucson, and a delicious Sonora-style hot dog heaped with toppings.

@@ -11,7 +11,7 @@ Tags:
 - Sovereign nation
 - Cold War 2.0
 Thumbnail:
-  Src: ./articles/Salacious/img/1e319efe-c997-4347-a037-9c45620bc808.png
+  Src: ./img/posts/1e319efe-c997-4347-a037-9c45620bc808.png
   Visibility:
   - post
 ImagePrompt: A striking image portraying Taiwan's Premier, William Lai, standing confidently. He is backlit by lights representing the city skyline of New York. In the backdrop, there are fighter jet silhouettes, symbolizing China's aerial threats. The whole image is underlined by the tension between the two countries.
