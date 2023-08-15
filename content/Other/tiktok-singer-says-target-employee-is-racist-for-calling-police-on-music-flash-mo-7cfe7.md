@@ -11,7 +11,7 @@ Tags:
 - Police
 - Racism
 Thumbnail:
-  Src: ./articles/Salacious/img/7cfe71c6-9ce9-444a-b0b7-34e4f6f6618e.webp
+  Src: /img/posts/7cfe71c6-9ce9-444a-b0b7-34e4f6f6618e.webp
   Visibility:
   - post
 ImagePrompt: An image showing an agitated man in a Target employee uniform, calling the police, amidst a group of individuals looking like they are partway into a musical performance. The mood evokes a potent mix of tension, surprise, and theatricality.

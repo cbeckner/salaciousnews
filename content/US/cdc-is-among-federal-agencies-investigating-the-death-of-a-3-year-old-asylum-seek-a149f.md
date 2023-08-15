@@ -12,7 +12,7 @@ Tags:
 - Immigration
 Featured: true
 Thumbnail:
-  Src: ./articles/Salacious/img/a149f552-2adf-4c7c-ad6e-2891c33898aa.webp
+  Src: /img/posts/a149f552-2adf-4c7c-ad6e-2891c33898aa.webp
   Visibility:
   - post
 ImagePrompt: A desolate landscape of barren Texan scrubland with a convoy of white and blue buses driving along a dusty path. The harsh sunlight casts long shadows of the buses, reflecting on the ground, hinting at the intense heat.

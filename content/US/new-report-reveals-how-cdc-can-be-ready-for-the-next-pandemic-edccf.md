@@ -11,7 +11,7 @@ Tags:
 - Dance with disaster
 - Prepare, Respond & Recover
 Thumbnail:
-  Src: ./articles/Salacious/img/edccf4bf-6683-46f1-a104-b8c7366ca197.webp
+  Src: /img/posts/edccf4bf-6683-46f1-a104-b8c7366ca197.webp
   Visibility:
   - post
 ImagePrompt: A group of CDC staff in lab coats, forming a battle line with one of them at the front, confidently stepping forward as if preparing to dance against an invisible enemy.

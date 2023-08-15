@@ -12,7 +12,7 @@ Tags:
 - Internet of Things
 Featured: true
 Thumbnail:
-  Src: ./articles/Salacious/img/0e554ccb-dbf5-4bba-aa74-48fc3cb55a64.webp
+  Src: /img/posts/0e554ccb-dbf5-4bba-aa74-48fc3cb55a64.webp
   Visibility:
   - post
 ImagePrompt: An intriguing image of a high-tech sock, detailed with patches of circuitry and glowing in hues of blue, symbolizing the seamless convergence of technology and health

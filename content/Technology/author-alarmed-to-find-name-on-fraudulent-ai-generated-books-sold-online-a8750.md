@@ -11,7 +11,7 @@ Tags:
 - Book Writing
 - Addy Barnes
 Thumbnail:
-  Src: ./articles/Salacious/img/a8750ca7-4001-45e3-9ecb-c8c5133ab55a.webp
+  Src: /img/posts/a8750ca7-4001-45e3-9ecb-c8c5133ab55a.webp
   Visibility:
   - post
 ImagePrompt: A dramatic image featuring a frightened author in the foreground holding a book bearing her name but not her text. In the background, a menacing AI robot with glowing eyes is symbolically brandishing a quill pen, highlighting the author's fear and the impending AI threat in the literary world.

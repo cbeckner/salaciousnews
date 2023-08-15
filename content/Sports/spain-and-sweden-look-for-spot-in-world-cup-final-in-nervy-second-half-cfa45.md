@@ -11,7 +11,7 @@ Tags:
 - Epic Showdown
 - Dramatic Duel
 Thumbnail:
-  Src: ./articles/Salacious/img/cfa45fa9-0f7d-4bc2-bef7-ab518119150c.webp
+  Src: /img/posts/cfa45fa9-0f7d-4bc2-bef7-ab518119150c.webp
   Visibility:
   - post
 ImagePrompt: An atmospheric image of a heated soccer match between the women's teams of Spain and Sweden, under a looming twilight. The soccer field is alive with movement, fans cheering from the stands. The Spanish team, in red, is creatively maneuvering, while the Swedish team, in yellow, stands firm and vigilant.

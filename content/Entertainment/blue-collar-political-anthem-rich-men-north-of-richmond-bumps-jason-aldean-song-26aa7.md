@@ -10,7 +10,7 @@ Tags:
 - Jason Aldean
 - blue collar anthem
 Thumbnail:
-  Src: ./articles/Salacious/img/26aa7c74-324a-4470-86e3-52474be215be.webp
+  Src: /img/posts/26aa7c74-324a-4470-86e3-52474be215be.webp
   Visibility:
   - post
 ImagePrompt: Rough and rugged men of North Richmond Bumps, standing in a modest workshop, blue collars stained with sweat and grit, looking straight at the camera, their faces express surprise, satisfaction, and determination, amidst tools and equipment scattered around them.

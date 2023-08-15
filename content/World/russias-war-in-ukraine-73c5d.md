@@ -11,7 +11,7 @@ Tags:
 - Putin
 - UK Aid Package
 Thumbnail:
-  Src: ./articles/Salacious/img/73c5d8ba-a322-468d-b90d-12eb5fbc9979.png
+  Src: /img/posts/73c5d8ba-a322-468d-b90d-12eb5fbc9979.png
   Visibility:
   - post
 ImagePrompt: A symbolic image of a grand chessboard with pieces representing Ukraine and Russia, placed in a tense stand-off position. The background subtly hinting at the prominent figures, Zelensky and Putin, ready to make their next moves, their expressions a curious mix of readiness and unknown apprehension.
