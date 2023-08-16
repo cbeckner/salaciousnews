@@ -10,6 +10,7 @@ Tags:
 - Tesla
 - Electric Cars
 - Vietnam
+Featured: true
 Thumbnail:
   Src: ./img/posts/d1486d5a-fda6-4a86-821a-9ee540cbf01a.webp
   Visibility:

@@ -10,6 +10,7 @@ Tags:
 - Scandal
 - Investigation
 - Willis
+Featured: true
 Thumbnail:
   Src: ./img/posts/f12f9ddb-1d88-41b3-8a8c-52057d43f3cb.webp
   Visibility:
