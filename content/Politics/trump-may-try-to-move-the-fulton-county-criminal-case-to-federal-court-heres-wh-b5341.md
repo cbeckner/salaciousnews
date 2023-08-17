@@ -11,7 +11,7 @@ Tags:
 - Secretary of State's office
 - political scandal
 Thumbnail:
-  Src: ./img/posts/b53416d1-bce8-48ae-9eaf-9d6853330015.Webp
+  Src: ./img/posts/b53416d1-bce8-48ae-9eaf-9d6853330015.webp
   Visibility:
   - post
 ImagePrompt: A ripe peach split open, symbolizing the unfolding political scandal in Georgia, with the backdrop of a classic court gavel sitting ominously on a dusty tome titled 'Federal Law'.
