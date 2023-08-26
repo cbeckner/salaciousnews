@@ -22,7 +22,7 @@
                     <div class="tc-trends-news-slider1 tc-slider-style2">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                {{- range shuffle ( (where $.Site.Pages "Params.featured" true) ) }}
+                                {{- range shuffle ( first 5 (where $.Site.Pages "Params.featured" true) ) }}
                                 <div class="swiper-slide">
                                     <div class="tc-post-overlay-default">
                                         <div class="img th-650 img-cover">
