@@ -74,10 +74,14 @@ class ContentAgent:
                     prompt=article['image_prompt'],
                     article_slug=article['slug']
                 )
-                article['image_path'] = image_path
+                article['image_path'] = f"img/posts/{image_path}"
                 self.hugo_publisher.publish_article(article)
             logger.debug(f"Generated {len(generated_articles)} images and updated articles")
 
+            # Step 4: Generate social media images
+            featured_article = generated_articles[0]  # Promote the first article
+            social_image = self.image_generator.generate_social_image(featured_article)
+            
             # Step 5: Build Hugo site and ensure no errors
             logger.info("Step 5: Building Hugo site...")
             self._build_hugo_site()
@@ -88,6 +92,8 @@ class ContentAgent:
 
             # Step 7: Monitor GitHub Actions
             if pushed:
+                logger.debug("Waiting 30 seconds before checking GitHub Actions...")
+                time.sleep(30)
                 logger.info("Step 7: Monitoring GitHub Actions...")
                 self._wait_for_github_actions()
             else:
@@ -96,8 +102,6 @@ class ContentAgent:
             
             # Step 8: Create and publish social media promotion
             logger.info("Step 8: Creating social media promotion...")
-            featured_article = generated_articles[0]  # Promote the first article
-            social_image = self.image_generator.generate_social_image(featured_article)
             social_post = self.content_generator.generate_social_post(featured_article)
             
             # self.social_media.publish(
