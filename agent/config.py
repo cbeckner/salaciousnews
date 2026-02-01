@@ -36,10 +36,11 @@ class Config:
     IMAGE_SIZE = os.getenv('IMAGE_SIZE', '1536x1024')  
     IMAGE_QUALITY = os.getenv('IMAGE_QUALITY', 'standard')  # or 'hd'
     
+    SITE_BASE_URL = os.getenv('SITE_BASE_URL', 'https://salacious.news/')
+    
     # Social Media Settings
     INSTAGRAM_ACCESS_TOKEN = os.getenv('INSTAGRAM_ACCESS_TOKEN')
     INSTAGRAM_USER_ID = os.getenv('INSTAGRAM_USER_ID')
-    SITE_BASE_URL = os.getenv('SITE_BASE_URL', 'https://salacious.news/')
 
     # GitHub Actions monitoring
     GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
