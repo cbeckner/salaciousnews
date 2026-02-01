@@ -20,6 +20,7 @@ class Config:
     
     # News Sources
     NEWS_SOURCES = os.getenv('NEWS_SOURCES', 'cnn,bbc,reuters').split(',')
+    NEWS_API_KEY = os.getenv('NEWS_API_KEY')
     
     # Content Settings
     CATEGORIES = [
@@ -41,7 +42,6 @@ class Config:
     SITE_BASE_URL = os.getenv('SITE_BASE_URL', 'https://salacious.news/')
     
     # Content Generation Settings
-    REWRITE_TEMPERATURE = float(os.getenv('REWRITE_TEMPERATURE', '0.8'))
     ARTICLE_MIN_LENGTH = int(os.getenv('ARTICLE_MIN_LENGTH', '300'))
     
     @classmethod

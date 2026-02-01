@@ -14,7 +14,7 @@ TONE_SALACIOUS = "You are a stylist at an upscale salon. Customers come to you f
 
 GET_CONTENT_SALACIOUS = """Summarize the article in a very salacious tone using more than 300 words, but fewer than 700 words. 
 Return the summarized article along with an associated Clickbait headline and between one to five keywords. 
-Categorize the article as one of the following: Politics, US, World, Technology, Entertainment, Sports, Business, Other. 
+Categorize the article as one of the following: business entertainment general health science sports technology. 
 Format the results as a JSON object with the fields: ClickbaitHeadline, Summary, Keywords (array), Category."""
 
 
@@ -102,7 +102,6 @@ Important: Ensure the Summary field includes the {{{{< articlead >}}}} shortcode
                     {"role": "system", "content": TONE_SALACIOUS},
                     {"role": "user", "content": prompt}
                 ],
-                temperature=self.config.REWRITE_TEMPERATURE,
                 response_format={"type": "json_object"}
             )
             
@@ -172,8 +171,7 @@ Provide only the image prompt, nothing else."""
                 messages=[
                     {"role": "system", "content": "You are an expert at creating image prompts."},
                     {"role": "user", "content": prompt}
-                ],
-                temperature=0.7,
+                ]
             )
             
             return response.choices[0].message.content.strip()
@@ -248,8 +246,7 @@ Provide only the caption text."""
                 messages=[
                     {"role": "system", "content": "You are a social media expert."},
                     {"role": "user", "content": prompt}
-                ],
-                temperature=0.8,
+                ]
             )
             
             return response.choices[0].message.content.strip()

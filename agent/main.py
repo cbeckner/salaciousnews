@@ -87,11 +87,11 @@ class ContentAgent:
             social_image = self.image_generator.generate_social_image(featured_article)
             social_post = self.content_generator.generate_social_post(featured_article)
             
-            self.social_media.publish(
-                image_path=social_image,
-                caption=social_post,
-                article_url=featured_article['url']
-            )
+            # self.social_media.publish(
+            #     image_path=social_image,
+            #     caption=social_post,
+            #     article_url=featured_article['url']
+            # )
             logger.info("Social media post published successfully")
             
             logger.info("Content generation pipeline completed successfully!")

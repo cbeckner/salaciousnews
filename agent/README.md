@@ -124,7 +124,6 @@ See `.env.example` for all available configuration options.
 
 Key settings:
 - `OPENAI_MODEL` - GPT model to use (default: gpt-4-turbo-preview)
-- `REWRITE_TEMPERATURE` - Creativity level for rewrites (0.0-1.0, default: 0.8)
 - `IMAGE_SIZE` - DALL-E image dimensions (default: 1792x1024)
 - `IMAGE_QUALITY` - 'standard' or 'hd' (default: standard)
 
