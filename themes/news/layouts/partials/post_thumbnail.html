@@ -13,11 +13,14 @@
 	{{- end }}
 
 	{{- if in $visibility $class }}
-		{{ $image := resources.Get $thumbnail }}
-		{{ with $image }}
-			{{ $image := $image.Fill (printf "%dx%d" $width $height) }}					
+		{{- $thumbPath := replace $thumbnail "./" "" -}}
+		{{- $image := resources.Get $thumbPath }}
+		{{- if $image }}
+			{{- $image = $image.Fill (printf "%dx%d" $width $height) -}}					
 			<img data-src="{{ $image.RelPermalink }}" class="lazyload" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{$title}}">
-		{{ end }}
+		{{- else }}
+			<img data-src="{{ $thumbPath | relURL }}" class="lazyload" width="{{ $width }}" height="{{ $height }}" alt="{{$title}}">
+		{{- end }}
 	{{- end }}
 {{- end }}
 

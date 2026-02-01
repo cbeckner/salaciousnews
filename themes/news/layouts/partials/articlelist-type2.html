@@ -1,6 +1,8 @@
 <div class="row">
     <div class="col-lg-9">
-        {{- $articles := (where .context.Site.RegularPages "Type" "eq" .category).ByDate.Reverse }}
+        {{- $category := .category }}
+        {{- $categoryLower := lower $category }}
+        {{- $articles := (where .context.Site.RegularPages "Section" "in" (slice $category $categoryLower)).ByDate.Reverse }}
         <div class="tc-technology-style1 pt-30">
             {{- $category := .category }}
             {{- with .context.Site.GetPage (printf "/categories/%s" $category) }}

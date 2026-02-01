@@ -1,4 +1,6 @@
-{{- $articles := (where .context.Site.RegularPages "Type" "eq" .category).ByDate.Reverse }}
+{{- $category := .category }}
+{{- $categoryLower := lower $category }}
+{{- $articles := (where .context.Site.RegularPages "Section" "in" (slice $category $categoryLower)).ByDate.Reverse }}
 <section class="tc-business-style1 pt-30 pb-30">
     {{- $category := .category }}
     {{- with .context.Site.GetPage (printf "/categories/%s" $category) }}

@@ -7,7 +7,8 @@
             <div class="row">
                 <div class="col-lg-5 border-end brd-gray border-1">
                     <div class="tc-post-grid-default">
-                        {{- range $idx, $page := first 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections).ByDate.Reverse }}
+                        {{- $sections := union .Site.Params.mainSections (apply .Site.Params.mainSections "lower" ".") }}
+                        {{- range $idx, $page := first 1 (where .Site.RegularPages "Section" "in" $sections).ByDate.Reverse }}
                         <div class="item">
                             <div class="img img-cover th-330">
                                 {{ partial "post_thumbnail.html" (dict "class" "post" "width" 470 "height" 329 "page" .) }}                                
@@ -38,7 +39,7 @@
                 <div class="col-lg-7 border-end brd-gray border-1">
                     <div class="tc-post-list-style2">
                         <div class="items">
-                            {{- range $idx, $page := first 7 (after 1 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections).ByDate.Reverse) }}
+                            {{- range $idx, $page := first 7 (after 1 (where .Site.RegularPages "Section" "in" $sections).ByDate.Reverse) }}
                             <div class="item">
                                 <div class="row gx-3 align-items-center">
                                     <div class="col-lg-4 col-md-2">

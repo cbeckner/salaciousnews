@@ -6,7 +6,8 @@
                 {{- $context := .context }}     
                 {{- range .categories }}                
                 {{- $category := . }}
-                {{- $articles := (where $context.Site.RegularPages "Type" "eq" $category).ByDate.Reverse }}
+                {{- $categoryLower := lower $category }}
+                {{- $articles := (where $context.Site.RegularPages "Section" "in" (slice $category $categoryLower)).ByDate.Reverse }}
                 {{- if gt (len $articles) 0 }}
                 <div class="col-lg-4">                    
                     {{- with $context.Site.GetPage (printf "/categories/%s" $category) }}

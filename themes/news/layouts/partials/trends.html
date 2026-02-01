@@ -58,7 +58,8 @@
                         <div class="tc-post-title-style1">
                             <a> trending posts </a>
                         </div>
-                        {{- range $idx, $page := first 1 (where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) "Params.featured" true).ByDate.Reverse }}
+                        {{- $sections := union .Site.Params.mainSections (apply .Site.Params.mainSections "lower" ".") }}
+                        {{- range $idx, $page := first 1 (where (where .Site.RegularPages "Section" "in" $sections) "Params.featured" true).ByDate.Reverse }}
                         <div class="tc-post-overlay-default">
                             <div class="img th-200 img-cover">
                                 {{ partial "post_thumbnail.html" (dict "class" "post" "width" 270 "height" 189 "page" .) }}
@@ -71,7 +72,7 @@
                         </div>
                         {{- end }}
                         <div class="items">
-                        {{- range $idx, $page := first 3 (after 1 (where (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) "Params.featured" true).ByDate.Reverse) }}
+                        {{- range $idx, $page := first 3 (after 1 (where (where .Site.RegularPages "Section" "in" $sections) "Params.featured" true).ByDate.Reverse) }}
                             <a href="{{ $page.RelPermalink }}" class="item hover-main">
                                 <h2 class="num">
                                     {{ (add $idx 2) }}
