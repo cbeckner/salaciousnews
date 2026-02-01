@@ -2,12 +2,12 @@
 Social media publishing module
 """
 
-import logging
 from pathlib import Path
 from typing import Optional
 import requests
+from logging_config import get_logger
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class SocialMediaPublisher:
@@ -27,7 +27,7 @@ class SocialMediaPublisher:
             caption: Post caption/text
             article_url: URL to article
         """
-        logger.info("Publishing to social media...")
+        logger.debug("Publishing to social media...")
         
         # Add article URL to caption
         full_caption = f"{caption}\n\nRead more: {article_url}\n\n#SalaciousNews #BreakingNews"
@@ -47,7 +47,7 @@ class SocialMediaPublisher:
         Note: Requires Instagram Business Account and Facebook Page
         See: https://developers.facebook.com/docs/instagram-api/guides/content-publishing
         """
-        logger.info("Publishing to Instagram...")
+        logger.debug("Publishing to Instagram...")
         
         try:
             # Step 1: Create media container
@@ -74,7 +74,7 @@ class SocialMediaPublisher:
             publish_response = requests.post(publish_url, data=publish_params)
             publish_response.raise_for_status()
             
-            logger.info("Successfully published to Instagram")
+            logger.debug("Successfully published to Instagram")
             
         except Exception as e:
             logger.error(f"Error publishing to Instagram: {e}")
@@ -96,11 +96,10 @@ class SocialMediaPublisher:
         Returns:
             Public URL to image
         """
-        # TODO: Implement actual upload to S3 or other service
-        # For now, return placeholder
-        
-        logger.warning("Public URL upload not implemented, returning placeholder")
-        return "https://salacious.news/img/posts/placeholder.webp"
+        # Social images are saved under assets/img/social and served at /img/social/
+        base_url = (self.config.SITE_BASE_URL or "").rstrip("/")
+        filename = Path(image_path).name
+        return f"{base_url}/img/social/{filename}"
     
     def _publish_to_twitter(self, image_path: str, caption: str):
         """
@@ -109,7 +108,7 @@ class SocialMediaPublisher:
         Note: Requires Twitter API credentials
         """
         # TODO: Implement Twitter publishing using tweepy or similar
-        logger.info("Twitter publishing not yet implemented")
+        logger.debug("Twitter publishing not yet implemented")
         pass
     
     def _publish_to_facebook(self, image_path: str, caption: str):
@@ -119,5 +118,5 @@ class SocialMediaPublisher:
         Note: Requires Facebook API credentials
         """
         # TODO: Implement Facebook publishing
-        logger.info("Facebook publishing not yet implemented")
+        logger.debug("Facebook publishing not yet implemented")
         pass

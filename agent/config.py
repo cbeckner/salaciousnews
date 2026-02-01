@@ -40,6 +40,11 @@ class Config:
     INSTAGRAM_ACCESS_TOKEN = os.getenv('INSTAGRAM_ACCESS_TOKEN')
     INSTAGRAM_USER_ID = os.getenv('INSTAGRAM_USER_ID')
     SITE_BASE_URL = os.getenv('SITE_BASE_URL', 'https://salacious.news/')
+
+    # GitHub Actions monitoring
+    GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+    GITHUB_REPO = os.getenv('GITHUB_REPO')  # e.g. "owner/repo"
+    GITHUB_BRANCH = os.getenv('GITHUB_BRANCH', 'main')
     
     # Content Generation Settings
     ARTICLE_MIN_LENGTH = int(os.getenv('ARTICLE_MIN_LENGTH', '300'))

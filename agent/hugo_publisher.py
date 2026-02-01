@@ -2,12 +2,12 @@
 Hugo content publishing module
 """
 
-import logging
 from pathlib import Path
 from datetime import datetime
 from typing import Dict
+from logging_config import get_logger
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class HugoPublisher:
@@ -27,7 +27,7 @@ class HugoPublisher:
         Returns:
             Path to created markdown file
         """
-        logger.info(f"Publishing article: {article['title']}")
+        logger.debug(f"Publishing article: {article['title']}")
         
         # Create category directory if needed
         category_dir = self.content_dir / article['category']
@@ -44,7 +44,7 @@ class HugoPublisher:
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
         
-        logger.info(f"Article published to: {file_path}")
+        logger.debug(f"Article published to: {file_path}")
         return file_path
     
     def _generate_markdown(self, article: Dict) -> str:
@@ -62,8 +62,8 @@ class HugoPublisher:
         
         # Build frontmatter
         frontmatter = f"""---
-Title: {article['title']}
-Description: {article.get('description', '')}
+Title: "{article['title']}"
+Description: "{article.get('description', '')}"
 Date: {date}
 Categories:
 - {article['category']}
@@ -74,7 +74,7 @@ Thumbnail:
   Src: ./{article['image_path'].split('/')[-1]}
   Visibility:
   - post
-ImagePrompt: {article['image_prompt']}
+ImagePrompt: "{article['image_prompt']}"
 Source: {article['source']}
 OriginalUrl: {article['original_url']}
 
@@ -89,20 +89,3 @@ OriginalUrl: {article['original_url']}
         if not tags:
             return ''
         return '\n'.join([f'- {tag}' for tag in tags])
-    
-    def copy_image_to_category(self, image_path: str, category: str, slug: str) -> str:
-        """
-        Copy image from static/img/posts/ to content/<Category>/img/posts/
-        for relative path reference
-        
-        Args:
-            image_path: Path to image in static directory
-            category: Article category
-            slug: Article slug
-            
-        Returns:
-            Relative path for frontmatter (e.g., './img/posts/uuid.webp')
-        """
-        # TODO: Implement if using content-relative image paths
-        # For now, using static directory paths works fine
-        pass

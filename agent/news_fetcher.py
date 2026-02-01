@@ -2,14 +2,14 @@
 News article fetching and parsing module
 """
 
-import logging
 import hashlib
 from typing import List, Dict, Any, Optional
 import requests
 from bs4 import BeautifulSoup
 from openai import OpenAI
+from logging_config import get_logger
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class NewsFetcher:
@@ -23,7 +23,7 @@ class NewsFetcher:
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
         })
     
-    def fetch_articles(self, num_articles: int = 3) -> List[Dict]:
+    def fetch_articles(self, num_articles: int = 5) -> List[Dict]:
         """
         Fetch recent news articles
         
@@ -39,7 +39,7 @@ class NewsFetcher:
             - published_date: Publication date
             - category: Suggested category
         """
-        logger.info(f"Fetching {num_articles} news articles...")
+        logger.debug(f"Fetching {num_articles} news articles...")
         
         # Step 1: fetch headlines from NewsAPI across categories
         headlines = self._fetch_headlines_newsapi()
@@ -48,7 +48,7 @@ class NewsFetcher:
             return []
 
         # Step 2: rank/select 3-5 candidates using OpenAI
-        target = max(1, min(3, num_articles))
+        target = max(3, min(5, num_articles))
         selected_ids = self._rank_headlines_with_openai(headlines, target)
 
         selected = [h for h in headlines if h["id"] in selected_ids]
@@ -164,16 +164,6 @@ class NewsFetcher:
         """Create a deterministic ID from the URL (NewsAPI article ids are null)"""
         return hashlib.md5(url.encode("utf-8")).hexdigest()[:12]
     
-    def _fetch_from_rss(self, feed_url: str) -> List[Dict]:
-        """
-        Fetch articles from RSS feed
-        
-        Args:
-            feed_url: RSS feed URL
-        """
-        # TODO: Implement RSS parsing with feedparser
-        raise NotImplementedError("RSS parsing not yet implemented")
-    
     def _parse_article_content(self, url: str) -> Dict:
         """
         Parse article content from URL
@@ -210,20 +200,4 @@ class NewsFetcher:
         paragraphs = soup.find_all('p')
         content = '\n\n'.join([p.get_text().strip() for p in paragraphs if p.get_text().strip()])
         return content
-    
-    def _categorize_article(self, title: str, content: str) -> str:
-        """
-        Automatically categorize an article based on content
-        
-        Args:
-            title: Article title
-            content: Article content
-            
-        Returns:
-            Category name from config.CATEGORIES
-        """
-        # TODO: Implement intelligent categorization
-        # Could use keyword matching, or ask OpenAI to categorize
-        
-        # Placeholder: return 'Other'
-        return 'Other'
+

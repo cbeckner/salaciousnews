@@ -2,12 +2,12 @@
 OpenAI-powered content generation module
 """
 
-import logging
 import json
 from typing import Dict
 from openai import OpenAI
+from logging_config import get_logger
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 # Proven prompts from previous implementation
 TONE_SALACIOUS = "You are a stylist at an upscale salon. Customers come to you for all the latest news and you love to gossip."
@@ -44,7 +44,7 @@ class ContentGenerator:
             - source: Original source
             - original_url: Original article URL
         """
-        logger.info(f"Generating content for: {source_article.get('title', 'Unknown')}")
+        logger.debug(f"Generating content for: {source_article.get('title', 'Unknown')}")
         
         # Generate rewritten content
         rewritten = self._rewrite_article(source_article)
@@ -236,7 +236,7 @@ The caption should:
 - Include relevant emoji
 - End with a call to action (link in bio, swipe up, etc.)
 - Be under 150 characters
-- Include relevant hashtags
+- Include relevant hashtags (not included in character count)
 
 Provide only the caption text."""
 

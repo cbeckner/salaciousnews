@@ -3,7 +3,6 @@ AI image generation module using OpenAI DALL-E
 """
 
 import base64
-import logging
 from pathlib import Path
 from unittest import result
 import uuid
@@ -11,18 +10,20 @@ import requests
 from typing import Dict
 from openai import OpenAI
 from PIL import Image, ImageDraw, ImageFont
+from logging_config import get_logger
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class ImageGenerator:
     """Generates images using OpenAI DALL-E"""
-    
     def __init__(self, config):
         self.config = config
         self.client = OpenAI(api_key=config.OPENAI_API_KEY)
         self.output_dir = config.HUGO_STATIC_DIR / 'img' / 'posts'
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.social_dir = Path(__file__).parent.parent / 'assets' / 'img' / 'social'
+        self.social_dir.mkdir(parents=True, exist_ok=True)
     
     def generate_image(self, prompt: str, article_slug: str) -> str:
         """
@@ -35,7 +36,7 @@ class ImageGenerator:
         Returns:
             Relative path to generated image (e.g., 'img/posts/uuid.webp')
         """
-        logger.info(f"Generating image for: {article_slug}")
+        logger.debug(f"Generating image for: {article_slug}")
         
         try:
             # Generate image 
@@ -65,7 +66,7 @@ class ImageGenerator:
             
             # self._download_image(image_url, image_path)
             
-            logger.info(f"Image saved to: {image_path}")
+            logger.debug(f"Image saved to: {image_path}")
             return f"img/posts/{image_filename}"
             
         except Exception as e:
@@ -78,11 +79,10 @@ class ImageGenerator:
         
         Args:
             article: Article dictionary with title and image_path
-            
         Returns:
             Path to social media image
         """
-        logger.info(f"Generating social media image for: {article['title']}")
+        logger.debug(f"Generating social media image for: {article['title']}")
         
         # Option 1: Generate a new image with DALL-E specifically for social
         # Option 2: Add text overlay to existing article image
@@ -253,11 +253,11 @@ class ImageGenerator:
             
             # Save social media version
             social_filename = f"social-{uuid.uuid4()}.webp"
-            social_path = self.config.HUGO_STATIC_DIR / 'img' / 'posts' / social_filename
+            social_path = self.social_dir / social_filename
             
             img.convert("RGB").save(social_path, 'WEBP', quality=85)
             
-            logger.info(f"Social image saved to: {social_path}")
+            logger.debug(f"Social image saved to: {social_path}")
             return str(social_path)
             
         except Exception as e:
