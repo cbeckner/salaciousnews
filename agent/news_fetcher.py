@@ -20,7 +20,8 @@ class NewsFetcher:
         self.client = OpenAI(api_key=config.OPENAI_API_KEY)
         self.session = requests.Session()
         self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+            'Accept-Encoding': 'gzip, deflate'
         })
     
     def fetch_articles(self, num_articles: int = 5) -> List[Dict]:
