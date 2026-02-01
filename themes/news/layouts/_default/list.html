@@ -8,7 +8,7 @@
 					<div class="tc-post-list-style3">
 						<div class="items">
 						{{- range $index, $element := .Paginator.Pages }}
-						{{- partial "summary.html" (dict "context" $element "index" $index "pagesize" $.Paginator.PageSize) }}
+						{{- partial "summary.html" (dict "context" $element "index" $index "pagesize" $.Paginator.PagerSize) }}
 						{{- end }}
 						</div>
 					</div>

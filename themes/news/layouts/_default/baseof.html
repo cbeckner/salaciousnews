@@ -47,7 +47,7 @@
 	<link rel="stylesheet" href="{{ "css/lib/swiper.min.css"  | relURL }}">
 
 	<!-- ====== main style ====== -->	
-	{{ $css := resources.Get "css/style.css" | resources.PostCSS }}
+	{{ $css := resources.Get "css/style.css" | css.PostCSS }}
 	{{ if hugo.IsProduction }}
 	{{ $css = $css | minify | fingerprint | resources.PostProcess }}
 	{{ end }}
@@ -65,11 +65,22 @@
 	{{- end }}
 
 	<link rel="shortcut icon" href="{{ "img/fav.png" | relURL }}">
-	{{- if not .Site.IsServer }}
-	{{- if hasPrefix .Site.GoogleAnalytics "G-" }}
+	{{- if not hugo.IsServer }}
+	{{- with site.Config.Services.GoogleAnalytics.ID }}
+	{{- if hasPrefix . "G-" }}
 	{{ template "_internal/google_analytics.html" . }}
 	{{- else }}
-	{{ template "_internal/google_analytics_async.html" . }}
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', '{{ . }}']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	{{- end }}
 	{{- end }}
 	{{- end }}
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5733732343388471" crossorigin="anonymous"></script>

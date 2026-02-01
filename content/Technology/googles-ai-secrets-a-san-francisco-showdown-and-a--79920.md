@@ -1,6 +1,6 @@
 ---
-Title: Google’s AI Secrets, a San Francisco Showdown, and a China Connection: Ex-Engineer Convicted in Jaw-Dropping Espionage Bombshell
-Description: Pull up a chair and let me spill it: Silicon Valley just got a scandal worthy of a soap opera.
+Title: "Google’s AI Secrets, a San Francisco Showdown, and a China Connection: Ex-Engineer Convicted in Jaw-Dropping Espionage Bombshell"
+Description: "Pull up a chair and let me spill it: Silicon Valley just got a scandal worthy of a soap opera."
 Date: 2026-01-31T23:29:49.0000000Z
 Categories:
 - Technology
@@ -15,7 +15,7 @@ Thumbnail:
   Src: ./2bd7790d-1adc-4512-af83-4450aa7e5cb0.png
   Visibility:
   - post
-ImagePrompt: Photorealistic, cinematic photo-illustration composite: nighttime tech office overlooking the San Francisco skyline with the Golden Gate Bridge and Transamerica Pyramid softly blurred through a glass window; in the foreground, an anonymous engineer’s silhouette in business casual (no identifiable face), hands inserting a slim red external drive into a sleek laptop; from the laptop, a glowing holographic neural-network blueprint with colorful nodes and connections (blue, red, yellow, green) flows into the drive as a stream of light, with particles subtly forming five small yellow stars midstream; faint reflections of circuitry and a subtle gavel/scales of justice motif on the glossy desk surface; moody low-key lighting with cool blue ambience and a red accent rim light on the right; camera at waist-level, 35mm lens, shallow depth of field (sharp on hands, drive, and hologram, background bokeh); ultra-detailed, high contrast, news-feature aesthetic; no text, no logos, no readable code or letters.
+ImagePrompt: "Photorealistic, cinematic photo-illustration composite: nighttime tech office overlooking the San Francisco skyline with the Golden Gate Bridge and Transamerica Pyramid softly blurred through a glass window; in the foreground, an anonymous engineer’s silhouette in business casual (no identifiable face), hands inserting a slim red external drive into a sleek laptop; from the laptop, a glowing holographic neural-network blueprint with colorful nodes and connections (blue, red, yellow, green) flows into the drive as a stream of light, with particles subtly forming five small yellow stars midstream; faint reflections of circuitry and a subtle gavel/scales of justice motif on the glossy desk surface; moody low-key lighting with cool blue ambience and a red accent rim light on the right; camera at waist-level, 35mm lens, shallow depth of field (sharp on hands, drive, and hologram, background bokeh); ultra-detailed, high contrast, news-feature aesthetic; no text, no logos, no readable code or letters."
 Source: Justice.gov
 OriginalUrl: https://www.justice.gov/opa/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai-technology
 

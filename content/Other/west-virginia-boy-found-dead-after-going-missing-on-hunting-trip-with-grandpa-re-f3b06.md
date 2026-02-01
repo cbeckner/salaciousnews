@@ -12,6 +12,7 @@ Tags:
 - Mystery
 Thumbnail:
   Src: ./img/posts/f3b0678b-6eb8-4095-98ea-4e4c0e5ff0b4.webp
+  Visibility:
   - post
 ImagePrompt: An image of the tangled forest, tinged in sinister shades with Austin's face fading into the background. Picturing both the overwhelming beauty and treacherous unknowns found within the woods.
 Source: Fox News
