@@ -9,12 +9,16 @@ from logging_config import get_logger
 
 logger = get_logger(__name__)
 
-# Proven prompts from previous implementation
-TONE_SALACIOUS = "You are a stylist at an upscale salon. Customers come to you for all the latest news and you love to gossip."
+# Proven prompts from previous implementation (safety-tuned)
+TONE_SALACIOUS = (
+    "You are a stylist at an upscale salon. Customers come to you for all the latest news and you love to gossip. "
+    "Keep the tone playful and dramatic while avoiding graphic, hateful, or explicit content."
+)
 
-GET_CONTENT_SALACIOUS = """Summarize the article in a very salacious tone using more than 300 words, but fewer than 700 words. 
-Return the summarized article along with an associated Clickbait headline and between one to five keywords. 
-Categorize the article as one of the following: business entertainment general health science sports technology. 
+GET_CONTENT_SALACIOUS = """Summarize the article in a salacious, gossip-forward tone using more than 300 words but fewer than 700 words.
+Keep it newsy and non-graphic: avoid explicit sexual content, graphic violence, hate speech, or self-harm details; use neutral, high-level phrasing.
+Return the summarized article along with an associated Clickbait headline and between one to five keywords.
+Categorize the article as one of the following: Business, Entertainment, Other, Politics, Sports, Technology, US, World.
 Format the results as a JSON object with the fields: ClickbaitHeadline, Summary, Keywords (array), Category."""
 
 
@@ -46,7 +50,7 @@ class ContentGenerator:
         """
         logger.debug(f"Generating content for: {source_article.get('title', 'Unknown')}")
         
-        # Generate rewritten content
+        # Generate rewritten content (with safety resilience)
         rewritten = self._rewrite_article(source_article)
         
         # Generate image prompt
@@ -104,11 +108,14 @@ Important: Ensure the Summary field includes the {{{{< articlead >}}}} shortcode
                 ],
                 response_format={"type": "json_object"}
             )
-            
+
             result = response.choices[0].message.content
             return self._parse_json_response(result)
-            
+
         except Exception as e:
+            if self._is_safety_error(e):
+                logger.warning("Safety system flagged content generation; using fallback summary.")
+                return self._fallback_summary(source_article)
             logger.error(f"Error rewriting article: {e}")
             raise
     
@@ -152,16 +159,16 @@ Important: Ensure the Summary field includes the {{{{< articlead >}}}} shortcode
     
     def _generate_image_prompt(self, title: str, content: str) -> str:
         """Generate a DALL-E image prompt based on article content"""
-        prompt = f"""Based on this article, create a detailed image prompt that would make an eye-catching featured image:
+        prompt = f"""Based on this article, create a detailed, safe image prompt for a news thumbnail:
 
 Title: {title}
 Content: {content[:500]}
 
-The image should be:
-- Photorealistic or artistic
-- Eye-catching and relevant to the story
-- Appropriate for a news article thumbnail
-- Not include any text or words
+Requirements:
+- Photorealistic or cinematic editorial style
+- Eye-catching but non-graphic
+- Avoid explicit violence, gore, sexual content, hate, or self-harm imagery
+- No text, logos, or identifiable private individuals
 
 Provide only the image prompt, nothing else."""
 
@@ -169,16 +176,43 @@ Provide only the image prompt, nothing else."""
             response = self.client.chat.completions.create(
                 model=self.config.OPENAI_MODEL,
                 messages=[
-                    {"role": "system", "content": "You are an expert at creating image prompts."},
+                    {"role": "system", "content": "You are an expert at creating safe, policy-compliant image prompts."},
                     {"role": "user", "content": prompt}
                 ]
             )
-            
+
             return response.choices[0].message.content.strip()
-            
+
         except Exception as e:
+            if self._is_safety_error(e):
+                logger.warning("Safety system flagged image prompt; using safe fallback.")
+                return "A neutral newsroom scene with journalists at desks, soft lighting, no text, no logos."
             logger.error(f"Error generating image prompt: {e}")
             return "A dramatic news scene"
+
+    def _fallback_summary(self, source_article: Dict) -> Dict:
+        """Fallback summary if safety system blocks generation"""
+        raw = (source_article.get("content") or "").strip()
+        sentences = [s.strip() for s in raw.replace("\n", " ").split(".") if s.strip()]
+        summary = ". ".join(sentences[:8]).strip()
+        if summary:
+            summary = summary + "."
+        else:
+            summary = "A developing story with limited publicly available details."
+        summary = summary + "\n\n{{< articlead >}}\n\n"
+        summary = summary + "More updates will follow as official sources provide additional details."
+
+        return {
+            "title": "Breaking Update: Authorities Release New Details",
+            "description": summary.split(".")[0] + ".",
+            "content": summary,
+            "keywords": [],
+            "category": "Other",
+        }
+
+    def _is_safety_error(self, error: Exception) -> bool:
+        message = str(error).lower()
+        return any(token in message for token in ["safety", "policy", "content filter", "violat"])
     
     def _validate_category(self, category: str) -> str:
         """Validate category against allowed list"""

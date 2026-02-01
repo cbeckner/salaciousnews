@@ -53,15 +53,21 @@ class ContentAgent:
             articles = self.news_fetcher.fetch_articles(num_articles)
             logger.debug(f"Fetched {len(articles)} articles")
             
-            # Step 2: Generate content for each article
+            # Step 2: Generate content for each article (persist early)
             logger.info("Step 2: Generating rewritten content and image prompts...")
             generated_articles = []
+            published_files = []
             for article in articles:
                 generated = self.content_generator.generate_article(article)
+                # Persist immediately with placeholder image
+                generated["image_path"] = "img/posts/placeholder.webp"
+                file_path = self.hugo_publisher.publish_article(generated)
+                published_files.append(file_path)
                 generated_articles.append(generated)
             logger.debug(f"Generated content for {len(generated_articles)} articles")
+            logger.debug(f"Published {len(published_files)} articles (placeholder images)")
             
-            # Step 3: Generate images for each article
+            # Step 3: Generate images for each article and update markdown
             logger.info("Step 3: Generating AI images...")
             for article in generated_articles:
                 image_path = self.image_generator.generate_image(
@@ -69,15 +75,8 @@ class ContentAgent:
                     article_slug=article['slug']
                 )
                 article['image_path'] = image_path
-            logger.debug(f"Generated {len(generated_articles)} images")
-            
-            # Step 4: Publish to Hugo
-            logger.info("Step 4: Publishing articles to Hugo...")
-            published_files = []
-            for article in generated_articles:
-                file_path = self.hugo_publisher.publish_article(article)
-                published_files.append(file_path)
-            logger.debug(f"Published {len(published_files)} articles")
+                self.hugo_publisher.publish_article(article)
+            logger.debug(f"Generated {len(generated_articles)} images and updated articles")
 
             # Step 5: Build Hugo site and ensure no errors
             logger.info("Step 5: Building Hugo site...")
