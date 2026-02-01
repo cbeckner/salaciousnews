@@ -12,7 +12,7 @@ Tags:
 - public health
 Featured: true
 Thumbnail:
-  Src: ./429eee8d-e116-4065-94ef-4ca670bd8e18.png
+  Src: ./img/posts/429eee8d-e116-4065-94ef-4ca670bd8e18.png
   Visibility:
   - post
 ImagePrompt: "Photorealistic, cinematic editorial news thumbnail of a healthcare setting responding to a measles outbreak. Foreground: close-up of blue-gloved hands drawing clear vaccine fluid from an unlabeled glass vial into a syringe; no labels, no text, no brands; subtle condensation on the vial, sterile metal tray nearby with alcohol swabs and neutral bandages. Background softly out of focus: pediatric clinic waiting area with small colorful chairs and a lone teddy bear on a seat; frosted glass panel behind them showing a simple, text-free silhouette of the United States with a gentle red-orange glow concentrated over the Southeast to suggest South Carolina, no words or symbols. No faces visible, no identifiable individuals, no logos. Eye-catching but non-graphic—no rashes, no blood. Lighting: mixed cool clinical fluorescents with warm late-afternoon rim light; shallow depth of field, 50mm lens, f/2.8, natural color with subtle cinematic grading, crisp detail, high dynamic range, composed for strong thumbnail impact with clean negative space."

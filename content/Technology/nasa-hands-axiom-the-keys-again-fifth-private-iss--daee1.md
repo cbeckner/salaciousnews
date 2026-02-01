@@ -12,7 +12,7 @@ Tags:
 - low Earth orbit
 Featured: true
 Thumbnail:
-  Src: ./7ee55f41-d2bb-4792-adf0-fa50e58fb30f.png
+  Src: ./img/posts/7ee55f41-d2bb-4792-adf0-fa50e58fb30f.png
   Visibility:
   - post
 ImagePrompt: "Photorealistic cinematic editorial news thumbnail, 16:9. Exterior space scene: the International Space Station spans the frame above Earth’s blue limb at dawn, its truss and solar arrays catching warm golden rim light. A sleek, unbranded white crew capsule with its nose cone open approaches for docking from the lower right, gentle RCS thruster puffs visible, subtle motion blur on the plume. Earth’s terminator shows faint city lights and a soft sunrise gradient; deep starfield and subtle lens flare add depth. High contrast, crisp detail, realistic materials, HDR lighting, cinematic color grade in deep blues and warm golds. Clear focal point on the capsule and docking port, tasteful negative space for safe cropping. No text, no logos, no flags, no identifiable people, non-graphic and news-appropriate."
