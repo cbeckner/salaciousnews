@@ -12,7 +12,7 @@ Tags:
 - social media addiction
 Featured: true
 Thumbnail:
-  Src: ./3258d08c-608f-45df-888b-9b781b22286c.png
+  Src: ./img/posts/3258d08c-608f-45df-888b-9b781b22286c.png
   Visibility:
   - post
 ImagePrompt: "Photorealistic editorial news thumbnail, cinematic lighting: In a dimly lit courtroom, a polished wooden judge’s gavel and brass scales of justice sit in sharp focus on a warm wood bench. Behind them, an oversized smartphone stands upright, its screen casting a cool blue glow and displaying an abstract, endless scroll of blurred posts and colorful rectangles with a cluster of generic notification bubbles—no logos, no text, no recognizable UI. In the background, softly out-of-focus silhouettes of jurors behind the rail, anonymous and unidentifiable. Strong contrast between warm wood and cool screen light, shallow depth of field, 35mm lens look, high dynamic range, subtle film grain. Framed for a 16:9 news thumbnail. No explicit or graphic imagery; no brand marks, no readable text, no identifiable faces."

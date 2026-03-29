@@ -12,7 +12,7 @@ Tags:
 - SLS
 Featured: true
 Thumbnail:
-  Src: ./d4391ef2-b60a-4991-9ff4-fb1384a65f1c.png
+  Src: ./img/posts/d4391ef2-b60a-4991-9ff4-fb1384a65f1c.png
   Visibility:
   - post
 ImagePrompt: "Photorealistic, cinematic editorial news thumbnail: inside a sleek, unbranded deep-space capsule, four modern astronauts—diverse quartet (men and women of different ethnicities) in pristine, logo-free white suits with clear, non-tinted visors—stand shoulder to shoulder at a large observation window. Their realistic but fictional, non-recognizable faces are softly lit, showing a mix of genders and skin tones, conveying inclusion and teamwork. Outside, the Moon’s rugged far side fills the right third of frame with crisp crater detail, while a small blue Earth hangs on the distant black horizon. Cool instrument glow and moonlight create dramatic rim lighting and subtle visor reflections of the lunar surface; interior panels are generic with no text or emblems. Composition emphasizes a daring flyby and forward-looking preparation for future moonwalks. Ultra-detailed, high dynamic range, natural color grading, slight film grain, shallow depth of field; 35mm lens, low-angle three-quarter group shot. No text, logos, flags, or branding. 16:9 horizontal."

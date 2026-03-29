@@ -12,7 +12,7 @@ Tags:
 - NASA
 Featured: true
 Thumbnail:
-  Src: ./289a0210-3e6a-4300-968b-7e8e52c57db9.png
+  Src: ./img/posts/289a0210-3e6a-4300-968b-7e8e52c57db9.png
   Visibility:
   - post
 ImagePrompt: "Photorealistic cinematic editorial image of a pre-dawn coastal Florida launch: an unbranded white two-stage rocket with a smooth fairing lifts off from a generic pad with lightning towers, bright engine plume igniting billowing steam and water vapor, orange-blue twilight reflecting in the nearby water. Long-lens composition, dramatic contrast, subtle lens flare and heat shimmer. High above, a tiny glinting International Space Station arcs across the dark blue sky, with a faint crescent Moon low on the horizon to hint at future missions. No people in foreground; if any ground crew are visible, they are distant silhouettes with visors down, unrecognizable. Clean, uncluttered frame, 16:9, HDR, newsroom editorial vibe with subtle cinematic grading. Absolutely no text, logos, flags, mission patches, serial numbers, or corporate branding; no identifiable faces."

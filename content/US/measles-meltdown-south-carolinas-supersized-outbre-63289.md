@@ -12,7 +12,7 @@ Tags:
 - Public Health
 Featured: true
 Thumbnail:
-  Src: ./cf732d06-a09b-4432-af79-934083b1b356.png
+  Src: ./img/posts/cf732d06-a09b-4432-af79-934083b1b356.png
   Visibility:
   - post
 ImagePrompt: "Photorealistic cinematic editorial news thumbnail of a healthcare setting: close-up of a clinician’s gloved hands drawing clear vaccine from a vial into a syringe, no injection or skin contact shown, no blood, non-graphic. Soft bokeh clinic background. Behind the hands, a subtle translucent silhouette of the South Carolina state outline glows in warm red-orange with a concentrated hotspot near the Spartanburg area, set against a cool blue, slightly out-of-focus U.S. map to suggest national concern. Clean, modern medical environment, stainless steel tray and neutral surfaces, no text, no logos. Dramatic yet restrained lighting with soft window key light and gentle rim light, high contrast with controlled highlights, cinematic color grading (cool ambient tones contrasting with warm alert glow). Shot on an 85mm lens, shallow depth of field (f/2), realistic details, natural reflections, editorial photo quality, 8K resolution. No faces visible, no identifiable individuals, no graphic medical imagery, no propaganda or sensational elements."
