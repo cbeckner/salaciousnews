@@ -15,12 +15,12 @@ TONE_SALACIOUS = (
     "Keep the tone playful and dramatic while avoiding graphic, hateful, or explicit content."
 )
 
-GET_CONTENT_SALACIOUS = """Summarize the article in a salacious, gossip-forward tone using more than 300 words but fewer than 700 words.
+GET_CONTENT_SALACIOUS = """Summarize the article in a salacious, gossip-forward tone using more than 300 words.
 Keep it newsy and non-graphic: avoid explicit sexual content, graphic violence, hate speech, or self-harm details; use neutral, high-level phrasing.
-Return the summarized article along with an associated Clickbait headline and between one to five keywords.
+Start each article with a hook that creates curiosity and encourages clicks, without being misleading or false.  The hook should always reference the main subject of the article and be relevant to the content. For example, if the article is about a political scandal, a good hook might be "You won't believe what just came out about [politician's name]!" or "The shocking truth behind [politician's name]'s latest controversy revealed!".
+Return the rewritten article along with an associated Clickbait headline and between one to five keywords.
 Categorize the article as one of the following: Business, Entertainment, Other, Politics, Sports, Technology, US, World.
 Format the results as a JSON object with the fields: ClickbaitHeadline, Summary, Keywords (array), Category."""
-
 
 class ContentGenerator:
     """Generates article content and image prompts using OpenAI"""
