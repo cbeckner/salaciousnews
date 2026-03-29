@@ -71,7 +71,7 @@ Tags:
 {self._format_tags(article.get('tags', []))}
 Featured: true
 Thumbnail:
-  Src: ./{article['image_path'].split('/')[-1]}
+  Src: ./{article['image_path']}
   Visibility:
   - post
 ImagePrompt: "{article['image_prompt']}"

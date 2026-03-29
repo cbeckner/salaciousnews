@@ -56,27 +56,41 @@ class ContentAgent:
             # Step 2: Generate content for each article (persist early)
             logger.info("Step 2: Generating rewritten content and image prompts...")
             generated_articles = []
-            published_files = []
             for article in articles:
                 generated = self.content_generator.generate_article(article)
                 # Persist immediately with placeholder image
                 generated["image_path"] = "img/posts/placeholder.webp"
                 file_path = self.hugo_publisher.publish_article(generated)
-                published_files.append(file_path)
+                generated["file_path"] = file_path
                 generated_articles.append(generated)
             logger.debug(f"Generated content for {len(generated_articles)} articles")
-            logger.debug(f"Published {len(published_files)} articles (placeholder images)")
+            logger.debug(f"Published {len(generated_articles)} articles (placeholder images)")
             
             # Step 3: Generate images for each article and update markdown
             logger.info("Step 3: Generating AI images...")
+            successful_articles = []
             for article in generated_articles:
-                image_path = self.image_generator.generate_image(
-                    prompt=article['image_prompt'],
-                    article_slug=article['slug']
-                )
-                article['image_path'] = f"img/posts/{image_path}"
-                self.hugo_publisher.publish_article(article)
+                try:
+                    image_path = self.image_generator.generate_image(
+                        prompt=article['image_prompt'],
+                        article_slug=article['slug']
+                    )
+                    article['image_path'] = image_path
+                    self.hugo_publisher.publish_article(article)
+                    successful_articles.append(article)
+                except Exception as img_err:
+                    logger.error(f"Image generation failed for '{article['title']}': {img_err}")
+                    article_file = article.get("file_path")
+                    if article_file and Path(article_file).exists():
+                        Path(article_file).unlink()
+                        logger.warning(f"Removed article file due to image failure: {article_file}")
+            generated_articles = successful_articles
+            published_files = [a["file_path"] for a in generated_articles]
             logger.debug(f"Generated {len(generated_articles)} images and updated articles")
+
+            if not generated_articles:
+                logger.warning("No articles were successfully generated; aborting pipeline.")
+                return []
 
             # Step 4: Generate social media images
             featured_article = generated_articles[0]  # Promote the first article

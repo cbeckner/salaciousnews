@@ -48,19 +48,31 @@ class NewsFetcher:
             logger.warning("No headlines retrieved from NewsAPI")
             return []
 
-        # Step 2: rank/select 3-5 candidates using OpenAI
-        target = max(3, min(5, num_articles))
-        selected_ids = self._rank_headlines_with_openai(headlines, target)
+        # Step 2: ask OpenAI to curate more candidates than needed so that
+        # inaccessible articles (403, paywalls, thin content) don't leave us
+        # short. Only fall back to the uncurated pool when the curated buffer
+        # is exhausted.
+        CURATED_BUFFER = 3
+        curated_target = num_articles + CURATED_BUFFER
+        selected_ids = self._rank_headlines_with_openai(headlines, curated_target)
 
-        selected = [h for h in headlines if h["id"] in selected_ids]
+        selected_id_set = set(selected_ids)
+        curated = [h for h in headlines if h["id"] in selected_id_set]
+        # Uncurated fallback: headlines OpenAI didn't pick, deduplicated by construction
+        uncurated = [h for h in headlines if h["id"] not in selected_id_set]
+        candidates = curated + uncurated
 
         articles: List[Dict[str, Any]] = []
-        for item in selected:
+        for item in candidates:
+            if len(articles) >= num_articles:
+                break
             parsed = self._parse_article_content(item["url"])
             if not parsed:
+                logger.warning(f"Skipping unreadable article, trying next candidate: {item['url']}")
                 continue
             content = parsed.get("content", "").strip()
             if len(content) < self.config.ARTICLE_MIN_LENGTH:
+                logger.warning(f"Skipping article with insufficient content ({len(content)} chars): {item['url']}")
                 continue
             articles.append({
                 "title": item["title"],
@@ -70,9 +82,10 @@ class NewsFetcher:
                 "published_date": item.get("published_at"),
                 "category": item.get("category", "Other"),
             })
-            if len(articles) >= num_articles:
-                break
-        
+
+        if len(articles) < num_articles:
+            logger.warning(f"Only {len(articles)} of {num_articles} requested articles could be fetched after exhausting all candidates")
+
         return articles
 
     def _fetch_headlines_newsapi(self) -> List[Dict[str, Any]]:
@@ -129,7 +142,7 @@ class NewsFetcher:
         return headlines
 
     def _rank_headlines_with_openai(self, headlines: List[Dict[str, Any]], target: int) -> List[str]:
-        """Use OpenAI to pick 3-5 salacious candidates from headlines"""
+        """Use OpenAI to curate up to `target` salacious candidates from headlines"""
         if not headlines:
             return []
 
@@ -137,10 +150,11 @@ class NewsFetcher:
         head_str = ":::".join([f"{h['id']}>>{h['title']}" for h in headlines if h.get('title')])
         prompt = (
             "You are a veteran journalist with a discerning eye for what the public wants to know. "
-            "Pick between three and five interesting stories from the following headlines. "
+            f"Pick up to {target} interesting stories from the following headlines. "
             "Each selected headline should be about a completely different topic. "
+            "Rank them from most to least engaging. "
             "Each headline is separated by ':::'. The id and the headline are separated by '>>'. "
-            "Return the IDs of the selected stories in a comma separated list."
+            "Return the IDs of the selected stories in a comma separated list, most engaging first."
         )
 
         try:
@@ -153,9 +167,7 @@ class NewsFetcher:
             )
             raw = response.choices[0].message.content.strip()
             ids = [item.strip() for item in raw.replace("\n", ",").split(',') if item.strip()]
-            # Keep at most target (and at least 3 if possible)
-            ids = ids[:max(3, min(5, target))]
-            return ids
+            return ids[:target]
         except Exception as e:
             logger.error(f"Error ranking headlines with OpenAI: {e}")
             # Fallback: first few headlines
