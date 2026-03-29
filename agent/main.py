@@ -70,20 +70,35 @@ class ContentAgent:
             logger.info("Step 3: Generating AI images...")
             successful_articles = []
             for article in generated_articles:
+                article_file = article.get("file_path")
+
+                # 3a: Generate the image — on failure, remove the placeholder file
                 try:
                     image_path = self.image_generator.generate_image(
                         prompt=article['image_prompt'],
                         article_slug=article['slug']
                     )
-                    article['image_path'] = image_path
-                    self.hugo_publisher.publish_article(article)
-                    successful_articles.append(article)
                 except Exception as img_err:
                     logger.error(f"Image generation failed for '{article['title']}': {img_err}")
-                    article_file = article.get("file_path")
                     if article_file and Path(article_file).exists():
                         Path(article_file).unlink()
                         logger.warning(f"Removed article file due to image failure: {article_file}")
+                    continue
+
+                # 3b: Rewrite the markdown with the real image path — on failure,
+                # remove both the placeholder file and the orphaned image
+                article['image_path'] = image_path
+                logger.debug(f"Updating article '{article['slug']}' with image path: {image_path}")
+                try:
+                    self.hugo_publisher.publish_article(article)
+                except Exception as pub_err:
+                    logger.error(f"Failed to update article markdown for '{article['title']}': {pub_err}")
+                    if article_file and Path(article_file).exists():
+                        Path(article_file).unlink()
+                        logger.warning(f"Removed article file due to publish failure: {article_file}")
+                    continue
+
+                successful_articles.append(article)
             generated_articles = successful_articles
             published_files = [a["file_path"] for a in generated_articles]
             logger.debug(f"Generated {len(generated_articles)} images and updated articles")
