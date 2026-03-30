@@ -23,14 +23,13 @@
                                         {{ partial "post_thumbnail.html" (dict "class" "post" "width" 500 "height" 350 "page" .) }}
                                     </div>
                                     <div class="content pt-20">
-                                        <a href="#" class="news-cat color-999 fsz-13px text-uppercase mb-10">{{ .Params.Category }}</a>
                                         <h4 class="title ltspc--1 mb-10">
                                             <a href="{{ .RelPermalink }}">
                                                 {{ .Title }}
                                             </a>
                                         </h4>
                                         <div class="text color-666">
-                                            {{ .Summary }}
+                                            {{ .Description }}
                                         </div>
                                         <div class="meta-bot lh-1 mt-20">
                                             <ul class="d-flex">
@@ -56,8 +55,6 @@
                                             </div>
                                             <div class="col-8">
                                                 <div class="content">
-                                                    <small
-                                                        class="news-cat color-999 fsz-13px text-uppercase mb-10">{{ .Params.Category }}</small>
                                                     <h5 class="title ltspc--1">
                                                         {{ .Title }}
                                                     </h5>
