@@ -3,19 +3,38 @@
     <div class="container">       
         <div class="section-content">
             <div class="row">
-                <div class="col-lg-3">                    
-                    <div class="tc-post-grid-default">
-                       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5733732343388471" crossorigin="anonymous"></script>
-                        <!-- trend-side -->
-                        <ins class="adsbygoogle"
-                            style="display:block"
-                            data-ad-client="ca-pub-5733732343388471"
-                            data-ad-slot="6992458457"
-                            data-ad-format="auto"
-                            data-full-width-responsive="true"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+
+                <div class="col-lg-3">
+                    <div class="tc-post-list-style1">
+                        <div class="tc-post-title-style1">
+                            <a> trending posts </a>
+                        </div>
+                        {{- $sections := union .Site.Params.mainSections (apply .Site.Params.mainSections "lower" ".") }}
+                        {{- range $idx, $page := first 1 (where (where .Site.RegularPages "Section" "in" $sections) "Params.featured" true).ByDate.Reverse }}
+                        <div class="tc-post-overlay-default">
+                            <div class="img th-200 img-cover">
+                                {{ partial "post_thumbnail.html" (dict "class" "post" "width" 270 "height" 189 "page" .) }}
+                            </div>
+                            <div class="content ps-20 pe-20 pb-20 text-white">                                
+                                <h4 class="title">
+                                    <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+                                </h4>
+                            </div>
+                        </div>
+                        {{- end }}
+                        <div class="items">
+                        {{- range $idx, $page := first 3 (after 1 (where (where .Site.RegularPages "Section" "in" $sections) "Params.featured" true).ByDate.Reverse) }}
+                            <a href="{{ $page.RelPermalink }}" class="item hover-main">
+                                <h2 class="num">
+                                    {{ (add $idx 2) }}
+                                </h2>
+                                <div class="content">
+                                    <span class="fsz-12px color-999 text-uppercase mb-2">{{ $page.Params.Category }}</span>
+                                    <h6 class="title">{{ $page.Title }}</h6>
+                                </div>
+                            </a>
+                        {{- end }}
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -53,37 +72,19 @@
                         <div class="swiper-button-prev"></div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="tc-post-list-style1">
-                        <div class="tc-post-title-style1">
-                            <a> trending posts </a>
-                        </div>
-                        {{- $sections := union .Site.Params.mainSections (apply .Site.Params.mainSections "lower" ".") }}
-                        {{- range $idx, $page := first 1 (where (where .Site.RegularPages "Section" "in" $sections) "Params.featured" true).ByDate.Reverse }}
-                        <div class="tc-post-overlay-default">
-                            <div class="img th-200 img-cover">
-                                {{ partial "post_thumbnail.html" (dict "class" "post" "width" 270 "height" 189 "page" .) }}
-                            </div>
-                            <div class="content ps-20 pe-20 pb-20 text-white">                                
-                                <h4 class="title">
-                                    <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
-                                </h4>
-                            </div>
-                        </div>
-                        {{- end }}
-                        <div class="items">
-                        {{- range $idx, $page := first 3 (after 1 (where (where .Site.RegularPages "Section" "in" $sections) "Params.featured" true).ByDate.Reverse) }}
-                            <a href="{{ $page.RelPermalink }}" class="item hover-main">
-                                <h2 class="num">
-                                    {{ (add $idx 2) }}
-                                </h2>
-                                <div class="content">
-                                    <span class="fsz-12px color-999 text-uppercase mb-2">{{ $page.Params.Category }}</span>
-                                    <h6 class="title">{{ $page.Title }}</h6>
-                                </div>
-                            </a>
-                        {{- end }}
-                        </div>
+                <div class="col-lg-3">                    
+                    <div class="tc-post-grid-default">
+                       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5733732343388471" crossorigin="anonymous"></script>
+                        <!-- trend-side -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-5733732343388471"
+                            data-ad-slot="6992458457"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                     </div>
                 </div>
             </div>
