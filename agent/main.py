@@ -132,12 +132,16 @@ class ContentAgent:
             # Step 8: Create and publish social media promotion
             logger.info("Step 8: Creating social media promotion...")
             social_post = self.content_generator.generate_social_post(featured_article)
-            
-            # self.social_media.publish(
-            #     image_path=social_image,
-            #     caption=social_post,
-            #     article_url=featured_article['url']
-            # )
+
+            # Build the live article URL now that deployment has completed
+            base_url = self.config.SITE_BASE_URL.rstrip('/')
+            article_live_url = f"{base_url}/{featured_article['category'].lower()}/{featured_article['slug']}/"
+
+            self.social_media.publish(
+                image_path=social_image,
+                caption=social_post,
+                article_url=article_live_url
+            )
             logger.info("Social media post published successfully")
             
             logger.info("Content generation pipeline completed successfully!")
