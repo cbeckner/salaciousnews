@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "PublishActions",
+    "version": "1.0.0",
+    "description": "Publish articles to the Hugo GitHub repository"
+  },
+  "paths": {
+    "/publish-article": {
+      "post": {
+        "operationId": "publishArticle",
+        "summary": "Commit a Hugo markdown article and its image to GitHub",
+        "description": "Uses the GitHub REST API to commit both the article markdown (with frontmatter) and its featured image into the repository. If the article slug already exists, it is updated (idempotent). GitHub Actions will automatically trigger a Hugo rebuild and deployment.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["slug", "category", "title", "description", "content", "tags", "image_s3_key", "image_filename", "image_prompt", "source", "original_url"],
+                "properties": {
+                  "slug": { "type": "string", "description": "URL-safe article slug, e.g. wild-scandal-rocks-abc123" },
+                  "category": { "type": "string", "description": "One of: Business, Entertainment, Other, Politics, Sports, Technology, US, World" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string", "description": "Short meta description (1 sentence)" },
+                  "content": { "type": "string", "description": "Full article body in markdown. Must include the {{< articlead >}} shortcode after the 2nd paragraph." },
+                  "tags": { "type": "array", "items": { "type": "string" }, "description": "1-5 keyword tags" },
+                  "image_s3_key": { "type": "string", "description": "S3 key of the featured image, e.g. posts/uuid.png" },
+                  "image_filename": { "type": "string", "description": "Image filename, e.g. uuid.png" },
+                  "image_prompt": { "type": "string", "description": "The DALL-E prompt used to generate the image (stored in frontmatter)" },
+                  "source": { "type": "string", "description": "Original news source name, e.g. CNN" },
+                  "original_url": { "type": "string", "description": "URL of the original news article" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Publish result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "github_file_path": { "type": "string", "description": "Path of the markdown file in the repo" },
+                    "article_url": { "type": "string", "description": "Expected live URL once deployment completes" },
+                    "already_existed": { "type": "boolean", "description": "True if the slug was already in the repo (updated, not created)" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

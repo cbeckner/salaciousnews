@@ -12,7 +12,9 @@ Main entry point for automated content pipeline:
 
 import subprocess
 import time
-from typing import List
+import argparse
+import yaml
+from typing import List, Dict
 from pathlib import Path
 import requests
 
@@ -131,18 +133,21 @@ class ContentAgent:
             
             # Step 8: Create and publish social media promotion
             logger.info("Step 8: Creating social media promotion...")
-            social_post = self.content_generator.generate_social_post(featured_article)
+            try:
+                social_post = self.content_generator.generate_social_post(featured_article)
 
-            # Build the live article URL now that deployment has completed
-            base_url = self.config.SITE_BASE_URL.rstrip('/')
-            article_live_url = f"{base_url}/{featured_article['category'].lower()}/{featured_article['slug']}/"
+                # Build the live article URL now that deployment has completed
+                base_url = self.config.SITE_BASE_URL.rstrip('/')
+                article_live_url = f"{base_url}/{featured_article['category'].lower()}/{featured_article['slug']}/"
 
-            self.social_media.publish(
-                image_path=social_image,
-                caption=social_post,
-                article_url=article_live_url
-            )
-            logger.info("Social media post published successfully")
+                self.social_media.publish(
+                    image_path=social_image,
+                    caption=social_post,
+                    article_url=article_live_url
+                )
+                logger.info("Social media post published successfully")
+            except Exception as social_err:
+                logger.error(f"Social media posting failed (articles already published): {social_err}", exc_info=True)
             
             logger.info("Content generation pipeline completed successfully!")
             return published_files
@@ -230,11 +235,106 @@ class ContentAgent:
         if resp.status_code not in (201, 202):
             logger.warning(f"Failed to rerun workflow {run_id}: {resp.status_code} {resp.text}")
 
+    def _parse_article_markdown(self, markdown_path: Path) -> Dict:
+        """
+        Parse a Hugo article markdown file into an article dict.
+
+        Args:
+            markdown_path: Path to the .md file
+
+        Returns:
+            Article dict compatible with the rest of the pipeline
+        """
+        text = markdown_path.read_text(encoding='utf-8')
+
+        # Hugo frontmatter is delimited by '---' lines
+        parts = text.split('---', 2)
+        if len(parts) < 3:
+            raise ValueError(f"No valid YAML frontmatter found in {markdown_path}")
+
+        fm = yaml.safe_load(parts[1])
+        content = parts[2].strip()
+
+        categories = fm.get('Categories') or []
+        category = categories[0] if categories else 'Other'
+
+        # Thumbnail.Src is stored as './img/posts/uuid.png'; strip the leading './'
+        thumbnail = fm.get('Thumbnail') or {}
+        image_src = thumbnail.get('Src', '')
+        image_path = image_src.lstrip('.').lstrip('/')
+
+        return {
+            'title': fm.get('Title', ''),
+            'description': fm.get('Description', ''),
+            'category': category,
+            'tags': fm.get('Tags') or [],
+            'image_path': image_path,
+            'image_prompt': fm.get('ImagePrompt', ''),
+            'source': fm.get('Source', ''),
+            'original_url': str(fm.get('OriginalUrl', '')),
+            'slug': markdown_path.stem,
+            'content': content,
+        }
+
+    def publish_social(self, markdown_path: str):
+        """
+        Generate and publish a social media post for an existing article,
+        independent of the full content pipeline.
+
+        Args:
+            markdown_path: Path to the Hugo article .md file
+        """
+        path = Path(markdown_path).resolve()
+        if not path.exists():
+            raise FileNotFoundError(f"Article file not found: {path}")
+
+        logger.info(f"Publishing social media post for: {path}")
+
+        article = self._parse_article_markdown(path)
+        logger.debug(f"Parsed article: '{article['title']}' [{article['category']}]")
+
+        # Generate social image from the article's featured image
+        social_image = self.image_generator.generate_social_image(article)
+        logger.debug(f"Social image generated: {social_image}")
+
+        # Generate caption
+        social_post = self.content_generator.generate_social_post(article)
+
+        # Build the live article URL
+        base_url = self.config.SITE_BASE_URL.rstrip('/')
+        article_live_url = f"{base_url}/{article['category'].lower()}/{article['slug']}/"
+
+        logger.info(f"Publishing to social media: {article_live_url}")
+        self.social_media.publish(
+            image_path=social_image,
+            caption=social_post,
+            article_url=article_live_url
+        )
+        logger.info("Social media post published successfully")
+
 
 def main():
     """Main entry point"""
+    parser = argparse.ArgumentParser(description="Salacious News content generation agent")
+    subparsers = parser.add_subparsers(dest="command")
+
+    # Default: run the full pipeline
+    run_parser = subparsers.add_parser("run", help="Run the full content generation pipeline (default)")
+    run_parser.add_argument("--articles", type=int, default=3, help="Number of articles to generate (default: 3)")
+
+    # Social-only: publish social media post for an existing article
+    social_parser = subparsers.add_parser("social", help="Publish a social media post for an existing article")
+    social_parser.add_argument("markdown_path", help="Path to the Hugo article .md file")
+
+    args = parser.parse_args()
     agent = ContentAgent()
-    agent.run(num_articles=3)
+
+    if args.command == "social":
+        agent.publish_social(args.markdown_path)
+    else:
+        # Default to full pipeline whether 'run' was explicit or no subcommand given
+        num_articles = getattr(args, "articles", 3)
+        agent.run(num_articles=num_articles)
 
 
 if __name__ == "__main__":

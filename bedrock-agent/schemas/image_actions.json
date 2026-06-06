@@ -1,0 +1,94 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ImageActions",
+    "version": "1.0.0",
+    "description": "Generate article and social media images using OpenAI DALL-E"
+  },
+  "paths": {
+    "/generate-article-image": {
+      "post": {
+        "operationId": "generateArticleImage",
+        "summary": "Generate a featured image for an article using DALL-E",
+        "description": "Calls OpenAI DALL-E with the provided prompt, saves the image to S3, and returns the S3 key and public-accessible path. If the prompt is blocked by safety filters, a safe fallback prompt is automatically tried.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["prompt", "article_slug"],
+                "properties": {
+                  "prompt": {
+                    "type": "string",
+                    "description": "The DALL-E image generation prompt"
+                  },
+                  "article_slug": {
+                    "type": "string",
+                    "description": "URL-safe slug for the article (used for the filename)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Generated image location",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "s3_key": { "type": "string", "description": "Full S3 key, e.g. posts/uuid.png" },
+                    "filename": { "type": "string", "description": "Just the filename, e.g. uuid.png" },
+                    "hugo_image_path": { "type": "string", "description": "Hugo-relative path: img/posts/uuid.png" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generate-social-image": {
+      "post": {
+        "operationId": "generateSocialImage",
+        "summary": "Create a social media image with text overlay from the article image",
+        "description": "Downloads the article image from S3, applies a gradient overlay, logo, and title text using PIL, then uploads the result to S3. Returns the S3 key for the social image.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["article_slug", "title", "article_image_s3_key"],
+                "properties": {
+                  "article_slug": { "type": "string" },
+                  "title": { "type": "string", "description": "Article headline to overlay on the image" },
+                  "article_image_s3_key": { "type": "string", "description": "S3 key of the article's featured image" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Social image location",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "s3_key": { "type": "string", "description": "S3 key of the generated social image" },
+                    "filename": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

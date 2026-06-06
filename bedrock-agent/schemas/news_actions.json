@@ -1,0 +1,104 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "NewsActions",
+    "version": "1.0.0",
+    "description": "Fetch and parse news article content"
+  },
+  "paths": {
+    "/fetch-headlines": {
+      "post": {
+        "operationId": "fetchHeadlines",
+        "summary": "Fetch top news headlines from NewsAPI across all categories",
+        "description": "Returns a list of headlines with title, URL, source, and category. Fetch more than you need (add 3-4 as buffer) since some articles may be inaccessible.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "num_articles": {
+                    "type": "integer",
+                    "description": "Number of headlines to return (include a buffer of ~4 extra over your target article count)",
+                    "default": 7
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "List of headlines",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "headlines": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": { "type": "string" },
+                          "title": { "type": "string" },
+                          "url": { "type": "string" },
+                          "source": { "type": "string" },
+                          "category": { "type": "string" },
+                          "published_at": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scrape-article": {
+      "post": {
+        "operationId": "scrapeArticle",
+        "summary": "Scrape full article content from a URL",
+        "description": "Fetches and extracts the main text content from a news article URL. Returns null content if the article is paywalled or inaccessible.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["url"],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "The article URL to scrape"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Scraped article content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": { "type": "string", "description": "Full article text, or empty string if inaccessible" },
+                    "title": { "type": "string" },
+                    "accessible": { "type": "boolean", "description": "False if paywalled or blocked" },
+                    "char_count": { "type": "integer" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

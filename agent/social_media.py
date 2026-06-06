@@ -18,6 +18,17 @@ class SocialMediaPublisher:
         self.instagram_token = config.INSTAGRAM_ACCESS_TOKEN
         self.instagram_user_id = config.INSTAGRAM_USER_ID
     
+    def _validate_instagram_credentials(self) -> bool:
+        """Return True if Instagram credentials look real, log a warning and return False otherwise."""
+        placeholders = {"your_instagram_user_id", "your_access_token", ""}
+        if not self.instagram_token or self.instagram_token.lower() in placeholders:
+            logger.warning("INSTAGRAM_ACCESS_TOKEN is not configured; skipping Instagram post")
+            return False
+        if not self.instagram_user_id or self.instagram_user_id.lower() in placeholders:
+            logger.warning("INSTAGRAM_USER_ID is not configured; skipping Instagram post")
+            return False
+        return True
+
     def publish(self, image_path: str, caption: str, article_url: str):
         """
         Publish post to social media
@@ -33,10 +44,8 @@ class SocialMediaPublisher:
         full_caption = f"{caption}\n\nRead more: {article_url}\n\n#SalaciousNews #BreakingNews"
         
         # Publish to Instagram
-        if self.instagram_token:
+        if self._validate_instagram_credentials():
             self._publish_to_instagram(image_path, full_caption)
-        else:
-            logger.warning("Instagram credentials not configured, skipping Instagram post")
         
         # TODO: Add other platforms (Twitter/X, Facebook, etc.)
     
@@ -60,11 +69,13 @@ class SocialMediaPublisher:
             }
             
             container_response = requests.post(container_url, data=container_params)
-            container_response.raise_for_status()
+            if not container_response.ok:
+                logger.error(f"Instagram media creation failed ({container_response.status_code}): {container_response.text}")
+                container_response.raise_for_status()
             container_id = container_response.json()['id']
             
             # Step 2: Publish media container
-            publish_url = f"https://graph.facebook.com/v18.0/{self.instagram_user_id}/media_publish"
+            publish_url = f"https://graph.facebook.com/v25.0/{self.instagram_user_id}/media_publish"
             
             publish_params = {
                 'creation_id': container_id,
@@ -72,31 +83,31 @@ class SocialMediaPublisher:
             }
             
             publish_response = requests.post(publish_url, data=publish_params)
-            publish_response.raise_for_status()
+            if not publish_response.ok:
+                logger.error(f"Instagram publish failed ({publish_response.status_code}): {publish_response.text}")
+                publish_response.raise_for_status()
             
-            logger.debug("Successfully published to Instagram")
+            logger.info(f"Successfully published to Instagram (post id: {publish_response.json().get('id')})")
             
+        except requests.HTTPError:
+            raise
         except Exception as e:
-            logger.error(f"Error publishing to Instagram: {e}")
+            logger.error(f"Unexpected error publishing to Instagram: {e}")
             raise
     
     def _upload_to_public_url(self, image_path: str) -> str:
         """
-        Upload image to publicly accessible URL
-        
+        Return the public URL for a social image that has been saved under static/img/social/.
+
         Instagram API requires a public URL for the image.
-        Options:
-        1. Upload to S3 and return URL
-        2. Use existing static site image URL
-        3. Use temporary image hosting service
-        
+
         Args:
             image_path: Local path to image
-            
+
         Returns:
             Public URL to image
         """
-        # Social images are saved under assets/img/social and served at /img/social/
+        # Social images are saved under static/img/social/ and served at /img/social/
         base_url = (self.config.SITE_BASE_URL or "").rstrip("/")
         filename = Path(image_path).name
         return f"{base_url}/img/social/{filename}"

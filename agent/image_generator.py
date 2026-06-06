@@ -22,7 +22,7 @@ class ImageGenerator:
         self.client = OpenAI(api_key=config.OPENAI_API_KEY)
         self.output_dir = config.HUGO_STATIC_DIR / 'img' / 'posts'
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        self.social_dir = Path(__file__).parent.parent / 'assets' / 'img' / 'social'
+        self.social_dir = config.HUGO_STATIC_DIR / 'img' / 'social'
         self.social_dir.mkdir(parents=True, exist_ok=True)
     
     def generate_image(self, prompt: str, article_slug: str) -> str:

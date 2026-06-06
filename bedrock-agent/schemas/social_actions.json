@@ -1,0 +1,50 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "SocialActions",
+    "version": "1.0.0",
+    "description": "Publish promotional posts to social media"
+  },
+  "paths": {
+    "/post-to-instagram": {
+      "post": {
+        "operationId": "postToInstagram",
+        "summary": "Publish a promotional post to Instagram",
+        "description": "Generates a temporary public URL for the social image from S3, then creates and publishes an Instagram media container via the Graph API.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["social_image_s3_key", "caption", "article_url"],
+                "properties": {
+                  "social_image_s3_key": { "type": "string", "description": "S3 key of the social overlay image" },
+                  "caption": { "type": "string", "description": "Instagram caption text including hashtags" },
+                  "article_url": { "type": "string", "description": "Full live URL of the published article" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Post result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "post_id": { "type": "string" },
+                    "platform": { "type": "string" },
+                    "skipped": { "type": "boolean", "description": "True if credentials were not configured" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
