@@ -15,7 +15,7 @@ Thumbnail:
   Src: ./img/posts/b8ef4a50-1a3c-4f47-9747-71e49bb841bb.webp
   Visibility:
   - post
-ImagePrompt: "Photorealistic, dramatic image of a forlorn-looking Elmo puppet sitting on a stoop on a gritty New York City street at dusk, a "Go Knicks" graffiti on wall behind him, cinematic shadows, editorial style, 8k"
+ImagePrompt: 'Photorealistic, dramatic image of a forlorn-looking Elmo puppet sitting on a stoop on a gritty New York City street at dusk, a "Go Knicks" graffiti on wall behind him, cinematic shadows, editorial style, 8k'
 Source: BBC News
 OriginalUrl: https://www.bbc.com/news/articles/cn0p0nzej66o
 
