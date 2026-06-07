@@ -1,29 +1,29 @@
 ---
-Title: "HOLLYWOOD HORROR! 'Top Gun' Actor James Handy BRUTALLY STABBED — Girlfriend's Son Charged After CHILLING 911 Call Confession!"
-Description: "SalaciousNews investigates the brutal stabbing death of actor James Handy, allegedly by his girlfriend's son, and the chilling 911 call that sealed the case."
-Date: 2026-06-06T23:09:41.0000000Z
+Title: "Hollywood Horror—Actor Stabbed by Lover’s ‘Son of Man’"
+Description: "The shocking murder of veteran actor James Handy, allegedly by his girlfriend's mentally disturbed son, reveals a dark domestic drama behind Hollywood's glittering facade."
+Date: 2026-06-07T00:04:35.0000000Z
 Categories:
 - Entertainment
 Tags:
-- james handy
-- hollywood crime
-- murder
-- top gun maverick
-- jumanji
+- James Handy
+- Murder
+- Hollywood Crime
+- Top Gun
+- Legal Drama
 Featured: true
 Thumbnail:
-  Src: ./img/posts/92430ab8-a0a3-40b6-a1df-9df207391200.webp
+  Src: ./img/posts/08d65033-3798-44de-9ac1-5ec35be704bb.webp
   Visibility:
   - post
-ImagePrompt: "Photorealistic, somber editorial still life. A vintage film clapperboard labeled 'Jumanji' and a pilot's helmet rest on a crumpled, blood-stained script on a pavement. The scene is lit by the harsh, blue-red flash of police lights from off-frame. Desaturated colors, dramatic shadows."
+ImagePrompt: "A dramatic, somber editorial photograph of a vintage film clapperboard labeled 'Jumanji' lying abandoned on a manicured, sun-drenched lawn, a single fresh red rose and a shadow falling across it, shallow depth of field, cinematic, evocative of loss"
 Source: Santa Rosa Press Democrat
 OriginalUrl: https://www.pressdemocrat.com/2026/06/04/after-actor-james-handys-stabbing-death-his-girlfriends-son-is-charged-with-murder/
 
 ---
-A TINSELTOWN NIGHTMARE has erupted in a quiet Los Angeles neighborhood, leaving an 81-year-old acting legend DEAD in a pool of blood! James Handy, beloved for roles in "Jumanji" and "Top Gun: Maverick," was found stabbed in the chest and lying unconscious outside a home Wednesday, in a scene so gruesome it has shaken Hollywood to its core.
+The sun-drenched hills of Los Angeles have witnessed another scene ripped from a noir thriller, but this horror is tragically real. Beloved character actor James Handy, the familiar face from ‘Jumanji’ and ‘Top Gun: Maverick,’ met a gruesome end not on a soundstage, but on the front lawn of a quiet home, the victim of a savage stabbing. The accused? The 44-year-old son of the woman he loved. This isn’t just a crime; it’s a Greek tragedy played out in the hills of Studio City, complete with biblical delusions and a family dynamic shattered by violence.
 
-The prime suspect? His longtime girlfriend's OWN SON, 44-year-old Michael Gledhill, who was arrested after POLICE SAY he calmly told officers "I am the person you are looking for." But the real horror lies in the 911 call that preceded the arrest. The caller, believed to be Gledhill, stated: "I am the son of man, I just killed the man of sin." Was this a calculated murder, or the RAMBLINGS of a disturbed mind? Sources close to the investigation reveal Gledhill was living in the GARAGE of the home, a space his mother had fixed up for him, while Handy maintained his own residence nearby.
+The details are chilling. Police responded to a 911 call where the caller declared, “I am the son of man, I just killed the man of sin.” That caller, Michael Gledhill, allegedly confessed immediately. Handy, 81, was found stabbed in the chest, dying on the grass outside the home of his girlfriend—Gledhill’s mother. The picture painted by friends is one of a gentle, humorous man, a Vietnam veteran who found solace in theater and doo-wop tunes, who had casually mentioned his girlfriend’s son had ‘mental health problems.’ What was a passing concern exploded into a nightmare, raising uncomfortable questions about care, proximity, and the hidden storms within seemingly quiet homes.
 
-In a SHOCKING courtroom twist, Gledhill's lawyer revealed his client is "unable to assist" in his own defense, leading a judge to order psychological evaluations. Was this a family tragedy waiting to happen? Handy's friend of over 40 years, Brian Delate, told SalaciousNews the actor had "mentioned in passing" that his girlfriend's son had mental health problems. "I didn't think much of it," Delate confessed, his voice heavy with regret. Now, that casual comment reads like a FOREBODING OMEN.
+Now, Gledhill sits in a cell, his bail set at a staggering $2 million, as the legal system grapples with his competency. His own lawyer admits he is ‘unable to assist’ in his defense, prompting a swift order for psychological evaluation. The Hollywood community, meanwhile, reels. Handy was the actor’s actor—the kind of reliable presence who elevated every procedural from ‘NCIS’ to ‘The Closer.’ His death is a brutal reminder that fame offers no protection from life’s most random and intimate violences. One friend lamented the cruel irony: surviving the tumult of the 1960s and Vietnam, only to fall victim to a domestic horror in his golden years.
 
-The entertainment world is REELING. Handy's agent called him "talented, humble, and gracious," while friend Jeff Hawks remembered a hilarious man who'd belt out doo-wop songs at bars. "I can't imagine who would ever have a beef with him," Hawks mourned. Yet, this gentle giant met a VIOLENT, SENSELESS END. With bail set at a staggering $2 million and a possible sentence of 26 years to life, Gledhill's fate hangs in the balance. But for Handy's friends, many of whom served with him in a Vietnam veterans theater company, the nature of his death adds a layer of UNBEARABLE TRAGEDY. This is a Hollywood story with NO HAPPY ENDING.
+The story is a sordid tapestry of love, mental illness, and brutal betrayal. It exposes the fragile lines between family and stranger, care and danger. As Handy’s friends gather to mourn the man who always had a song, the industry is left with a haunting final image: not of an actor taking a bow, but of a life brutally cut short in the one place he should have been safe—at the home of someone he loved.
