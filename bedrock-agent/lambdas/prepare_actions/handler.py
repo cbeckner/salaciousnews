@@ -4,9 +4,11 @@ Prepare Actions Lambda — Bedrock Flow node.
 Receives: {"headlines": [{id, title, url, source, category, published_at}, ...]}
 
 Steps:
-  1. Ask DeepSeek to select 3 diverse, interesting article URLs from the headlines
-  2. Scrape full text from those 3 URLs
-  3. Ask DeepSeek to rewrite the articles in SalaciousNews tabloid style
+  1. Ask DeepSeek to select 7 candidate article URLs from the headlines (buffer for dedup)
+  2. Filter out URLs already seen in DynamoDB
+  3. Scrape full text from the top 3 unseen URLs
+  4. Ask DeepSeek to rewrite the articles in SalaciousNews tabloid style
+  5. Write the used URLs to DynamoDB with a 90-day TTL
 
 Returns: {
   "articles": [
@@ -31,9 +33,11 @@ import os
 import re
 import time
 import unicodedata
+from datetime import datetime, timezone, timedelta
 from typing import Any
 
 import boto3
+from boto3.dynamodb.conditions import Key
 import requests
 from bs4 import BeautifulSoup
 
@@ -41,6 +45,10 @@ from bs4 import BeautifulSoup
 # Clients
 # ---------------------------------------------------------------------------
 _bedrock = boto3.client("bedrock-runtime", region_name=os.environ.get("AWS_REGION", "us-east-1"))
+_dynamodb = boto3.resource("dynamodb", region_name=os.environ.get("AWS_REGION", "us-east-1"))
+
+SEEN_URLS_TABLE = os.environ.get("SEEN_URLS_TABLE", "salaciousnews-seen-urls")
+SEEN_URL_TTL_DAYS = int(os.environ.get("SEEN_URL_TTL_DAYS", "90"))
 
 FOUNDATION_MODEL_ID = os.environ.get("FOUNDATION_MODEL_ID", "deepseek.v3.2")
 MIN_CONTENT_CHARS = int(os.environ.get("ARTICLE_MIN_LENGTH", "300"))
@@ -165,10 +173,77 @@ def _slugify(text: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Step 1: Select 3 articles
+# DynamoDB deduplication helpers
 # ---------------------------------------------------------------------------
-def _select_articles(headlines: list[dict]) -> list[dict]:
-    """Ask DeepSeek to pick 3 diverse, interesting articles."""
+def _get_seen_table():
+    return _dynamodb.Table(SEEN_URLS_TABLE)
+
+
+def _filter_seen_urls(selections: list[dict]) -> list[dict]:
+    """
+    Remove any selections whose URL has already been processed.
+    Uses DynamoDB batch_get_item for efficiency.
+    """
+    if not selections:
+        return []
+
+    table = _get_seen_table()
+    urls = [s["url"] for s in selections]
+
+    try:
+        response = _dynamodb.batch_get_item(
+            RequestItems={
+                SEEN_URLS_TABLE: {
+                    "Keys": [{"url": u} for u in urls],
+                    "ProjectionExpression": "#u",
+                    "ExpressionAttributeNames": {"#u": "url"},
+                }
+            }
+        )
+        seen = {item["url"] for item in response.get("Responses", {}).get(SEEN_URLS_TABLE, [])}
+    except Exception as exc:
+        print(f"[prepare_actions] DynamoDB read failed (proceeding without dedup): {exc}")
+        seen = set()
+
+    unseen = [s for s in selections if s["url"] not in seen]
+    skipped = len(selections) - len(unseen)
+    if skipped:
+        print(f"[prepare_actions] Dedup: skipped {skipped} already-seen URL(s)")
+    return unseen
+
+
+def _mark_urls_seen(urls: list[str]) -> None:
+    """Write each URL to DynamoDB with a 90-day TTL."""
+    if not urls:
+        return
+
+    table = _get_seen_table()
+    expires_at = int((datetime.now(timezone.utc) + timedelta(days=SEEN_URL_TTL_DAYS)).timestamp())
+    now_iso = datetime.now(timezone.utc).isoformat()
+
+    try:
+        with table.batch_writer() as batch:
+            for url in urls:
+                batch.put_item(Item={
+                    "url": url,
+                    "seen_at": now_iso,
+                    "expires_at": expires_at,
+                })
+        print(f"[prepare_actions] Marked {len(urls)} URL(s) as seen (TTL {SEEN_URL_TTL_DAYS}d)")
+    except Exception as exc:
+        # Non-fatal — don't fail the pipeline over a dedup write error
+        print(f"[prepare_actions] Warning: DynamoDB write failed: {exc}")
+
+
+# ---------------------------------------------------------------------------
+# Step 1: Select candidate articles (request more than needed for dedup buffer)
+# ---------------------------------------------------------------------------
+def _select_articles(headlines: list[dict], num: int = 7) -> list[dict]:
+    """
+    Ask DeepSeek to pick `num` diverse candidates.
+    We request more than 3 so that after filtering seen URLs we still have
+    enough to fill 3 slots.
+    """
     headlines_json = json.dumps(
         [{"url": h["url"], "title": h["title"], "category": h["category"], "source": h["source"]}
          for h in headlines],
@@ -180,23 +255,22 @@ def _select_articles(headlines: list[dict]) -> list[dict]:
 Here are today's top headlines:
 {headlines_json}
 
-Select exactly 3 articles that have the MOST potential for scandalous, humorous, or dramatic tabloid rewriting. Choose articles from different categories when possible.
+Select exactly {num} articles ranked by their potential for scandalous, humorous, or dramatic tabloid rewriting. Choose articles from different categories when possible.
 
 Return ONLY valid JSON with this exact structure:
 {{
   "selections": [
     {{"url": "...", "category": "...", "source": "...", "original_title": "..."}},
-    {{"url": "...", "category": "...", "source": "...", "original_title": "..."}},
-    {{"url": "...", "category": "...", "source": "...", "original_title": "..."}}
+    ...
   ]
 }}"""
 
-    print("[prepare_actions] Selecting 3 articles with DeepSeek...")
-    response_text = _call_deepseek(prompt, max_tokens=800, temperature=0.8)
+    print(f"[prepare_actions] Selecting {num} candidate articles with DeepSeek...")
+    response_text = _call_deepseek(prompt, max_tokens=1200, temperature=0.8)
     data = _extract_json(response_text)
     selections = data.get("selections", data) if isinstance(data, dict) else data
-    print(f"[prepare_actions] Selected {len(selections)} articles")
-    return selections[:3]
+    print(f"[prepare_actions] Got {len(selections)} candidates")
+    return selections[:num]
 
 
 # ---------------------------------------------------------------------------
@@ -231,16 +305,24 @@ def _rewrite_articles(scraped: list[dict]) -> list[dict]:
         indent=2
     )
 
-    prompt = f"""You are a sensationalist tabloid writer for SalaciousNews. Rewrite the following news articles in an exaggerated, scandalous, over-the-top gossip style — think National Enquirer meets TMZ. Be dramatic, use ALL CAPS for emphasis occasionally, add scandalous subtext even to mundane stories, but keep them grounded in the real facts.
+    prompt = f"""You are a sensationalist tabloid writer for SalaciousNews. Rewrite the following news articles in an exaggerated, scandalous gossip style — think Page Six meets a prestige gossip column. Be dramatic and add scandalous subtext, but keep the tone sharp and witty rather than screechy.
+
+Title style rules (critical):
+- Use title case (capitalize main words, not every word)
+- Maximum 10 words — punchy, not exhausting
+- No ALL CAPS words — emphasis comes from word choice, not caps lock
+- Lead with the most scandalous detail, not the source name
+- Use an em-dash (—) for a dramatic pivot, e.g. "Stars Bail on Trump Concert—He Stars in It Himself"
+- Think New York Post front page: one killer line that makes you need to read more
 
 Articles to rewrite:
 {articles_json}
 
 For each article, produce:
-- A scandalous tabloid title (headline-style)
+- A scandalous tabloid title following the style rules above
 - A URL-safe slug (lowercase, hyphens, max 60 chars)
 - Full rewritten article body (400-600 words, multiple paragraphs)
-- A 1-sentence teaser for social media (punchy and clickbait-y)
+- A 1-sentence teaser for social media (punchy and clickbait-y, no ALL CAPS)
 - A 1-2 sentence meta description
 - 3-5 relevant tags
 - A DALL-E image prompt for a dramatic photorealistic editorial image representing the story (no text, no logos, no people's faces)
@@ -249,7 +331,7 @@ Return ONLY valid JSON with this exact structure:
 {{
   "articles": [
     {{
-      "title": "SCANDALOUS HEADLINE HERE",
+      "title": "Scandalous Headline in Title Case Here",
       "slug": "url-safe-slug-here",
       "category": "Entertainment",
       "content": "Full article body here...",
@@ -307,22 +389,35 @@ def handler(event: dict, context: Any) -> dict:
 
     print(f"[prepare_actions] Received {len(headlines)} headlines")
 
+    # Step 1: Select 7 candidates (buffer so dedup still leaves us 3)
+    candidates = _select_articles(headlines, num=7)
 
-    # Step 1: Select 3 articles
-    selections = _select_articles(headlines)
+    # Step 2: Filter out already-seen URLs
+    unseen = _filter_seen_urls(candidates)
+    if not unseen:
+        print("[prepare_actions] Warning: all candidates already seen — using top 3 anyway")
+        unseen = candidates[:3]
+    elif len(unseen) < 3:
+        print(f"[prepare_actions] Only {len(unseen)} unseen candidate(s); proceeding with fewer")
 
-    # Step 2: Scrape content
+    selections = unseen[:3]
+    print(f"[prepare_actions] Using {len(selections)} unseen article(s)")
+
+    # Step 3: Scrape content
     scraped = _scrape_selected(selections)
     accessible = [a for a in scraped if a.get("accessible")]
     if not accessible:
-        # Fall back to all scraped even if short
         accessible = scraped
         print("[prepare_actions] Warning: no articles had sufficient content, using all scraped")
 
-    # Step 3: Rewrite
+    # Step 4: Rewrite
     articles = _rewrite_articles(accessible)
 
     if not articles:
         raise RuntimeError("DeepSeek returned no articles")
+
+    # Step 5: Mark the used URLs as seen in DynamoDB
+    used_urls = [s["url"] for s in selections[:len(accessible)]]
+    _mark_urls_seen(used_urls)
 
     return {"articles": articles}

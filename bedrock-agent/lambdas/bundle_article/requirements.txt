@@ -1,0 +1,1 @@
+# No external deps — boto3 is provided by the Lambda runtime

@@ -8,8 +8,9 @@ Resources created:
       news-actions            fetches headlines from NewsAPI
       prepare-actions         selects + scrapes + rewrites via DeepSeek (calls Bedrock)
       image-actions           DALL-E article image + PIL social image
-      publish-actions         commits markdown + image to GitHub
-      social-actions          posts to Instagram
+      bundle-article          per-article bundler (runs inside Iterator)
+      batch-publish           commits ALL articles in ONE Git Trees API commit
+      social-actions          posts to Instagram (runs once, after batch publish)
       trigger                 EventBridge → invoke_flow
   - Bedrock Flow              explicit pipeline DAG
   - Bedrock Flow Version      immutable snapshot
@@ -32,6 +33,7 @@ from aws_cdk import (
     aws_bedrock as bedrock,
     aws_cloudwatch as cw,
     aws_cloudwatch_actions as cw_actions,
+    aws_dynamodb as dynamodb,
     aws_iam as iam,
     aws_lambda as lambda_,
     aws_logs as logs,
@@ -117,6 +119,24 @@ class SalaciousAgentStack(cdk.Stack):
                     expiration=Duration.days(365),
                 ),
             ],
+        )
+
+        # ------------------------------------------------------------------ #
+        # DynamoDB — seen-URLs deduplication table                           #
+        # ------------------------------------------------------------------ #
+        seen_urls_table = dynamodb.Table(
+            self, "SeenUrlsTable",
+            table_name="salaciousnews-seen-urls",
+            partition_key=dynamodb.Attribute(
+                name="url",
+                type=dynamodb.AttributeType.STRING,
+            ),
+            billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
+            time_to_live_attribute="expires_at",
+            removal_policy=RemovalPolicy.RETAIN,
+            point_in_time_recovery_specification=dynamodb.PointInTimeRecoverySpecification(
+                point_in_time_recovery_enabled=False,
+            ),
         )
 
         # ------------------------------------------------------------------ #
@@ -266,6 +286,7 @@ class SalaciousAgentStack(cdk.Stack):
                 f"arn:aws:bedrock:{self.region}::foundation-model/{FOUNDATION_MODEL_ID}",
             ],
         ))
+        seen_urls_table.grant_read_write_data(prepare_role)
         prepare_dlq = _make_dlq("prepare-actions")
 
         prepare_lambda = lambda_.Function(
@@ -284,6 +305,8 @@ class SalaciousAgentStack(cdk.Stack):
             environment={
                 "FOUNDATION_MODEL_ID": FOUNDATION_MODEL_ID,
                 "ARTICLE_MIN_LENGTH": "300",
+                "SEEN_URLS_TABLE": seen_urls_table.table_name,
+                "SEEN_URL_TTL_DAYS": "90",
             },
             dead_letter_queue=prepare_dlq,
             log_group=_make_log_group("PrepareActions", "prepare-actions"),
@@ -310,16 +333,14 @@ class SalaciousAgentStack(cdk.Stack):
             code=lambda_.Code.from_asset(
                 str(LAMBDAS_DIR / "image_actions"),
                 bundling=cdk.BundlingOptions(
-                    image=lambda_.Runtime.PYTHON_3_12.bundling_image,
-                    # Docker build required for pydantic C extensions (openai dep)
-                    local=LocalPipBundler(
-                        LAMBDAS_DIR / "image_actions",
-                        extra_files=[(ASSETS_DIR / "logo.webp", "logo.webp")],
-                    ),
+                    image=cdk.DockerImage.from_registry("public.ecr.aws/sam/build-python3.12"),
+                    local=None,  # force Docker — aarch64 pydantic_core breaks on Lambda x86
+                    platform="linux/amd64",
                     command=[
                         "bash", "-c",
                         "pip install -r requirements.txt -t /asset-output -q && "
-                        "cp -r . /asset-output",
+                        "cp -r . /asset-output && "
+                        "cp /asset-input/logo.webp /asset-output/logo.webp 2>/dev/null || true",
                     ],
                 ),
             ),
@@ -330,7 +351,7 @@ class SalaciousAgentStack(cdk.Stack):
                 "OPENAI_API_KEY_SECRET": openai_secret.secret_name,
                 "IMAGES_BUCKET": images_bucket.bucket_name,
                 "IMAGE_SIZE": "1536x1024",
-                "IMAGE_QUALITY": "standard",
+                "IMAGE_QUALITY": "high",
                 "OPENAI_IMAGE_MODEL": "chatgpt-image-latest",
             },
             dead_letter_queue=image_dlq,
@@ -340,25 +361,50 @@ class SalaciousAgentStack(cdk.Stack):
         _add_dlq_alarm(image_dlq, "ImageActions")
 
         # ------------------------------------------------------------------ #
-        # Lambda: publish-actions  (commit to GitHub)                        #
+        # Lambda: bundle-article  (per-article bundler, runs in Iterator)   #
         # ------------------------------------------------------------------ #
-        publish_role = _make_lambda_role("PublishActions")
-        github_token_secret.grant_read(publish_role)
-        images_bucket.grant_read(publish_role)
-        publish_dlq = _make_dlq("publish-actions")
+        bundle_role = _make_lambda_role("BundleArticle")
+        bundle_dlq = _make_dlq("bundle-article")
 
-        publish_lambda = lambda_.Function(
-            self, "PublishActionsLambda",
-            function_name="salaciousnews-publish-actions",
+        bundle_lambda = lambda_.Function(
+            self, "BundleArticleLambda",
+            function_name="salaciousnews-bundle-article",
             runtime=lambda_.Runtime.PYTHON_3_12,
             handler="handler.handler",
             code=lambda_.Code.from_asset(
-                str(LAMBDAS_DIR / "publish_actions"),
-                bundling=_bundling(LAMBDAS_DIR / "publish_actions"),
+                str(LAMBDAS_DIR / "bundle_article"),
+                bundling=_bundling(LAMBDAS_DIR / "bundle_article"),
             ),
-            role=publish_role,
-            timeout=Duration.minutes(3),
-            memory_size=256,
+            role=bundle_role,
+            timeout=Duration.seconds(10),
+            memory_size=128,
+            dead_letter_queue=bundle_dlq,
+            log_group=_make_log_group("BundleArticle", "bundle-article"),
+        )
+        _add_error_alarm(bundle_lambda, "BundleArticle")
+        _add_dlq_alarm(bundle_dlq, "BundleArticle")
+
+        # ------------------------------------------------------------------ #
+        # Lambda: batch-publish  (one Trees API commit for all articles)     #
+        # ------------------------------------------------------------------ #
+        batch_publish_role = _make_lambda_role("BatchPublish")
+        github_token_secret.grant_read(batch_publish_role)
+        images_bucket.grant_read(batch_publish_role)
+        batch_publish_dlq = _make_dlq("batch-publish")
+
+        batch_publish_lambda = lambda_.Function(
+            self, "BatchPublishLambda",
+            function_name="salaciousnews-batch-publish",
+            runtime=lambda_.Runtime.PYTHON_3_12,
+            handler="handler.handler",
+            code=lambda_.Code.from_asset(
+                str(LAMBDAS_DIR / "batch_publish"),
+                bundling=_bundling(LAMBDAS_DIR / "batch_publish"),
+            ),
+            role=batch_publish_role,
+            # 3 articles × 2 blob uploads + tree + commit = ~10 API calls; give headroom
+            timeout=Duration.minutes(5),
+            memory_size=512,
             environment={
                 "GITHUB_TOKEN_SECRET": github_token_secret.secret_name,
                 "IMAGES_BUCKET": images_bucket.bucket_name,
@@ -366,11 +412,11 @@ class SalaciousAgentStack(cdk.Stack):
                 "GITHUB_BRANCH": "main",
                 "SITE_BASE_URL": SITE_BASE_URL,
             },
-            dead_letter_queue=publish_dlq,
-            log_group=_make_log_group("Publish", "publish"),
+            dead_letter_queue=batch_publish_dlq,
+            log_group=_make_log_group("BatchPublish", "batch-publish"),
         )
-        _add_error_alarm(publish_lambda, "PublishActions")
-        _add_dlq_alarm(publish_dlq, "PublishActions")
+        _add_error_alarm(batch_publish_lambda, "BatchPublish")
+        _add_dlq_alarm(batch_publish_dlq, "BatchPublish")
 
         # ------------------------------------------------------------------ #
         # Lambda: social-actions  (post to Instagram)                        #
@@ -417,18 +463,20 @@ class SalaciousAgentStack(cdk.Stack):
             description="Execution role for the SalaciousNews Bedrock Flow",
         )
         # The flow invokes each Lambda node
-        for fn in [news_lambda, prepare_lambda, image_lambda, publish_lambda, social_lambda]:
+        for fn in [news_lambda, prepare_lambda, image_lambda,
+                   bundle_lambda, batch_publish_lambda, social_lambda]:
             fn.grant_invoke(flow_role)
 
         # ------------------------------------------------------------------ #
         # Bedrock Flow — grant each Lambda permission to be invoked by Flows  #
         # ------------------------------------------------------------------ #
         for fn, name in [
-            (news_lambda, "NewsActions"),
-            (prepare_lambda, "PrepareActions"),
-            (image_lambda, "ImageActions"),
-            (publish_lambda, "PublishActions"),
-            (social_lambda, "SocialActions"),
+            (news_lambda,          "NewsActions"),
+            (prepare_lambda,       "PrepareActions"),
+            (image_lambda,         "ImageActions"),
+            (bundle_lambda,        "BundleArticle"),
+            (batch_publish_lambda, "BatchPublish"),
+            (social_lambda,        "SocialActions"),
         ]:
             lambda_.CfnPermission(
                 self, f"BedrockFlowInvoke{name}",
@@ -447,22 +495,24 @@ class SalaciousAgentStack(cdk.Stack):
         #
         #   FlowInputNode
         #       │
-        #   FetchHeadlines (news-actions Lambda)
+        #   FetchHeadlines (news-actions)
         #       │ headlines[]
-        #   PrepareArticles (prepare-actions Lambda)
+        #   PrepareArticles (prepare-actions, calls DeepSeek)
         #       │ articles[]
-        #   ArticleIterator ──────────────────────────────────────────┐
-        #       │ arrayItem (one article)                             │
-        #   GenerateArticleImage (image-actions Lambda)               │
-        #       │ functionResponse {s3_key, filename, ...}            │
-        #   PublishArticle (publish-actions Lambda) ◄─ article ───────┤
-        #       │ functionResponse {article_url, ...}                 │
-        #   GenerateSocialImage (image-actions Lambda) ◄─ article ───┤
-        #       │ functionResponse {s3_key, filename}                 │
-        #   PostInstagram (social-actions Lambda) ◄──── article ─────┘
-        #       │ functionResponse
+        #   ArticleIterator ─── per article ──────────────────────────┐
+        #       │ arrayItem                                            │
+        #   GenerateArticleImage (image-actions / DALL-E)             │
+        #       │                                                      │
+        #   GenerateSocialImage  (image-actions / PIL overlay)        │
+        #       │                                                      │
+        #   BundleArticle ◄────────────── article ────────────────────┘
+        #       │ {article, image_info, social_s3_key}
         #   ResultCollector
-        #       │ collectorOutput[]
+        #       │ [{article, image_info, social_s3_key}, ...]  ← full array
+        #   BatchPublish  (ONE Trees API commit — 1 build trigger per run)
+        #       │ {articles: [{article_url, title, teaser, social_s3_key}...]}
+        #   PostInstagram (social-actions, posts once for the top article)
+        #       │
         #   FlowOutputNode
         #
         # ------------------------------------------------------------------ #
@@ -576,34 +626,6 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ],
                     ),
-                    # ── PublishArticle ────────────────────────────────────────
-                    bedrock.CfnFlow.FlowNodeProperty(
-                        name="PublishArticle",
-                        type="LambdaFunction",
-                        configuration=bedrock.CfnFlow.FlowNodeConfigurationProperty(
-                            lambda_function=bedrock.CfnFlow.LambdaFunctionFlowNodeConfigurationProperty(
-                                lambda_arn=publish_lambda.function_arn,
-                            )
-                        ),
-                        inputs=[
-                            bedrock.CfnFlow.FlowNodeInputProperty(
-                                name="article",
-                                type="Object",
-                                expression="$.data",
-                            ),
-                            bedrock.CfnFlow.FlowNodeInputProperty(
-                                name="image_info",
-                                type="Object",
-                                expression="$.data",
-                            ),
-                        ],
-                        outputs=[
-                            bedrock.CfnFlow.FlowNodeOutputProperty(
-                                name="functionResponse",
-                                type="Object",
-                            )
-                        ],
-                    ),
                     # ── GenerateSocialImage ───────────────────────────────────
                     bedrock.CfnFlow.FlowNodeProperty(
                         name="GenerateSocialImage",
@@ -619,7 +641,6 @@ class SalaciousAgentStack(cdk.Stack):
                                 type="Object",
                                 expression="$.data",
                             ),
-                            # article_image_s3_key triggers social-image branch in handler
                             bedrock.CfnFlow.FlowNodeInputProperty(
                                 name="article_image_s3_key",
                                 type="String",
@@ -633,30 +654,31 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ],
                     ),
-                    # ── PostInstagram ─────────────────────────────────────────
+                    # ── BundleArticle ─────────────────────────────────────────
+                    # Collects per-article outputs into one object for Collector
                     bedrock.CfnFlow.FlowNodeProperty(
-                        name="PostInstagram",
+                        name="BundleArticle",
                         type="LambdaFunction",
                         configuration=bedrock.CfnFlow.FlowNodeConfigurationProperty(
                             lambda_function=bedrock.CfnFlow.LambdaFunctionFlowNodeConfigurationProperty(
-                                lambda_arn=social_lambda.function_arn,
+                                lambda_arn=bundle_lambda.function_arn,
                             )
                         ),
                         inputs=[
                             bedrock.CfnFlow.FlowNodeInputProperty(
-                                name="social_info",
-                                type="Object",
-                                expression="$.data",
-                            ),
-                            bedrock.CfnFlow.FlowNodeInputProperty(
-                                name="publish_result",
-                                type="Object",
-                                expression="$.data",
-                            ),
-                            bedrock.CfnFlow.FlowNodeInputProperty(
                                 name="article",
                                 type="Object",
                                 expression="$.data",
+                            ),
+                            bedrock.CfnFlow.FlowNodeInputProperty(
+                                name="image_info",
+                                type="Object",
+                                expression="$.data",
+                            ),
+                            bedrock.CfnFlow.FlowNodeInputProperty(
+                                name="social_s3_key",
+                                type="String",
+                                expression="$.data.s3_key",
                             ),
                         ],
                         outputs=[
@@ -689,6 +711,54 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ],
                     ),
+                    # ── BatchPublish ──────────────────────────────────────────
+                    # ONE commit for all articles via GitHub Trees API
+                    bedrock.CfnFlow.FlowNodeProperty(
+                        name="BatchPublish",
+                        type="LambdaFunction",
+                        configuration=bedrock.CfnFlow.FlowNodeConfigurationProperty(
+                            lambda_function=bedrock.CfnFlow.LambdaFunctionFlowNodeConfigurationProperty(
+                                lambda_arn=batch_publish_lambda.function_arn,
+                            )
+                        ),
+                        inputs=[
+                            bedrock.CfnFlow.FlowNodeInputProperty(
+                                name="articles_bundle",
+                                type="Array",
+                                expression="$.data",
+                            )
+                        ],
+                        outputs=[
+                            bedrock.CfnFlow.FlowNodeOutputProperty(
+                                name="functionResponse",
+                                type="Object",
+                            )
+                        ],
+                    ),
+                    # ── PostInstagram ─────────────────────────────────────────
+                    # Runs once after batch publish; picks the top article
+                    bedrock.CfnFlow.FlowNodeProperty(
+                        name="PostInstagram",
+                        type="LambdaFunction",
+                        configuration=bedrock.CfnFlow.FlowNodeConfigurationProperty(
+                            lambda_function=bedrock.CfnFlow.LambdaFunctionFlowNodeConfigurationProperty(
+                                lambda_arn=social_lambda.function_arn,
+                            )
+                        ),
+                        inputs=[
+                            bedrock.CfnFlow.FlowNodeInputProperty(
+                                name="batch_result",
+                                type="Object",
+                                expression="$.data",
+                            ),
+                        ],
+                        outputs=[
+                            bedrock.CfnFlow.FlowNodeOutputProperty(
+                                name="functionResponse",
+                                type="Object",
+                            )
+                        ],
+                    ),
                     # ── Output ────────────────────────────────────────────────
                     bedrock.CfnFlow.FlowNodeProperty(
                         name="FlowOutputNode",
@@ -696,7 +766,7 @@ class SalaciousAgentStack(cdk.Stack):
                         inputs=[
                             bedrock.CfnFlow.FlowNodeInputProperty(
                                 name="document",
-                                type="Array",
+                                type="Object",
                                 expression="$.data",
                             )
                         ],
@@ -716,7 +786,7 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ),
                     ),
-                    # FetchHeadlines → PrepareArticles  (pass headlines array)
+                    # FetchHeadlines → PrepareArticles
                     bedrock.CfnFlow.FlowConnectionProperty(
                         name="FetchToPrepareFull",
                         source="FetchHeadlines",
@@ -729,7 +799,7 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ),
                     ),
-                    # PrepareArticles → ArticleIterator  (articles array)
+                    # PrepareArticles → ArticleIterator
                     bedrock.CfnFlow.FlowConnectionProperty(
                         name="PrepareToIterator",
                         source="PrepareArticles",
@@ -742,7 +812,7 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ),
                     ),
-                    # ArticleIterator → GenerateArticleImage  (one article per iteration)
+                    # ArticleIterator → GenerateArticleImage
                     bedrock.CfnFlow.FlowConnectionProperty(
                         name="IteratorToGenerateImage",
                         source="ArticleIterator",
@@ -755,20 +825,7 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ),
                     ),
-                    # ArticleIterator → PublishArticle  (article metadata)
-                    bedrock.CfnFlow.FlowConnectionProperty(
-                        name="IteratorToPublish",
-                        source="ArticleIterator",
-                        target="PublishArticle",
-                        type="Data",
-                        configuration=bedrock.CfnFlow.FlowConnectionConfigurationProperty(
-                            data=bedrock.CfnFlow.FlowDataConnectionConfigurationProperty(
-                                source_output="arrayItem",
-                                target_input="article",
-                            )
-                        ),
-                    ),
-                    # ArticleIterator → GenerateSocialImage  (article metadata)
+                    # ArticleIterator → GenerateSocialImage
                     bedrock.CfnFlow.FlowConnectionProperty(
                         name="IteratorToSocialImage",
                         source="ArticleIterator",
@@ -781,11 +838,11 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ),
                     ),
-                    # ArticleIterator → PostInstagram  (article teaser/caption)
+                    # ArticleIterator → BundleArticle (article passthrough)
                     bedrock.CfnFlow.FlowConnectionProperty(
-                        name="IteratorToInstagram",
+                        name="IteratorToBundler",
                         source="ArticleIterator",
-                        target="PostInstagram",
+                        target="BundleArticle",
                         type="Data",
                         configuration=bedrock.CfnFlow.FlowConnectionConfigurationProperty(
                             data=bedrock.CfnFlow.FlowDataConnectionConfigurationProperty(
@@ -794,20 +851,7 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ),
                     ),
-                    # GenerateArticleImage → PublishArticle  (image s3_key + filename)
-                    bedrock.CfnFlow.FlowConnectionProperty(
-                        name="GenerateImageToPublish",
-                        source="GenerateArticleImage",
-                        target="PublishArticle",
-                        type="Data",
-                        configuration=bedrock.CfnFlow.FlowConnectionConfigurationProperty(
-                            data=bedrock.CfnFlow.FlowDataConnectionConfigurationProperty(
-                                source_output="functionResponse",
-                                target_input="image_info",
-                            )
-                        ),
-                    ),
-                    # GenerateArticleImage → GenerateSocialImage  (s3_key for overlay)
+                    # GenerateArticleImage → GenerateSocialImage (s3_key for overlay)
                     bedrock.CfnFlow.FlowConnectionProperty(
                         name="GenerateImageToSocial",
                         source="GenerateArticleImage",
@@ -820,36 +864,36 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ),
                     ),
-                    # GenerateSocialImage → PostInstagram
+                    # GenerateArticleImage → BundleArticle (image_info)
                     bedrock.CfnFlow.FlowConnectionProperty(
-                        name="SocialImageToInstagram",
+                        name="GenerateImageToBundler",
+                        source="GenerateArticleImage",
+                        target="BundleArticle",
+                        type="Data",
+                        configuration=bedrock.CfnFlow.FlowConnectionConfigurationProperty(
+                            data=bedrock.CfnFlow.FlowDataConnectionConfigurationProperty(
+                                source_output="functionResponse",
+                                target_input="image_info",
+                            )
+                        ),
+                    ),
+                    # GenerateSocialImage → BundleArticle (social_s3_key)
+                    bedrock.CfnFlow.FlowConnectionProperty(
+                        name="SocialImageToBundler",
                         source="GenerateSocialImage",
-                        target="PostInstagram",
+                        target="BundleArticle",
                         type="Data",
                         configuration=bedrock.CfnFlow.FlowConnectionConfigurationProperty(
                             data=bedrock.CfnFlow.FlowDataConnectionConfigurationProperty(
                                 source_output="functionResponse",
-                                target_input="social_info",
+                                target_input="social_s3_key",
                             )
                         ),
                     ),
-                    # PublishArticle → PostInstagram  (article_url for caption link)
+                    # BundleArticle → ResultCollector
                     bedrock.CfnFlow.FlowConnectionProperty(
-                        name="PublishToInstagram",
-                        source="PublishArticle",
-                        target="PostInstagram",
-                        type="Data",
-                        configuration=bedrock.CfnFlow.FlowConnectionConfigurationProperty(
-                            data=bedrock.CfnFlow.FlowDataConnectionConfigurationProperty(
-                                source_output="functionResponse",
-                                target_input="publish_result",
-                            )
-                        ),
-                    ),
-                    # PostInstagram → ResultCollector  (per-article result)
-                    bedrock.CfnFlow.FlowConnectionProperty(
-                        name="InstagramToCollector",
-                        source="PostInstagram",
+                        name="BundlerToCollector",
+                        source="BundleArticle",
                         target="ResultCollector",
                         type="Data",
                         configuration=bedrock.CfnFlow.FlowConnectionConfigurationProperty(
@@ -872,15 +916,41 @@ class SalaciousAgentStack(cdk.Stack):
                             )
                         ),
                     ),
-                    # ResultCollector → FlowOutputNode
+                    # ResultCollector → BatchPublish (full array)
                     bedrock.CfnFlow.FlowConnectionProperty(
-                        name="CollectorToOutput",
+                        name="CollectorToBatchPublish",
                         source="ResultCollector",
-                        target="FlowOutputNode",
+                        target="BatchPublish",
                         type="Data",
                         configuration=bedrock.CfnFlow.FlowConnectionConfigurationProperty(
                             data=bedrock.CfnFlow.FlowDataConnectionConfigurationProperty(
                                 source_output="collectedArray",
+                                target_input="articles_bundle",
+                            )
+                        ),
+                    ),
+                    # BatchPublish → PostInstagram
+                    bedrock.CfnFlow.FlowConnectionProperty(
+                        name="BatchPublishToInstagram",
+                        source="BatchPublish",
+                        target="PostInstagram",
+                        type="Data",
+                        configuration=bedrock.CfnFlow.FlowConnectionConfigurationProperty(
+                            data=bedrock.CfnFlow.FlowDataConnectionConfigurationProperty(
+                                source_output="functionResponse",
+                                target_input="batch_result",
+                            )
+                        ),
+                    ),
+                    # PostInstagram → FlowOutput
+                    bedrock.CfnFlow.FlowConnectionProperty(
+                        name="InstagramToOutput",
+                        source="PostInstagram",
+                        target="FlowOutputNode",
+                        type="Data",
+                        configuration=bedrock.CfnFlow.FlowConnectionConfigurationProperty(
+                            data=bedrock.CfnFlow.FlowDataConnectionConfigurationProperty(
+                                source_output="functionResponse",
                                 target_input="document",
                             )
                         ),
@@ -940,7 +1010,9 @@ class SalaciousAgentStack(cdk.Stack):
             memory_size=256,
             environment={
                 "FLOW_ID": flow.attr_id,
-                "FLOW_ALIAS_ID": flow_alias.attr_id,
+                # TSTALIASID always routes to DRAFT — safe for development.
+                # After promoting to production, swap to: flow_alias.attr_id
+                "FLOW_ALIAS_ID": "TSTALIASID",
             },
             dead_letter_queue=trigger_dlq,
             log_group=_make_log_group("Trigger", "trigger"),
@@ -981,6 +1053,8 @@ class SalaciousAgentStack(cdk.Stack):
         # ------------------------------------------------------------------ #
         # Outputs                                                             #
         # ------------------------------------------------------------------ #
+        cdk.CfnOutput(self, "SeenUrlsTableName", value=seen_urls_table.table_name,
+                      description="DynamoDB table storing processed article URLs (dedup)")
         cdk.CfnOutput(self, "FlowId", value=flow.attr_id, description="Bedrock Flow ID")
         cdk.CfnOutput(self, "FlowAliasId", value=flow_alias.attr_id,
                       description="Bedrock Flow Alias ID (prod)")
