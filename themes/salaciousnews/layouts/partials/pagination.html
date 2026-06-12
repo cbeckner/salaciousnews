@@ -1,0 +1,12 @@
+{{- $ctx := .ctx }}
+{{- $mobile := .mobile | default false }}
+{{- $p := $ctx.Paginator }}
+{{- if gt $p.TotalPages 1 }}
+<div class="{{ if $mobile }}tbm-pager{{ else }}tb-pager{{ end }}">
+  {{- if $p.HasPrev }}<a href="{{ $p.Prev.URL }}">‹ Prev</a>{{- end }}
+  {{- range $p.Pagers }}
+  <a class="{{ if eq .PageNumber $p.PageNumber }}on{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+  {{- end }}
+  {{- if $p.HasNext }}<a href="{{ $p.Next.URL }}">Next ▸</a>{{- end }}
+</div>
+{{- end }}

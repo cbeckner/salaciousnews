@@ -1,0 +1,11 @@
+{{- $ctx := .ctx }}
+<div class="tb-anchor view-desktop" id="tb-anchor">
+  <div class="tb-wrap">
+    {{ partial "ad-slot.html" (dict "ctx" $ctx "size" "970×90" "kind" "Sticky Anchor" "h" 66 "dark" true "maxWidth" 970 "slot" "anchor") }}
+    <button class="cl" id="tb-anchor-close" aria-label="Dismiss advertisement">✕</button>
+  </div>
+</div>
+<div class="tbm-anchor view-mobile" id="tbm-anchor">
+  {{ partial "ad-slot.html" (dict "ctx" $ctx "size" "320×50" "kind" "AdSense Anchor" "h" 50 "dark" true "slot" "anchorMobile") }}
+  <button class="cl" id="tbm-anchor-close" aria-label="Dismiss advertisement">✕</button>
+</div>

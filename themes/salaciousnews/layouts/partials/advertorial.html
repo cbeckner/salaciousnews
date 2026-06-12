@@ -1,0 +1,33 @@
+{{- $ctx := .ctx }}
+{{- $mobile := .mobile | default false }}
+{{- $client := $ctx.Site.Params.adsense.client }}
+{{- $slotID := index $ctx.Site.Params.adsense.slots "multiplex" }}
+{{- $items := slice
+  (dict "label" "Sponsored" "title" "Doctors Stunned: This $3 Kitchen Trick Melts Belly Fat Overnight" "brand" "HealthDailyPro" "img" "Steaming mug on a rustic table")
+  (dict "label" "Sponsored" "title" "She Bought an Old Painting for $4 — Appraisers Couldn't Stay Calm" "brand" "TrendingFinds" "img" "Ornate frame under gallery light")
+  (dict "label" "Sponsored" "title" "Why Everyone in Your Zip Code Is Switching to This Solar Plan" "brand" "EnergySaverUSA" "img" "Solar panels at golden hour")
+  (dict "label" "Sponsored" "title" "Vets Beg Owners to Stop Feeding Dogs This One Common Food" "brand" "PetWellnessHub" "img" "Hopeful dog at the dinner table")
+}}
+{{- if $mobile }}{{ $items = first 2 $items }}{{ end }}
+<section class="{{ if $mobile }}tbm-adv{{ else }}tb-adv{{ end }}">
+  {{- if not $mobile }}<div class="tb-wrap" style="padding:0;">{{- end }}
+  <div class="hd">
+    <h2>Around the Web</h2>
+    <span class="by">Sponsored {{ if not $mobile }}Links · powered by {{ end }}ad network</span>
+  </div>
+  {{- if and $client $slotID }}
+  {{ partial "multiplex-ad.html" (dict "ctx" $ctx) }}
+  {{- else }}
+  <div class="{{ if $mobile }}tbm-adv-g{{ else }}tb-adv-g{{ end }}">
+    {{- range $items }}
+    <a class="{{ if $mobile }}tbm-adv-c{{ else }}tb-adv-c{{ end }}" href="#">
+      <div class="img"><div class="ph"><span class="cap">▦ {{ .img }}</span></div></div>
+      <span class="sp">{{ .label }}</span>
+      <h4>{{ .title }}</h4>
+      <span class="br">{{ .brand }}</span>
+    </a>
+    {{- end }}
+  </div>
+  {{- end }}
+  {{- if not $mobile }}</div>{{- end }}
+</section>

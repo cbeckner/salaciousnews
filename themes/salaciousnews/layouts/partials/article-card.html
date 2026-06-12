@@ -1,0 +1,15 @@
+{{- $p := .page }}
+{{- $sm := .sm | default false }}
+{{- $mobile := .mobile | default false }}
+{{- $h := 168 }}
+{{- if $sm }}{{ $h = 130 }}{{ end }}
+{{- if $mobile }}{{ $h = 196 }}{{ end }}
+<a class="{{ if $mobile }}tbm-card{{ else }}tb-card{{ if $sm }} sm{{ end }}{{ end }}" href="{{ $p.RelPermalink }}">
+  {{ partial "post-image.html" (dict "page" $p "w" 480 "h" $h) }}
+  <span class="tb-kick ghost">{{ $p.Section }}</span>
+  <h3>{{ $p.Title }}</h3>
+  {{- if and (not $sm) $p.Description }}
+  <p class="dek">{{ $p.Description }}</p>
+  {{- end }}
+  {{ partial "post-meta.html" (dict "page" $p) }}
+</a>

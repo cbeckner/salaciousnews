@@ -24,8 +24,8 @@ class Config:
     
     # Content Settings
     CATEGORIES = [
-        'Business', 'Entertainment', 'Other', 
-        'Politics', 'Sports', 'Technology', 'US', 'World'
+        'Business', 'Entertainment', 'General',
+        'Health', 'Science', 'Sports', 'Technology'
     ]
     
     # Hugo Settings

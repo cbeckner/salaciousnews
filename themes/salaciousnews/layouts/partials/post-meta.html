@@ -1,0 +1,5 @@
+{{- $p := .page }}
+{{- $light := .light | default false }}
+<div class="tb-meta{{ if $light }} meta-l{{ end }}">
+  <span class="src">{{ $p.Params.source | default "Salacious News" }}</span><span class="dot">●</span><span>{{ $p.Date.Format "Mon, Jan 2, 2006" }}</span>
+</div>

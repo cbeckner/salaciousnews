@@ -1,4 +1,4 @@
-"""
+w"""
 News article fetching and parsing module
 """
 
@@ -80,7 +80,7 @@ class NewsFetcher:
                 "url": item["url"],
                 "source": item.get("source", "Unknown"),
                 "published_date": item.get("published_at"),
-                "category": item.get("category", "Other"),
+                "category": item.get("category", "General"),
             })
 
         if len(articles) < num_articles:
@@ -113,7 +113,6 @@ class NewsFetcher:
             api_cat = category_map.get(cat, "general")
             url = "https://newsapi.org/v2/top-headlines"
             params = {
-                "country": "us",
                 "category": api_cat,
                 "pageSize": 10,
                 "apiKey": api_key,

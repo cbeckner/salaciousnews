@@ -1,0 +1,15 @@
+{{- $pages := .pages }}
+{{- $mobile := .mobile | default false }}
+<aside class="{{ if $mobile }}tbm-trend{{ else }}tb-trend{{ end }}">
+  <div class="hd">{{ if not $mobile }}<span class="fire">🔥</span> {{ else }}🔥 {{ end }}Trending Now</div>
+  <ol>
+    {{- range $i, $p := $pages }}
+    <li>
+      <a href="{{ $p.RelPermalink }}">
+        <span class="n">{{ add $i 1 }}</span>
+        <span class="tt">{{ $p.Title }}{{- if not $mobile }}<span class="s">{{ $p.Params.source | default $p.Section }}</span>{{- end }}</span>
+      </a>
+    </li>
+    {{- end }}
+  </ol>
+</aside>

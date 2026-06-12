@@ -1,10 +1,12 @@
 baseURL = "https://salacious.news/"
 languageCode = "en-us"
 title = "Salacious News"
-theme = "news"
+theme = "salaciousnews"
 
 [pagination]
   pagerSize = 10 # Number of posts per page
+
+pluralizeListTitles = false
 googleAnalytics = "G-MRRZYLYQC7"
 summaryLength = 20
 
@@ -15,6 +17,7 @@ summaryLength = 20
 
 [Params]
   description = "Salacious News!  All the hot gossip from around the world" # Site description. Used in meta description
+  subtitle = "All the hot gossip from around the world. All true!"
   copyright = "XYZ Consulting LLC" # Footer copyright holder, otherwise will use site title
   footerBlurb = "For all the latest gossip."
   opengraph = true # Enable OpenGraph if true
@@ -25,8 +28,8 @@ summaryLength = 20
   toc = true # Enable Table of Contents
   pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
   post_meta = [ "date", "categories"] # Order of post meta information
-  mainSections = ["post", "news", "US", "World", "Technology", "Entertainment", "Sports", "Other", "Politics"] # Specify section pages to show on home page and the "Recent articles" widget
-  subSections = ["US","World","Technology","Entertainment","Sports","Politics","Other"]
+  mainSections = ["post", "news", "Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"] # Specify section pages to show on home page and the "Recent articles" widget
+  subSections = ["Business","Entertainment","General","Health","Science","Sports","Technology"]
   dateformat = "2006-01-02" # Change the format of dates
   mathjax = false # Enable MathJax
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
@@ -74,6 +77,22 @@ summaryLength = 20
 
 [Params.thumbnail]
   visibility = ["list", "post"] # Control thumbnail visibility
+
+[Params.adsense]
+  client = "ca-pub-5733732343388471"
+  [Params.adsense.slots]
+    billboard = "1832220320"     # top leaderboard (970x250 / 320x100)
+    nativeband = "4663273500"    # in-feed native band
+    mpuSidebar = "3556365530"    # rail MPU (300x250)
+    leaderboard = "2326447878"
+    halfpage = "3116246362"
+    inarticle = "8775215937"
+    mpu1 = "7591518317"
+    mpu2 = "1201664931"
+    topMobile = "2243283860"
+    anchor = "8321607052"
+    anchorMobile = "6262419925"
+    multiplex = "2051712172"     # "Around the Web" multiplex ad (home/category pages)
 
 [Params.sidebar]
   home = "right" # Configure layout for home page

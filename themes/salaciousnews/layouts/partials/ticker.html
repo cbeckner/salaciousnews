@@ -1,0 +1,19 @@
+{{- $ctx := .ctx }}
+{{- $featured := .featured }}
+<div class="view-desktop">
+  <div class="tb-tick">
+    <div class="tb-wrap">
+      <span class="lab">⚡ Breaking</span>
+      {{- range $i, $p := first 3 $featured }}
+      {{- if gt $i 0 }}<span class="dot">●</span>{{- end }}
+      <a class="it" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+      {{- end }}
+    </div>
+  </div>
+</div>
+<div class="view-mobile">
+  <div class="tbm-tick">
+    <span class="lab">⚡ Breaking</span>
+    {{- with index $featured 0 }}<a class="it" href="{{ .RelPermalink }}">{{ .Title }}</a>{{- end }}
+  </div>
+</div>

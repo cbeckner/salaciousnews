@@ -1,0 +1,13 @@
+{{- $p := .page }}
+{{- $mobile := .mobile | default false }}
+<a class="{{ if $mobile }}tbm-row{{ else }}tb-row{{ end }}" href="{{ $p.RelPermalink }}">
+  {{ partial "post-image.html" (dict "page" $p "w" (cond $mobile 220 300) "h" (cond $mobile 156 192)) }}
+  <div>
+    <span class="tb-kick ghost">{{ $p.Section }}</span>
+    <h3>{{ $p.Title }}</h3>
+    {{- if and (not $mobile) $p.Description }}
+    <p class="dek">{{ $p.Description }}</p>
+    {{- end }}
+    {{ partial "post-meta.html" (dict "page" $p) }}
+  </div>
+</a>

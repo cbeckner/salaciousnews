@@ -1,0 +1,135 @@
+{{ define "main" }}
+{{- $sections := slice }}
+{{- range .Site.Params.subSections }}{{ $sections = $sections | append (lower .) }}{{ end }}
+{{- $allSub := (where .Site.RegularPages "Section" "in" $sections).ByDate.Reverse }}
+{{- $featured := first 5 (where $allSub "Params.featured" true) }}
+{{- if not $featured }}{{- $featured = first 5 $allSub }}{{- end }}
+{{- $pages := .Pages.ByDate.Reverse }}
+{{- $paginator := .Paginate $pages }}
+{{- $items := $paginator.Pages }}
+{{- $isFirst := eq $paginator.PageNumber 1 }}
+{{- $lead := "" }}
+{{- $cards := slice }}
+{{- $rows := slice }}
+{{- $mcards := slice }}
+{{- $mrows := slice }}
+{{- if $isFirst }}
+  {{- $lead = index $items 0 }}
+  {{- $cards = first 3 (after 1 $items) }}
+  {{- $rows = after 4 $items }}
+  {{- $mcards = first 3 $items }}
+  {{- $mrows = after 3 $items }}
+{{- else }}
+  {{- $rows = $items }}
+  {{- $mrows = $items }}
+{{- end }}
+{{- $description := .Description | default (printf "Every breakup, blowup and box-office bloodbath in %s — refreshed daily." .Title) }}
+
+{{ partial "ticker.html" (dict "ctx" . "featured" $featured) }}
+
+<!-- ===================== DESKTOP ===================== -->
+<div class="view-desktop">
+  <div class="tb-wrap" style="padding-top:22px;">
+    {{ partial "ad-slot.html" (dict "ctx" . "size" "970×250" "kind" "Billboard — top leaderboard" "h" 244 "maxWidth" 970 "slot" "billboard") }}
+  </div>
+  <div class="tb-wrap tb-cat-mast">
+    <div class="inner">
+      <span class="tb-kick">Category</span>
+      <h1>{{ .Title }}</h1>
+      <p>{{ $description }}</p>
+    </div>
+  </div>
+  <div class="tb-wrap">
+    <div class="tb-body">
+      <main>
+        {{- if $lead }}
+        <a class="tb-lead" href="{{ $lead.RelPermalink }}" style="display:block;margin-bottom:26px;">
+          {{ partial "post-image.html" (dict "page" $lead "w" 900 "h" 360 "dark" true) }}
+          <div class="scrim"></div>
+          <div class="ov">
+            <span class="tb-kick">Top Story</span>
+            <h1>{{ $lead.Title }}</h1>
+            {{ partial "post-meta.html" (dict "page" $lead "light" true) }}
+          </div>
+        </a>
+        {{- end }}
+
+        {{- if $cards }}
+        <div class="tb-cards">
+          {{- range $cards }}
+          {{ partial "article-card.html" (dict "page" .) }}
+          {{- end }}
+        </div>
+        <div style="height:28px;"></div>
+        {{ partial "ad-slot.html" (dict "ctx" . "size" "728×90" "kind" "In-list leaderboard" "h" 96 "maxWidth" 728 "slot" "leaderboard") }}
+        <div style="height:28px;"></div>
+        {{- end }}
+
+        <div class="tb-rows">
+          {{- range $i, $p := $rows }}
+          {{ partial "article-row.html" (dict "page" $p) }}
+          {{- if eq $i 2 }}
+          <div style="padding:8px 0;">
+            {{ partial "ad-slot.html" (dict "ctx" $ "size" "970×90" "kind" "In-feed native band" "h" 84 "slot" "nativeband") }}
+          </div>
+          {{- end }}
+          {{- end }}
+        </div>
+
+        {{ partial "pagination.html" (dict "ctx" . "mobile" false) }}
+      </main>
+      <aside class="tb-aside">
+        <div class="tb-stick">
+          {{ partial "ad-slot.html" (dict "ctx" . "size" "300×250" "kind" "MPU" "h" 250 "slot" "mpuSidebar") }}
+          {{ partial "trending.html" (dict "pages" $featured) }}
+          {{ partial "ad-slot.html" (dict "ctx" . "size" "300×600" "kind" "Half-page · sticky" "h" 600 "sticky" true "slot" "halfpage") }}
+        </div>
+      </aside>
+    </div>
+  </div>
+  <div class="tb-wrap">
+    {{ partial "advertorial.html" (dict "ctx" . "mobile" false) }}
+  </div>
+</div>
+
+<!-- ===================== MOBILE ===================== -->
+<div class="view-mobile tbm">
+  {{ partial "ad-slot.html" (dict "ctx" . "size" "320×100" "kind" "AdSense — large mobile banner" "h" 100 "slot" "topMobile") }}
+  <div class="tbm-cat-mast" style="padding-top:14px;">
+    <span class="tb-kick">Category</span>
+    <h1>{{ .Title }}</h1>
+    <p>{{ $description }}</p>
+  </div>
+
+  {{- if $lead }}
+  <a class="tbm-hero" style="display:block;" href="{{ $lead.RelPermalink }}">
+    {{ partial "post-image.html" (dict "page" $lead "w" 600 "h" 250 "dark" true) }}
+    <div class="scrim"></div>
+    <div class="ov">
+      <span class="tb-kick">Top Story</span>
+      <h1>{{ $lead.Title }}</h1>
+      {{ partial "post-meta.html" (dict "page" $lead "light" true) }}
+    </div>
+  </a>
+  {{- end }}
+
+  <div class="tbm-pad" style="padding-top:14px;">
+    {{- range $mcards }}
+    {{ partial "article-card.html" (dict "page" . "mobile" true) }}
+    {{- end }}
+  </div>
+
+  {{ partial "ad-slot.html" (dict "ctx" . "size" "300×250" "kind" "AdSense — in-feed MPU" "h" 250 "slot" "mpu1") }}
+
+  <div class="tbm-pad">
+    {{- range $mrows }}
+    {{ partial "article-row.html" (dict "page" . "mobile" true) }}
+    {{- end }}
+    {{ partial "pagination.html" (dict "ctx" . "mobile" true) }}
+  </div>
+
+  <div class="tbm-pad" style="padding-top:8px;">
+    {{ partial "advertorial.html" (dict "ctx" . "mobile" true) }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,28 @@
+{{- $page := .page }}
+{{- $w := .w | default 600 }}
+{{- $h := .h | default 400 }}
+{{- $class := .class | default "" }}
+{{- $dark := .dark | default false }}
+{{- $src := "" }}
+{{- with $page.Params.thumbnail }}
+  {{- $valueType := printf "%T" . }}
+  {{- if in $valueType "map" }}
+    {{- $src = .src }}
+  {{- else }}
+    {{- $src = . }}
+  {{- end }}
+{{- end }}
+<div class="img{{ with $class }} {{ . }}{{ end }}" style="height:{{ $h }}px;">
+{{- if $src }}
+  {{- $thumbPath := replace $src "./" "" }}
+  {{- $image := resources.Get $thumbPath }}
+  {{- if $image }}
+    {{- $resized := $image.Fill (printf "%dx%d" $w $h) }}
+    <img src="{{ $resized.RelPermalink }}" loading="lazy" width="{{ $resized.Width }}" height="{{ $resized.Height }}" alt="{{ $page.Title }}">
+  {{- else }}
+    <img src="{{ $thumbPath | relURL }}" loading="lazy" alt="{{ $page.Title }}">
+  {{- end }}
+{{- else }}
+  <div class="ph{{ if $dark }} dark{{ end }}"><span class="cap">▦ {{ $page.Title }}</span></div>
+{{- end }}
+</div>

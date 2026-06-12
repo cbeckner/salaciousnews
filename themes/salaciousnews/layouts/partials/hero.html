@@ -1,0 +1,15 @@
+{{- $lead := .lead }}
+{{- $trending := .trending }}
+<section class="tb-hero">
+  <a class="tb-lead" href="{{ $lead.RelPermalink }}">
+    {{ partial "post-image.html" (dict "page" $lead "w" 900 "h" 462 "dark" true) }}
+    <div class="scrim"></div>
+    <div class="ov">
+      <span class="tb-kick">Exclusive · {{ $lead.Section }}</span>
+      <h1>{{ $lead.Title }}</h1>
+      {{- with $lead.Description }}<p class="dek">{{ . }}</p>{{- end }}
+      {{ partial "post-meta.html" (dict "page" $lead "light" true) }}
+    </div>
+  </a>
+  {{ partial "trending.html" (dict "pages" $trending) }}
+</section>

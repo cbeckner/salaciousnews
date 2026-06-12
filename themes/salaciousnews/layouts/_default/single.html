@@ -1,0 +1,129 @@
+{{ define "main" }}
+{{- $sections := slice }}
+{{- range .Site.Params.subSections }}{{ $sections = $sections | append (lower .) }}{{ end }}
+{{- $allSub := (where .Site.RegularPages "Section" "in" $sections).ByDate.Reverse }}
+{{- $featured := first 5 (where $allSub "Params.featured" true) }}
+{{- if not $featured }}{{- $featured = first 5 $allSub }}{{- end }}
+{{- $related := first 3 (where (where .Site.RegularPages "Section" .Section) "RelPermalink" "ne" .RelPermalink).ByDate.Reverse }}
+
+{{- $content := .Content }}
+{{- $parts := split $content "</p>" }}
+{{- $firstPara := $content }}
+{{- $restContent := "" }}
+{{- if gt (len $parts) 1 }}
+  {{- $firstPara = printf "%s</p>" (index $parts 0) }}
+  {{- $restContent = delimit (after 1 $parts) "</p>" }}
+{{- end }}
+
+<!-- ===================== DESKTOP ===================== -->
+<div class="view-desktop">
+  <div class="tb-wrap" style="padding-top:22px;">
+    {{ partial "ad-slot.html" (dict "ctx" . "size" "970×250" "kind" "Billboard — top leaderboard" "h" 244 "maxWidth" 970 "slot" "billboard") }}
+  </div>
+  <div class="tb-wrap">
+    <div class="tb-body tb-article" style="padding-top:30px;">
+      <main>
+        <div>
+          <span class="tb-kick kicker">{{ .Section }} · Exclusive</span>
+          <h1>{{ .Title }}</h1>
+          {{- with .Description }}<p class="dek">{{ . }}</p>{{- end }}
+          <div class="tb-meta byline">
+            <span style="color:var(--ink);">By <b>The Salacious Desk</b></span>
+            <span class="dot">●</span>
+            <span class="src">{{ .Params.source | default "Salacious News" }}</span>
+            <span class="dot">●</span>
+            <span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+            <span class="sp"></span>
+            <span>Share ▸</span>
+          </div>
+        </div>
+        <figure class="hero-img">
+          {{ partial "post-image.html" (dict "page" . "w" 1200 "h" 420) }}
+          <figcaption>Photo illustration · Salacious News</figcaption>
+        </figure>
+        <div class="body-copy">
+          {{ $firstPara | safeHTML }}
+          {{- if $restContent }}
+          {{ partial "in-article-ad.html" (dict "ctx" .) }}
+          {{ $restContent | safeHTML }}
+          {{- end }}
+        </div>
+
+        {{- with .Params.originalUrl }}
+        <p class="dek">Original article: <a href="{{ . }}" target="_blank" rel="noopener" class="tb-kick ghost">{{ $.Params.source | default "Source" }} ▸</a></p>
+        {{- end }}
+
+        <div style="margin-top:30px;">
+          {{ partial "advertorial.html" (dict "ctx" . "mobile" false) }}
+        </div>
+
+        {{- if $related }}
+        <div style="margin-top:30px;">
+          <div class="tb-sec"><h2>More in {{ .Section }}</h2><div class="bar"></div></div>
+          <div class="tb-cards">
+            {{- range $related }}
+            {{ partial "article-card.html" (dict "page" . "sm" true) }}
+            {{- end }}
+          </div>
+        </div>
+        {{- end }}
+      </main>
+      <aside class="tb-aside">
+        <div class="tb-stick">
+          {{ partial "ad-slot.html" (dict "ctx" . "size" "300×250" "kind" "MPU" "h" 250 "slot" "mpuSidebar") }}
+          {{ partial "trending.html" (dict "pages" $featured) }}
+          {{ partial "ad-slot.html" (dict "ctx" . "size" "300×600" "kind" "Half-page · sticky" "h" 600 "sticky" true "slot" "halfpage") }}
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MOBILE ===================== -->
+<div class="view-mobile tbm tbm-article">
+  {{ partial "ad-slot.html" (dict "ctx" . "size" "320×100" "kind" "AdSense — large mobile banner" "h" 100 "slot" "topMobile") }}
+  <div class="tbm-pad" style="padding-top:6px;">
+    <span class="tb-kick kicker">{{ .Section }} · Exclusive</span>
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}<p class="dek">{{ . }}</p>{{- end }}
+    <div class="tb-meta byline">
+      <span style="color:var(--ink);">By <b>The Salacious Desk</b></span>
+      <span class="dot">●</span>
+      <span class="src">{{ .Params.source | default "Salacious News" }}</span>
+      <span class="dot">●</span>
+      <span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+    </div>
+  </div>
+  <figure class="hero-img">
+    {{ partial "post-image.html" (dict "page" . "w" 800 "h" 240) }}
+  </figure>
+  <div class="tbm-pad body-copy">
+    {{ $firstPara | safeHTML }}
+  </div>
+  {{- if $restContent }}
+  {{ partial "in-article-ad.html" (dict "ctx" .) }}
+  <div class="tbm-pad body-copy">
+    {{ $restContent | safeHTML }}
+  </div>
+  {{- end }}
+
+  {{- with .Params.originalUrl }}
+  <div class="tbm-pad">
+    <p class="dek">Original article: <a href="{{ . }}" target="_blank" rel="noopener" class="tb-kick ghost">{{ $.Params.source | default "Source" }} ▸</a></p>
+  </div>
+  {{- end }}
+
+  <div class="tbm-pad" style="padding-top:10px;">
+    {{ partial "advertorial.html" (dict "ctx" . "mobile" true) }}
+  </div>
+
+  {{- if $related }}
+  <div class="tbm-pad" style="padding-top:16px;">
+    <div class="tbm-sec"><h2>More in {{ .Section }}</h2><div class="bar"></div></div>
+    {{- range $related }}
+    {{ partial "article-row.html" (dict "page" . "mobile" true) }}
+    {{- end }}
+  </div>
+  {{- end }}
+</div>
+{{ end }}

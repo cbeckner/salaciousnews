@@ -1,0 +1,63 @@
+{{- $ctx := .ctx }}
+{{- $disclaimer := "This website is a satirical news website. All articles are parodies of real news and are not intended to be taken seriously. Original articles that have been parodied are linked so readers can compare the two. Use of copyrighted material falls under fair use for the purpose of parody and criticism." }}
+{{- $copyright := $ctx.Site.Params.copyright | default $ctx.Site.Title }}
+
+<footer class="tb-foot view-desktop">
+  <div class="tb-wrap">
+    <div class="top">
+      <div class="fl">Salacious<span class="b">.</span></div>
+      <div class="cols">
+        <div>
+          <h5>Sections</h5>
+          <ul>
+            {{- range first 4 $ctx.Site.Params.subSections }}
+            {{- with $ctx.Site.GetPage (printf "/categories/%s" .) }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{- end }}
+            {{- end }}
+          </ul>
+        </div>
+        <div>
+          <h5>More</h5>
+          <ul>
+            {{- range after 4 $ctx.Site.Params.subSections }}
+            {{- with $ctx.Site.GetPage (printf "/categories/%s" .) }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{- end }}
+            {{- end }}
+            <li>Newsletter</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Follow</h5>
+          <ul>
+            {{- with $ctx.Site.Params.widgets.social.instagram }}
+            <li><a href="https://www.instagram.com/{{ . }}" target="_blank" rel="noopener">Instagram</a></li>
+            {{- end }}
+            <li>Tip Line</li>
+            {{- with $ctx.Site.Params.widgets.social.email }}
+            <li><a href="mailto:{{ . }}">{{ . }}</a></li>
+            {{- end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h5 style="color:#fff;">Legal Disclaimer</h5>
+    <p class="disc">{{ $disclaimer }}</p>
+    <div class="cr">© {{ now.Format "2006" }} {{ $copyright }} · <a href="{{ "/privacy/" | relLangURL }}">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<footer class="tbm-foot view-mobile">
+  <div class="fl">Salacious<span class="b">.</span></div>
+  <div class="nav">
+    {{- range $ctx.Site.Params.subSections }}
+    {{- with $ctx.Site.GetPage (printf "/categories/%s" .) }}
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{- end }}
+    {{- end }}
+    <span>Newsletter</span>
+  </div>
+  <p class="disc">{{ $disclaimer }}</p>
+  <div class="cr">© {{ now.Format "2006" }} {{ $copyright }} · <a href="{{ "/privacy/" | relLangURL }}">Privacy</a></div>
+</footer>

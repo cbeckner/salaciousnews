@@ -1,0 +1,9 @@
+{{- $ctx := .ctx }}
+{{- $client := $ctx.Site.Params.adsense.client }}
+{{- $slotID := index $ctx.Site.Params.adsense.slots "multiplex" }}
+{{- if and $client $slotID }}
+<ins class="adsbygoogle" style="display:block"
+  data-ad-format="autorelaxed"
+  data-ad-client="{{ $client }}" data-ad-slot="{{ $slotID }}"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+{{- end }}

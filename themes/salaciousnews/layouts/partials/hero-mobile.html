@@ -1,0 +1,10 @@
+{{- $lead := .lead }}
+<a class="tbm-hero" href="{{ $lead.RelPermalink }}">
+  {{ partial "post-image.html" (dict "page" $lead "w" 600 "h" 320 "dark" true) }}
+  <div class="scrim"></div>
+  <div class="ov">
+    <span class="tb-kick">Exclusive · {{ $lead.Section }}</span>
+    <h1>{{ $lead.Title }}</h1>
+    {{ partial "post-meta.html" (dict "page" $lead "light" true) }}
+  </div>
+</a>

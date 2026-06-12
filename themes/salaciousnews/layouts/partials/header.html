@@ -1,0 +1,66 @@
+{{- $ctx := .ctx }}
+<header class="view-desktop">
+  <div class="tb-util">
+    <div class="tb-wrap">
+      <span class="sat">★ Satire</span>
+      <span class="lk">{{ now.Format "Mon, Jan 2, 2006" }}</span>
+      <span class="sp"></span>
+      {{- with $ctx.Site.Params.widgets.social.instagram }}
+      <a class="lk" href="https://www.instagram.com/{{ . }}" target="_blank" rel="noopener">Instagram</a>
+      {{- end }}
+      {{- with $ctx.Site.Params.widgets.social.email }}
+      <a class="lk" href="mailto:{{ . }}">Tip Line</a>
+      {{- end }}
+    </div>
+  </div>
+  <div class="tb-mast">
+    <div class="tb-wrap" style="position:relative;">
+      <span class="tb-mast-side" style="left:32px;text-align:left;">No. {{ len $ctx.Site.RegularPages }}<br>Daily Gossip</span>
+      <span class="tb-mast-side" style="right:32px;text-align:right;">No Fake News!<br>Gauaranteed</span>
+      <h1 class="tb-logo"><a href="{{ "/" | relLangURL }}"><span class="a">Salacious</span><span class="b"> News</span></a></h1>
+      <div class="tb-tag">{{ $ctx.Site.Params.subtitle }}</div>
+    </div>
+  </div>
+  <nav class="tb-nav">
+    <div class="tb-wrap">
+      <a class="{{ if $ctx.IsHome }}home{{ end }}" href="{{ "/" | relLangURL }}">Home</a>
+      {{- range $ctx.Site.Params.subSections }}
+      {{- $name := . }}
+      {{- $sec := lower . }}
+      {{- with $ctx.Site.GetPage "section" $sec }}
+      <a class="{{ if eq $ctx.Section $sec }}home{{ end }}" href="{{ .RelPermalink }}">{{ $name }}</a>
+      {{- end }}
+      {{- end }}
+      <span class="spx"></span>
+    </div>
+  </nav>
+</header>
+
+<div class="view-mobile">
+  <div class="tbm-hd">
+    <button class="ic" id="tbm-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="tbm-drawer">☰</button>
+    <a class="lg" href="{{ "/" | relLangURL }}">Salacious<span class="r"> News</span></a>
+    <a class="ic s" href="{{ $ctx.Site.Params.widgets.search.url }}" aria-label="Search">⌕</a>
+  </div>
+  <nav class="tbm-cats">
+    <a class="{{ if $ctx.IsHome }}on{{ end }}" href="{{ "/" | relLangURL }}">Home</a>
+    {{- range $ctx.Site.Params.subSections }}
+    {{- $name := . }}
+    {{- $sec := lower . }}
+    {{- with $ctx.Site.GetPage "section" $sec }}
+    <a class="{{ if eq $ctx.Section $sec }}on{{ end }}" href="{{ .RelPermalink }}">{{ $name }}</a>
+    {{- end }}
+    {{- end }}
+  </nav>
+  <div class="tbm-drawer" id="tbm-drawer">
+    <ul>
+      <li><a href="{{ "/" | relLangURL }}">Home</a></li>
+      {{- range $ctx.Site.Params.subSections }}
+      {{- $name := . }}
+      {{- with $ctx.Site.GetPage "section" (lower .) }}
+      <li><a href="{{ .RelPermalink }}">{{ $name }}</a></li>
+      {{- end }}
+      {{- end }}
+    </ul>
+  </div>
+</div>

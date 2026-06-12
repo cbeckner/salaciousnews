@@ -1,0 +1,9 @@
+{{- $pages := .pages }}
+<div class="tb-mr">
+  <div class="hd">Most Read</div>
+  <ol>
+    {{- range $pages }}
+    <li><a href="{{ .RelPermalink }}"><span class="t">{{ .Title }}</span></a></li>
+    {{- end }}
+  </ol>
+</div>

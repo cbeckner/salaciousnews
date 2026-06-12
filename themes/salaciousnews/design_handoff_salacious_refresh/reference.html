@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Salacious News — Direction A reference (Tabloid)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  html,body{margin:0;padding:0;background:#d9d4c8;font-family:'Archivo',system-ui,sans-serif;}
+  .ref-lbl{max-width:1240px;margin:0 auto;padding:34px 24px 12px;color:#3a342b;}
+  .ref-lbl .t{font:800 22px/1 'Archivo';letter-spacing:-.01em;}
+  .ref-lbl .s{font:500 13px/1.4 'IBM Plex Mono',monospace;color:#6b6256;margin-top:6px;}
+  .ref-frame{max-width:1240px;margin:0 auto 10px;background:#fff;box-shadow:0 6px 30px rgba(0,0,0,.12);overflow:hidden;}
+  .ref-frame.m{max-width:390px;}
+  .ref-page{}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="src/data.jsx"></script>
+<script type="text/babel" src="src/ui.jsx"></script>
+<script type="text/babel" src="src/directionA.jsx"></script>
+<script type="text/babel" src="src/directionA-mobile.jsx"></script>
+<script type="text/babel">
+  function Label({ t, s }) { return <div className="ref-lbl"><div className="t">{t}</div><div className="s">{s}</div></div>; }
+  function Ref() {
+    return (
+      <div>
+        <Label t="DESKTOP · Homepage" s="1440px canvas · ≥1024 breakpoint" />
+        <div className="ref-frame"><HomeA /></div>
+        <Label t="DESKTOP · Category (Entertainment)" s="section list template" />
+        <div className="ref-frame"><CatA /></div>
+        <Label t="DESKTOP · Article (single post)" s="single template" />
+        <div className="ref-frame"><ArtA /></div>
+        <Label t="MOBILE · Homepage" s="390px · <768 breakpoint · AdSense 320×100 / 300×250 / 320×50 anchor" />
+        <div className="ref-frame m"><MHomeA /></div>
+        <Label t="MOBILE · Category" s="section list template, mobile" />
+        <div className="ref-frame m"><MCatA /></div>
+        <Label t="MOBILE · Article" s="single template, mobile" />
+        <div className="ref-frame m"><MArtA /></div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<Ref />);
+</script>
+</body>
+</html>
