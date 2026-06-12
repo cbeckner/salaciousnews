@@ -9,7 +9,7 @@
 {{- $feed := first 6 $rest }}
 {{- $mostRead := first 5 $rest }}
 {{- $general := first 4 (where $all "Section" "general") }}
-{{- $entertainment := first 4 (where $all "Section" "entertainment") }}
+{{- $entertainment := first 6 (where $all "Section" "entertainment") }}
 {{- $generalPage := .Site.GetPage "section" "general" }}
 {{- $entertainmentPage := .Site.GetPage "section" "entertainment" }}
 
