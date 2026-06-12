@@ -6,7 +6,7 @@
 {{- $lead := index $all 0 }}
 {{- $rest := after 1 $all }}
 {{- if not $featured }}{{- $featured = first 5 $rest }}{{- end }}
-{{- $feed := first 6 $rest }}
+{{- $feed := first 5 $rest }}
 {{- $mostRead := first 5 $rest }}
 {{- $general := first 4 (where $all "Section" "general") }}
 {{- $entertainment := first 6 (where $all "Section" "entertainment") }}
