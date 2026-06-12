@@ -23,7 +23,30 @@
   {{- $rows = $items }}
   {{- $mrows = $items }}
 {{- end }}
-{{- $description := .Description | default (printf "Every breakup, blowup and box-office bloodbath in %s — refreshed daily." .Title) }}
+{{- $catTitles := dict
+  "business" "Business"
+  "entertainment" "Entertainment"
+  "general" "General"
+  "health" "Health"
+  "science" "Science"
+  "sports" "Sports"
+  "technology" "Technology"
+}}
+{{- $catDescriptions := dict
+  "business" "Every merger, meltdown and market-moving scandal — refreshed daily."
+  "entertainment" "Every breakup, blowup and box-office bloodbath in Hollywood — refreshed daily."
+  "general" "Everything that's too weird, wild or wonderful to file anywhere else — refreshed daily."
+  "health" "Every outbreak, breakthrough and drama from the world of medicine — refreshed daily."
+  "science" "Every discovery, disaster and deep-space dust-up — refreshed daily."
+  "sports" "Every upset, ejection and locker-room confession — refreshed daily."
+  "technology" "Every glitch, gadget and Silicon Valley scandal — refreshed daily."
+}}
+{{- $title := .Title }}
+{{- $description := .Description }}
+{{- with index $catTitles .Section }}{{- $title = . }}{{- end }}
+{{- if not $description }}
+  {{- with index $catDescriptions .Section }}{{- $description = . }}{{- else }}{{- $description = printf "Every breakup, blowup and box-office bloodbath in %s — refreshed daily." $title }}{{- end }}
+{{- end }}
 
 {{ partial "ticker.html" (dict "ctx" . "featured" $featured) }}
 
@@ -35,7 +58,7 @@
   <div class="tb-wrap tb-cat-mast">
     <div class="inner">
       <span class="tb-kick">Category</span>
-      <h1>{{ .Title }}</h1>
+      <h1>{{ $title }}</h1>
       <p>{{ $description }}</p>
     </div>
   </div>
@@ -97,7 +120,7 @@
   {{ partial "ad-slot.html" (dict "ctx" . "size" "320×100" "kind" "AdSense — large mobile banner" "h" 100 "slot" "topMobile") }}
   <div class="tbm-cat-mast" style="padding-top:14px;">
     <span class="tb-kick">Category</span>
-    <h1>{{ .Title }}</h1>
+    <h1>{{ $title }}</h1>
     <p>{{ $description }}</p>
   </div>
 
