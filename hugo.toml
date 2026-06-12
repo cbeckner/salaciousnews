@@ -7,8 +7,11 @@ theme = "salaciousnews"
   pagerSize = 10 # Number of posts per page
 
 pluralizeListTitles = false
-googleAnalytics = "G-MRRZYLYQC7"
 summaryLength = 20
+
+[services]
+  [services.googleAnalytics]
+    id = "G-MRRZYLYQC7"
 
 [Author] # Used in authorbox
   name = "John Doe"
