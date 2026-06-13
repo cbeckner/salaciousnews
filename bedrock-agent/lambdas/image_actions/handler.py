@@ -39,8 +39,6 @@ IMAGE_QUALITY = os.environ.get("IMAGE_QUALITY", "standard")
 IMAGE_MODEL = os.environ.get("OPENAI_IMAGE_MODEL", "chatgpt-image-latest")
 OPENAI_MODEL_SECRET = os.environ["OPENAI_API_KEY_SECRET"]
 
-LOGO_PATH = Path(__file__).parent / "logo.webp"
-
 
 def _get_secret(name: str) -> str:
     if name not in _secret_cache:
@@ -114,6 +112,8 @@ def generate_article_image(article: dict) -> dict:
 # Social image generation (PIL overlay)
 # ---------------------------------------------------------------------------
 TARGET_SIZE = 1080
+ACCENT_RED = (227, 30, 30, 255)
+WHITE = (255, 255, 255, 255)
 
 
 def _load_article_image_from_s3(s3_key: str) -> Image.Image:
@@ -141,14 +141,15 @@ def _fit_and_crop(img: Image.Image, target: int = TARGET_SIZE) -> Image.Image:
 
 def _apply_gradient(img: Image.Image) -> Image.Image:
     """
-    Black gradient that fades in from 55% down and is fully opaque by 72%.
-    This gives a solid dark zone covering the bottom ~28% for the text.
+    Black gradient that fades in from 46% down and is fully opaque by 64%.
+    This gives a solid dark band covering the bottom ~36% for the badge,
+    title, and footer branding.
     """
     w, h = img.size
     gradient = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     draw = ImageDraw.Draw(gradient)
-    fade_start = int(h * 0.55)   # gradient begins here
-    fade_end   = int(h * 0.72)   # fully black from here down
+    fade_start = int(h * 0.46)   # gradient begins here
+    fade_end   = int(h * 0.64)   # fully black from here down
     for y in range(fade_start, h):
         if y < fade_end:
             alpha = int(255 * (y - fade_start) / max(fade_end - fade_start, 1))
@@ -203,11 +204,12 @@ def _wrap_text(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.ImageFont,
 
 def generate_social_image(article: dict, article_image_s3_key: str) -> dict:
     title = article.get("title", "")
+    category = (article.get("category") or "").strip()
     slug = article.get("slug", "unknown")
 
     # Normalise punctuation for clean word-wrapping.
     # Add spaces around em-dash so it's treated as a separate token by _wrap_text.
-    title = title.replace("—", " — ").replace("  ", " ").strip()
+    title = title.replace("—", " — ").replace("  ", " ").strip().upper()
 
     img = _load_article_image_from_s3(article_image_s3_key)
     img = _fit_and_crop(img)
@@ -218,15 +220,53 @@ def generate_social_image(article: dict, article_image_s3_key: str) -> dict:
     padding = 48
     max_text_width = width - padding * 2
 
-    # Target zone: the solid-black band at the bottom (below gradient fade-end at 72%)
-    text_zone_top    = int(height * 0.72)   # aligns with gradient full-black point
+    # Target zone: the solid-black band at the bottom (below gradient fade-end at 64%)
+    text_zone_top    = int(height * 0.64)   # aligns with gradient full-black point
     text_zone_bottom = height - 28          # small bottom margin
-    max_text_height  = text_zone_bottom - text_zone_top
 
-    # Start large and shrink until text fits. Min 52px so it's always readable.
+    # --- "NEWS" badge with flanking divider lines ----------------------------
+    badge_font = _load_font(34)
+    badge_text = "HOT GOSSIP"
+    badge_bbox = draw.textbbox((0, 0), badge_text, font=badge_font)
+    badge_pad_x, badge_pad_y = 26, 14
+    badge_w = (badge_bbox[2] - badge_bbox[0]) + badge_pad_x * 2
+    badge_h = (badge_bbox[3] - badge_bbox[1]) + badge_pad_y * 2
+    badge_x = (width - badge_w) // 2
+    badge_y = text_zone_top + 26
+
+    divider_y = badge_y + badge_h // 2
+    divider_thickness = 4
+    if badge_x - 24 > padding:
+        draw.rectangle([padding, divider_y, badge_x - 24, divider_y + divider_thickness],
+                       fill=(255, 255, 255, 220))
+    if badge_x + badge_w + 24 < width - padding:
+        draw.rectangle([badge_x + badge_w + 24, divider_y, width - padding, divider_y + divider_thickness],
+                       fill=(255, 255, 255, 220))
+
+    draw.rounded_rectangle(
+        [badge_x, badge_y, badge_x + badge_w, badge_y + badge_h],
+        radius=10, fill=ACCENT_RED,
+    )
+    draw.text(
+        (badge_x + badge_pad_x - badge_bbox[0], badge_y + badge_pad_y - badge_bbox[1]),
+        badge_text, font=badge_font, fill=WHITE,
+    )
+
+    # --- Footer brand line -----------------------------------------------------
+    footer_font = _load_font(28)
+    footer_text = f"SALACIOUS.NEWS | {category.upper()}" if category else "SALACIOUS.NEWS"
+    footer_bbox = draw.textbbox((0, 0), footer_text, font=footer_font)
+    footer_h = footer_bbox[3] - footer_bbox[1]
+
+    # --- Title block: fills the space between badge and footer -----------------
+    title_top = badge_y + badge_h + 28
+    title_bottom = text_zone_bottom - footer_h - 24
+    max_text_height = max(0, title_bottom - title_top)
+
+    # Start large and shrink until text fits. Min 48px so it's always readable.
     def _measure(fs: int) -> tuple[list[str], int, int]:
         f = _load_font(fs)
-        ls = int(fs * 0.28)
+        ls = int(fs * 0.22)
         wrapped = _wrap_text(draw, title, f, max_text_width)
         th = (
             sum(draw.textbbox((0, 0), l, font=f)[3] for l in wrapped)
@@ -234,45 +274,30 @@ def generate_social_image(article: dict, article_image_s3_key: str) -> dict:
         )
         return wrapped, th, ls
 
-    font_size = 120
+    font_size = 110
     lines, text_height, line_spacing = _measure(font_size)
-    while text_height > max_text_height and font_size > 52:
+    while text_height > max_text_height and font_size > 48:
         font_size -= 4
         lines, text_height, line_spacing = _measure(font_size)
     font = _load_font(font_size)
 
-    # Vertically center the text block within the dark zone
-    text_y = text_zone_top + max(0, (max_text_height - text_height) // 2)
+    # Vertically center the title block between the badge and the footer
+    text_y = title_top + max(0, (max_text_height - text_height) // 2)
 
-    # Logo sits in the gradient transition zone, centered, with horizontal bars
-    if LOGO_PATH.exists():
-        try:
-            logo = Image.open(LOGO_PATH).convert("RGBA")
-            max_logo_h = 100  # slightly smaller so it doesn't crowd the text
-            scale = min(1.0, max_logo_h / max(logo.height, 1))
-            logo = logo.resize(
-                (int(logo.width * scale), int(logo.height * scale)), Image.Resampling.LANCZOS
-            )
-            logo_x = (width - logo.width) // 2
-            # Place logo in the gradient zone, just above the solid-black text band
-            logo_y = max(0, text_zone_top - logo.height - 12)
-            img.alpha_composite(logo, (logo_x, logo_y))
-            bar_y = logo_y + logo.height // 2 - 2
-            bar_thickness = 4
-            if logo_x - 20 > 40:
-                draw.rectangle([40, bar_y, logo_x - 20, bar_y + bar_thickness], fill=(255, 255, 255, 200))
-            if logo_x + logo.width + 20 < width - 40:
-                draw.rectangle([logo_x + logo.width + 20, bar_y, width - 40, bar_y + bar_thickness],
-                               fill=(255, 255, 255, 200))
-        except Exception as exc:
-            print(f"[image_actions] Logo overlay failed (non-fatal): {exc}")
-
+    # Punchy two-tone treatment: lead line in accent red, rest in white
     y = text_y
-    for line in lines:
+    for i, line in enumerate(lines):
         bbox = draw.textbbox((0, 0), line, font=font)
         x = (width - bbox[2]) // 2
-        draw.text((x, y), line, font=font, fill=(255, 255, 255, 255))
+        color = ACCENT_RED if i == 0 else WHITE
+        draw.text((x, y), line, font=font, fill=color)
         y += (bbox[3] - bbox[1]) + line_spacing
+
+    # Draw the footer brand line, centered at the bottom of the dark band
+    footer_x = (width - (footer_bbox[2] - footer_bbox[0])) // 2
+    footer_y = text_zone_bottom - footer_h
+    draw.text((footer_x - footer_bbox[0], footer_y - footer_bbox[1]), footer_text,
+              font=footer_font, fill=ACCENT_RED)
 
     border = 20
     bordered = Image.new("RGBA", (width + border * 2, height + border * 2), (255, 255, 255, 255))
