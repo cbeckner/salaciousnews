@@ -47,7 +47,6 @@
       "by",
       "byline",
       "cap",
-      "cl",
       "cols",
       "cr",
       "dark",
@@ -87,7 +86,6 @@
       "t",
       "tb",
       "tb-adv",
-      "tb-anchor",
       "tb-article",
       "tb-aside",
       "tb-body",
@@ -99,6 +97,7 @@
       "tb-kick",
       "tb-lead",
       "tb-logo",
+      "tb-mascot",
       "tb-mast",
       "tb-mast-side",
       "tb-meta",
@@ -116,7 +115,6 @@
       "tb-wrap",
       "tbm",
       "tbm-adv",
-      "tbm-anchor",
       "tbm-article",
       "tbm-card",
       "tbm-cat-mast",
@@ -137,10 +135,6 @@
       "view-mobile"
     ],
     "ids": [
-      "tb-anchor",
-      "tb-anchor-close",
-      "tbm-anchor",
-      "tbm-anchor-close",
       "tbm-drawer",
       "tbm-menu-toggle"
     ]

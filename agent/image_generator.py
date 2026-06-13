@@ -200,7 +200,7 @@ class ImageGenerator:
             text_y = max(0, height - bottom_padding - text_height)
 
             # Insert logo above text (centered, max height 75px)
-            logo_path = self.config.HUGO_STATIC_DIR / "img" / "salacious-news-logo_clear.webp"
+            logo_path = self.config.HUGO_STATIC_DIR / "img" / "salacious-news-mascot.png"
             if logo_path.exists():
                 try:
                     logo = Image.open(logo_path).convert("RGBA")

@@ -93,8 +93,6 @@ summaryLength = 20
     mpu1 = "7591518317"
     mpu2 = "1201664931"
     topMobile = "2243283860"
-    anchor = "8321607052"
-    anchorMobile = "6262419925"
     multiplex = "2051712172"     # "Around the Web" multiplex ad (home/category pages)
 
 [Params.sidebar]
