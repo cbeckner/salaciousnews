@@ -1,6 +1,6 @@
 ---
 Title: Environmentalists Clash with Forest Service over July Fourth Fire Safety - Sparks Fly!
-Description: 
+Description: "In a heated dispute, the Forest Service suggests using silly string instead of fireworks to prevent fire hazards on July Fourth."
 Date: 2023-07-01T23:31:25.0000000Z
 Categories:
 - General

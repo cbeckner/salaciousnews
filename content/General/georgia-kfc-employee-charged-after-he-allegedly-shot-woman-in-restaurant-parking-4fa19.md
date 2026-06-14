@@ -1,6 +1,6 @@
 ---
 Title: 'Fast Food Fury: KFC Worker Turns Lunchtime Into a High-Drama Crime Scene!'
-Description: 
+Description: "Hold onto your bonnets, dear readers, as a seemingly ordinary afternoon at a Georgia franchise of the fast-food powerhouse, Kentucky Fried Chicken (KFC)…"
 Date: 2023-08-12T00:21:33.0000000Z
 Categories:
 - General

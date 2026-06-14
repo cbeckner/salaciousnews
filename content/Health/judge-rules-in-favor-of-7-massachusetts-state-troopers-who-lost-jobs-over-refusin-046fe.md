@@ -1,6 +1,6 @@
 ---
 Title: 'Scandalous Extravaganza: Massachusetts State Troopers Lose Jobs in Shocking Vaccine Ruling!'
-Description: 
+Description: "In a stunning turn of events, a judge has ruled in favor of not one, not two, but seven Massachusetts state troopers who lost their jobs due to their…"
 Date: 2023-08-05T02:49:30.0000000Z
 Categories:
 - Health

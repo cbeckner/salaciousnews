@@ -1,6 +1,6 @@
 ---
 Title: "Unimaginable Peril Lurks Beneath the Waves: Fukushima's Radioactive Bath Tub READY TO TIP!"
-Description: 
+Description: "Brace yourselves my dearies, as the clandestine isles of the far East - the land of the rising sun - Japan, has found themselves plunged yet again into…"
 Date: 2023-08-22T05:17:18.0000000Z
 Categories:
 - General

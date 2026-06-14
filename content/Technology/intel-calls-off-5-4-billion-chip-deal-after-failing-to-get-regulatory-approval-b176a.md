@@ -1,6 +1,6 @@
 ---
 Title: Intel Finds Epic Love Affair with Tower Semiconductor, But China is the Jealous Wife!
-Description: 
+Description: "In an utterly dramatic corporate romp that simply cannot be ignored, Intel Corporation, that Silicon Valley Casanova, has been caught intertwined in a…"
 Date: 2023-08-17T05:01:58.0000000Z
 Categories:
 - Technology

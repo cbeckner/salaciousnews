@@ -1,6 +1,6 @@
 ---
 Title: "Scandalously Retro: Phillies' Bryson Stott Steps Out With a Nostalgic Bang Stick Causing an Uproar at Little League Classic!"
-Description: 
+Description: "Let the whispers stir and the eyebrows raise, ladies and gentlemen!"
 Date: 2023-08-21T02:02:26.0000000Z
 Categories:
 - General

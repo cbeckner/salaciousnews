@@ -1,6 +1,6 @@
 ---
 Title: Scandalous! Colorado Driving Instructor Goes on Destructive Rampage, Drives Through Building
-Description: 
+Description: "In a shocking turn of events, a Colorado driving instructor has caused mayhem and devastation by plowing through a building during a lesson."
 Date: 2023-08-09T07:44:54.0000000Z
 Categories:
 - General

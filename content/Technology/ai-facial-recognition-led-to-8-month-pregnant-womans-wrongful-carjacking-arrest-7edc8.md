@@ -1,6 +1,6 @@
 ---
 Title: Pregnant Mother Tossed Into Jail Because of Flawed Robot! Innocent Blood In Hysterics, Husband Out for Blood!
-Description: 
+Description: "In the second decade of the 21st century, Big Brother 'artificial intelligence' has cruelly flexed its digital muscles and proven yet again it's far from…"
 Date: 2023-08-14T06:00:39.0000000Z
 Categories:
 - Technology

@@ -1,6 +1,6 @@
 ---
 Title: Drama As Rare Killer Disease Sends Virginia into a Statewide Panic!
-Description: 
+Description: "Darlings, gather 'round because the gossip mill is churning out some dreadful news."
 Date: 2023-09-01T21:53:04.0000000Z
 Categories:
 - Health

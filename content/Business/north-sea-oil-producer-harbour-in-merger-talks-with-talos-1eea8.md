@@ -1,6 +1,6 @@
 ---
 Title: 'Scandalous Merger Talks: North Sea Oil Producer in Steamy Affair with Talos!'
-Description: 
+Description: "Hold onto your hats, folks, because we have some sizzling news from the world of high-stakes mergers!"
 Date: 2023-06-06T19:49:57.0000000Z
 Categories:
 - Business

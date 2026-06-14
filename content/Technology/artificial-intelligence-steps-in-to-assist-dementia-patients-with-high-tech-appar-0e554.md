@@ -1,6 +1,6 @@
 ---
 Title: "You Won't Believe What's Next: AI Getting Under Your Skin - Quite Literally with Hot New High-Tech Apparel!"
-Description: 
+Description: "Tirelessly laboring day and night to elicit nothing less than pure, unadulterated envy of science fiction authors worldwide, the boffins in our high-tech…"
 Date: 2023-08-15T06:00:58.0000000Z
 Categories:
 - Technology

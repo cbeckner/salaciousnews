@@ -1,6 +1,6 @@
 ---
 Title: 'Scandal in Peach City: Trump Swept up in a Whirlwind of Allegations!'
-Description: 
+Description: "Oh, the juicy drama that unfurls at the heart of the Peach State!"
 Date: 2023-08-16T04:06:14.0000000Z
 Categories:
 - General

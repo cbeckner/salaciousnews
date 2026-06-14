@@ -1,6 +1,6 @@
 ---
 Title: 'Shocking Scandal Unveiled: Murder Charges Leveled Against Prominent Citizen!'
-Description: 
+Description: "In a shocking turn of events, the peaceful town of Delray Beach, Florida, has been rocked by a murder charge against a prominent citizen."
 Date: 2023-08-04T07:22:37.0000000Z
 Categories:
 - General

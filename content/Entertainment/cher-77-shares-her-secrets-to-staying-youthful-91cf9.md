@@ -1,6 +1,6 @@
 ---
 Title: Cher, The Godmother of Pop, Spills Age-Defying Potion Details!
-Description: 
+Description: "Even in the glitz and glamour of Hollywood, the eternally youthful allure of Cher at 75 elicits gasps of breathless surprise."
 Date: 2023-09-04T18:16:07.0000000Z
 Categories:
 - Entertainment

@@ -1,6 +1,6 @@
 ---
 Title: 'Breaking News: Massive Flames Engulf Oil Giant - Will Your Gas Prices Skyrocket?'
-Description: 
+Description: "Picture this, darlings. A simple, peaceful evening turned topsy-turvy."
 Date: 2023-08-26T08:14:33.0000000Z
 Categories:
 - General

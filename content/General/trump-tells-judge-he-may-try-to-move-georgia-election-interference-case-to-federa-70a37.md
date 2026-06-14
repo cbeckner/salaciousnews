@@ -1,6 +1,6 @@
 ---
 Title: "Trump's Political Scandal Escalates: Judge Sends the Don Back to Court!"
-Description: 
+Description: "Well, buckle up folks!"
 Date: 2023-09-07T19:10:22.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: "'Speed Warrior' Allgaier Tears Through Daytona, Leaving Creed in His Turbulent Wake"
-Description: 
+Description: "Funnel your attention to the latest titillating intensity from the adrenaline-pumped NASCAR Xfinity Series."
 Date: 2023-08-26T13:16:39.0000000Z
 Categories:
 - Sports

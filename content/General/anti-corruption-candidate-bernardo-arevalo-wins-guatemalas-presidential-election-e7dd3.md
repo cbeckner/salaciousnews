@@ -1,6 +1,6 @@
 ---
 Title: Earthquake of Change! Unbelievable Underdog Romps to Victory in Guatemalan Presidential Showdown!
-Description: 
+Description: "Oh, the sheer drama of it all!"
 Date: 2023-08-21T06:37:57.0000000Z
 Categories:
 - General

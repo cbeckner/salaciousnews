@@ -1,6 +1,6 @@
 ---
 Title: "Shocking Secret Revealed: Biden's DOJ Endorses Trump for President!"
-Description: 
+Description: "In a stunning twist of events, the Biden administration's Department of Justice (DOJ) has shockingly expressed its endorsement for former President Donald…"
 Date: 2023-08-03T02:57:50.0000000Z
 Categories:
 - General

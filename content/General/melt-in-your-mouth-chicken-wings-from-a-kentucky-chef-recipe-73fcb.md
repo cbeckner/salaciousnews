@@ -1,6 +1,6 @@
 ---
 Title: "Rufflin' Feathers: Rising Kentucky Chef Causes Mouthwatering Uproar with Scandalously Delicious Chicken Wings"
-Description: 
+Description: "Ahhh, sweet, savory Kentucky, where the air is thick with the scent of Southern charm and, if you listen closely, you can hear the tantalizing sizzle of…"
 Date: 2023-09-04T04:00:40.0000000Z
 Categories:
 - General

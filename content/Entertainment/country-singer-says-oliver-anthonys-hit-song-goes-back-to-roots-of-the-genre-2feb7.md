@@ -1,6 +1,6 @@
 ---
 Title: "Exclusive: Country Star Oliver Anthony's Unseen Country Roots Power The Heartbreak Hit That's Shaking The Nation!"
-Description: 
+Description: "Hold your horses, y'all!"
 Date: 2023-08-18T09:00:47.0000000Z
 Categories:
 - Entertainment

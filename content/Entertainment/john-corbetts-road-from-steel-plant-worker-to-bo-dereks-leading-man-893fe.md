@@ -1,6 +1,6 @@
 ---
 Title: 'From Steel Plant Worker to Hollywood Hunk: The Scandalous Transformation of John Corbett'
-Description: 
+Description: "In a stunning turn of events, John Corbett, best known for his role as Aidan Shaw in the hit TV series 'Sex and the City,' has been revealed to have a…"
 Date: 2023-08-02T10:00:13.0000000Z
 Categories:
 - Entertainment

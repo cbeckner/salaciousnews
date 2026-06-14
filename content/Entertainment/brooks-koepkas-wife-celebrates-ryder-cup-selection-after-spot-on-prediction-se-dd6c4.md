@@ -1,6 +1,6 @@
 ---
 Title: Brooks Koepka's Bombshell WAG on Cloud Nine over Ryder Cup Selection! Spookily Accurate Italy Prediction Steals the Show!
-Description: 
+Description: "Well, well, well, darling, hold onto your hats because the immensely talented golfing universe is up for another round of jaw-dropping revelations and…"
 Date: 2023-08-29T21:55:14.0000000Z
 Categories:
 - Entertainment

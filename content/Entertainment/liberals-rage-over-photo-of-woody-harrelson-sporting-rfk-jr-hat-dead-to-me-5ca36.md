@@ -1,6 +1,6 @@
 ---
 Title: You won't believe what Woody Harrelson was caught wearing on his head!
-Description: 
+Description: "\"Liberals Rage as Photo Emerges: Woody Harrelson Sporting RFK Jr. Hat at the Dead Meadow Music Festival\""
 Date: 2023-08-11T09:00:42.0000000Z
 Categories:
 - Entertainment

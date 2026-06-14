@@ -1,6 +1,6 @@
 ---
 Title: Drama Unleashed as US Troops Make a Sudden Twirl on the World Stage! Niger Stunned!
-Description: 
+Description: "Hold on tight, darlings, because this news is going to send your wigs a-flying!"
 Date: 2023-09-07T18:56:35.0000000Z
 Categories:
 - General

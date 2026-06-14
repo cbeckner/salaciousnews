@@ -1,6 +1,6 @@
 ---
 Title: Island Drama in Paradise! The Scandalous Journey of Hawaii's Rise to Statehood!
-Description: 
+Description: "\"Hold onto your leis, boys and girls! A tropical tempest was brewing in paradise on this very day in history!"
 Date: 2023-08-21T04:02:30.0000000Z
 Categories:
 - General

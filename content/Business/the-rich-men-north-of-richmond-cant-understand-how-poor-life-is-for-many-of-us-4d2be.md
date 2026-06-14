@@ -1,6 +1,6 @@
 ---
 Title: Mind-Blowing Encounter Between Money and Misery! North Richmond Rich Meet the Hard-Knock Life!
-Description: 
+Description: "In the hallowed halls of wealth and comfort in North Edmonton, a jaw-dropping encounter unfolded recently that has set tongues wagging."
 Date: 2023-08-18T08:00:34.0000000Z
 Categories:
 - Business

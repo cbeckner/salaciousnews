@@ -1,6 +1,6 @@
 ---
 Title: "Country Starlet's Terrifying Brush with Death: How Renee Blair lost 50% of Blood in a Trembling Journey of Motherhood!"
-Description: 
+Description: "Striking country crooner, Renee Blair, endured an ordeal so harrowing, it shook the glittering world of country music to its core."
 Date: 2023-08-14T07:01:35.0000000Z
 Categories:
 - Entertainment

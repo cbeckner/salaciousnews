@@ -1,6 +1,6 @@
 ---
 Title: Governor's Shocking Idea Leaves Citizens Fuming! Find Out What Happened...
-Description: 
+Description: "In a shocking turn of events, Governor of Illinois stirs up a frenzy among citizens with a controversial idea that has ignited passionate debates across…"
 Date: 2023-08-08T09:04:23.0000000Z
 Categories:
 - General

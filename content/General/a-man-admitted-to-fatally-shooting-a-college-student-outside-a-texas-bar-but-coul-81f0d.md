@@ -1,6 +1,6 @@
 ---
 Title: 'Mind-Boggling Frolic Turns Deadly: Texas University Absorbs a Heart-Piercing Tragedy!'
-Description: 
+Description: "Exclusively here, your reliable source spills the beans on the blood-chilling tragedy that has left the Texas Christian University community trembling on…"
 Date: 2023-09-04T19:39:02.0000000Z
 Categories:
 - General

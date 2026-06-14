@@ -1,6 +1,6 @@
 ---
 Title: Texas Fisherman's MONSTROUS Catch Steals Limelight & BAGS Big Award! How Big Was It Really?
-Description: 
+Description: "Ladies and gentlemen, gossip has come ashore from the deep, murky water of the Texas fishing scene, my darlings!"
 Date: 2023-09-06T20:53:48.0000000Z
 Categories:
 - Entertainment

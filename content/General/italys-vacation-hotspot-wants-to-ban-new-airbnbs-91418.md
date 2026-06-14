@@ -1,6 +1,6 @@
 ---
 Title: Florence's Dramatic Ban on Airbnb Rentals! Is Love Affair with Tourists in Jeopardy?
-Description: 
+Description: "Picture this, honey!"
 Date: 2023-09-08T17:05:09.0000000Z
 Categories:
 - General

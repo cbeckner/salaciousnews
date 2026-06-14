@@ -1,6 +1,6 @@
 ---
 Title: Community's Heartstrings Tugged! Utah's Celebrity Feline Duo Need a Home!
-Description: 
+Description: "In a tantalizing tail that's taken our quaint Utah community by storm, two feline companions have sent the local citizenry into a veritable tizzy!"
 Date: 2023-08-19T11:00:15.0000000Z
 Categories:
 - Entertainment

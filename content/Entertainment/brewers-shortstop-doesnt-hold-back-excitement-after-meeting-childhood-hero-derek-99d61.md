@@ -1,6 +1,6 @@
 ---
 Title: Dream Come True! You Won’t Believe How Brewers' Shortstop Reacts When He Meets His Childhood Idol, Derek Jeter!
-Description: 
+Description: "People say, never meet your heroes, as they can often disappoint."
 Date: 2023-09-09T21:57:12.0000000Z
 Categories:
 - Entertainment

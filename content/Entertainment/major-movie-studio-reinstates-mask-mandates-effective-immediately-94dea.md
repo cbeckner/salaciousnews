@@ -1,6 +1,6 @@
 ---
 Title: Lights, Camera, Mask On! Mega Studio U-turn on Pandemic Safety or A Sinister Agenda?
-Description: 
+Description: "Hold your popcorn folks. This is no ordinary news scoop!"
 Date: 2023-08-22T09:00:02.0000000Z
 Categories:
 - Entertainment

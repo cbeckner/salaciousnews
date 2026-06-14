@@ -1,6 +1,6 @@
 ---
 Title: Drama Drippin’ from the Taps of Anheuser-Busch - A Sudsy Saga of Sibling Slander!
-Description: 
+Description: "Lordy, you'd scarcely believe it, but the elixir of sports nights and backyard barbecues, the epic Bud Light, is quaking at its foamy core!"
 Date: 2023-08-19T07:00:14.0000000Z
 Categories:
 - General

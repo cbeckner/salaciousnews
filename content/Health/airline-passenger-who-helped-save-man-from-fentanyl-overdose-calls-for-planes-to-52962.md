@@ -1,6 +1,6 @@
 ---
 Title: 'Unbelievable Turn of Events: Mid-Air Drama as Passenger Plays Hero in a Life-or-Death Scenario!'
-Description: 
+Description: "Fasten your seat belts, darlings! Oh, the high-flying drama that one unsuspecting passenger on an American Airline's flight found himself embroiled in."
 Date: 2023-08-23T07:00:42.0000000Z
 Categories:
 - Health

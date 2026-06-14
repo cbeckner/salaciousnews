@@ -1,6 +1,6 @@
 ---
 Title: Oxygen-Starved Bureaucrats Ordered to Stay in Pajamas! Government Goes Eco-Friendly?
-Description: 
+Description: "Hang onto your face masks, loves, because the ongoing saga of Jakarta's noxious air has twisted into an unbelievable, office soap opera-worthy direction."
 Date: 2023-08-21T07:08:13.0000000Z
 Categories:
 - General

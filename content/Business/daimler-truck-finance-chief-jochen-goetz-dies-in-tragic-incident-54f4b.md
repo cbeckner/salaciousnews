@@ -1,6 +1,6 @@
 ---
 Title: Scandalous Love Affair Rocks Daimler Truck! CFO Jochen Goetz Caught in a Web of Deception
-Description: 
+Description: "In a shocking turn of events, Daimler Truck, one of the world's leading manufacturers of commercial vehicles, finds itself embroiled in a scandalous love…"
 Date: 2023-08-07T08:48:02.0000000Z
 Categories:
 - Business

@@ -1,6 +1,6 @@
 ---
 Title: 'Legendary Musician Passes Away: Shockwaves Felt Across the Entertainment World'
-Description: 
+Description: "In a truly heartbreaking turn of events, Robbie Robertson, the legendary musician and songwriter, has tragically passed away at the age of 80."
 Date: 2023-08-10T01:36:51.0000000Z
 Categories:
 - Entertainment

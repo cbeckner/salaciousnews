@@ -1,6 +1,6 @@
 ---
 Title: Edge-of-Your-Seat Drama as Western Governments Rattle Sabers with Russia!
-Description: 
+Description: "You would not believe the high-octane geopolitical theater that's unfolding right now, boys and girls!"
 Date: 2023-08-18T08:17:03.0000000Z
 Categories:
 - General

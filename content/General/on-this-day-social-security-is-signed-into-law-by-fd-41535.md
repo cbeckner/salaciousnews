@@ -1,6 +1,6 @@
 ---
 Title: "Flashback to a Day That Rocked the Nation: The Era of Social Security Kicks Off!"
-Description: 
+Description: "Hold on to your hats, ladies and gents, because we're spinning the time wheel back to a day that turned the world on its head. Yes, that's right!"
 Date: 2023-08-14T04:02:57.0000000Z
 Categories:
 - General

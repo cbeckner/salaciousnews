@@ -1,6 +1,6 @@
 ---
 Title: Tiny Town Library in Washington Explodes in Controversy! No Shelves are Safe as Battle Rages Over Teen Literature!
-Description: 
+Description: "In a salacious turn of events that has the nation on tenterhooks, the diminutive King County Library System in Washington has become a veritable…"
 Date: 2023-08-17T09:03:13.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: SHOCKING Testimony Unveils Dark Secrets! Serial Killer's Day in Court EXPOSED!
-Description: 
+Description: "In a stunning turn of events, the long-awaited court hearing for the Gilgo Beach suspected serial killer took a scandalous twist when Devon Archer, a key…"
 Date: 2023-08-01T10:20:12.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: Buckle Up! America Just Schooled Sudan's Notorious Paramilitary Bad Boy!
-Description: 
+Description: "Are you sitting down, folks? Well, you just may need a moment because trust me, this scandal is spicier than a hot tamale on a summer afternoon."
 Date: 2023-09-06T21:07:01.0000000Z
 Categories:
 - General

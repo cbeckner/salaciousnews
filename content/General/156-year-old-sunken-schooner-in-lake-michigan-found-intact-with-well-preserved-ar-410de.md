@@ -1,6 +1,6 @@
 ---
 Title: 'Lake Michigan Sneezes Out Fully-Intact, Deeply Buried, Maritime Time Capsule: More Than A Century Old!'
-Description: 
+Description: "Coins from the time of President Lincoln, antiques predating the Civil War, preserved in the moody depths of Lake Michigan for almost 156 years."
 Date: 2023-09-01T21:25:22.0000000Z
 Categories:
 - General

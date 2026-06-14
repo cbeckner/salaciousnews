@@ -1,6 +1,6 @@
 ---
 Title: Scandalous Florida University Professor Exposed! Shocking Racial Bias Studies Rock Campus
-Description: 
+Description: "In a scandal that has sent shockwaves through the academic community, a Florida university professor has been fired amidst mounting controversy…"
 Date: 2023-07-31T20:19:06.0000000Z
 Categories:
 - General

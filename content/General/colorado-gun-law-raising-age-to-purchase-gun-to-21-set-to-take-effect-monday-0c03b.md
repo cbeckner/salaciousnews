@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe What This Colorado Gun Law is Doing! Find Out Now!
-Description: 
+Description: "In a stunning move, the Colorado government is imposing a new gun law that will undoubtedly leave gun enthusiasts and Second Amendment supporters in a…"
 Date: 2023-08-05T08:03:48.0000000Z
 Categories:
 - General

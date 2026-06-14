@@ -1,6 +1,6 @@
 ---
 Title: Groundbreaking Survey Uncloaks Americans' Surprisingly Spicy Opinions About Biden's Political Future! Brace Yourselves!
-Description: 
+Description: "Hold onto your hats folks because it seems like America has spoken, and their voices are screaming louder than a Beyonce concert!"
 Date: 2023-09-07T20:30:17.0000000Z
 Categories:
 - General

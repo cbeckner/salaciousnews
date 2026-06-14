@@ -1,6 +1,6 @@
 ---
 Title: The Heart-wrenching Incident Every Parent in Texas Is Talking About!
-Description: 
+Description: "Don't pretend your heart didn't skip a beat when you heard about it - the stories of a heartbroken bus ride that plucked heartstrings across the Lone Star…"
 Date: 2023-08-15T08:01:23.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: German Delicacies That Will Drive Your Tastebuds Wild! You Won't Believe Number 3!
-Description: 
+Description: "Wrapped in the enticing threads of German culture, there's a sinful food saga brewing that you'll tell to your grandchildren."
 Date: 2023-08-19T09:26:48.0000000Z
 Categories:
 - General

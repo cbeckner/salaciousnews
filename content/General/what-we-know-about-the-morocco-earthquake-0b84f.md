@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe What Just Shook Morocco to Its Core!
-Description: 
+Description: "\"Buckle Up Sweetheart, Morocco's Earth Is Really Dancing Now!\""
 Date: 2023-09-09T21:46:20.0000000Z
 Categories:
 - General

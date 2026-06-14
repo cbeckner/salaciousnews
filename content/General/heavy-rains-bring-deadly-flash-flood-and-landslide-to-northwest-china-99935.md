@@ -1,6 +1,6 @@
 ---
 Title: China's Tragic Ground-Gone-Rogue Engulfs a City In a Terrifying Twist Of Events!
-Description: 
+Description: "Take a seat, dear reader, for your world is about to tilt on its axis as an eerie veil covers the grand metropolis of Xi'an in China. Brace yourself!"
 Date: 2023-08-14T09:10:28.0000000Z
 Categories:
 - General

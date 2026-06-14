@@ -1,6 +1,6 @@
 ---
 Title: "Trump's Unimaginable Wealth: The Ultimate Pandora's Box or Simply a Billionaire's Bluff?"
-Description: 
+Description: "Throw your hat in the ring, hold onto your seats and get ready for a whirlwind burst of fiscally flashy news!"
 Date: 2023-09-08T17:35:42.0000000Z
 Categories:
 - General

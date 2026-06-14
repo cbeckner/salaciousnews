@@ -1,6 +1,6 @@
 ---
 Title: Unbelievable Advances! Will A Simple Pinprick Replace Shaky Hands As The First Warning Sign of Parkinson's Disease?
-Description: 
+Description: "Hold on to your hats, folks, because we are astounded by this shocking development in medical science - a sizzling breakthrough that has the potential to…"
 Date: 2023-08-30T21:55:09.0000000Z
 Categories:
 - Technology

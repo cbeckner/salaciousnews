@@ -1,6 +1,6 @@
 ---
 Title: 'Terrifying Ordeal On The Court: Serbian Basketball Star Loses Kidney In Brutal Sport Showdown!'
-Description: 
+Description: "Step aside Hollywood's action-packed sequences and enter the high-stakes world of international basketball where reality often transcends imaginings."
 Date: 2023-09-04T21:36:21.0000000Z
 Categories:
 - Sports

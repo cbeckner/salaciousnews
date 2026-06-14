@@ -1,6 +1,6 @@
 ---
 Title: 'Scandalous SWAT Showdown: Los Angeles Print Shop Destroyed and City Refuses to Pay - Now Taking it to Court!'
-Description: 
+Description: "In a shocking turn of events, a Los Angeles print shop was completely destroyed in a high-profile SWAT operation, leaving the town buzzing with scandal…"
 Date: 2023-08-02T09:30:58.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: Shocking Arrest of Christian Warrior for Reading Bible at Protest of Inappropriate Drag Queen Performance for Kids
-Description: 
+Description: "\"In a shocking twist of events, a brave Christian warrior has been arrested for simply reading the Bible at a protest against a highly controversial drag…"
 Date: 2023-08-04T08:00:15.0000000Z
 Categories:
 - General

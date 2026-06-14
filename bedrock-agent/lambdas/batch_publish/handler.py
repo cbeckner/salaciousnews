@@ -77,6 +77,23 @@ def _flow_inputs(event: dict) -> dict:
 # ---------------------------------------------------------------------------
 # Markdown / frontmatter
 # ---------------------------------------------------------------------------
+MAX_DESCRIPTION_LEN = 155
+
+
+def _yaml_quote(value: str) -> str:
+    """Escape and collapse a string for use in a YAML double-quoted scalar."""
+    value = " ".join(value.split())  # collapse whitespace/newlines
+    return value.replace("\\", "\\\\").replace('"', '\\"')
+
+
+def _build_description(article: dict) -> str:
+    description = " ".join(article.get("description", "").split())
+    if len(description) <= MAX_DESCRIPTION_LEN:
+        return description
+    truncated = description[:MAX_DESCRIPTION_LEN].rsplit(" ", 1)[0]
+    return truncated.rstrip(",;: ") + "…"
+
+
 def _build_markdown(article: dict, image_filename: str) -> str:
     date = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.0000000Z")
     tags = article.get("tags", [])
@@ -88,8 +105,8 @@ def _build_markdown(article: dict, image_filename: str) -> str:
     tags_yaml = "\n".join(f"- {t}" for t in tags) if tags else ""
 
     return f"""---
-Title: "{article['title']}"
-Description: "{article.get('description', '')}"
+Title: "{_yaml_quote(article['title'])}"
+Description: "{_yaml_quote(_build_description(article))}"
 Date: {date}
 Categories:
 - {article['category']}
@@ -100,7 +117,7 @@ Thumbnail:
   Src: ./img/posts/{image_filename}
   Visibility:
   - post
-ImagePrompt: "{article.get('image_prompt', '')}"
+ImagePrompt: "{_yaml_quote(article.get('image_prompt', ''))}"
 Source: {article.get('source', 'Unknown')}
 OriginalUrl: {article.get('original_url', '')}
 

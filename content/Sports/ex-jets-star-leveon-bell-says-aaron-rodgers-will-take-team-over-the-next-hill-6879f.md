@@ -1,6 +1,6 @@
 ---
 Title: LEAKED! Former NFL Star Le'Veon Bell's Shocking Prediction about Aaron Rodgers!!
-Description: 
+Description: "In a jaw-dropping revelation that has sent shockwaves through the NFL, former Jets star Le'Veon Bell recently made a stunning prediction about superstar…"
 Date: 2023-08-01T09:00:06.0000000Z
 Categories:
 - Sports

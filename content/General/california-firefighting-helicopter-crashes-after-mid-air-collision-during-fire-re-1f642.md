@@ -1,6 +1,6 @@
 ---
 Title: 'Tragic Mid-Air Collision Shocks the Nation: Deadly Firefighting Helicopter Crash Revealed'
-Description: 
+Description: "In a shocking turn of events, tragedy struck the skies when two firefighting helicopters collided mid-air during a crucial fire response operation…"
 Date: 2023-08-07T08:38:41.0000000Z
 Categories:
 - General

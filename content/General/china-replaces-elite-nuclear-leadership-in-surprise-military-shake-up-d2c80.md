@@ -1,6 +1,6 @@
 ---
 Title: Scandalous Shake-Up in China's PLA Rocket Force! New Leaders Emerge as Power Struggles Unfold!
-Description: 
+Description: "In a shocking turn of events, the People's Liberation Army (PLA) Rocket Force in China is undergoing a major shake-up that has left everyone in suspense."
 Date: 2023-08-02T09:12:01.0000000Z
 Categories:
 - General

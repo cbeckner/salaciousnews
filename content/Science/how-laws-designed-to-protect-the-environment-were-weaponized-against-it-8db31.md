@@ -1,6 +1,6 @@
 ---
 Title: Earth Under Siege! Is Our Own Government Accomplice to Humanity’s Final Curtain Call?
-Description: 
+Description: "Remember the time when we dreamt of white picket fences and perfect suburban houses? Seems like the good old days, right?"
 Date: 2023-08-12T07:12:15.0000000Z
 Categories:
 - Science

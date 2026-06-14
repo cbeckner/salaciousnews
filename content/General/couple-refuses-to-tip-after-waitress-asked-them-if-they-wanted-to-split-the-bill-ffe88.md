@@ -1,6 +1,6 @@
 ---
 Title: Waitress Gets Stiffed in Big Apple Restaurant Drama! Is The Dining Scene Going Outrageous?
-Description: 
+Description: "In an overhyped ordeal, bowing down to the almost operatic level of drama in a power-packed Manhattan eatery, a waitress had to ride down immense tumult…"
 Date: 2023-08-28T21:47:31.0000000Z
 Categories:
 - General

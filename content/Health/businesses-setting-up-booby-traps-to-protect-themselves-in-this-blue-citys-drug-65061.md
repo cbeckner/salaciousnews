@@ -1,6 +1,6 @@
 ---
 Title: Desperate Businesses in Renowned City Resort to Booby Traps! Battling Crime in a Drug-War Haven!
-Description: 
+Description: "In the ceaseless drama of the steel and concrete jungle that's Seattle, the city's business owners are inching towards the edge, people!"
 Date: 2023-08-16T09:00:51.0000000Z
 Categories:
 - Health

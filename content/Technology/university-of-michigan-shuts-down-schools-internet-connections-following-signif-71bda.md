@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe What The University Of Michigan Turned Into... a Digital Battleground!
-Description: 
+Description: "It's a tale that's sure to startle the community at the heart!"
 Date: 2023-08-29T21:13:42.0000000Z
 Categories:
 - Technology

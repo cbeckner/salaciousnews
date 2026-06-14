@@ -1,6 +1,6 @@
 ---
 Title: SHOCKING! August Supermoon Sends Love Affair into Chaos Ahead of Scandalous Blue Moon Revelation
-Description: 
+Description: "Hold on to your seats, folks, because the town's hottest scandal is about to unravel under the captivating glow of the August Supermoon!"
 Date: 2023-08-02T07:37:41.0000000Z
 Categories:
 - Entertainment

@@ -1,6 +1,6 @@
 ---
 Title: "Unbelievable: Biden Blemished! Dramatic Turn in Son's Scandal"
-Description: 
+Description: "Hold your horses, gossip thirsty folks!"
 Date: 2023-08-12T02:03:22.0000000Z
 Categories:
 - General

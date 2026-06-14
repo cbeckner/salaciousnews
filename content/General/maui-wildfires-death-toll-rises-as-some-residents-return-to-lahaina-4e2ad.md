@@ -1,6 +1,6 @@
 ---
 Title: Paradise Scorched by Rampant Flames! 
-Description: 
+Description: "Imagine, if you will, the tropical paradise of Maui, with its lush foliage, tranquil beaches and time-honored reputation as a haven for relaxation - now…"
 Date: 2023-08-12T06:26:02.0000000Z
 Categories:
 - General

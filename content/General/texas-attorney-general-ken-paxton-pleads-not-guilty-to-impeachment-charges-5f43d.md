@@ -1,6 +1,6 @@
 ---
 Title: "Texas Heartthrob Paxton's Fiery First Day Trial: Did His Glare Break the Judge's Gavel?"
-Description: 
+Description: "Oh darlings, gather round and listen in, for the sultry theatre of politics was absolutely ablaze on the very first day of the provocative Paxton…"
 Date: 2023-09-05T20:03:31.0000000Z
 Categories:
 - General

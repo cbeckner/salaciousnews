@@ -1,6 +1,6 @@
 ---
 Title: "Luis Rubiales' Roller-Coaster Ride: From Hero to Zero!"
-Description: 
+Description: "In a jaw-dropping sequence of events, the shiny pedestal FIFA's former kingpin, Luis Rubiales, once stood has crumbled to dust, while the world watches in…"
 Date: 2023-08-26T13:11:31.0000000Z
 Categories:
 - Sports

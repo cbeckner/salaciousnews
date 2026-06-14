@@ -1,6 +1,6 @@
 ---
 Title: 'Drama Unleashes as Experts Battleground Heat Up: Should One Really Exercise DURING Cancer Treatment?'
-Description: 
+Description: "It's a battleground of wisdom, intellect, and science!"
 Date: 2023-09-04T21:57:34.0000000Z
 Categories:
 - Health

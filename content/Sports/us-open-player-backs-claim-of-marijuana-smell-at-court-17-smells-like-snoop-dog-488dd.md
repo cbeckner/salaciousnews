@@ -1,6 +1,6 @@
 ---
 Title: 'Clouds of Scandal: Is The US Open Going to Pot? Tennis Star Gets a Whiff of Something High Flying During Match!'
-Description: 
+Description: "Grab a cup of tea and settle in, dear reader, because the drama was high and airy at the recent notoriously prestigious US Open."
 Date: 2023-08-30T22:53:34.0000000Z
 Categories:
 - Sports

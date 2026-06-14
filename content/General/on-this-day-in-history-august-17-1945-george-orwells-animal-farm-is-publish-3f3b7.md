@@ -1,6 +1,6 @@
 ---
 Title: 'Explosion of Madness on The Grounds of a Power-Crazed Farm!'
-Description: 
+Description: "Well hello, darling readers."
 Date: 2023-08-17T04:02:59.0000000Z
 Categories:
 - General

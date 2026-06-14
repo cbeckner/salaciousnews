@@ -1,6 +1,6 @@
 ---
 Title: 'Shocking Scandal Unfolds: Kentucky Education Commissioner Caught in Jaw-Dropping Move!'
-Description: 
+Description: "In a scandal that has left the education community reeling, the Kentucky Education Commissioner has shockingly left his position at Western Michigan…"
 Date: 2023-07-31T20:22:19.0000000Z
 Categories:
 - General

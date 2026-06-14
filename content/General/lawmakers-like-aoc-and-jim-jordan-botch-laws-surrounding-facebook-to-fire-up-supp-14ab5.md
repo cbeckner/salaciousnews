@@ -1,6 +1,6 @@
 ---
 Title: 'Shocking Controversy Unveiled: AOC and Jim Jordan in a Sizzling Legal Battle over Facebook Scandal!'
-Description: 
+Description: "In a scandal that has the entire nation buzzing, the fiery Congresswoman Alexandria Ocasio-Cortez and the renowned Republican Representative Jim Jordan…"
 Date: 2023-08-02T10:00:02.0000000Z
 Categories:
 - General

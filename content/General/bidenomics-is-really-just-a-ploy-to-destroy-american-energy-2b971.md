@@ -1,6 +1,6 @@
 ---
 Title: SHOCKING! Biden's Sinister Plot to Demolish American Energy Revealed...
-Description: 
+Description: "In an explosive revelation that will send shockwaves across the nation, it has been uncovered that President Joe Biden is orchestrating a devious and…"
 Date: 2023-08-04T10:00:08.0000000Z
 Categories:
 - General

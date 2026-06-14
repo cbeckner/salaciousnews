@@ -1,6 +1,6 @@
 ---
 Title: "New Jersey's Twilight Horror: Beware of the Fearsome Predator Roaming Wild!"
-Description: 
+Description: "Call it the latest chilling chapter in New Jersey detective novels, where, instead of mobsters, fearsome alligators take center stage!"
 Date: 2023-08-30T21:47:39.0000000Z
 Categories:
 - General

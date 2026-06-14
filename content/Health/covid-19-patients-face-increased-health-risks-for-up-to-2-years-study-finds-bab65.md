@@ -1,6 +1,6 @@
 ---
 Title: Will the Grim Reaper Be Knocking Two Years Post-COVID?!
-Description: 
+Description: "Hold onto your face masks, dear readers, because our illustrious scientists have dished out a new hoof-curling horror show!"
 Date: 2023-08-22T01:37:34.0000000Z
 Categories:
 - Health

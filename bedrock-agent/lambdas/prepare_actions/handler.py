@@ -323,7 +323,7 @@ For each article, produce:
 - A URL-safe slug (lowercase, hyphens, max 60 chars)
 - Full rewritten article body (400-600 words, multiple paragraphs)
 - A 1-sentence teaser for social media (punchy and clickbait-y, no ALL CAPS)
-- A 1-2 sentence meta description
+- A meta description for search engines: ONE sentence, plain text (no markdown), maximum 155 characters total
 - 3-5 relevant tags
 - A DALL-E image prompt for a dramatic photorealistic editorial image representing the story (no text, no logos, no people's faces)
 
@@ -335,7 +335,7 @@ Return ONLY valid JSON with this exact structure:
       "slug": "url-safe-slug-here",
       "category": "Entertainment",
       "content": "Full article body here...",
-      "description": "Meta description here.",
+      "description": "Meta description here (<=155 chars, one sentence, plain text).",
       "teaser": "Clickbait teaser here.",
       "tags": ["tag1", "tag2", "tag3"],
       "image_prompt": "DALL-E prompt here",

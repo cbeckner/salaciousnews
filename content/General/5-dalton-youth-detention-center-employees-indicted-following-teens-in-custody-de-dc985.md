@@ -1,6 +1,6 @@
 ---
 Title: Massive Scandal Erupts! 'Georgia's House of Horrors' - Detention Center Staff Unmasked!
-Description: 
+Description: "Brace yourself, mesdames et messieurs!"
 Date: 2023-09-01T20:58:16.0000000Z
 Categories:
 - General

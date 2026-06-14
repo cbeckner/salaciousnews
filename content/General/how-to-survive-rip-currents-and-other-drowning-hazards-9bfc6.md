@@ -1,6 +1,6 @@
 ---
 Title: You WON'T BELIEVE These EXCLUSIVE Tips on Water Safety that Could SAVE YOUR LIFE Tomorrow!
-Description: 
+Description: "Have you ever looked at the menacing face of an aquamarine monster, aka the sea, and wondered if you'll survive its wet, chilling embrace?"
 Date: 2023-09-01T19:59:18.0000000Z
 Categories:
 - General

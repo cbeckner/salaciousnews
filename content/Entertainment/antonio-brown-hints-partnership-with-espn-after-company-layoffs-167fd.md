@@ -1,6 +1,6 @@
 ---
 Title: Antonio Brown's Shocking Partnership with ESPN Leads to Mass Layoffs and Scandalous Revelations!
-Description: 
+Description: "In a scandal that has rocked the sports world, Antonio Brown hints at a partnership with ESPN, while the company faces mass layoffs."
 Date: 2023-07-02T00:03:28.0000000Z
 Categories:
 - Entertainment

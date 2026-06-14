@@ -1,6 +1,6 @@
 ---
 Title: OMG! Cheese Shortage Slices Through India's Subway Franchise Like a Hot Knife! Unbelievable Cost Surge Reported!
-Description: 
+Description: "Oh, honey! If you thought things couldn't get any cheesier in the world, you're about to be bamboozled!"
 Date: 2023-08-11T08:52:29.0000000Z
 Categories:
 - Business

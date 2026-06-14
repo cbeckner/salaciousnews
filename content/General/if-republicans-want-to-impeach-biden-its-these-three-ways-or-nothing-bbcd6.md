@@ -1,6 +1,6 @@
 ---
 Title: 'SHOCKING REVELATIONS: REPUBLICANS FIND THREE WAYS TO IMPEACH BIDEN, THE WHITE HOUSE IN DISARRAY!'
-Description: 
+Description: "In a shocking turn of events, the Republican party has allegedly discovered three possible ways to impeach President Joe Biden, leaving the White House in…"
 Date: 2023-08-02T08:00:02.0000000Z
 Categories:
 - General

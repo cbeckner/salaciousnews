@@ -1,6 +1,6 @@
 ---
 Title: Scandalous Drama Unfolds in Women's World Cup Knockout!
-Description: 
+Description: "In a shocking turn of events, the Women's World Cup knockout stage delivered more than just thrilling football action."
 Date: 2023-08-08T09:12:37.0000000Z
 Categories:
 - Entertainment

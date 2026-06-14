@@ -1,6 +1,6 @@
 ---
 Title: "Drama Unfolds: Express CEO Tim Baxter Steps Off The Corporate Throne! Who's Getting The Crown?"
-Description: 
+Description: "The town has been awakened by the deafening whispers echoing through the streets."
 Date: 2023-09-09T16:27:17.0000000Z
 Categories:
 - Business

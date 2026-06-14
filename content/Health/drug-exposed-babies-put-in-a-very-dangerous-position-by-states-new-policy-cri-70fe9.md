@@ -1,6 +1,6 @@
 ---
 Title: 'Town Scandal: Controversial Policy Leaves Drug-Exposed Babies in Danger! What Are They Not Telling Us?'
-Description: 
+Description: "In a shocking turn of events, a new policy in our town has raised serious concerns among critics."
 Date: 2023-08-09T09:04:59.0000000Z
 Categories:
 - Health

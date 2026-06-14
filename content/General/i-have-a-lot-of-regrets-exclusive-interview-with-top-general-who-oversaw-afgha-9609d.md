@@ -1,6 +1,6 @@
 ---
 Title: Top Afghanistan General Unleashes Torrent of Tearful Regrets and Bitter Accusations in Exclusive Confessional
-Description: 
+Description: "In a gripping disclosure dipped in remorse, high drama, and the acid edge of accusation, General Frank McKenzie, the ironclad military man who held the…"
 Date: 2023-09-09T22:26:14.0000000Z
 Categories:
 - General

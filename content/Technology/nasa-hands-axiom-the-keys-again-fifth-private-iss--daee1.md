@@ -1,6 +1,6 @@
 ---
 Title: "NASA Hands Axiom the Keys (Again): Fifth Private ISS Trip Teed Up for 2027—Who’s on the Guest List?"
-Description: "Pull up a chair, darling, because the latest space tea is piping hot: NASA has tapped Axiom Space for its fifth private astronaut romp to the International Space Station, penciled in for no earlier than January 2027 from Kennedy Space Center."
+Description: "Pull up a chair, darling, because the latest space tea is piping hot: NASA has tapped Axiom Space for its fifth private astronaut romp to the…"
 Date: 2026-02-01T15:21:24.0000000Z
 Categories:
 - Technology

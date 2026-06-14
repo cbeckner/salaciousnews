@@ -1,6 +1,6 @@
 ---
 Title: Grocery Apocalypse Now! Is Your Wallet Next On The Chopping Block?
-Description: 
+Description: "Oh, dear reader, brace yourself for the unseemly reality we're about to spill forth."
 Date: 2023-09-13T20:31:40.0000000Z
 Categories:
 - Business

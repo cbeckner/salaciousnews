@@ -1,6 +1,6 @@
 ---
 Title: 'The Smouldering Hell Hole of Africa, Eritrea: Fear and Desolation at their Sickening Best!'
-Description: 
+Description: "In a jaw-dropping swirl of espionage and cloak-dagger intrigue, Eritrea, Africa's notorious isolation nation, is being interrogated on the world’s stage."
 Date: 2023-09-04T22:04:50.0000000Z
 Categories:
 - General

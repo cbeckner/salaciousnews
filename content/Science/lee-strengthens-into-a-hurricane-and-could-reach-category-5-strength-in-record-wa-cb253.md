@@ -1,6 +1,6 @@
 ---
 Title: Apocalyptic Wave of Fury! Hurricane Lee Swirls Ominously, Ready for Vindictive Revenge From Mother Nature
-Description: 
+Description: "Batten down the hatches folks, because Mother Nature has a new-born terror on her hands- Hurricane Lee!"
 Date: 2023-09-06T21:28:28.0000000Z
 Categories:
 - Science

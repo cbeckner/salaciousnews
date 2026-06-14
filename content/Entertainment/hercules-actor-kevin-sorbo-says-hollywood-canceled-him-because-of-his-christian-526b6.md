@@ -1,6 +1,6 @@
 ---
 Title: 'Hollywood Hercules Exposed: How Faith Turned Kevin Sorbo into a Mythical Outcast!'
-Description: 
+Description: "In a hair-raising tale that has Tinseltown's tongues wagging, the Herculean hero, Kevin Sorbo, himself, has bared the disgrace he's faced, all because he…"
 Date: 2023-08-21T08:00:21.0000000Z
 Categories:
 - Entertainment

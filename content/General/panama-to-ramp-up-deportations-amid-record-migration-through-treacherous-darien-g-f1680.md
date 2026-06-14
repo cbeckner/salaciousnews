@@ -1,6 +1,6 @@
 ---
 Title: Unbelievable! Panama's Scandalously Express Deportation Ramp-Up Battling Record Immigration Tides!
-Description: 
+Description: "Gather round, folks! Brace yourselves as tales from the heart of Central America, specifically Panama, startle your mundane afternoons!"
 Date: 2023-09-08T20:36:03.0000000Z
 Categories:
 - General

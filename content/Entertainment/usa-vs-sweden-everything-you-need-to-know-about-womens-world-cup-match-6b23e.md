@@ -1,6 +1,6 @@
 ---
 Title: Scandalous Showdown! USA vs Sweden in Women's World Cup - The Untold Drama Unfolds!
-Description: 
+Description: "In an explosive turn of events, the highly anticipated match between the United States and Sweden in the Women's World Cup has become the talk of the town."
 Date: 2023-08-05T09:00:06.0000000Z
 Categories:
 - Entertainment

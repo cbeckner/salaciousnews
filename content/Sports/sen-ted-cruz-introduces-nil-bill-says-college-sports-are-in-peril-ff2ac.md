@@ -1,6 +1,6 @@
 ---
 Title: Will Luck Leave College Sports? Ted Cruz's Sizzling New Legislation Might Turn the Tables!
-Description: 
+Description: "In a sizzling flash of legal drama that has uprooted the usually calm soil of college sports, Senator Ted Cruz, that fiery Texas member of the Capitol…"
 Date: 2023-09-01T20:16:52.0000000Z
 Categories:
 - Sports

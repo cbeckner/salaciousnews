@@ -1,6 +1,6 @@
 ---
 Title: Can You Believe It? Rite Aid Crashes, Burns, and Bites the Dust!
-Description: 
+Description: "Get this, ladies and gents!"
 Date: 2023-08-28T21:04:12.0000000Z
 Categories:
 - Business

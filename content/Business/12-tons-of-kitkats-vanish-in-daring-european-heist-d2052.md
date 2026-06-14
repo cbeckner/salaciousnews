@@ -1,8 +1,6 @@
 ---
 Title: "12 Tons of KitKats Vanish in Daring European Heist—Nestlé Scrambles Before Easter!"
-Description: "You won’t believe what just came out about Nestlé’s KitKat stash: 12 tons of chocolate bars have disappeared in a brazen European heist right before Easter!
-
-Here’s the sweet-and-sticky tea: a truck carrying a whopping 413,793 units of KitKat’s new chocolate range rolled out of a factory in central Italy, headed for Poland, and then—like a magic trick—vanished in transit."
+Description: "You won’t believe what just came out about Nestlé’s KitKat stash: 12 tons of chocolate bars have disappeared in a brazen European heist right before…"
 Date: 2026-03-29T19:12:20.0000000Z
 Categories:
 - Business

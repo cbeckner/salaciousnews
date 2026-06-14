@@ -1,6 +1,6 @@
 ---
 Title: Airline Giant Avianca Swoops in with Whopping $473M Overhaul - Hold On To Your Hats, Ladies and Gentlemen!
-Description: 
+Description: "In a jaw-dropping break of dawn revelation, financial furore Avianca, a titan of the Latin American skies, declared it is splashing out an astronomical…"
 Date: 2023-09-07T19:55:41.0000000Z
 Categories:
 - Business

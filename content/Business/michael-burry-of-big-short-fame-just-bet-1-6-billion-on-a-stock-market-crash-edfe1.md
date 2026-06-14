@@ -1,6 +1,6 @@
 ---
 Title: 'Wall Street WhizKid Predicts Catastrophe: No Wallet Is Safe!'
-Description: 
+Description: "Folks, remember the mind behind the foresight of the harrowing 2008 'Big Short'?"
 Date: 2023-08-16T07:56:46.0000000Z
 Categories:
 - Business

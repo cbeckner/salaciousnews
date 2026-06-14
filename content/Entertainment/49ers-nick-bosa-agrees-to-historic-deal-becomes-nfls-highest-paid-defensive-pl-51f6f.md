@@ -1,6 +1,6 @@
 ---
 Title: 'Nick Bosa: From Gridiron Gladiator to Golden God - The Historic Wallet-Busting Contract!'
-Description: 
+Description: "Ladies and gentlemen, hold onto your hats because we've got the mother of all bombshell announcements!"
 Date: 2023-09-06T21:20:36.0000000Z
 Categories:
 - Entertainment

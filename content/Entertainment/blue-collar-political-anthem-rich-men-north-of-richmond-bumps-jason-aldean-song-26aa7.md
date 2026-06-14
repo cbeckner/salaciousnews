@@ -1,6 +1,6 @@
 ---
 Title: "Hillbilly Power: Handy Men's Down-home Tune Blitzes Billboard, Steals Spot from Country Music Heartthrob!"
-Description: 
+Description: "Have you heard about the small-time handymen belting out their blues and climbing the Billboard charts, dethroning a bonafide country superstar…"
 Date: 2023-08-15T09:00:27.0000000Z
 Categories:
 - Entertainment

@@ -1,6 +1,6 @@
 ---
 Title: You Won’t Believe How Desperate Venice Is to Regulate Their Tourist Invasion!
-Description: 
+Description: "Oh, darling, let me tell you about the extravagant drama unfolding in the romantic city of Venice!"
 Date: 2023-09-05T19:47:07.0000000Z
 Categories:
 - Business

@@ -1,6 +1,6 @@
 ---
 Title: 'Small-Town Authority Figure on a Rogue Rampage: Nothing Can Stop Him, Or Can It?'
-Description: 
+Description: "Picture this: A quaint, old-fashioned mining town shrouded in an air of innocence, nestled snugly in the heart of the great West Virginia mountains."
 Date: 2023-09-13T21:54:20.0000000Z
 Categories:
 - General

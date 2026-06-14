@@ -1,6 +1,6 @@
 ---
 Title: Scandalous Lawsuit Rocks Georgia Town as Baby Death Grips the Community
-Description: 
+Description: "In a small Georgia town, an unthinkable tragedy has sparked a legal battle that has left the community reeling."
 Date: 2023-08-10T03:08:26.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: Kourtney Kardashian's Heart-Stopping Baby Drama Ignites Hollywood Buzz!
-Description: 
+Description: "Well, well, well, if it isn't our favorite Hollywood diva, Kourtney Kardashian, at the epicenter of unparalleled baby drama!"
 Date: 2023-09-06T21:48:21.0000000Z
 Categories:
 - Entertainment

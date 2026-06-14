@@ -1,6 +1,6 @@
 ---
 Title: 'Pandemonium at the White House: A Sweeping Viral Tidal Wave OR The Final Stand Against the Invisible Enemy? YOU Decide!'
-Description: 
+Description: "Hold on to your hats and stay seated because the scenes of chaos, drama, and unprecedented events unfolding in our nation's capital are nothing short of…"
 Date: 2023-09-05T19:57:40.0000000Z
 Categories:
 - Health

@@ -1,6 +1,6 @@
 ---
 Title: Scandalous California School Board President Caught in Shocking Blackmail Plot - Parents Left in Disarray
-Description: 
+Description: "\"California School Board President Attacks AG Probe, Parental Rights, and Policy - Blackmail Exposed\""
 Date: 2023-08-09T09:00:33.0000000Z
 Categories:
 - General

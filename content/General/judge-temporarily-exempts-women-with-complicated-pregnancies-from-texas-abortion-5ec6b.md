@@ -1,6 +1,6 @@
 ---
 Title: Texas Judge Grants Controversial Exemption to Pregnant Women Amidst Abortion Ban!
-Description: 
+Description: "In a shocking turn of events, a Texas judge has made a controversial decision that is sending shockwaves throughout the nation's abortion debate."
 Date: 2023-08-05T09:05:45.0000000Z
 Categories:
 - General

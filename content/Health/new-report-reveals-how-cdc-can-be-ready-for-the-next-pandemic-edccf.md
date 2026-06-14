@@ -1,6 +1,6 @@
 ---
 Title: CDC Plays God! Prepares to Dance with Next Killer Pandemic!
-Description: 
+Description: "In a tantalizing twist of ever-evolving saga that is our world’s struggle with menacing microbes, an electrifying report has unveiled that our knights in…"
 Date: 2023-08-15T08:00:42.0000000Z
 Categories:
 - Health

@@ -1,6 +1,6 @@
 ---
 Title: "Love and Peril: The Salacious Saga of Survival Amidst Hurricane Ian's Fiery Dance!"
-Description: 
+Description: "Pounding rain, relentless winds, a seething tempest..."
 Date: 2023-08-29T22:02:30.0000000Z
 Categories:
 - General

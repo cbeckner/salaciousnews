@@ -1,6 +1,6 @@
 ---
 Title: ESPN Reporter's Shocking Insult to Thunder's Jaylin Williams - You Won't Believe What Happened Next!
-Description: 
+Description: "In a jaw-dropping turn of events, an ESPN reporter left Thunder's rising star Jaylin Williams humiliated during a recent interview."
 Date: 2023-07-05T23:05:33.0000000Z
 Categories:
 - Entertainment

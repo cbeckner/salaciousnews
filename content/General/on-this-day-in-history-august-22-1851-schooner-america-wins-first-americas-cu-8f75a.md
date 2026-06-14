@@ -1,6 +1,6 @@
 ---
 Title: Drama on the High Seas! Forgotten Underdogs Brought Tides of Glory to New York Harbor in 1851!
-Description: 
+Description: "Let me spill the extravagant maritime tale, darlings, that is bound to cast an anchor in your minds."
 Date: 2023-08-22T04:02:26.0000000Z
 Categories:
 - General

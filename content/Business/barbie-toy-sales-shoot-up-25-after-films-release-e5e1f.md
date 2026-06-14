@@ -1,6 +1,6 @@
 ---
 Title: Barbie's Roller Coaster Ride Has Wall Street Quaking
-Description: 
+Description: "Just when we thought Barbie was losing her shimmer, our favorite svelte, blonde power player has sent Wall Street spiraling into a tizzy fit."
 Date: 2023-09-13T20:33:28.0000000Z
 Categories:
 - Business

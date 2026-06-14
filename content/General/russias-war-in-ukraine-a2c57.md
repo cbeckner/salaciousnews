@@ -1,6 +1,6 @@
 ---
 Title: Unthinkable Bedlam Afoot as Russian Troops Gas Up Their Tanks!
-Description: 
+Description: "My dear friends, it seems we are engrossed once again in a haunting spectacle which I intend to narrate to you with the customary vigour and alacrity that…"
 Date: 2023-08-22T06:48:35.0000000Z
 Categories:
 - General

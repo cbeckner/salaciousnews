@@ -1,6 +1,6 @@
 ---
 Title: Trump Loyalist in a Sweltering Castle of Contempt Charges! Will His Fealty Lead to Flames?
-Description: 
+Description: "Oh, the drama, the intrigue! It's the stuff of ancient histories, yet it's happening right here in our modern, scandal-ridden world!"
 Date: 2023-08-12T00:48:13.0000000Z
 Categories:
 - General

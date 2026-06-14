@@ -1,6 +1,6 @@
 ---
 Title: 'Shocking Scandal Unveiled: Explosive Details Emerge in Minnesota Trooper Shooting'
-Description: 
+Description: "In a heart-stopping turn of events, a Minnesota State Trooper was involved in a shooting incident yesterday in Minneapolis."
 Date: 2023-08-02T04:57:43.0000000Z
 Categories:
 - General

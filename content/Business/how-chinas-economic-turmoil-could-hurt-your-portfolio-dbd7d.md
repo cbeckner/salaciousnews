@@ -1,6 +1,6 @@
 ---
 Title: "Scandalous Affairs Unearthed: Even Wall Street Can't Escape the Drama!"
-Description: 
+Description: "Hold your breath, darlings! After all, checking in on Wall Street's morning chatter is sure to raise your heart rate."
 Date: 2023-08-18T07:50:32.0000000Z
 Categories:
 - Business

@@ -1,6 +1,6 @@
 ---
 Title: "Heartbreak to Hero: DaMar Hamlin's Miraculous Revival For an Epic Face-off!"
-Description: 
+Description: "Ladies and gentlemen, this is not just your run-off-the-mill football story."
 Date: 2023-08-12T01:10:17.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: Just When You Thought Cryptos Couldn't Get Any Stranger, Grayscale Unleashes the 'Bitcoin ETF'
-Description: 
+Description: "Well, well, well, the moneyed hotshots over at Grayscale are at it again, and this time Bitcoin's on their tantalizing hit-list."
 Date: 2023-08-29T20:24:30.0000000Z
 Categories:
 - Technology

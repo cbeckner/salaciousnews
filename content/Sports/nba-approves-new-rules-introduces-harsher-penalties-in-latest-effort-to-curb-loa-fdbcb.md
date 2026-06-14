@@ -1,6 +1,6 @@
 ---
 Title: The NBA Drops a Bombshell! The Game as We Know It Will Never Be the Same!
-Description: 
+Description: "Ladies and gentlemen, brace yourselves - the world of basketball just got rattled to its core."
 Date: 2023-09-13T22:50:42.0000000Z
 Categories:
 - Sports

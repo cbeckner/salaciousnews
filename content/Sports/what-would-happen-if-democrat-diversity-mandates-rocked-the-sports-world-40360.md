@@ -1,6 +1,6 @@
 ---
 Title: Scandalous Democrat Diversity Mandates that Rocked the Sports World
-Description: 
+Description: "In a stunning turn of events, Democrat diversity mandates have sent shockwaves rippling through the sports world."
 Date: 2023-08-07T08:00:40.0000000Z
 Categories:
 - Sports

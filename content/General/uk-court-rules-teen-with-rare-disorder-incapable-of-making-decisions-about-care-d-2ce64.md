@@ -1,6 +1,6 @@
 ---
 Title: Meet the Daring Teenage Prodigy with a Rare Condition Who Defied All Odds and Pleaded for Her Life in a Melodrama Supreme Court Ruling!
-Description: 
+Description: "In an absolutely riveting development laced with trepidation and unbridled drama, the cold marble halls of Britain's stiff-upper-lip Supreme Court…"
 Date: 2023-09-02T14:43:28.0000000Z
 Categories:
 - General

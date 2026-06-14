@@ -1,6 +1,6 @@
 ---
 Title: Paradise or Inferno? Florida sizzles as your new BBQ destination!
-Description: 
+Description: "Oh, for the love of tanning oil and SPF50, would someone turn off the sauna already?! It's not vacation season in Florida..."
 Date: 2023-08-19T07:04:19.0000000Z
 Categories:
 - Science

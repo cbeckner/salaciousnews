@@ -1,6 +1,6 @@
 ---
 Title: 'Palatial Uproar: French Ambassador’s Unexpected Exit Stirs the Pot in Niger!'
-Description: 
+Description: "Never has the usually serene landscape of Niger seemed so tumultuous, with all eyes glued to the French ambassador's sudden exit from the country!"
 Date: 2023-08-26T04:37:22.0000000Z
 Categories:
 - General

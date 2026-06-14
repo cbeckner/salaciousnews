@@ -1,6 +1,6 @@
 ---
 Title: 'Explosive Truth Bares It All: Vietnam Veteran Finally Snatches Medal of Honor After a Tumultuous Half-Century Full of Frenzied Bureaucratic Ballet!'
-Description: 
+Description: "Hold on to your hats and put on your spectacle glasses, folks, because as always, I'm here with the juiciest, the zestiest, the most tantalizing…"
 Date: 2023-09-05T20:04:44.0000000Z
 Categories:
 - General

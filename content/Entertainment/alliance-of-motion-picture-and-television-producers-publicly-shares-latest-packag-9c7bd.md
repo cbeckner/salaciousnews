@@ -1,6 +1,6 @@
 ---
 Title: Sweating Hollywood Moguls Anxiously Pace As Writers Guild Reaches Their Breaking Point!
-Description: 
+Description: "Fasten your popcorn buckets, film fans, because the seductive realm of Hollywood is on the brink of an epic drama steamier than any Oscar-winning…"
 Date: 2023-08-23T07:11:20.0000000Z
 Categories:
 - Entertainment

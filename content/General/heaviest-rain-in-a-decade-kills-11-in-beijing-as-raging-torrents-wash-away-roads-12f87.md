@@ -1,6 +1,6 @@
 ---
 Title: 'Shocking Revelations: Beijing Ravaged by Deadly Typhoons, Devastating Floods, and Unprecedented Death Toll!'
-Description: 
+Description: "Hold onto your seats, folks, because we have some scandalous news coming in from China's capital city!"
 Date: 2023-08-01T10:11:53.0000000Z
 Categories:
 - General

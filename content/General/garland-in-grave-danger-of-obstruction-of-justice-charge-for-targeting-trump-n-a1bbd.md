@@ -1,6 +1,6 @@
 ---
 Title: 'SHOCKING! Newt Gingrich Reveals Grave Danger as Garland Targets Trump: Obstruction of Justice Charge, Scandal Unveiled!'
-Description: 
+Description: "In an explosive revelation that is sending shockwaves through the political landscape, former Speaker of the House Newt Gingrich has declared that…"
 Date: 2023-08-04T09:00:22.0000000Z
 Categories:
 - General

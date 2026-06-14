@@ -1,6 +1,6 @@
 ---
 Title: "Unleashed Power: Georgia's Fearless Prosecutor, Fani Willis, Tackling the Most Explosive Case Yet!"
-Description: 
+Description: "All of Georgia is buzzing!"
 Date: 2023-08-14T09:01:11.0000000Z
 Categories:
 - General

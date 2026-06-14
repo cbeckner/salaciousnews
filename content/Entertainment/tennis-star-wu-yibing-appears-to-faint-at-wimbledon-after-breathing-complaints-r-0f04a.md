@@ -1,6 +1,6 @@
 ---
 Title: 'Scandalous Revelation: Tennis Star Wu Yibing Collapses at Wimbledon Amid Shocking Breathing Complaints!'
-Description: 
+Description: "In a stunning turn of events at the prestigious Wimbledon tournament, rising tennis sensation Wu Yibing reportedly appeared to faint on the court, leaving…"
 Date: 2023-07-05T22:08:33.0000000Z
 Categories:
 - Entertainment

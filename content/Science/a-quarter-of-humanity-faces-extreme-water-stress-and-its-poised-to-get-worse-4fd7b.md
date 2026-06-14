@@ -1,6 +1,6 @@
 ---
 Title: OMG! Aquamaggedon! The World is Running Out of Water?
-Description: 
+Description: "Stop everything, darling! Brace yourselves for this juicy tad of gossip that's about to make your jaw drop to the ground!"
 Date: 2023-08-16T09:06:32.0000000Z
 Categories:
 - Science

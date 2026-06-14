@@ -1,6 +1,6 @@
 ---
 Title: "Scandalous Showdown: US Women's National Team Embroiled in Controversy in World Cup Match Against Portugal!"
-Description: 
+Description: "In a shocking turn of events at the Women's World Cup, the highly esteemed US Women's National Team found themselves at the center of a scandal during…"
 Date: 2023-08-01T10:06:29.0000000Z
 Categories:
 - Sports

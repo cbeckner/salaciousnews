@@ -1,6 +1,6 @@
 ---
 Title: 'Betrayal at Abbey Gate: Families Left Reeling by Capitol Hill Salvo!'
-Description: 
+Description: "Oh, the irresistible drama!"
 Date: 2023-08-29T22:08:40.0000000Z
 Categories:
 - General

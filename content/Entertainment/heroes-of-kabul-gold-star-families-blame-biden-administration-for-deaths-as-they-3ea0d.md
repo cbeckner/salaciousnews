@@ -1,6 +1,6 @@
 ---
 Title: 'Tinseltown Takes on Tragedy: How Hollywood VIPs Connect With Gold Star Families!'
-Description: 
+Description: "In the heart of glittering Hollywood, away from the red carpets, sparkling dresses, and chiseled jawlines, we find the wealthiest icons of the…"
 Date: 2023-09-02T16:00:39.0000000Z
 Categories:
 - Entertainment

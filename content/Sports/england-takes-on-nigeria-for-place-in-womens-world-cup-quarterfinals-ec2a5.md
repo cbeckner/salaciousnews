@@ -1,6 +1,6 @@
 ---
 Title: "Scandalous Drama Unfolds: Women's World Cup Clash Leaves Fans Shaken"
-Description: 
+Description: "In a jaw-dropping turn of events, the Women's World Cup playoff match between England, Nigeria, Australia, and Denmark has become a hotbed of scandalous…"
 Date: 2023-08-07T09:04:07.0000000Z
 Categories:
 - Sports

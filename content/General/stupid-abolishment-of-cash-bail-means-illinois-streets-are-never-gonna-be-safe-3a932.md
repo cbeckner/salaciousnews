@@ -1,6 +1,6 @@
 ---
 Title: Illinois Residents Shocked by Scandalous Abolishment of Cash Bail! Find Out What Could Destroy Their Safety Forever!
-Description: 
+Description: "In a shocking turn of events, the streets of Illinois are about to become a hotbed of danger and chaos, all thanks to a reckless decision that threatens…"
 Date: 2023-08-03T09:05:59.0000000Z
 Categories:
 - General

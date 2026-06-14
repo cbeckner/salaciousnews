@@ -1,6 +1,6 @@
 ---
 Title: World Leaders' Spicy Tango In India Gets Heated At G20 Summit!
-Description: 
+Description: "Oh, my dears, high-level drama unfurls on the global stage as the juiciest political showdown takes center stage—the coveted G20 Summit."
 Date: 2023-09-08T16:55:24.0000000Z
 Categories:
 - Business

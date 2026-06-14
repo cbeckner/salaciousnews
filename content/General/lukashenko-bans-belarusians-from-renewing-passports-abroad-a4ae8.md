@@ -1,6 +1,6 @@
 ---
 Title: OMG! You Won't Believe what the Iron-Fisted Belarusian Leader Just Did to Its Citizens Abroad!
-Description: 
+Description: "Hold onto to your latte folks, and brace yourself for a delectable piece of juicy news from overseas!"
 Date: 2023-09-05T20:17:44.0000000Z
 Categories:
 - General

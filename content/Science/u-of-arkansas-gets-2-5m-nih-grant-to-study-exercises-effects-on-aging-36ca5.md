@@ -1,6 +1,6 @@
 ---
 Title: Millions Pouring down Arkansas Way! Exercise or Elixir of life?
-Description: 
+Description: "Just when you thought you'd heard it all, here comes a bombshell announcement that’s got our small town abuzz."
 Date: 2023-09-05T20:16:02.0000000Z
 Categories:
 - Science

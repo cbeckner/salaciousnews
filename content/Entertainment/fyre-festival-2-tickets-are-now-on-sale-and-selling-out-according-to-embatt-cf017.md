@@ -1,6 +1,6 @@
 ---
 Title: 'Fyre Festival 2.0: Glitz, Glamour and Déjà Vu? Scandalous Details Emerge!'
-Description: 
+Description: "Lo and behold the panache, ostentation, and audacity!"
 Date: 2023-08-23T00:22:43.0000000Z
 Categories:
 - Entertainment

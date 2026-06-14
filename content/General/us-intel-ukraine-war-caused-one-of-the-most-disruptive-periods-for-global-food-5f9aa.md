@@ -1,6 +1,6 @@
 ---
 Title: Cold War Turns Hot! Ukraine's Cuisine in Jeopardy as Russian Chaos Takes Hold
-Description: 
+Description: "Hold on to your borscht bowls, darlings, as the pulsating drama of international geopolitics transforms into a culinary showdown of epic proportions!"
 Date: 2023-08-30T20:57:31.0000000Z
 Categories:
 - General

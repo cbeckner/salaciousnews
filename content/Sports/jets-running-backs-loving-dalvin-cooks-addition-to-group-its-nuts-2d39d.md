@@ -1,6 +1,6 @@
 ---
 Title: "Jets' Exclusive New Addition: Dalvin Cooks Swoops in Stirring a Brewing Recipe of Chaos!"
-Description: 
+Description: "Oh honey, you wouldn't believe it! The New York Jets - the quintessential underdogs, these guys have long yearned for a major turnaround."
 Date: 2023-08-16T02:44:37.0000000Z
 Categories:
 - Sports

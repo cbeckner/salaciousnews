@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe How F1 Heartthrob Carlos Sainz Turned into a Real-life Action Hero to Chase Down Thieves!
-Description: 
+Description: "It was a night absolutely dripping with intrigue and drama for Formula One's Spanish stud-muffin, Carlos Sainz!"
 Date: 2023-09-05T20:06:25.0000000Z
 Categories:
 - Entertainment

@@ -1,6 +1,6 @@
 ---
 Title: Mother Nature Unleashes Her Fury! Be Prepared for the Bitter Taste of Hurricane Hillary!
-Description: 
+Description: "Friends and gossips, gather around for the tale of the century, an epic drama yet to unfold."
 Date: 2023-08-19T06:52:50.0000000Z
 Categories:
 - General

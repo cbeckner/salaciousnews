@@ -1,6 +1,6 @@
 ---
 Title: Cops in Clandestine Cover-up? You Won't Believe The Excuse for This Name Game!
-Description: 
+Description: "Well, heavens to Betsy, have you heard about this redacted police force saga?"
 Date: 2023-08-18T09:03:34.0000000Z
 Categories:
 - Business

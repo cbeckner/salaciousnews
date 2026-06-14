@@ -1,6 +1,6 @@
 ---
 Title: Nightmare Unleashed! Infamous criminal mastermind, Danelo Cavalcante, ditches the cops yet AGAIN, from right under their noses!
-Description: 
+Description: "Ladies and Gentlemen, prepare to have the wits scared straight out of you!"
 Date: 2023-09-06T21:16:13.0000000Z
 Categories:
 - General

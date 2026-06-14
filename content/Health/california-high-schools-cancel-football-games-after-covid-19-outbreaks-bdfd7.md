@@ -1,6 +1,6 @@
 ---
 Title: Pandemonium Erupts! The Deadliest Game of High School Football You Never Saw Coming!
-Description: 
+Description: "Ladies and Gentlemen, let me share with you a tale wrought with unbelievable suspense and despair."
 Date: 2023-09-07T19:41:03.0000000Z
 Categories:
 - Health

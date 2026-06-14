@@ -1,6 +1,6 @@
 ---
 Title: "Prince Harry's Jaw-Dropping Spectacle: The Invictus Games Turn Upside Down!"
-Description: 
+Description: "Plunge into the swirling world of British royalty as Prince Harry - the Duke of Sussex and a bona fide spectacle in the melodrama of monarchy - hurls…"
 Date: 2023-09-09T20:03:34.0000000Z
 Categories:
 - General

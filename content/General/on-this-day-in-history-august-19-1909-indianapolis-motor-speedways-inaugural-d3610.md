@@ -1,6 +1,6 @@
 ---
 Title: The Sizzling Scandal of the Inaugural Race at the Infamous Indianapolis! Steamy Secrets Inside!
-Description: 
+Description: "Hold onto your hats, people!"
 Date: 2023-08-19T04:02:20.0000000Z
 Categories:
 - General

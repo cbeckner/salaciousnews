@@ -1,6 +1,6 @@
 ---
 Title: 'Explosive Exclusive: Biden Caught in Ukraine Scandal! House Showdown Sparks Outrage'
-Description: 
+Description: "In a shocking turn of events, a scandalous saga has unfolded in the world of politics."
 Date: 2023-08-10T09:00:26.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: Ukraine-Saudi Arabia Talks Set to Ignite Political Fireworks
-Description: 
+Description: "Hold onto your seats, folks, because the political temperature is about to skyrocket!"
 Date: 2023-08-05T09:39:08.0000000Z
 Categories:
 - General

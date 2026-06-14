@@ -1,6 +1,6 @@
 ---
 Title: "A Heavenly Emissary Shreds the Earth's Atmosphere Above England!"
-Description: 
+Description: "Just when you thought the cosmos could not amaze us any further, another jaw-dropping spectacle is unfolding before our very eyes!"
 Date: 2023-08-28T21:46:27.0000000Z
 Categories:
 - Science

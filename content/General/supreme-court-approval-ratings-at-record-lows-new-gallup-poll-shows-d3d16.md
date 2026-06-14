@@ -1,6 +1,6 @@
 ---
 Title: 'Shocking Scandal Unveiled: Supreme Court Plunges to Record Lows, Revealing Secret Struggles Within!'
-Description: 
+Description: "In a stunning turn of events, the Supreme Court has fallen to record lows, sending shockwaves throughout the nation."
 Date: 2023-08-02T09:00:36.0000000Z
 Categories:
 - General

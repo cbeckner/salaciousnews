@@ -1,6 +1,6 @@
 ---
 Title: Marilyn Monroe's Enchanting Mansion Meets a Fiery End! ICON Turned Dust!
-Description: 
+Description: "Roll out the red carpet, darlings, and grab a martini! Why, you ask?"
 Date: 2023-09-09T15:44:15.0000000Z
 Categories:
 - Entertainment

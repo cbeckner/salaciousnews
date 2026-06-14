@@ -1,6 +1,6 @@
 ---
 Title: 'Unthinkably Unprecedented: Trump Spins in a Legal Web of His Own Weaving!'
-Description: 
+Description: "In a whirlwind of drama, scandal, suits and countersuits, our dear old ex-President Donald Trump, just can't catch a break!"
 Date: 2023-08-28T22:00:03.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: "Shocking Encounter: Teenager's Terrifying Shark Bite Drama on Fire Island Revealed!"
-Description: 
+Description: "In a heart-stopping turn of events, a teenager faced the chilling jaws of a shark while enjoying a day of surfing off the picturesque shores of Fire…"
 Date: 2023-07-04T01:00:17.0000000Z
 Categories:
 - General

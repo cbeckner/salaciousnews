@@ -1,6 +1,6 @@
 ---
 Title: "Scandalous Revelations: USWNT Embroiled in Controversy During Women's World Cup Match Against Portugal"
-Description: 
+Description: "In a shocking turn of events during the highly anticipated Women's World Cup match between the US Women's National Team (USWNT) and Portugal, scandal and…"
 Date: 2023-08-01T10:22:46.0000000Z
 Categories:
 - Entertainment

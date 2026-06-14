@@ -1,6 +1,6 @@
 ---
 Title: "Brexit Fallout: UK's Economy Holds Massive Drama Underneath The Polished Surface!"
-Description: 
+Description: "This isn't the story you'd typically hear about Britain's elegant royal quarter, but lo and behold, a development as magnificent as the Buckingham Palace…"
 Date: 2023-09-04T17:27:16.0000000Z
 Categories:
 - Business

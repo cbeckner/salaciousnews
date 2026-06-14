@@ -1,6 +1,6 @@
 ---
 Title: "Birmingham's Swirling Financial Scandal: Are We on the Brink of Economic Chaos?!"
-Description: 
+Description: "Drape yourself in silk and get ready for a scandalous waltz with a gritty edge, a titanic tango of crisis proportions rolling across our cityscapes!"
 Date: 2023-09-05T17:36:43.0000000Z
 Categories:
 - Business

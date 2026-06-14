@@ -1,6 +1,6 @@
 ---
 Title: Apocalyptic Display! Machiavellian North Korean Ruler Plays with Fire! Truth or Hoax?
-Description: 
+Description: "Hold your breath, ladies and gentlemen, for a questionable display of power that might plunge us into global commotion!"
 Date: 2023-08-21T08:39:50.0000000Z
 Categories:
 - General

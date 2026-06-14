@@ -1,6 +1,6 @@
 ---
 Title: You Won't BELIEVE What Happened at This Notorious Baltimore Party!
-Description: 
+Description: "Oh, darling, put down that espresso and brace yourself!"
 Date: 2023-08-18T06:47:29.0000000Z
 Categories:
 - General

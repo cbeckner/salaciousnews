@@ -1,6 +1,6 @@
 ---
 Title: This Canine Carnivore Devoured Love In Its Most Material Form!
-Description: 
+Description: "In an outlandish tale of ill-starred nuptials, love fell into the sacrilegious clutches of domestic betrayal."
 Date: 2023-08-22T07:00:55.0000000Z
 Categories:
 - General

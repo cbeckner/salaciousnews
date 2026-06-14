@@ -1,6 +1,6 @@
 ---
 Title: Doctors Robbing Patient Privacy? AI Gets Creep-Tastic New Role! You Won't Believe What It's Doing Now!
-Description: 
+Description: "Hold on to your privacy hats, ladies and gents, for artificial intelligence (AI) has officially invaded doctor's offices, and it's causing a…"
 Date: 2023-08-16T07:00:58.0000000Z
 Categories:
 - Technology

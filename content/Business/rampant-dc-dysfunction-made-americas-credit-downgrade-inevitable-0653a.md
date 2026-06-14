@@ -1,6 +1,6 @@
 ---
 Title: Shocking Downgrade Shakes Nightcap's Foundation! Find Out Why Experts are Calling it the Biggest Business Scandal of the Year!
-Description: 
+Description: "In a scandalous turn of events, Nightcap, the renowned beverage company, has been hit with a major blow that sent shockwaves through the business world."
 Date: 2023-08-03T09:17:48.0000000Z
 Categories:
 - Business

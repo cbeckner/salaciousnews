@@ -1,6 +1,6 @@
 ---
 Title: 'Mother Nature Flits from Frill to Furious: USA in the Grips of Scorched Heat!'
-Description: 
+Description: "Listen folks!"
 Date: 2023-08-19T06:43:27.0000000Z
 Categories:
 - Science

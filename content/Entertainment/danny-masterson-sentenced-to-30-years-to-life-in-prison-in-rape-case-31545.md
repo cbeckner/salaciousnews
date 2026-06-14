@@ -1,6 +1,6 @@
 ---
 Title: "Hollywood Heartthrob Danny Masterson's Dark Days: Sex Assault Convictions Result in Jaw-Dropping 45-Year Sentence!"
-Description: 
+Description: "In an unprecedented twist of fate that kept Hollywood's cream-de-la-creme on their toes, notorious Tinseltown hunk and famed 'That '70s Show' star, Danny…"
 Date: 2023-09-07T19:43:50.0000000Z
 Categories:
 - Entertainment

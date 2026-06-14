@@ -1,6 +1,6 @@
 ---
 Title: Your Next Swim Could Be a Dance with Death! The Lurking Peril in Your Local Waters!
-Description: 
+Description: "When was the last time you planned a blissful backyard swimming session that included a possible rendezvous with a brain-eating entity?"
 Date: 2023-08-14T08:00:28.0000000Z
 Categories:
 - General

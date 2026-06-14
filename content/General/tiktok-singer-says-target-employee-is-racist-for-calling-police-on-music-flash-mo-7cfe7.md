@@ -1,6 +1,6 @@
 ---
 Title: A Riotous Battle of Songs at Target! Meet the Man Who Dared to Silence the Singers!
-Description: 
+Description: "Hold onto your wigs, dear readers!"
 Date: 2023-08-15T08:46:10.0000000Z
 Categories:
 - General

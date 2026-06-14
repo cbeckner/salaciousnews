@@ -1,6 +1,6 @@
 ---
 Title: Devastating Blow! Selena Gomez's Handicap Dashes Hopes - Find Out The Dramatic Consequences!
-Description: 
+Description: "Prepare yourself for an explosive revelation that will shatter your perception!"
 Date: 2023-08-28T22:28:36.0000000Z
 Categories:
 - Entertainment

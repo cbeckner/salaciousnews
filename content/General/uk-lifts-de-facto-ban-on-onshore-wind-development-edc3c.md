@@ -1,6 +1,6 @@
 ---
 Title: Britain Jolts World with Sudden Love Affair with Wind Farms! Who's Blushing Now?
-Description: 
+Description: "Get ready for a whirlwind of a story because the Kingdom of Britannia is stirring up a storm with a scandalous U-turn that would put a tornado to shame."
 Date: 2023-09-05T18:48:38.0000000Z
 Categories:
 - General

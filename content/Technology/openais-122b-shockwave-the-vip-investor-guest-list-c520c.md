@@ -1,6 +1,6 @@
 ---
 Title: "OpenAI’s $122B Shockwave: The VIP Investor Guest List, eye-popping numbers, and the pre-IPO tea—spilled!"
-Description: "You won’t believe how much cash OpenAI just reeled in—and which power players swarmed to snag a slice! The AI titan has reportedly closed a colossal $122 billion raise at an $852 billion valuation, the kind of number that makes even seasoned VCs clutch their pearls."
+Description: "You won’t believe how much cash OpenAI just reeled in—and which power players swarmed to snag a slice!"
 Date: 2026-04-02T00:47:15.0000000Z
 Categories:
 - Technology

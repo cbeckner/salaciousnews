@@ -1,6 +1,6 @@
 ---
 Title: Tiny Tots Vs. Mega Monsters! Alligator Attack on Innocent Child at New Orleans Beach Unleashes Outrage!
-Description: 
+Description: "The tantalizing tranquility of the New Orleans sandy shores saw a terrifying torrent of turmoil when terror struck in the form of an insatiable, audacious…"
 Date: 2023-09-02T19:19:41.0000000Z
 Categories:
 - General

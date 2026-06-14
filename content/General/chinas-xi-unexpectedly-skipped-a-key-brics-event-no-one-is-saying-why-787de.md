@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe this Esteemed Leader's Stunning Omission at the Big Affair!
-Description: 
+Description: "Buckle up, darlings! Can you believe what our favorite leader from the Far East, Chinese President Xi Jinping, just did?"
 Date: 2023-08-23T08:58:20.0000000Z
 Categories:
 - General

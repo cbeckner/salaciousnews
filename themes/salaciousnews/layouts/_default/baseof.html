@@ -7,16 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{{ block "title" . }}{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
-  <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | default .Summary | plainify }}{{ end }}">
+  <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | default .Summary | plainify | truncate 160 }}{{ end }}">
+  <link rel="canonical" href="{{ .Permalink }}">
 
-  {{- if .Site.Params.opengraph }}
-  {{ template "_internal/opengraph.html" . }}
-  {{- end }}
   {{- if .Site.Params.schema }}
   {{ template "_internal/schema.html" . }}
   {{- end }}
-  {{- if .Site.Params.twitter_cards }}
-  {{ template "_internal/twitter_cards.html" . }}
+  {{- if or .Site.Params.opengraph .Site.Params.twitter_cards }}
+  {{ partial "social-meta.html" . }}
   {{- end }}
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

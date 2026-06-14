@@ -1,6 +1,6 @@
 ---
 Title: "From Struggling Carpenter to Galactic Heartthrob: Harrison Ford's Shocking Journey to Fame Revealed!"
-Description: 
+Description: "In a stunning revelation that will leave fans in awe, shocking details have emerged about the cast of the classic film 'American Graffiti' that launched…"
 Date: 2023-08-01T10:00:47.0000000Z
 Categories:
 - Entertainment

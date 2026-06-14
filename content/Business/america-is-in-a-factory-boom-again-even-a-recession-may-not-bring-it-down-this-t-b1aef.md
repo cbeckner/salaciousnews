@@ -1,6 +1,6 @@
 ---
 Title: Has the American Dream Been Sacked by Its Manufacturing Hub? There's Panic in the Workshop!
-Description: 
+Description: "Good evening, splendid folks! This just in: You might want to brace yourself for this."
 Date: 2023-09-09T18:33:43.0000000Z
 Categories:
 - Business

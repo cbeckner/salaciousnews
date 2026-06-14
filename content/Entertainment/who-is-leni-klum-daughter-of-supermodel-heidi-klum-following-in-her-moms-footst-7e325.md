@@ -1,6 +1,6 @@
 ---
 Title: 'Dazzling Bombshell: Leni Klum, Catwalk Queen, Echoes her Famed Mother, Heidi Klum in Stellar Milestones!'
-Description: 
+Description: "Hold your wigs, ladies and gents, because there's a dazzling bombshell shaking the fashion cosmos to its core!"
 Date: 2023-08-21T04:12:13.0000000Z
 Categories:
 - Entertainment

@@ -1,6 +1,6 @@
 ---
 Title: Chocolate Lovers Beware! The Radical Revamp of the Iconic KitKat That Will Send You Grabbing for More!
-Description: 
+Description: "Last Friday evening, while the town was settling down for a quiet weekend, the world of chocolate was being thrown into a delicious chaos!"
 Date: 2023-09-02T10:02:16.0000000Z
 Categories:
 - General

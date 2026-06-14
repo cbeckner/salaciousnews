@@ -1,6 +1,6 @@
 ---
 Title: The Snail-faced EPA Almost Let Michigan Swallow Poison! The Horrifying Tale Behind the Delayed Lead Water Report!
-Description: 
+Description: "Get ready to sip on this deliciously scandalous tale, ladies and gentlemen! Can you believe it?!"
 Date: 2023-09-07T19:48:37.0000000Z
 Categories:
 - General

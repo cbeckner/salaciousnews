@@ -1,6 +1,6 @@
 ---
 Title: 'Shocking Scandal: Georgia Woman Arrested in Bahamas! Find out the Sensational Details!'
-Description: 
+Description: "In a shocking turn of events, the small town of Georgia is buzzing with scandal as Lindsay Shiver, a local woman, was arrested in the Bahamas."
 Date: 2023-08-01T08:51:27.0000000Z
 Categories:
 - General

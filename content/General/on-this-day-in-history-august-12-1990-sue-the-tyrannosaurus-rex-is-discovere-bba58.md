@@ -1,6 +1,6 @@
 ---
 Title: 'Story of Ambition, Bone and a Bitter Showdown: The Unthinkable Discovery of Monstrous Sue!'
-Description: 
+Description: "Once upon a heated August day in 1990, nestled amidst the timeless tumbleweeds of South Dakota, the world seemed to brush dust off a torrid love affair it…"
 Date: 2023-08-12T04:02:39.0000000Z
 Categories:
 - General

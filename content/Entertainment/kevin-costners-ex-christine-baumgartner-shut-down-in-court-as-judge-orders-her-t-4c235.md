@@ -1,6 +1,6 @@
 ---
 Title: "Costner's Bitter Love Saga: Ex-wife Tangled in the Steely Claws of the Law!"
-Description: 
+Description: "Oh, sweeties, grab your tea because the drama unfolding in Hollywood could put any novella to shame."
 Date: 2023-09-06T21:49:46.0000000Z
 Categories:
 - Entertainment

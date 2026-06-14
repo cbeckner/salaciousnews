@@ -1,6 +1,6 @@
 ---
 Title: 'Shocking Revelation: Explosive New Details Emerge in Ongoing Russia-Ukraine Conflict!'
-Description: 
+Description: "In a shocking turn of events, explosive new details have emerged in the ongoing Russia-Ukraine conflict."
 Date: 2023-08-02T09:34:50.0000000Z
 Categories:
 - General

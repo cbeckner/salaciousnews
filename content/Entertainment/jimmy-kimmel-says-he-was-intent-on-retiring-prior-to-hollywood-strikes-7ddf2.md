@@ -1,6 +1,6 @@
 ---
 Title: 'Late-Night Empire Collapses: Kimmel Calls it Quits on High Throne!'
-Description: 
+Description: "It's an absolute bombshell that's set tinsel town all a-tizzy!"
 Date: 2023-08-30T22:38:46.0000000Z
 Categories:
 - Entertainment

@@ -1,6 +1,6 @@
 ---
 Title: Tensions Ignite As Ukraine and Russia Enter a Sizzling Showdown!
-Description: 
+Description: "Was it the day of reckoning or a lively game of political chess?"
 Date: 2023-08-15T08:43:22.0000000Z
 Categories:
 - General

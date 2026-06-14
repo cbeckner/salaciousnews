@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe the Scandalous Truth Behind Randy Travis' Legendary Career and Health Struggles
-Description: 
+Description: "In a shocking turn of events, country music legend Randy Travis' illustrious career and health battles have taken an unexpected twist."
 Date: 2023-08-07T08:00:48.0000000Z
 Categories:
 - Entertainment

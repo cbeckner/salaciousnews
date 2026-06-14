@@ -1,6 +1,6 @@
 ---
 Title: "Gaze Up or You'll Miss: Capricornus, A Celestial Drama Unravelling in the Night Sky!"
-Description: 
+Description: "Hold onto your celestial hats, stargazers: Capricornus, the scandalously shape-shifting constellation, is tiptoeing into your line of sight this very…"
 Date: 2023-08-17T09:00:34.0000000Z
 Categories:
 - Science

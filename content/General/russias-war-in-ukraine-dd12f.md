@@ -1,6 +1,6 @@
 ---
 Title: Staggering Showdown! Unprecedented Tensions Loom Over Europe As Russia And Ukraine Ignite The Global Stage!
-Description: 
+Description: "Hold onto your pearls, dear readers, as the continent of Europe finds itself skirting the edge of a high-octane political potboiler."
 Date: 2023-08-17T08:56:20.0000000Z
 Categories:
 - General

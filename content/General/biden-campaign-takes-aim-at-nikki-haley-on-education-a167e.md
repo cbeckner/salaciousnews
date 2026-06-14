@@ -1,6 +1,6 @@
 ---
 Title: Biden's Campaign Fires Laser Beams at Nikki Haley in Education Showdown!
-Description: 
+Description: "Hide the children! President Biden's campaign has dramatically launched a fierce attack on none other than the good-guy-turned-arch-enemy, Nikki Haley!"
 Date: 2023-09-06T21:34:19.0000000Z
 Categories:
 - General

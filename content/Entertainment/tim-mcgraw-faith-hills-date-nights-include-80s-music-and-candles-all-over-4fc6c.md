@@ -1,6 +1,6 @@
 ---
 Title: Honey, Dim the Lights! Tim McGraw and Faith Hill's Unbelievably Passionate Date Nights Drenched in Nostalgia and Candlelight!
-Description: 
+Description: "Ladies and gentlemen, let's face it: there's just something intoxicating about being a fly on the wall of a celebrity power couple's intimate moments."
 Date: 2023-08-26T13:24:02.0000000Z
 Categories:
 - Entertainment

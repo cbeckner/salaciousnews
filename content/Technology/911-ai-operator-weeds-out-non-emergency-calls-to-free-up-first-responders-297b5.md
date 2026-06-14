@@ -1,6 +1,6 @@
 ---
 Title: Breathtakingly Bold AI Stealing Jobs from 911 Operators?!
-Description: 
+Description: "Hang onto your hats, ladies and gentlemen! Never mind the Kardashians, forget about the newest Tesla launch..."
 Date: 2023-08-22T06:00:15.0000000Z
 Categories:
 - Technology

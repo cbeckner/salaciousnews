@@ -1,6 +1,6 @@
 ---
 Title: 'Daring Diva Paris Jackson Shatters Conventional Beauty Standards: Arm Hair Controversy Takes the Internet By Storm!'
-Description: 
+Description: "With bold disregard for social norms and critics, fearless media magnet Paris Jackson is once again turning heads and stirring up online chatter."
 Date: 2023-08-30T21:13:25.0000000Z
 Categories:
 - Entertainment

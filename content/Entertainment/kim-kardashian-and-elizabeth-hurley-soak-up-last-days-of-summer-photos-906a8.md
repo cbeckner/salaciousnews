@@ -1,6 +1,6 @@
 ---
 Title: The Scorching Summer Finale! Kim K & Elizabeth Hurley Sizzle in Breathtaking Late Summer Snaps!
-Description: 
+Description: "Just as the curtain was drawing to a close on a truly torrid summer, Hollywood's darling divas Kim Kardashian and Elizabeth Hurley decided to give the Sun…"
 Date: 2023-09-02T19:00:35.0000000Z
 Categories:
 - Entertainment

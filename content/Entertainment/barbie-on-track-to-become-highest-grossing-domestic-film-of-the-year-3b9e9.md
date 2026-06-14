@@ -1,6 +1,6 @@
 ---
 Title: You Won’t Believe What Just Dethroned Marvel at the Box Office!
-Description: 
+Description: "Drop everything, darling, because there's piping hot news from the heart of Tinseltown!"
 Date: 2023-08-14T08:19:40.0000000Z
 Categories:
 - Entertainment

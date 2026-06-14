@@ -1,6 +1,6 @@
 ---
 Title: 'Green Giant Found: Immense African Tortoise Rescued in a Tub-Thumping Drama in Louisiana'
-Description: 
+Description: "Get ready for the most outrageous, most mind-boggling event to hit the unassuming town of Slidell, Louisiana."
 Date: 2023-09-02T11:21:01.0000000Z
 Categories:
 - General

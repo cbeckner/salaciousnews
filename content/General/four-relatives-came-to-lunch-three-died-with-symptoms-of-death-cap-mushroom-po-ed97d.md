@@ -1,6 +1,6 @@
 ---
 Title: This Ordinary Meal Turned Deadly in Australia! Find Out the Shocking Truth Behind the Poison Mushroom Scandal
-Description: 
+Description: "In a shocking turn of events, a seemingly ordinary meal in Australia took a fatal turn after unsuspecting diners consumed poisonous mushrooms."
 Date: 2023-08-09T07:38:39.0000000Z
 Categories:
 - General

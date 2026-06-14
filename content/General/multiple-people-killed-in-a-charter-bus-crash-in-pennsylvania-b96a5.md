@@ -1,6 +1,6 @@
 ---
 Title: Tragic Bus Crash Sends Shockwaves Through Dauphin County!
-Description: 
+Description: "In a devastating turn of events, tragedy struck Dauphin County, Pennsylvania today as a bus carrying passengers crashed in a shocking accident."
 Date: 2023-08-07T09:12:50.0000000Z
 Categories:
 - General

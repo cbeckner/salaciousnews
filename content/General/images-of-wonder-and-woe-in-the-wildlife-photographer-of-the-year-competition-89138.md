@@ -1,6 +1,6 @@
 ---
 Title: Wild Animals like NEVER Before! Uncovered Moments of Distinct Drama, Danger and Daring-deeds!
-Description: 
+Description: "In the exclusive world of wilderness and wildlife photography, nary a moment passes that's not dripping with tremendous tales of tangles with nature and…"
 Date: 2023-08-30T23:04:59.0000000Z
 Categories:
 - General

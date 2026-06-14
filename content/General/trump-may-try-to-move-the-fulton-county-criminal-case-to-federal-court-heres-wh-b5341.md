@@ -1,6 +1,6 @@
 ---
 Title: High Drama in Peach State! Scandalous Election Fraud Case Tosses Georgia into the National Spotlight!
-Description: 
+Description: "Hold on to your mint juleps, folks, because Georgia has once again turned into America’s dysfunctional political soap opera, and it's just getting juicier!"
 Date: 2023-08-17T09:04:17.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: You Won’t Believe the Twilight Twist Unfolding in Tennessee's Political Jungle!
-Description: 
+Description: "Well, darlings, it's time to buckle up and dust off your political hats, because the unfolding Tennessee malarkey is hotter than a summer barbecue!"
 Date: 2023-08-11T02:24:58.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: Google Squanders a Whooping 1.7 Billion! Pretending to Rule the Whole of Ohio! Sneak Peek Inside the Clandestine Affairs!
-Description: 
+Description: "In a wild and totally unexpected spending spree, Google has just blown a shocking $1.7 billion! Yes, you heard it right!"
 Date: 2023-08-28T22:23:56.0000000Z
 Categories:
 - Technology

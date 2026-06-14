@@ -1,6 +1,6 @@
 ---
 Title: 'Burning Man Chaos Ignites: Extravagant Revelers Seek Solace Amidst a Roaring Sandstorm!'
-Description: 
+Description: "You wouldn't believe what happened at the colossal social gathering known as Burning Man this year!"
 Date: 2023-09-04T22:15:48.0000000Z
 Categories:
 - Entertainment

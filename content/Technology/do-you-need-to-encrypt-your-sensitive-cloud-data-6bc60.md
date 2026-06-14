@@ -1,6 +1,6 @@
 ---
 Title: 'Exposed Online: Is Your Deepest, Darkest Data Safe in the Icy Clutches of the Cloud?'
-Description: 
+Description: "Imagine your every secret, shrouded in shadow, lurking in the clandestine sanctuary of cyberspace."
 Date: 2023-09-08T19:30:40.0000000Z
 Categories:
 - Technology

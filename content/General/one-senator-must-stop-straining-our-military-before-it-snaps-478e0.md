@@ -1,6 +1,6 @@
 ---
 Title: "Shocking Exposé: Senator Caught in Military Scandal - You Won't Believe What He Did!"
-Description: 
+Description: "\"Stop Straining the Military Before it Snaps\" - the plea of one senator has ignited a firestorm of controversy!"
 Date: 2023-08-03T08:00:06.0000000Z
 Categories:
 - General

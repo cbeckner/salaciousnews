@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe What These Celebrities Are Doing Under the Stars!
-Description: 
+Description: "Celebrities are known for their wild and scandalous lifestyles, but have you ever wondered what they get up to under the beautiful night sky?"
 Date: 2023-08-08T09:00:52.0000000Z
 Categories:
 - Entertainment

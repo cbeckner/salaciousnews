@@ -1,6 +1,6 @@
 ---
 Title: "Why the Queen Might Have to Pawn the Crown Jewels: A Sly Look Inside the UK's Economic Backbone Snap!"
-Description: 
+Description: "Heads up all, let's delve into a twisted tale of the UK economy's spine-chilling tango!"
 Date: 2023-08-11T06:45:24.0000000Z
 Categories:
 - Business

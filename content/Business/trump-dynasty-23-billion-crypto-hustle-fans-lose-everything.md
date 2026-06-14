@@ -1,6 +1,6 @@
 ---
 Title: "Trump Dynasty Cashes $2.3B Crypto Haul—Fanbase Left Holding the Bag"
-Description: "A Reuters analysis exposes the Trump family's alleged $2.3 billion profit from branded crypto, perfectly offset by devastating losses for their own investor base. Is this financial genius or a loyalist-funded heist?"
+Description: "A Reuters analysis exposes the Trump family's alleged $2.3 billion profit from branded crypto, perfectly offset by devastating losses for their own…"
 Date: 2026-06-11T08:14:14.0000000Z
 Categories:
 - Business

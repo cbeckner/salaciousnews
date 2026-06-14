@@ -1,6 +1,6 @@
 ---
 Title: In an Exhilarating Clash of the Titans, Spain and Sweden Women's Teams Battle It Out for World Cup Glory!
-Description: 
+Description: "In the thrilling world of soccer, crisis and opportunity walk hand in hand, often in the most dramatic fashion. And oh, didn't we get a display of that!"
 Date: 2023-08-15T09:11:53.0000000Z
 Categories:
 - Sports

@@ -1,6 +1,6 @@
 ---
 Title: You'll Never Guess The Scandalous Tricks Hackers Use The Second They Get Your Passwords!
-Description: 
+Description: "Honey, it's time to spill the tea about these high-tech tricksters!"
 Date: 2023-09-04T17:34:35.0000000Z
 Categories:
 - Technology

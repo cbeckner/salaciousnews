@@ -1,6 +1,6 @@
 ---
 Title: "Scandalous Secret Revealed: Gymnast Mary Lou Retton's Olympic Triumph Shrouded in Controversy!"
-Description: 
+Description: "It was a fateful day on August 3, 1984, when the world watched in awe as the talented gymnast Mary Lou Retton clinched the gold medal at the Olympics."
 Date: 2023-08-03T04:02:16.0000000Z
 Categories:
 - Sports

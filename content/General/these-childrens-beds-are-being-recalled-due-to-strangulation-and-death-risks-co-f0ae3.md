@@ -1,6 +1,6 @@
 ---
 Title: "Bedtime Horror: Kiddies' Dreamland Turns Nightmare as Charming Bed Frames Turn Homicidal!"
-Description: 
+Description: "Fasten your seat belts, folks! The renowned purveyor of children's dreams and giggles, Zipadee, has a sinister terror lurking in its enchanted woods."
 Date: 2023-08-19T05:04:16.0000000Z
 Categories:
 - General

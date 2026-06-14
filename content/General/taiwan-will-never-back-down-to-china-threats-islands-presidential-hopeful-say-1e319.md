@@ -1,6 +1,6 @@
 ---
 Title: Scandal in The Sky! Taiwan Premier Lai's Defiant Stand Against China Heats up Cold War 2.0!
-Description: 
+Description: "Oh, baby, baby, it's a wild world!"
 Date: 2023-08-14T08:45:25.0000000Z
 Categories:
 - General

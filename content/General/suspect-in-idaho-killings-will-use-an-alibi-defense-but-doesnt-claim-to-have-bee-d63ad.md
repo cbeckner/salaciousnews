@@ -1,6 +1,6 @@
 ---
 Title: "SHOCKING Scandal Unearthed: Prominent Politician's Alibi Falls Apart in Idaho Killings"
-Description: 
+Description: "In a stunning turn of events, new information has come to light regarding the recent Idaho killings that has left the community in shock and disbelief."
 Date: 2023-08-04T09:14:29.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe How Wall Street Reacted to This Unexpected Job Data!
-Description: 
+Description: "Can you imagine Wall Street being absolutely thrilled at the astonishing news of the unemployment rate diving down smaller and tinier than Scrooge's heart…"
 Date: 2023-09-01T20:05:14.0000000Z
 Categories:
 - Business

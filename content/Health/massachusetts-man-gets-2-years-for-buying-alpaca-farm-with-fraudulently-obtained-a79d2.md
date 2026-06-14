@@ -1,6 +1,6 @@
 ---
 Title: Massive Conniving COVID Conspiracy! Local Man Buys Alpaca Kingdom with Fraudulently-Snatched COVID Relief Funds!
-Description: 
+Description: "In a tale as twisted as it gets, a Massachusetts man executed a scandal as fleeced and fluffy as the alpacas he coveted!"
 Date: 2023-09-01T21:42:06.0000000Z
 Categories:
 - Health

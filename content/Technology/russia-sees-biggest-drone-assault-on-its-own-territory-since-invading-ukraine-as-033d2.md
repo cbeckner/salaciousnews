@@ -1,6 +1,6 @@
 ---
 Title: "Cold War Goes Frigid: Unprecedented Russian Drone Strikes Flare Up - You Won't Believe what Happens Next!"
-Description: 
+Description: "Hold on to your hats, folks, because drama is unfolding right before our eyes!"
 Date: 2023-08-30T20:24:10.0000000Z
 Categories:
 - Technology

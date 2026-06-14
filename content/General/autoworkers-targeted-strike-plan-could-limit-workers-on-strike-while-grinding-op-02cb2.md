@@ -1,6 +1,6 @@
 ---
 Title: "Apocalypse Now: The Intense Standoff That's Fully Paralyzing the Auto Industry!"
-Description: 
+Description: "Prepare yourself for an indomitable drama that would sway even the toughest of souls."
 Date: 2023-09-13T22:14:55.0000000Z
 Categories:
 - General

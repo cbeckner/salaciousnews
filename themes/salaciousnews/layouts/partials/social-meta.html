@@ -1,0 +1,46 @@
+{{- $page := . }}
+{{- $title := $page.Title }}
+{{- if $page.IsHome }}{{ $title = $page.Site.Title }}{{ end }}
+{{- $description := $page.Description | default $page.Summary | plainify | truncate 160 }}
+{{- if $page.IsHome }}{{ $description = $page.Site.Params.description }}{{ end }}
+
+{{- $imgWidth := 1200 }}
+{{- $imgHeight := 630 }}
+{{- $image := "" }}
+{{- with $page.Params.thumbnail }}
+  {{- $src := "" }}
+  {{- if reflect.IsMap . }}{{ $src = .src }}{{ else }}{{ $src = . }}{{ end }}
+  {{- with $src }}
+    {{- $thumbPath := replace . "./" "" }}
+    {{- with resources.Get $thumbPath }}
+      {{- $image = (.Fill (printf "%dx%d" $imgWidth $imgHeight)).Permalink }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- if not $image }}
+  {{- with resources.Get "img/banner.webp" }}
+    {{- $image = (.Fill (printf "%dx%d" $imgWidth $imgHeight)).Permalink }}
+  {{- end }}
+{{- end }}
+
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ $page.Permalink }}">
+<meta property="og:site_name" content="{{ $page.Site.Title }}">
+<meta property="og:type" content="{{ if $page.IsPage }}article{{ else }}website{{ end }}">
+{{- with $image }}
+<meta property="og:image" content="{{ . }}">
+<meta property="og:image:width" content="{{ $imgWidth }}">
+<meta property="og:image:height" content="{{ $imgHeight }}">
+{{- end }}
+{{- if $page.IsPage }}
+<meta property="article:published_time" content="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time" content="{{ $page.Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
+
+<meta name="twitter:card" content="{{ if $image }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{- with $image }}
+<meta name="twitter:image" content="{{ . }}">
+{{- end }}

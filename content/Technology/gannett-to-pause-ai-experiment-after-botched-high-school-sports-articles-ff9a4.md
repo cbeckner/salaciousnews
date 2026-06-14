@@ -1,6 +1,6 @@
 ---
 Title: Scandalous AI Experiment Sparks Chaos At Media Empire! Can You Believe What They Did Now?
-Description: 
+Description: "You best sit down for this one, folks, because this recent drama at the media dominion of Gannett Co. Inc is pure, unadulterated scandal!"
 Date: 2023-08-30T19:33:07.0000000Z
 Categories:
 - Technology

@@ -1,6 +1,6 @@
 ---
 Title: Ex-POTUS Causes Commotion at Beloved Heartland Hoedown!
-Description: 
+Description: "In an outrageous ripple through the quintessentially American plains of Iowa, none other than the infamous Don himself - that's right, ex-President Donald…"
 Date: 2023-08-14T07:46:05.0000000Z
 Categories:
 - General

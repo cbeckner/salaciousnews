@@ -1,6 +1,6 @@
 ---
 Title: Scandal Strikes! A Helpless Teacher's Job Hung Out to Dry Over Fiery Literature Dust-Up!
-Description: 
+Description: "Just catch your breath, darlings, because the saga entangling this unsuspecting Georgia teacher in a red-hot scandal that's sparking fireworks across the…"
 Date: 2023-08-12T09:45:29.0000000Z
 Categories:
 - General

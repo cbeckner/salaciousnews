@@ -1,6 +1,6 @@
 ---
 Title: Juicy Details Emerge Surrounding DOJ Request in Trump's Election Fraud Case
-Description: 
+Description: "In a stunning turn of events, an explosive request has been made by the Department of Justice (DOJ) to impose a protective order in the ongoing legal…"
 Date: 2023-08-05T09:27:58.0000000Z
 Categories:
 - General

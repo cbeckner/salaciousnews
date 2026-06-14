@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe the Untold Truth About VP Harris' Unpopularity!
-Description: 
+Description: "In a stunning turn of events, a former staffer of Vice President Kamala Harris has come forward to shed light on her shocking unpopularity in recent polls."
 Date: 2023-08-07T09:00:26.0000000Z
 Categories:
 - General

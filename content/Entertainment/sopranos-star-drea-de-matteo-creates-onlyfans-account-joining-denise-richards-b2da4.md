@@ -1,6 +1,6 @@
 ---
 Title: Sizzling Sopranos Siren Drea De Matteo Breaks the Internet, Carnally Bares All on OnlyFans!
-Description: 
+Description: "In the most sensationally tantalizing turn of events, the glamorous and intoxicating Sopranos starlet, Drea de Matteo, has catapulted herself into the…"
 Date: 2023-08-28T22:56:54.0000000Z
 Categories:
 - Entertainment

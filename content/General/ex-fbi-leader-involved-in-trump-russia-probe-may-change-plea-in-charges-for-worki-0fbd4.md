@@ -1,6 +1,6 @@
 ---
 Title: Former FBI Leader's Stunning Twist in Trump-Russia Probe - Involvement with Russian Oligarch Revealed!
-Description: 
+Description: "In a shocking turn of events, a former FBI leader involved in the highly controversial Trump-Russia probe could be changing his plea on charges related to…"
 Date: 2023-08-08T09:00:39.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: You Won't BELIEVE What's REALLY Happening in Arizona's Torrid Deserts!
-Description: 
+Description: "Hold onto your hats, darlings, because Arizona has just unleashed her wildest ruby-red secrets, and it's far too steamy not to share!"
 Date: 2023-08-14T09:00:44.0000000Z
 Categories:
 - General

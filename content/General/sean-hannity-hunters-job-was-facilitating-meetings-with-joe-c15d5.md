@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe What Hunter Biden Was Really Doing for Joe Biden - Scandalous Details Inside!
-Description: 
+Description: "\" In a shocking turn of events, it has been discovered that Hunter Biden's involvement in his father's political career goes far beyond what was initially…"
 Date: 2023-08-10T03:45:22.0000000Z
 Categories:
 - General

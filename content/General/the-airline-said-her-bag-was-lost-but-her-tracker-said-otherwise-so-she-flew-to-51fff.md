@@ -1,6 +1,6 @@
 ---
 Title: You Won't Believe What Happens to Your Lost Luggage on Flights!
-Description: 
+Description: "Attention all travelers! Prepare to be shocked as a bombshell revelation rocks the airline industry."
 Date: 2023-08-07T08:48:29.0000000Z
 Categories:
 - General

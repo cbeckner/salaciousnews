@@ -1,6 +1,6 @@
 ---
 Title: A Staggering Gamble? Phil Mickelson Puts Money Down on Ryder Cup Outcome!
-Description: 
+Description: "Oh, darling readers, you wouldn't believe the scandal rolling across our precious golf greens."
 Date: 2023-08-11T07:25:07.0000000Z
 Categories:
 - Entertainment

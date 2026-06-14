@@ -1,6 +1,6 @@
 ---
 Title: Can You Guess the Surprise Twist? Rajinikanth, the Glitzy Movie Star-Turned-Politician, Dons a New Role!
-Description: 
+Description: "Just when you thought India's chameleon of cinema, the ever-evolving Rajinikanth, had unveiled every dramatic persona imaginable - he's penned another…"
 Date: 2023-08-11T07:04:47.0000000Z
 Categories:
 - Entertainment

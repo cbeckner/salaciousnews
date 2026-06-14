@@ -1,6 +1,6 @@
 ---
 Title: Hopes Dashed! The Big Flexport Fiasco That Left 250 Candidates High and Dry!
-Description: 
+Description: "Hold onto your hats, ladies and gentlemen, because this tale is one for the books!"
 Date: 2023-09-08T18:58:10.0000000Z
 Categories:
 - Technology

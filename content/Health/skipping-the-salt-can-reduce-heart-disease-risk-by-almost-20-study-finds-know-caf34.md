@@ -1,6 +1,6 @@
 ---
 Title: 'Your Kitchen Assassin: Sinister Salt Sneakily Sabotaging Your Heart!'
-Description: 
+Description: "Scandal rocks the pantry shelves as the newest health conspiracy implicates the most innocent-looking of everyday foods - salt!"
 Date: 2023-09-01T20:12:52.0000000Z
 Categories:
 - Health

@@ -1,6 +1,6 @@
 ---
 Title: "Five Angels Players Served a Hot Plate of Waivers: Is This Hollywood's Messiest Breakup?"
-Description: 
+Description: "In the startlingly ruthless arena of high-stakes Major League Baseball, barely any news can compare to the latest jaw-dropping twist."
 Date: 2023-08-29T22:36:40.0000000Z
 Categories:
 - Business

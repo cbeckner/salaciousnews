@@ -1,6 +1,6 @@
 ---
 Title: The Woods Whispered a Terrible Tale! Teenage Dynamo's Deadly Disaster!
-Description: 
+Description: "Buckled up, are we? A chilling piece of news shakes the very marrow of the Ozark-esque, tranquil hamlet of West Virginia!"
 Date: 2023-09-13T22:15:35.0000000Z
 Categories:
 - General

@@ -1,6 +1,6 @@
 ---
 Title: "SHOCKING: Florida Suspect's Vicious Attack on Innocent Woman Holding Baby Leaves Community in Outrage!"
-Description: 
+Description: "In a shocking incident that has sent shockwaves through the tight-knit community of Florida, a suspect stands accused of launching a violent assault and…"
 Date: 2023-07-31T19:48:21.0000000Z
 Categories:
 - General

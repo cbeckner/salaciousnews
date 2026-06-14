@@ -1,6 +1,6 @@
 ---
 Title: "Jay-Z's Sizzling Hot-House of Knowledge: The Spicy Tale Behind the Library Card Extravaganza!"
-Description: 
+Description: "Buckle-up folks, because the ever-so-charismatic and always intriguing Jay-Z has once again altered the path of normality by igniting the literary cosmos…"
 Date: 2023-08-16T02:01:41.0000000Z
 Categories:
 - Entertainment

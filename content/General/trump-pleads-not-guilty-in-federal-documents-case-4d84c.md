@@ -1,6 +1,6 @@
 ---
 Title: SHOCKING! Trump's Scandalous Plea of Innocence in Federal Documents Case!
-Description: 
+Description: "In a stunning turn of events, former President Donald Trump has entered a plea of not guilty in a federal documents case that has rocked the nation."
 Date: 2023-06-13T20:25:25.0000000Z
 Categories:
 - General

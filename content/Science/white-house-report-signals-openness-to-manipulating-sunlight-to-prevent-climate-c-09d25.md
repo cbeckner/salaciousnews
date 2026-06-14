@@ -1,6 +1,6 @@
 ---
 Title: 'SHOCKING REVELATION: White House Signals Manipulating Sunlight to Combat Climate Change!'
-Description: 
+Description: "In an alarming development, a recent White House report reveals a potential plan to control sunlight as a means to prevent climate change."
 Date: 2023-07-01T21:57:17.0000000Z
 Categories:
 - Science

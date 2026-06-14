@@ -1,6 +1,6 @@
 ---
 Title: "California's Power Struggle: School Board Vs. Parents In A Jaw-Dropping Legal Battle!"
-Description: 
+Description: "Hold on tight folks; this is not your everyday school feud!"
 Date: 2023-08-28T21:30:28.0000000Z
 Categories:
 - General
