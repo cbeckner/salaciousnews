@@ -8,7 +8,12 @@ VENV      := .venv/bin
 CDK       := cdk
 ENV_FILE  := ../agent/.env
 
-.PHONY: install bootstrap secrets deploy synth invoke clean
+# S3 key of an existing social image for test-instagram (override on CLI)
+TEST_SOCIAL_S3_KEY ?= social/test.png
+TEST_CAPTION       ?= Test post from Salacious News
+TEST_ARTICLE_URL   ?= https://salacious.news/
+
+.PHONY: install bootstrap secrets deploy synth invoke test-instagram clean
 
 ## Install Python CDK dependencies
 install:
@@ -58,6 +63,23 @@ secrets:
 		--secret-string "$$INSTAGRAM_USER_ID" \
 		--profile $(PROFILE) --region $(REGION) --output text --query VersionId
 	@echo "Done."
+
+## Invoke social_actions Lambda directly — no Flow, no image generation.
+## Override defaults on the CLI, e.g.:
+##   make test-instagram TEST_SOCIAL_S3_KEY=social/my-image.png TEST_CAPTION="Hello world"
+test-instagram:
+	@PAYLOAD=$$(printf '{"batch_result":{"articles":[{"social_s3_key":"%s","article_url":"%s","teaser":"%s","slug":"test","title":"Test"}]}}' \
+		"$(TEST_SOCIAL_S3_KEY)" "$(TEST_ARTICLE_URL)" "$(TEST_CAPTION)"); \
+	echo "Invoking salaciousnews-social-actions with payload:"; \
+	echo "$$PAYLOAD" | python3 -m json.tool; \
+	aws lambda invoke \
+		--function-name salaciousnews-social-actions \
+		--payload "$$PAYLOAD" \
+		--log-type Tail \
+		--profile $(PROFILE) --region $(REGION) \
+		--query 'LogResult' --output text \
+		/tmp/social_test_response.json | base64 -d; \
+	echo; echo "Response:"; cat /tmp/social_test_response.json; echo
 
 ## Manually invoke the pipeline (triggers the trigger Lambda, which calls the agent)
 invoke:
