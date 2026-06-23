@@ -250,12 +250,16 @@ def _select_articles(headlines: list[dict], num: int = 7) -> list[dict]:
         indent=2
     )
 
+    categories_present = sorted({h["category"] for h in headlines if h.get("category")})
+
     prompt = f"""You are an editor for SalaciousNews, a satirical tabloid that rewrites real news in a scandalous, over-the-top gossip style.
 
 Here are today's top headlines:
 {headlines_json}
 
-Select exactly {num} articles ranked by their potential for scandalous, humorous, or dramatic tabloid rewriting. Choose articles from different categories when possible.
+Select exactly {num} articles ranked by their potential for scandalous, humorous, or dramatic tabloid rewriting.
+
+Category diversity is required, not optional: the headlines span these categories — {", ".join(categories_present)}. Pick at least one article from EVERY category listed above before picking a second from any single category. Do not let one category (e.g. Entertainment) dominate the selection.
 
 Return ONLY valid JSON with this exact structure:
 {{
@@ -305,7 +309,7 @@ def _rewrite_articles(scraped: list[dict]) -> list[dict]:
         indent=2
     )
 
-    prompt = f"""You are a sensationalist tabloid writer for SalaciousNews. Rewrite the following news articles in an exaggerated, scandalous gossip style — think Page Six meets a prestige gossip column. Be dramatic and add scandalous subtext, but keep the tone sharp and witty rather than screechy.
+    prompt = f"""You are a sensationalist tabloid writer for SalaciousNews. Rewrite the following news articles in an exaggerated, scandalous gossip style — think Page Six meets a prestige gossip column. Go big: lean into scandalous subtext, innuendo, and dramatic flair. For non-political stories (entertainment, sports, business, tech, health, science, general), feel free to be as cheeky, gossipy, and over-the-top as the story allows — don't hold back for the sake of restraint. Reserve extra care only for genuinely political/government stories, where you should keep the satire sharp but avoid outright false factual claims.
 
 Title style rules (critical):
 - Use title case (capitalize main words, not every word)
@@ -389,8 +393,9 @@ def handler(event: dict, context: Any) -> dict:
 
     print(f"[prepare_actions] Received {len(headlines)} headlines")
 
-    # Step 1: Select 7 candidates (buffer so dedup still leaves us 3)
-    candidates = _select_articles(headlines, num=7)
+    # Step 1: Select candidates (one per category plus a buffer so dedup still leaves us 3)
+    num_categories = len({h["category"] for h in headlines if h.get("category")}) or 7
+    candidates = _select_articles(headlines, num=num_categories + 2)
 
     # Step 2: Filter out already-seen URLs
     unseen = _filter_seen_urls(candidates)
