@@ -425,6 +425,13 @@ class SalaciousAgentStack(cdk.Stack):
         instagram_token_secret.grant_read(social_role)
         instagram_user_id_secret.grant_read(social_role)
         images_bucket.grant_read(social_role)
+        social_role.add_to_policy(iam.PolicyStatement(
+            sid="InvokeBedrockForViralRanking",
+            actions=["bedrock:InvokeModel", "bedrock:Converse"],
+            resources=[
+                f"arn:aws:bedrock:{self.region}::foundation-model/{FOUNDATION_MODEL_ID}",
+            ],
+        ))
         social_dlq = _make_dlq("social-actions")
 
         social_lambda = lambda_.Function(
@@ -437,13 +444,14 @@ class SalaciousAgentStack(cdk.Stack):
                 bundling=_bundling(LAMBDAS_DIR / "social_actions"),
             ),
             role=social_role,
-            timeout=Duration.minutes(2),
+            timeout=Duration.minutes(5),
             memory_size=256,
             environment={
                 "INSTAGRAM_TOKEN_SECRET": instagram_token_secret.secret_name,
                 "INSTAGRAM_USER_ID_SECRET": instagram_user_id_secret.secret_name,
                 "IMAGES_BUCKET": images_bucket.bucket_name,
                 "SITE_BASE_URL": SITE_BASE_URL,
+                "FOUNDATION_MODEL_ID": FOUNDATION_MODEL_ID,
             },
             dead_letter_queue=social_dlq,
             log_group=_make_log_group("Social", "social"),

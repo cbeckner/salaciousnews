@@ -74,6 +74,7 @@ test-instagram:
 	echo "$$PAYLOAD" | python3 -m json.tool; \
 	aws lambda invoke \
 		--function-name salaciousnews-social-actions \
+		--cli-binary-format raw-in-base64-out \
 		--payload "$$PAYLOAD" \
 		--log-type Tail \
 		--profile $(PROFILE) --region $(REGION) \

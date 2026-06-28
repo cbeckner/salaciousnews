@@ -50,7 +50,8 @@ FlowInputNode
       → BundleArticle         (bundle-article)
   → ResultCollector     (fans back in → collectedArray)
   → BatchPublish        (batch-publish — ONE GitHub commit for everything)
-  → PostInstagram       (social-actions — posts ONCE per run)
+  → PostInstagram       (social-actions — DeepSeek ranks articles by viral
+                          potential, posts the top 2 per run)
   → FlowOutputNode
 ```
 

@@ -207,9 +207,10 @@ def generate_social_image(article: dict, article_image_s3_key: str) -> dict:
     category = (article.get("category") or "").strip()
     slug = article.get("slug", "unknown")
 
-    # Normalise punctuation for clean word-wrapping.
-    # Add spaces around em-dash so it's treated as a separate token by _wrap_text.
-    title = title.replace("—", " — ").replace("  ", " ").strip().upper()
+    # Defense-in-depth: strip em/en-dashes — the bundled font may render them as
+    # missing-glyph boxes on some Lambda deploys. The title source should already
+    # avoid these, but normalize here too in case one slips through.
+    title = title.replace("—", ":").replace("–", ":").replace("  ", " ").strip().upper()
 
     img = _load_article_image_from_s3(article_image_s3_key)
     img = _fit_and_crop(img)
@@ -304,11 +305,11 @@ def generate_social_image(article: dict, article_image_s3_key: str) -> dict:
     bordered.paste(img, (border, border))
 
     buf = BytesIO()
-    bordered.convert("RGB").save(buf, "WEBP", quality=85)
+    bordered.convert("RGB").save(buf, "JPEG", quality=90)
     buf.seek(0)
-    filename = f"social-{uuid.uuid4()}.webp"
+    filename = f"social-{uuid.uuid4()}.jpg"
     s3_key = f"social/{filename}"
-    _s3.put_object(Bucket=BUCKET, Key=s3_key, Body=buf.getvalue(), ContentType="image/webp")
+    _s3.put_object(Bucket=BUCKET, Key=s3_key, Body=buf.getvalue(), ContentType="image/jpeg")
     print(f"[image_actions] Social image → s3://{BUCKET}/{s3_key}")
     return {"s3_key": s3_key, "filename": filename}
 

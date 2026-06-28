@@ -316,7 +316,8 @@ Title style rules (critical):
 - Maximum 10 words — punchy, not exhausting
 - No ALL CAPS words — emphasis comes from word choice, not caps lock
 - Lead with the most scandalous detail, not the source name
-- Use an em-dash (—) for a dramatic pivot, e.g. "Stars Bail on Trump Concert—He Stars in It Himself"
+- Only if needed, use a colon for a dramatic pivot, e.g. "Stars Bail on Trump Concert: He Stars in It Himself"
+- Do NOT use an em-dash, en-dash, or any "—"/"–" character anywhere in the title
 - Think New York Post front page: one killer line that makes you need to read more
 
 Articles to rewrite:
@@ -365,6 +366,11 @@ Return ONLY valid JSON with this exact structure:
         # Ensure list fields
         if isinstance(art.get("tags"), str):
             art["tags"] = [t.strip() for t in art["tags"].split(",") if t.strip()]
+        # Strip em/en-dashes — the social/article-image font may render them as
+        # missing-glyph boxes; a colon reads just as well for a dramatic pivot.
+        for field in ("title", "teaser"):
+            if art.get(field):
+                art[field] = art[field].replace("—", ":").replace("–", ":")
 
     print(f"[prepare_actions] Rewrote {len(articles)} articles")
     return articles
