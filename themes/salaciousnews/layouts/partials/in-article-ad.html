@@ -1,13 +1,12 @@
 {{- $ctx := .ctx }}
-{{- $client := $ctx.Site.Params.adsense.client }}
-{{- $slotID := index $ctx.Site.Params.adsense.slots "inarticle" }}
+{{- $zone := $ctx.Site.Params.adsterra.zones.inarticle }}
 <div class="ad-slot in-article-ad" style="min-height:250px;">
   <span class="ad-label">Advertisement</span>
-  {{- if and $client $slotID }}
-  <ins class="adsbygoogle" style="display:block; text-align:center;"
-    data-ad-layout="in-article" data-ad-format="fluid"
-    data-ad-client="{{ $client }}" data-ad-slot="{{ $slotID }}"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  {{- if $zone }}
+  <script>
+    atOptions = { 'key' : '{{ $zone.key }}', 'format' : 'iframe', 'height' : {{ $zone.h }}, 'width' : {{ $zone.w }}, 'params' : {} };
+  </script>
+  <script src="https://www.highperformanceformat.com/{{ $zone.key }}/invoke.js"></script>
   {{- else }}
   <span class="ad-size">In-article</span>
   <span class="ad-kind">In-article · fluid</span>

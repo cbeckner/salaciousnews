@@ -81,19 +81,23 @@ summaryLength = 20
 [Params.thumbnail]
   visibility = ["list", "post"] # Control thumbnail visibility
 
-[Params.adsense]
-  client = "ca-pub-5733732343388471"
-  [Params.adsense.slots]
-    billboard = "1832220320"     # top leaderboard (970x250 / 320x100)
-    nativeband = "4663273500"    # in-feed native band
-    mpuSidebar = "3556365530"    # rail MPU (300x250)
-    leaderboard = "2326447878"
-    halfpage = "3116246362"
-    inarticle = "8775215937"
-    mpu1 = "7591518317"
-    mpu2 = "1201664931"
-    topMobile = "2243283860"
-    multiplex = "2051712172"     # "Around the Web" multiplex ad (home/category pages)
+[Params.adsterra]
+  nativeKey = "3bf4dfbd5ba91074c24ce160ccd66ccc"  # single Native Banner zone, reused only by "nativeband" to avoid duplicate container ids
+  nativeDomain = "pl30117303.effectivecpmnetwork.com"
+  socialBarSrc = "https://pl30117306.effectivecpmnetwork.com/3e/62/d7/3e62d76206f1602cd3c079c645c6a805.js"
+  socialBarEnabled = true
+  [Params.adsterra.zones]
+    billboard   = { type = "banner", key = "5a2f693a9224b255763d6f7e6aea1e42", w = 728, h = 90 }
+    leaderboard = { type = "banner", key = "5a2f693a9224b255763d6f7e6aea1e42", w = 728, h = 90 }
+    mpuSidebar  = { type = "banner", key = "04ff230a0fc4b0d9c97182cdc84f8c56", w = 300, h = 250 }
+    halfpage    = { type = "banner", key = "04ff230a0fc4b0d9c97182cdc84f8c56", w = 300, h = 250 }
+    mpu1        = { type = "banner", key = "04ff230a0fc4b0d9c97182cdc84f8c56", w = 300, h = 250 }
+    mpu2        = { type = "banner", key = "04ff230a0fc4b0d9c97182cdc84f8c56", w = 300, h = 250 }
+    inarticle   = { type = "banner", key = "04ff230a0fc4b0d9c97182cdc84f8c56", w = 300, h = 250 }
+    multiplex   = { type = "banner", key = "04ff230a0fc4b0d9c97182cdc84f8c56", w = 300, h = 250 }
+    topMobile   = { type = "banner", key = "c4023322a58199a75a6b403cb29e64de", w = 320, h = 50 }
+    banner468x60 = { type = "banner", key = "55f6a6f476b62e66a3c29da947bcea8c", w = 468, h = 60 } # unused placeholder for future mapping
+    nativeband  = { type = "native" }
 
 [Params.sidebar]
   home = "right" # Configure layout for home page

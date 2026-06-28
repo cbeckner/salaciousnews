@@ -5,19 +5,20 @@
 {{- $sticky := .sticky | default false }}
 {{- $dark := .dark | default false }}
 {{- $maxWidth := .maxWidth }}
-{{- $client := $ctx.Site.Params.adsense.client }}
-{{- $slotID := "" }}
+{{- $zone := "" }}
 {{- with .slot }}
-  {{- $slotID = index $ctx.Site.Params.adsense.slots . }}
+  {{- $zone = index $ctx.Site.Params.adsterra.zones . }}
 {{- end }}
 <div class="ad-slot{{ if $dark }} dark{{ end }}" style="min-height:{{ $h }}px;{{ with $maxWidth }}max-width:{{ . }}px;margin-left:auto;margin-right:auto;{{ end }}">
   <span class="ad-label">Advertisement</span>
   {{- if $sticky }}<span class="ad-sticky-label">sticky</span>{{- end }}
-  {{- if and $client $slotID }}
-  <ins class="adsbygoogle" style="display:block;width:100%;"
-    data-ad-client="{{ $client }}" data-ad-slot="{{ $slotID }}"
-    data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  {{- if and $zone (eq $zone.type "banner") }}
+  <script>
+    atOptions = { 'key' : '{{ $zone.key }}', 'format' : 'iframe', 'height' : {{ $zone.h }}, 'width' : {{ $zone.w }}, 'params' : {} };
+  </script>
+  <script src="https://www.highperformanceformat.com/{{ $zone.key }}/invoke.js"></script>
+  {{- else if and $zone (eq $zone.type "native") }}
+  {{ partial "native-banner.html" (dict "ctx" $ctx) }}
   {{- else }}
   <span class="ad-size">{{ $size }}</span>
   <span class="ad-kind">{{ $kind }}</span>

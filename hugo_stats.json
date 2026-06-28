@@ -20,7 +20,6 @@
       "header",
       "html",
       "img",
-      "ins",
       "li",
       "link",
       "main",
@@ -40,7 +39,6 @@
       "ad-label",
       "ad-slot",
       "ad-sticky-label",
-      "adsbygoogle",
       "b",
       "bar",
       "body-copy",
@@ -135,6 +133,7 @@
       "view-mobile"
     ],
     "ids": [
+      "container-3bf4dfbd5ba91074c24ce160ccd66ccc",
       "tbm-drawer",
       "tbm-menu-toggle"
     ]

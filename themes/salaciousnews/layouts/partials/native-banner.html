@@ -1,0 +1,5 @@
+{{- $ctx := .ctx }}
+{{- $key := $ctx.Site.Params.adsterra.nativeKey }}
+{{- $domain := $ctx.Site.Params.adsterra.nativeDomain }}
+<script async="async" data-cfasync="false" src="https://{{ $domain }}/{{ $key }}/invoke.js"></script>
+<div id="container-{{ $key }}"></div>

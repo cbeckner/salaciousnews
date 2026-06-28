@@ -44,9 +44,7 @@
   {{- end }}
   {{- end }}
 
-  {{- with .Site.Params.adsense.client }}
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}" crossorigin="anonymous"></script>
-  {{- end }}
+
 </head>
 
 <body class="tb">
@@ -59,6 +57,12 @@
   {{- $js := resources.Get "js/main.js" }}
   {{- if hugo.IsProduction }}{{ $js = $js | minify }}{{ end }}
   <script src="{{ $js.RelPermalink }}"></script>
+
+  {{- if .Site.Params.adsterra.socialBarEnabled }}
+  {{- with .Site.Params.adsterra.socialBarSrc }}
+  <script src="{{ . }}"></script>
+  {{- end }}
+  {{- end }}
 </body>
 
 </html>

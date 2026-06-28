@@ -1,9 +1,8 @@
 {{- $ctx := .ctx }}
-{{- $client := $ctx.Site.Params.adsense.client }}
-{{- $slotID := index $ctx.Site.Params.adsense.slots "multiplex" }}
-{{- if and $client $slotID }}
-<ins class="adsbygoogle" style="display:block"
-  data-ad-format="autorelaxed"
-  data-ad-client="{{ $client }}" data-ad-slot="{{ $slotID }}"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+{{- $zone := $ctx.Site.Params.adsterra.zones.multiplex }}
+{{- if $zone }}
+<script>
+  atOptions = { 'key' : '{{ $zone.key }}', 'format' : 'iframe', 'height' : {{ $zone.h }}, 'width' : {{ $zone.w }}, 'params' : {} };
+</script>
+<script src="https://www.highperformanceformat.com/{{ $zone.key }}/invoke.js"></script>
 {{- end }}

@@ -1,7 +1,6 @@
 {{- $ctx := .ctx }}
 {{- $mobile := .mobile | default false }}
-{{- $client := $ctx.Site.Params.adsense.client }}
-{{- $slotID := index $ctx.Site.Params.adsense.slots "multiplex" }}
+{{- $zone := $ctx.Site.Params.adsterra.zones.multiplex }}
 {{- $items := slice
   (dict "label" "Sponsored" "title" "Doctors Stunned: This $3 Kitchen Trick Melts Belly Fat Overnight" "brand" "HealthDailyPro" "img" "Steaming mug on a rustic table")
   (dict "label" "Sponsored" "title" "She Bought an Old Painting for $4 — Appraisers Couldn't Stay Calm" "brand" "TrendingFinds" "img" "Ornate frame under gallery light")
@@ -15,7 +14,7 @@
     <h2>Around the Web</h2>
     <span class="by">Sponsored {{ if not $mobile }}Links · powered by {{ end }}ad network</span>
   </div>
-  {{- if and $client $slotID }}
+  {{- if $zone }}
   {{ partial "multiplex-ad.html" (dict "ctx" $ctx) }}
   {{- else }}
   <div class="{{ if $mobile }}tbm-adv-g{{ else }}tb-adv-g{{ end }}">

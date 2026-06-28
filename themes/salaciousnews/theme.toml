@@ -3,8 +3,8 @@ license = "None"
 licenselink = "https://github.com/cbeckner/salaciousnews"
 description = "Loud supermarket-tabloid refresh of Salacious News, built from the design_handoff_salacious_refresh (Direction A) handoff."
 homepage = "https://github.com/cbeckner/salaciousnews"
-tags = ["blog", "news", "responsive", "tabloid", "adsense"]
-features = ["blog", "responsive", "google analytics", "adsense"]
+tags = ["blog", "news", "responsive", "tabloid", "adsterra"]
+features = ["blog", "responsive", "google analytics", "adsterra"]
 min_version = "0.110"
 
 [author]
