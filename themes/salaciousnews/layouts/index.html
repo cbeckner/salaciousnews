@@ -32,7 +32,7 @@
           {{ partial "article-card.html" (dict "page" .) }}
           {{- end }}
           {{ partial "native-card.html" (dict "ctx" . "mobile" false) }}
-          {{- range last 4 $feed }}
+          {{- range last 3 $feed }}
           {{ partial "article-card.html" (dict "page" .) }}
           {{- end }}
         </div>
