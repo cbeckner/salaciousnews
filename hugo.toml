@@ -13,10 +13,6 @@ summaryLength = 20
   [services.googleAnalytics]
     id = "G-MRRZYLYQC7"
 
-[Author] # Used in authorbox
-  name = "John Doe"
-  bio = "John Doe's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
-  avatar = "img/avatar.png"
 
 [Params]
   description = "Salacious News!  All the hot gossip from around the world" # Site description. Used in meta description
