@@ -16,7 +16,27 @@
   <div class="tb-mast">
     <div class="tb-wrap" style="position:relative;">
       <span class="tb-mast-side" style="left:32px;text-align:left;">No. {{ len $ctx.Site.RegularPages }}<br>Daily Gossip</span>
-      <span class="tb-mast-side" style="right:32px;text-align:right;">No Fake News!<br>Gauaranteed</span>
+      <span id="sn-tagline" class="tb-mast-side" style="right:32px;text-align:right;">Too Juicy to Ignore</span>
+      <script>
+        (function() {
+          var taglines = [
+            "Too Juicy to Ignore",
+            "Deliciously Disreputable",
+            "Unapologetically Scandalous",
+            "All the Dirt. None of the Shame.",
+            "Because Respectable News Is Boring",
+            "We Read the Tabloids So You Don't Have To",
+            "Mostly True. Definitely Entertaining.",
+            "The News Your Mother Warned You About",
+            "Scandal, Served Daily",
+            "Gossip. Glorified.",
+            "Filth Worth Reading",
+            "Stay Nosy"
+          ];
+          var el = document.getElementById("sn-tagline");
+          el.textContent = taglines[Math.floor(Math.random() * taglines.length)];
+        })();
+      </script>
       <img class="tb-mascot" src="{{ "img/salacious-news-mascot.png" | relURL }}" alt="" width="400" height="464">
       <p class="tb-logo"><a href="{{ "/" | relLangURL }}"><span class="a">Salacious</span><span class="b"> News</span></a></p>
       <div class="tb-tag">{{ $ctx.Site.Params.subtitle }}</div>
