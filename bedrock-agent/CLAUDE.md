@@ -97,31 +97,26 @@ so there's no easy way to publish versions and repoint a custom alias. Using
 alias-management step. Don't "fix" this by creating a custom alias unless you
 also solve the boto3 version problem.
 
-### 5. ⚠️ KNOWN BROKEN: image-actions Lambda bundling (x86_64 vs aarch64)
-**Every `cdk deploy` currently breaks `image-actions`.** CDK's local pip
-bundler runs on the dev Mac and produces a `pydantic_core` binary for the
-host architecture (macOS/aarch64), but Lambda runs on `x86_64` Linux — causing
-runtime import errors.
+### 5. ✅ FIXED: image-actions Lambda bundling (x86_64 vs aarch64)
+Previously, CDK's local pip bundler ran on the dev Mac and produced a
+`pydantic_core` binary for the host architecture (macOS/aarch64), but Lambda
+runs on `x86_64` Linux — causing runtime import errors on every deploy.
 
-**Until this is fixed in CDK**, after every deploy you must manually rebuild
-and push `image-actions`:
-```bash
-rm -rf /tmp/image_build && mkdir -p /tmp/image_build
-docker run --rm --platform linux/amd64 \
-  -v /tmp/image_build:/asset -v "$(pwd)/lambdas/image_actions":/src \
-  public.ecr.aws/sam/build-python3.12 \
-  bash -c "pip install -r /src/requirements.txt -t /asset -q && cp -r /src/* /asset/"
-# verify the .so filename contains x86_64-linux-gnu:
-find /tmp/image_build -name "*.so" | grep pydantic
-cd /tmp/image_build && zip -r -q /tmp/image_actions.zip . && cd -
-aws lambda update-function-code --function-name salaciousnews-image-actions \
-  --zip-file fileb:///tmp/image_actions.zip --profile personal --region us-east-1
+**Fixed** in `stacks/salacious_agent_stack.py` — the `image-actions` Lambda's
+`code.from_asset(..., bundling=...)` now forces Docker bundling instead of the
+local pip bundler:
+```python
+bundling=cdk.BundlingOptions(
+    image=cdk.DockerImage.from_registry("public.ecr.aws/sam/build-python3.12"),
+    local=None,  # force Docker — aarch64 pydantic_core breaks on Lambda x86
+    platform="linux/amd64",
+    ...
+)
 ```
-**Tracked as background task `task_fd003f9c`** — "Fix image-actions CDK
-bundling for Linux x86_64". Suggested permanent fix: force Docker bundling in
-CDK with `cdk.BundlingOptions(image=cdk.DockerImage.from_registry(...),
-platform="linux/amd64", local=None)` so `cdk deploy` always builds correctly
-without a manual follow-up step.
+A plain `cdk deploy` (or `make deploy`) now builds `image-actions` correctly
+every time — **no manual post-deploy Docker rebuild/zip/upload step needed
+anymore.** Docker must still be running locally (CDK shells out to it during
+bundling), but no extra manual intervention is required beyond that.
 
 ### 6. Secrets are cached per warm Lambda instance
 Each Lambda keeps a module-level `_secret_cache: dict[str, str]`. After
@@ -186,11 +181,10 @@ aws secretsmanager get-secret-value --secret-id salaciousnews/openai-api-key \
 
 ---
 
-## Status (as of 2026-06-07)
+## Status (as of 2026-07-08)
 
 ✅ Flow migration, single-commit publishing, title style, social image
-rendering (sizing + em-dash font), and DynamoDB dedup are all **complete,
-deployed, and verified live**.
-
-⚠️ Only outstanding item: fix CDK bundling so `image-actions` survives a
-normal `cdk deploy` without manual Docker rebuild (background task `task_fd003f9c`).
+rendering (sizing + em-dash font), DynamoDB dedup, and the `image-actions`
+CDK bundling fix (see gotcha #5) are all **complete, deployed, and verified
+live**. `cdk deploy` / `make deploy` now works cleanly with no manual
+post-deploy steps.

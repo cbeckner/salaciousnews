@@ -330,7 +330,7 @@ For each article, produce:
 - A 1-sentence teaser for social media (punchy and clickbait-y, no ALL CAPS)
 - A meta description for search engines: ONE sentence, plain text (no markdown), maximum 155 characters total
 - 3-5 relevant tags
-- A DALL-E image prompt for a dramatic photorealistic editorial image representing the story (no text, no logos, no people's faces)
+- A DALL-E image prompt for a realistic photojournalistic image representing the story — shot like a real news/paparazzi photo (candid framing, natural lighting, telephoto or press-pool feel), not an illustration or stylized render. People and real-world locations relevant to the story may be depicted generically (e.g. "a crowd of reporters," "a courthouse steps scene," "a politician at a podium") as long as no real named individual's likeness is described. Lean slightly tabloid: paparazzi flash, long lens compression, candid unposed moments. No text, no logos, no watermarks.
 
 Return ONLY valid JSON with this exact structure:
 {{

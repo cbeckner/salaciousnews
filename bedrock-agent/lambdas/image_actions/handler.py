@@ -55,8 +55,10 @@ def _openai_client() -> OpenAI:
 # Article image generation
 # ---------------------------------------------------------------------------
 SAFE_FALLBACK_PROMPT = (
-    "A professional newsroom scene with journalists working at modern desks, "
-    "soft editorial lighting, clean composition, no text, no logos, photorealistic."
+    "A candid paparazzi-style press photo: a crowd of reporters and photographers "
+    "with cameras and microphones outside a courthouse or public building, natural "
+    "daylight, telephoto compression, unposed and slightly chaotic, realistic "
+    "photojournalism, no text, no logos, no watermarks."
 )
 
 
@@ -86,7 +88,10 @@ def generate_article_image(article: dict) -> dict:
 
     if not prompt:
         title = article.get("title", "")
-        prompt = f"Dramatic editorial photo representing: {title}. Photorealistic, no text, no logos."
+        prompt = (
+            f"Realistic paparazzi-style press photo representing: {title}. "
+            "Candid photojournalism, natural lighting, telephoto lens feel, no text, no logos."
+        )
 
     client = _openai_client()
     last_exc: Exception | None = None
