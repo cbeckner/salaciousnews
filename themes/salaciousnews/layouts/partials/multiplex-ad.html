@@ -1,8 +1,0 @@
-{{- $ctx := .ctx }}
-{{- $zone := $ctx.Site.Params.adsterra.zones.multiplex }}
-{{- if $zone }}
-<script>
-  atOptions = { 'key' : '{{ $zone.key }}', 'format' : 'iframe', 'height' : {{ $zone.h }}, 'width' : {{ $zone.w }}, 'params' : {} };
-</script>
-<script src="https://www.highperformanceformat.com/{{ $zone.key }}/invoke.js"></script>
-{{- end }}

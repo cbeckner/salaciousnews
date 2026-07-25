@@ -9,6 +9,15 @@
 {{- with .slot }}
   {{- $zone = index $ctx.Site.Params.adsterra.zones . }}
 {{- end }}
+{{- /* Box must match the real ad creative, not the aspirational size the
+      caller was written against — a mismatch here is exactly what makes
+      an ad look "too small for its box" (e.g. a 728x90 zone rendered
+      inside a box sized for 970x250). Banner zones carry real w/h; trust
+      those over the caller's size/kind, which are just placeholder text. */}}
+{{- if and $zone (eq $zone.type "banner") }}
+  {{- $h = $zone.h }}
+  {{- $maxWidth = $zone.w }}
+{{- end }}
 <div class="ad-slot{{ if $dark }} dark{{ end }}" style="min-height:{{ $h }}px;{{ with $maxWidth }}max-width:{{ . }}px;margin-left:auto;margin-right:auto;{{ end }}">
   <span class="ad-label">Advertisement</span>
   {{- if $sticky }}<span class="ad-sticky-label">sticky</span>{{- end }}

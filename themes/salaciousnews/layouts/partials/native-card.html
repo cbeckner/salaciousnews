@@ -1,17 +1,20 @@
 {{- $ctx := .ctx }}
 {{- $mobile := .mobile | default false }}
+{{- /* This slot is one grid card wide (~300px). Adsterra's Native Banner
+      widget is a responsive multi-item grid meant for a wide container —
+      squeezed in here it renders as cramped, truncated thumbnails. A
+      single fixed-size banner is the right fit; the real multi-item
+      native widget belongs in advertorial.html's full-width section. */}}
 {{- $zone := index $ctx.Site.Params.adsterra.zones "mpuSidebar" }}
 <div class="{{ if $mobile }}tbm-card{{ else }}tb-card{{ end }} ad-slot" style="min-height:{{ if $mobile }}180{{ else }}168{{ end }}px;{{ if $mobile }}margin:8px 0;{{ end }}">
   <span class="ad-label">Advertisement</span>
-  {{- if not $mobile }}
-  {{ partial "native-banner.html" (dict "ctx" $ctx) }}
-  {{- else if $zone }}
+  {{- if $zone }}
   <script>
     atOptions = { 'key' : '{{ $zone.key }}', 'format' : 'iframe', 'height' : {{ $zone.h }}, 'width' : {{ $zone.w }}, 'params' : {} };
   </script>
   <script src="https://www.highperformanceformat.com/{{ $zone.key }}/invoke.js"></script>
   {{- else }}
   <span class="ad-size">In-feed</span>
-  <span class="ad-kind">Native · auto</span>
+  <span class="ad-kind">MPU · auto</span>
   {{- end }}
 </div>
