@@ -15,6 +15,13 @@ Receives:
       "social_s3_key": str   (may be "" if social image generation failed)
     }
 
+After a successful GitHub commit, marks each published article's
+`original_url` as "seen" in DynamoDB (90-day TTL) — this is the ONLY place
+that writes to the dedup table. It must stay gated on a successful publish:
+writing it earlier in the pipeline (e.g. during selection) means a
+flow-level retry or downstream failure permanently blacklists articles that
+were never actually published.
+
 Returns:
   {
     "articles": [
@@ -30,7 +37,7 @@ import base64
 import json
 import os
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from typing import Any
 
 import boto3
@@ -41,6 +48,7 @@ import requests
 # ---------------------------------------------------------------------------
 _s3 = boto3.client("s3")
 _secrets = boto3.client("secretsmanager")
+_dynamodb = boto3.resource("dynamodb", region_name=os.environ.get("AWS_REGION", "us-east-1"))
 _secret_cache: dict[str, str] = {}
 
 BUCKET = os.environ["IMAGES_BUCKET"]
@@ -48,6 +56,8 @@ GITHUB_REPO = os.environ["GITHUB_REPO"]
 GITHUB_BRANCH = os.environ.get("GITHUB_BRANCH", "main")
 SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://salacious.news").rstrip("/")
 GITHUB_TOKEN_SECRET = os.environ["GITHUB_TOKEN_SECRET"]
+SEEN_URLS_TABLE = os.environ.get("SEEN_URLS_TABLE", "salaciousnews-seen-urls")
+SEEN_URL_TTL_DAYS = int(os.environ.get("SEEN_URL_TTL_DAYS", "90"))
 
 
 def _get_secret(name: str) -> str:
@@ -169,6 +179,33 @@ def _create_blob(content_b64: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# DynamoDB deduplication — mark seen ONLY after a successful publish
+# ---------------------------------------------------------------------------
+def _mark_urls_seen(urls: list[str]) -> None:
+    """Write each published article's original URL to DynamoDB with a TTL."""
+    urls = [u for u in urls if u]
+    if not urls:
+        return
+
+    table = _dynamodb.Table(SEEN_URLS_TABLE)
+    expires_at = int((datetime.now(timezone.utc) + timedelta(days=SEEN_URL_TTL_DAYS)).timestamp())
+    now_iso = datetime.now(timezone.utc).isoformat()
+
+    try:
+        with table.batch_writer() as batch:
+            for url in urls:
+                batch.put_item(Item={
+                    "url": url,
+                    "seen_at": now_iso,
+                    "expires_at": expires_at,
+                })
+        print(f"[batch_publish] Marked {len(urls)} URL(s) as seen (TTL {SEEN_URL_TTL_DAYS}d)")
+    except Exception as exc:
+        # Non-fatal — don't fail a successful publish over a dedup write error
+        print(f"[batch_publish] Warning: DynamoDB write failed: {exc}")
+
+
+# ---------------------------------------------------------------------------
 # Main batch-publish logic
 # ---------------------------------------------------------------------------
 def batch_publish(bundles: list[dict]) -> dict:
@@ -185,6 +222,7 @@ def batch_publish(bundles: list[dict]) -> dict:
     # 2. Build the tree — create one blob per file for all articles
     tree_items = []
     article_results = []
+    published_urls = []
 
     for bundle in bundles:
         article = bundle.get("article", {})
@@ -230,6 +268,7 @@ def batch_publish(bundles: list[dict]) -> dict:
             "teaser":        article.get("teaser", ""),
             "social_s3_key": social_s3_key,
         })
+        published_urls.append(article.get("original_url", ""))
 
     if not tree_items:
         raise RuntimeError("No valid articles to publish — all bundles were missing image info")
@@ -256,6 +295,9 @@ def batch_publish(bundles: list[dict]) -> dict:
     # 5. Advance the branch ref
     _gh_patch(f"git/refs/heads/{GITHUB_BRANCH}", {"sha": new_commit_sha})
     print(f"[batch_publish] Branch '{GITHUB_BRANCH}' advanced to {new_commit_sha[:8]}")
+
+    # 6. Only now — after the commit is live — mark these URLs as seen
+    _mark_urls_seen(published_urls)
 
     return {
         "articles":        article_results,

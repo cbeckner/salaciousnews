@@ -286,7 +286,11 @@ class SalaciousAgentStack(cdk.Stack):
                 f"arn:aws:bedrock:{self.region}::foundation-model/{FOUNDATION_MODEL_ID}",
             ],
         ))
-        seen_urls_table.grant_read_write_data(prepare_role)
+        # Read-only: prepare-actions filters candidates against the dedup table
+        # but no longer writes to it. batch_publish owns writes — only after a
+        # successful GitHub commit, so a retried/failed flow never permanently
+        # blacklists an article that was never published.
+        seen_urls_table.grant_read_data(prepare_role)
         prepare_dlq = _make_dlq("prepare-actions")
 
         prepare_lambda = lambda_.Function(
@@ -306,7 +310,6 @@ class SalaciousAgentStack(cdk.Stack):
                 "FOUNDATION_MODEL_ID": FOUNDATION_MODEL_ID,
                 "ARTICLE_MIN_LENGTH": "300",
                 "SEEN_URLS_TABLE": seen_urls_table.table_name,
-                "SEEN_URL_TTL_DAYS": "90",
             },
             dead_letter_queue=prepare_dlq,
             log_group=_make_log_group("PrepareActions", "prepare-actions"),
@@ -390,6 +393,9 @@ class SalaciousAgentStack(cdk.Stack):
         batch_publish_role = _make_lambda_role("BatchPublish")
         github_token_secret.grant_read(batch_publish_role)
         images_bucket.grant_read(batch_publish_role)
+        # Write-only owner of the dedup table — marks URLs seen only after a
+        # successful GitHub commit (see prepare_role comment above).
+        seen_urls_table.grant_write_data(batch_publish_role)
         batch_publish_dlq = _make_dlq("batch-publish")
 
         batch_publish_lambda = lambda_.Function(
@@ -411,6 +417,8 @@ class SalaciousAgentStack(cdk.Stack):
                 "GITHUB_REPO": GITHUB_REPO,
                 "GITHUB_BRANCH": "main",
                 "SITE_BASE_URL": SITE_BASE_URL,
+                "SEEN_URLS_TABLE": seen_urls_table.table_name,
+                "SEEN_URL_TTL_DAYS": "90",
             },
             dead_letter_queue=batch_publish_dlq,
             log_group=_make_log_group("BatchPublish", "batch-publish"),

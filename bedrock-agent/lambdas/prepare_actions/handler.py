@@ -8,7 +8,11 @@ Steps:
   2. Filter out URLs already seen in DynamoDB
   3. Scrape full text from the top 3 unseen URLs
   4. Ask DeepSeek to rewrite the articles in SalaciousNews tabloid style
-  5. Write the used URLs to DynamoDB with a 90-day TTL
+
+Note: URLs are marked "seen" in DynamoDB by batch_publish, not here — only
+after a successful GitHub commit. Marking them here (pre-publish) meant a
+flow-level retry/failure downstream still permanently blacklisted articles
+that were never actually published.
 
 Returns: {
   "articles": [
@@ -33,7 +37,6 @@ import os
 import re
 import time
 import unicodedata
-from datetime import datetime, timezone, timedelta
 from typing import Any
 
 import boto3
@@ -48,7 +51,6 @@ _bedrock = boto3.client("bedrock-runtime", region_name=os.environ.get("AWS_REGIO
 _dynamodb = boto3.resource("dynamodb", region_name=os.environ.get("AWS_REGION", "us-east-1"))
 
 SEEN_URLS_TABLE = os.environ.get("SEEN_URLS_TABLE", "salaciousnews-seen-urls")
-SEEN_URL_TTL_DAYS = int(os.environ.get("SEEN_URL_TTL_DAYS", "90"))
 
 FOUNDATION_MODEL_ID = os.environ.get("FOUNDATION_MODEL_ID", "deepseek.v3.2")
 MIN_CONTENT_CHARS = int(os.environ.get("ARTICLE_MIN_LENGTH", "300"))
@@ -210,29 +212,6 @@ def _filter_seen_urls(selections: list[dict]) -> list[dict]:
     if skipped:
         print(f"[prepare_actions] Dedup: skipped {skipped} already-seen URL(s)")
     return unseen
-
-
-def _mark_urls_seen(urls: list[str]) -> None:
-    """Write each URL to DynamoDB with a 90-day TTL."""
-    if not urls:
-        return
-
-    table = _get_seen_table()
-    expires_at = int((datetime.now(timezone.utc) + timedelta(days=SEEN_URL_TTL_DAYS)).timestamp())
-    now_iso = datetime.now(timezone.utc).isoformat()
-
-    try:
-        with table.batch_writer() as batch:
-            for url in urls:
-                batch.put_item(Item={
-                    "url": url,
-                    "seen_at": now_iso,
-                    "expires_at": expires_at,
-                })
-        print(f"[prepare_actions] Marked {len(urls)} URL(s) as seen (TTL {SEEN_URL_TTL_DAYS}d)")
-    except Exception as exc:
-        # Non-fatal — don't fail the pipeline over a dedup write error
-        print(f"[prepare_actions] Warning: DynamoDB write failed: {exc}")
 
 
 # ---------------------------------------------------------------------------
@@ -426,9 +405,5 @@ def handler(event: dict, context: Any) -> dict:
 
     if not articles:
         raise RuntimeError("DeepSeek returned no articles")
-
-    # Step 5: Mark the used URLs as seen in DynamoDB
-    used_urls = [s["url"] for s in selections[:len(accessible)]]
-    _mark_urls_seen(used_urls)
 
     return {"articles": articles}

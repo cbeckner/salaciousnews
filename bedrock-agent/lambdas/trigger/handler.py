@@ -33,6 +33,7 @@ def handler(event: dict, context: Any) -> dict:
     response = bedrock_runtime.invoke_flow(
         flowIdentifier=FLOW_ID,
         flowAliasIdentifier=FLOW_ALIAS_ID,
+        enableTrace=True,
         inputs=[
             {
                 "content": {"document": {"executionId": execution_id}},
