@@ -26,9 +26,18 @@ jobs:
           cache: 'npm'
 
       - name: Get latest Hugo version
+        env:
+          # Authenticated API calls avoid the shared-runner-IP rate limit (60/hr)
+          # that intermittently returned no tag and broke the download.
+          GH_TOKEN: ${{ github.token }}
         run: |
-          LATEST_HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
-          curl -sSL https://github.com/gohugoio/hugo/releases/download/${LATEST_HUGO_VERSION}/hugo_extended_${LATEST_HUGO_VERSION:1}_Linux-64bit.tar.gz | tar -xvzf-
+          set -euo pipefail
+          LATEST_HUGO_VERSION=$(gh release view --repo gohugoio/hugo --json tagName --jq .tagName)
+          if [[ -z "$LATEST_HUGO_VERSION" || "$LATEST_HUGO_VERSION" == "null" ]]; then
+            echo "::error::Could not determine latest Hugo version"; exit 1
+          fi
+          echo "Installing Hugo ${LATEST_HUGO_VERSION}"
+          curl -fsSL --retry 3 "https://github.com/gohugoio/hugo/releases/download/${LATEST_HUGO_VERSION}/hugo_extended_${LATEST_HUGO_VERSION#v}_linux-amd64.tar.gz" | tar -xzf - hugo
 
       - name: Move Hugo executable file
         run: |
